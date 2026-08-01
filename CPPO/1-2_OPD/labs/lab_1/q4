@@ -1,0 +1,4 @@
+cd Lab0
+wc -l grotle5 > grotle5 2>/tmp/errors_log.txt
+ls -la s* */s* */*/s* 2>/tmp/errors_log.txt
+ | sort -n -k 5 | grep -E "^(-|l)"
