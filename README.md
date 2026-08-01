@@ -1,52 +1,114 @@
-В папке CPPO предметы, которые раньше встретил на СППО (англ там)
+В этом репозитории собраны материалы собранные во время моего обучения в Университете ИТМО.
+# Краткое описание
+- Автор - Ануфриев Андрей Сергеевич
+- ИСУ - 465029
 
-В папке CYUR предметы, которые раньше встретил на СУиРе в 1 семе только 3
+## В 2024 году поступил на СППО по бви на бюджет.
+- Специальность: Программная инженерия 09.03.04
+- Образовательная программа: Системное и прикладное программное обеспечение (СППО или СиППО)
+- Факультет: Программной инженерии и компьютерной техники (ПИиКТ)
+- Мегафукультет: Компьютерных технологий и управления (КТУ)
 
-В папке selection лежат всякие разные отборы, которые я писал
-# Как сделать ссылку на репозиторий?
-- сначала добавляем папку и инициализируем её
-  ```bash
-  git init
-  git remote add origin https://github.com/MeAndNoOneElse/lab_5.git
-  git pull --set-upstream origin master
-  git push origin master
-  ```
-- затем из ITMO:
-```bash
-cd "C:\Users\Eternal Core\OneDrive - MSFT\github_file\ITMO"
-git submodule add "../lab_5" "CPPO\old\1-2 Programming\programms\lab_5"
-```
-  lab_7 это репозиторий, лежит рядом с ITMO (ну или где-то ещё, можно ссылку вставлять), а второй путь это то, где надо создать ссылку
-- Удалить, если она уже есть:
- ```bash
- Remove-Item -Recurse -Force "CPPO\old\1-2 Programming\programms\lab_5"
- ```
-- Ну и всё:
-``` bash
-git add .
-git commit -m "feat: add Lab_5 as submodule"
-git push
-```
-# Как комитить?
-1. Перейдите в папку submodule
-```bash
-cd CPPO/3_sem/Programming_languages/practics/sea_battle
-```
-2. Зафиксируйте в репозитории sea_battle
-```bash
-git add .
-git commit -m "Ваши изменения"
-git push
-```
-3. Обновите ссылку в основном репозитории
-```bash
-cd ../../../../../  # вернуться в ITMO
-git add CPPO/3_sem/Programming_languages/practics/sea_battle
-git commit -m "Подгузил изменения в основную ветку"
-git push
-```
-4. Перед тем как работать, нужно сделать ```pull``` из папки sea_battle
-```bash
-cd CPPO/3_sem/Programming_languages/practics/sea_battle
-git pull
-```
+## В 2025 году поступил на второе направление - робототехнику, также по бви.
+- Специальность: Мехатронника и робототехника 15.03.06
+- Образовательная программа: Робототехника и искуственный интеллект (Робототехника)
+- Факультет: Систем управления и робототехники (СУиР)
+- Мегафукультет: Компьютерных технологий и управления (КТУ)
+
+
+## Список материалов по курсам и направлениям
+Те предметы, котоорые повторялись на обоих направлениях отражены там, где я их раньше встретил.
+### Бакалавриат
+<details>
+    <summary>СППО</summary>
+    <details>
+        <summary>1 курс</summary>
+
+- [Информатика](CPPO/1%20Informatics)
+- [Дискретная математика (прод)](CPPO/1-2%20Discrete%20mathematics%28prod%29)
+- [Английский A1](CPPO/1-2%20English_A1.1)
+- [История (науки и техники)](CPPO/1-2%20History)
+- [Линейная алгебра (прод)](CPPO/1-2%20Linear%20algebra%28prod%29)
+- [Основы профессиональной деятельности](CPPO/1-2%20OPD)
+- [Java](CPPO/1-2%20Programming_Java)
+- [Математический анализ (прод)](CPPO/1-3%20Mathematical%20analysis%28prod%29)
+- [Базы данных](CPPO/2%20Data_base)
+- [КиК](CPPO/2%20KIK)
+- [БЖД](CPPO/2%20Life%20safety)
+
+    </details>
+
+    <details>
+        <summary>2 курс</summary>
+
+- [Математический анализ (прод)](CPPO/1-3%20Mathematical%20analysis%28prod%29)
+- [Теория вероятностей](CPPO/3%20%20Probability%20theory)
+- [Языки программирования](CPPO/3%20Programming%20languages)
+- [ТФКП](CPPO/3%20TFKP)
+- [ВТП](CPPO/3%20VTP)
+- [Веб.программирование](CPPO/3%20Web.prog)
+- [Английский B1.1](CPPO/3-4%20English_B1.1)
+- [Физика](CPPO/3-4%20Phisics)
+- [Алгоритмы](CPPO/4%20Algoritms%26data.struct)
+- [Архитектура компьютера](CPPO/4%20Arch.comp)
+- [Математическая статичтика](CPPO/4%20Mat.stat)
+- [Методы оптимизации](CPPO/4%20Met.opt)
+- [Основы программмной инженерии](CPPO/4%20OPI)
+- [ТПВП](CPPO/4%20TPVP)
+
+    </details>
+
+    <details>
+        <summary>3 курс</summary>
+скоро
+    </details>
+    <details>
+        <summary>4 курс</summary>
+пока маленький
+    </details>
+
+</details>
+
+
+<details>
+    <summary>Робототехника</summary>
+    <details>
+        <summary>1 курс</summary>
+
+- [Компьютерная графика](CYUR/1%20Graphics)
+- [OS Linux](CYUR/1%20OS%20Linux)
+- [Python](CYUR/1-2%20Python)
+- [Механика](CYUR/2%20Mechanics)
+- [Основы проектной деятельности](CYUR/2%20OPD)
+- [Философия](CYUR/2%20Philosophy)
+- [ПНР](CYUR/2%20PNR)
+- [Введение в профессиональную деятельность](CYUR/2%20VPD)
+- [Хранения и обработка данных](CYUR/2%20XuOD)
+
+    </details>
+
+    <details>
+        <summary>2 курс</summary>
+
+скоро
+
+    </details>
+
+    <details>
+        <summary>3 курс</summary>
+
+пока маленький
+
+    </details>
+
+    <details>
+        <summary>4 курс</summary>
+
+пока маленький
+
+    </details>
+
+</details>
+
+### магистратура:
+~ещё маленький~
