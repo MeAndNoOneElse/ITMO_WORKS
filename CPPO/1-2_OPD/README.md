@@ -1,5 +1,8 @@
 # Основы профессиональной деятельности (ОПД)
-- Преподаватель: [Клименков Сергей Викторович](https://my.itmo.ru/persons/105395)
+- Лектор: [Клименков Сергей Викторович](https://my.itmo.ru/persons/105395)
+- Практик: [Остапенко Ольга Денисовна](https://my.itmo.ru/persons/311740)
+- [Журнал 1 сем (осень)](https://docs.google.com/spreadsheets/d/1Ins9LfW_h4Tg1axT9Mfl4WI24GBdcQxIhnIIoqVSHh8/edit?gid=914298218#gid=914298218)
+- [Журнал 2 сем (весна)](https://docs.google.com/spreadsheets/d/1Ra5R2QdahI-bz-salZJRDjXlk96A-1Jsd24vzNEBu5k/edit?gid=760091588#gid=760091588)
 - Результат: 1ый сем зачёт, 2ой - сначала допса, потом закрыл на 4С
 ## Описание
 Предмет про то, как работает компьютер внутри на примере Базовой ЭВМ(бэвм).
