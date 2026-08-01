@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<week_schedule>
+<weekday1>  ср, 6 ноября
+<day_schedule>
+<lesson_1>
+	<time>
+		<lesson_time_start> 08:20 </lesson_time_start>
+		<lesson_time_end> 09:50 </lesson_time_end>
+	</time>
+	<body>
+		<lesson_type> Лекция </lesson_type>
+		<lesson_name> Информатика </lesson_name>
+		<lesson_teacher> Балакшин Павел Валерьевич </lesson_teacher>
+		<lesson_place>
+			<room> Ауд. Актовый зал (1216/0 (усл)) </room>
+			<address> ул.Ломоносова, д.9, лит.М </address>
+		</lesson_place>
+	</body>
+</lesson_1>
+<lesson_2>
+	<time>
+		<lesson_time_start> 10:00 </lesson_time_start>
+		<lesson_time_end> 11:30 </lesson_time_end>
+	</time>
+	<body>
+		<lesson_type> Лекция </lesson_type>
+		<lesson_name> Основы профессиональной деятельности </lesson_name>
+		<lesson_teacher> Клименков Сергей Викторович</lesson_teacher>
+		<lesson_place>
+			<room> Ауд. Актовый зал (1216/0 (усл)) </room>
+			<address> ул.Ломоносова, д.9, лит.М </address>
+		</lesson_place>
+	</body>
+</lesson_2>
+<lesson_3>
+	<time>
+		<lesson_time_start> 19:00 </lesson_time_start>
+		<lesson_time_end> 21:00 </lesson_time_end>
+	</time>
+	<body>
+		<lesson_type> Занятие спортом </lesson_type>
+		<lesson_name> Гребной спорт (мужская сборная команда) </lesson_name>
+		<lesson_teacher> Фомченко Андрей Александрович </lesson_teacher>
+		<lesson_place>
+			<room> Ауд. Гребной клуб "Стрела" </room>
+			<address> Северная дорога, 25 </address>
+		</lesson_place>
+	</body>
+</lesson_3>
+</day_schedule>
+</weekday1>
+<weekday2>  ср, 6 ноября
+<day_schedule>
+<lesson_1>
+	<time>
+		<lesson_time_start> 08:20 </lesson_time_start>
+		<lesson_time_end> 09:50 </lesson_time_end>
+	</time>
+	<body>
+		<lesson_type> Лекция </lesson_type>
+		<lesson_name> Информатика </lesson_name>
+		<lesson_teacher> Балакшин Павел Валерьевич </lesson_teacher>
+		<lesson_place>
+			<room> Ауд. Актовый зал (1216/0 (усл)) </room>
+			<address> ул.Ломоносова, д.9, лит.М </address>
+		</lesson_place>
+	</body>
+</lesson_1>
+<lesson_2>
+	<time>
+		<lesson_time_start> 10:00 </lesson_time_start>
+		<lesson_time_end> 11:30 </lesson_time_end>
+	</time>
+	<body>
+		<lesson_type> Лекция </lesson_type>
+		<lesson_name> Основы профессиональной деятельности </lesson_name>
+		<lesson_teacher> Клименков Сергей Викторович</lesson_teacher>
+		<lesson_place>
+			<room> Ауд. Актовый зал (1216/0 (усл)) </room>
+			<address> ул.Ломоносова, д.9, лит.М </address>
+		</lesson_place>
+	</body>
+</lesson_2>
+<lesson_3>
+	<time>
+		<lesson_time_start> 19:00 </lesson_time_start>
+		<lesson_time_end> 21:00 </lesson_time_end>
+	</time>
+	<body>
+		<lesson_type> Занятие спортом </lesson_type>
+		<lesson_name> Гребной спорт (мужская сборная команда) </lesson_name>
+		<lesson_teacher> Фомченко Андрей Александрович </lesson_teacher>
+		<lesson_place>
+			<room> Ауд. Гребной клуб "Стрела" </room>
+			<address> Северная дорога, 25 </address>
+		</lesson_place>
+	</body>
+</lesson_3>
+</day_schedule>
+</weekday2>
+</week_schedule>
