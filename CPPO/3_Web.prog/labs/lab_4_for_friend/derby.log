@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Feb 28 03:52:27 MSK 2026:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-019c-a1bb-83a0-00000e3605f8 
+on database directory C:\Users\Eternal_Core\.weblab_derby\weblab with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@659e0bfd 
+Loaded from file:/C:/Users/Eternal_Core/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.12+8-LTS-286
+user.dir=C:\Users\Eternal_Core\OneDrive - MSFT\github_file\LABS\web\web_lab_4.10
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    providedCompile 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.0.0'
+    providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation 'javax.servlet:jstl:1.2'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
+    implementation 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+}
+war {
+    archiveFileName = 'app.war'
+}
+test {
+    useJUnitPlatform()
+}

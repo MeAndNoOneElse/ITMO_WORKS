@@ -1,0 +1,143 @@
+<ui:composition template="/resources/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <h:outputScript library="js" name="validate.js"/>
+        <h:outputScript library="js" name="canvas.js"/>
+        <br/>
+        <!--Вод каким id вошёл и кнопка выйти-->
+        <div id="authoris">
+            <h:outputText id="userId" value="Вы на главной странице"/>
+            <h:button value="Выйти" outcome="start" styleClass="yellow-btn"/>
+            <!-- Добавлен блок переключения кэша -->
+            <h:panelGroup style="display:inline-block; margin-left:20px;">
+                <h:outputText value="Кэш: "/>
+                <h:outputText id="cacheStatus" value="#{cacheSwitcher.current}"/>
+                <p:commandButton value="Caffeine" action="#{cacheSwitcher.setCaffeine}"
+                                 update="resultsTable cacheStatus" styleClass="ui-button-info" process="@this"/>
+                <p:commandButton value="Redis" action="#{cacheSwitcher.setRedis}"
+                                 update="resultsTable cacheStatus" styleClass="ui-button-warning" process="@this"/>
+            </h:panelGroup>
+        </div>
+        <br/>
+        <!--        основный блок: форма и график-->
+        <div class="main">
+            <div id="form">
+                <h:form id="checkForm">
+                    <!-- X: Spinner с подписью -->
+                    <p:outputLabel for="x" value="Введите X:"/>
+                    <p:spinner id="x" widgetVar="spinnerX"
+                               value="#{pointCheckBean.x}"
+                               min="-5" max="5" step="1">
+                        <f:validator validatorId="XValidator"/>
+                        <p:ajax event="valueChange" update="x-err"/>
+                    </p:spinner>
+                    <p:message id="x-err" for="x" display="text" styleClass="error-message"/>
+                    <br/>
+
+
+                    <p:outputLabel for="y" value="Введите Y:" styleClass="field-label"/>
+                    <p:inputText id="y" value="#{pointCheckBean.y}" styleClass="input-field">
+                        <f:validator validatorId="YValidator"/>
+                        <p:ajax event="valueChange" update="y-err"/>
+                    </p:inputText>
+                    <p:message id="y-err" for="y" display="text" styleClass="error-message"/>
+
+
+                    <br/>
+
+                    <h:outputLabel for="r" value="Введите R:" style="display: block; text-align: left;"/>
+                    <h:panelGrid columns="1" style="margin-bottom:10px; width: auto; text-align: left; display: inline-block;">
+                        <p:slider id="rSlider"
+                                  widgetVar="rSlider"
+                                  for="r"
+                                  minValue="2"
+                                  maxValue="5"
+                                  step="0.25"
+                                  style="width:200px; margin-bottom: 10px;"/>
+                        <p:inputText id="r"
+                                     value="#{pointCheckBean.r}"
+                                     maxlength="10"
+                                     style="width: 200px;">
+                            <f:validator validatorId="RValidator"/>
+                            <p:ajax event="valueChange" update="r-err"/>
+                        </p:inputText>
+                    </h:panelGrid>
+                    <p:message id="r-err" for="r" display="text" styleClass="error-message"/>
+
+
+                    <p:commandButton id="checkBtn"
+                                     value="Проверить"
+                                     action="#{pointCheckBean.checkArea}"
+                                     update="resultsTable"
+                                     oncomplete="setTimeout(function(){drawArea(getR());}, 0);">
+                    </p:commandButton>
+                    <p:dialog id="errorDialog" widgetVar="errorDialogWidget"
+                              modal="true" closable="true" header="Ошибка" showEffect="fade">
+                        <h:outputText id="modalText" value="" style="color:#e84118"/>
+                    </p:dialog>
+
+                </h:form>
+
+                <h:messages globalOnly="true"/>
+
+            </div>
+
+            <div id="graph">
+                <canvas id="coordinatePlane" width="400" height="400"></canvas>
+            </div>
+            <h:panelGroup rendered="#{errorBean.hasError()}">
+                <h:outputText value="#{errorBean.errorMessage}" style="color:red;"/>
+            </h:panelGroup>
+
+        </div>
+        <br/>
+        <!-- таблица результатов -->
+        <div id="end">
+            <h3 class="table-title">История проверок</h3>
+            <div>
+                <h:dataTable id="resultsTable" value="#{resultsBean.results}" var="result">
+                    <h:column>
+                        <f:facet name="header">X</f:facet>
+                        #{result.x}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Y</f:facet>
+                        #{result.y}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">R</f:facet>
+                        #{result.r}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Попадание</f:facet>
+                        #{result.hit}
+                    </h:column>
+<!--                    <h:column>-->
+<!--                        <f:facet name="header">Время</f:facet>-->
+<!--                        #{result.time}-->
+<!--                    </h:column>-->
+                    <h:column>
+                        <f:facet name="header">Дата</f:facet>
+                        #{result.date}
+                    </h:column>
+
+                </h:dataTable>
+            </div>
+
+
+            <p:commandButton value="Очистить всё"
+                             action="#{resultsBean.clearResults}"
+                             update="resultsTable "
+                             icon="pi pi-trash"
+                             styleClass="ui-button-danger"
+                             oncomplete="setTimeout(function(){drawArea(getR());}, 0);">
+
+            </p:commandButton>
+        </div>
+    </ui:define>
+</ui:composition>

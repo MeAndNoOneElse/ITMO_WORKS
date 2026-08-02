@@ -1,0 +1,9 @@
+Index: src/main/java/app/AppMain.java
+===================================================================
+--- src/main/java/app/AppMain.java	(revision 1)
++++ src/main/java/app/AppMain.java	(revision 2)
+@@ -10,3 +10,4 @@
+     }
+ }
+ 
++; // Intentional syntax error

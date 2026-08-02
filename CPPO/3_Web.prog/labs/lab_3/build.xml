@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="web_lab_3" default="build" basedir=".">
+    <property file="build.properties"/>
+
+    <tstamp>
+        <format property="TODAY" pattern="yyyy-MM-dd"/>
+    </tstamp>
+
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="${lib.dir}/ant-contrib-1.0b3.jar"/>
+        </classpath>
+    </taskdef>
+
+    <path id="compile.classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+
+    <path id="test.classpath">
+        <path refid="compile.classpath"/>
+        <pathelement location="${build.dir}/classes"/>
+        <pathelement location="${build.dir}/test-classes"/>
+    </path>
+
+    <target name="clean" description="Удаление скомпилированных классов и временных файлов">
+        <delete dir="${build.dir}"/>
+        <delete dir="${doc.dir}/javadoc"/>
+        <echo message="Очистка завершена."/>
+    </target>
+
+    <target name="compile" description="Компиляция исходных кодов проекта">
+        <mkdir dir="${build.dir}/classes"/>
+        <copy todir="${build.dir}/classes" includeemptydirs="false">
+            <fileset dir="${resources.dir}" includes="**/*"/>
+        </copy>
+        <javac srcdir="${src.dir}"
+               destdir="${build.dir}/classes"
+               source="${java.source}"
+               target="${java.target}"
+               encoding="${java.encoding}"
+               debug="${javac.debug}"
+               includeantruntime="false">
+            <classpath refid="compile.classpath"/>
+        </javac>
+        <echo message="Компиляция завершена: ${build.dir}/classes"/>
+    </target>
+
+    <target name="build" depends="compile" description="Компиляция и упаковка в исполняемый jar-архив">
+        <mkdir dir="${build.dir}/jar"/>
+        <manifest file="${build.dir}/MANIFEST.MF">
+            <attribute name="Manifest-Version" value="1.0"/>
+            <attribute name="Implementation-Title" value="${app.name}"/>
+            <attribute name="Implementation-Version" value="${app.version}"/>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Build-Date" value="${TODAY}"/>
+            <attribute name="Main-Class" value="${main.class}"/>
+        </manifest>
+        <jar destfile="${build.dir}/jar/${jar.name}"
+             basedir="${build.dir}/classes"
+             manifest="${build.dir}/MANIFEST.MF"/>
+        <echo message="JAR-архив создан: ${build.dir}/jar/${jar.name}"/>
+    </target>
+
+    <target name="test" depends="build" description="Запуск JUnit-тестов">
+        <mkdir dir="${build.dir}/test-classes"/>
+        <mkdir dir="${build.dir}/test-reports"/>
+        <javac srcdir="${test.dir}"
+               destdir="${build.dir}/test-classes"
+               source="${java.source}"
+               target="${java.target}"
+               encoding="${java.encoding}"
+               includeantruntime="false">
+            <classpath>
+                <path refid="compile.classpath"/>
+                <pathelement location="${build.dir}/classes"/>
+            </classpath>
+        </javac>
+        <java classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true"
+              failonerror="true">
+            <classpath>
+                <path refid="compile.classpath"/>
+                <pathelement location="${build.dir}/classes"/>
+                <pathelement location="${build.dir}/test-classes"/>
+            </classpath>
+            <jvmarg value="-javaagent:${bytebuddy.agent}"/>
+            <arg line="execute"/>
+            <arg line="--scan-classpath"/>
+            <arg line="--reports-dir=${build.dir}/test-reports"/>
+            <arg line="--details=summary"/>
+        </java>
+        <echo message="Тесты завершены."/>
+    </target>
+
+    <target name="doc" depends="build" description="Добавление MD5/SHA-1 и генерация javadoc">
+        <mkdir dir="${doc.dir}/javadoc"/>
+        <javadoc sourcepath="${src.dir}"
+                 destdir="${doc.dir}/javadoc"
+                 encoding="${java.encoding}"
+                 failonerror="true">
+            <classpath refid="compile.classpath"/>
+        </javadoc>
+        <checksum file="${build.dir}/jar/${jar.name}"
+                  algorithm="MD5"
+                  fileext=".MD5"/>
+        <checksum file="${build.dir}/jar/${jar.name}"
+                  algorithm="SHA-1"
+                  fileext=".SHA1"/>
+        <loadfile property="jar.md5" srcFile="${build.dir}/jar/${jar.name}.MD5">
+            <filterchain>
+                <striplinebreaks/>
+                <trim/>
+            </filterchain>
+        </loadfile>
+        <loadfile property="jar.sha1" srcFile="${build.dir}/jar/${jar.name}.SHA1">
+            <filterchain>
+                <striplinebreaks/>
+                <trim/>
+            </filterchain>
+        </loadfile>
+        <manifest file="${build.dir}/MANIFEST.MF">
+            <attribute name="Manifest-Version" value="1.0"/>
+            <attribute name="Implementation-Title" value="${app.name}"/>
+            <attribute name="Implementation-Version" value="${app.version}"/>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Build-Date" value="${TODAY}"/>
+            <attribute name="Main-Class" value="${main.class}"/>
+            <section name="${jar.name}">
+                <attribute name="MD5-Digest" value="${jar.md5}"/>
+                <attribute name="SHA1-Digest" value="${jar.sha1}"/>
+            </section>
+        </manifest>
+        <jar destfile="${build.dir}/jar/${jar.name}"
+             basedir="${build.dir}/classes"
+             manifest="${build.dir}/MANIFEST.MF"
+             update="true">
+            <fileset dir="${doc.dir}/javadoc"/>
+        </jar>
+        <echo message="Javadoc и хеши добавлены в JAR."/>
+    </target>
+
+    <target name="scp" depends="build" description="Копирование JAR на сервер по SCP">
+        <scp file="${build.dir}/jar/${jar.name}"
+             todir="${scp.user}:${scp.password}@${scp.server}:${scp.path}"
+             port="2222"
+             trust="true"
+             verbose="true"/>
+        <echo message="JAR-файл отправлен на сервер: ${scp.server}:${scp.path}"/>
+    </target>
+
+    <target name="music" depends="build" description="Воспроизведение музыки по завершению сборки">
+        <exec executable="powershell" failonerror="false">
+            <arg value="-NoProfile"/>
+            <arg value="-Command"/>
+            <arg value="Add-Type -AssemblyName 'System.Windows.Forms';
+            [System.Windows.Forms.MessageBox]::Show('Playing success sound...');
+             Add-Type -AssemblyName 'System';
+              $sound = New-Object System.Media.SoundPlayer '${music.success.file}'; $sound.PlaySync();"/>
+        </exec>
+    </target>
+
+    <target name="diff" description="Проверка рабочей копии и commit в SVN">
+        <exec executable="cmd" dir="${basedir}" failonerror="false">
+            <arg value="/c"/>
+            <arg value="lib\diff_and_commit.bat"/>
+            <arg value="${diff.classes}"/>
+            <arg value="${svn.commit.message}"/>
+        </exec>
+    </target>
+
+    <target name="history" description="Откат к последней рабочей SVN-ревизии">
+        <exec executable="cmd" dir="${basedir}" failonerror="false">
+            <arg value="/c"/>
+            <arg value="lib\history.bat"/>
+            <arg value="."/>
+        </exec>
+        <echo message="Операция history завершена."/>
+    </target>
+
+    <target name="team" description="Сборка 4 предыдущих ревизий Git и упаковка JAR в ZIP">
+        <property name="team.build.dir" value="${build.dir}/team"/>
+        <property name="team.jars.dir" value="${team.build.dir}/jars"/>
+        <delete dir="${team.build.dir}"/>
+        <mkdir dir="${team.jars.dir}"/>
+        <exec executable="cmd" dir="${basedir}" failonerror="true">
+            <arg value="/c"/>
+            <arg value="lib\team.bat"/>
+            <arg value="${team.build.dir}"/>
+            <arg value="${team.jars.dir}"/>
+            <arg value="${zip.name}"/>
+            <arg value="${app.name}"/>
+        </exec>
+        <echo message="Team build finished. ZIP archive created at ${zip.name}"/>
+    </target>
+
+    <target name="env" description="Найти минимальную версию Java для сборки проекта">
+        <var name="env.found.version" value=""/>
+        <for list="${env.java.versions}" param="java.version" delimiter=",">
+            <sequential>
+                <if>
+                    <equals arg1="${env.found.version}" arg2=""/>
+                    <then>
+                        <mkdir dir="${build.dir}/classes-env-@{java.version}"/>
+                        <trycatch>
+                            <try>
+                                <javac srcdir="${src.dir}"
+                                       destdir="${build.dir}/classes-env-@{java.version}"
+                                       source="@{java.version}"
+                                       target="@{java.version}"
+                                       fork="true"
+                                       includeantruntime="false"
+                                       failonerror="true">
+                                    <classpath refid="compile.classpath"/>
+                                </javac>
+                                <var name="env.found.version" value="@{java.version}"/>
+                                <echo message="Минимальная рабочая версия Java: @{java.version}"/>
+                            </try>
+                            <catch>
+                                <echo message="Java @{java.version} - ошибка компиляции"/>
+                            </catch>
+                        </trycatch>
+                    </then>
+                </if>
+            </sequential>
+        </for>
+        <if>
+            <equals arg1="${env.found.version}" arg2=""/>
+            <then>
+                <fail message="Не удалось собрать проект ни на одной из версий Java"/>
+            </then>
+        </if>
+    </target>
+
+</project>

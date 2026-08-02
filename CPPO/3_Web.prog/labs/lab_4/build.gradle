@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.5'
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'com.weblab'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'  // AOP для логирования
+
+    // JAX-RS (Jersey)
+    implementation 'org.springframework.boot:spring-boot-starter-jersey'
+
+    // PostgreSQL
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // H2 Database (для разработки)
+    runtimeOnly 'com.h2database:h2'
+
+    // Security (для хеширования паролей)
+    implementation 'org.springframework.security:spring-security-crypto'
+
+    // JWT (JSON Web Token) для создания и проверки токенов
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+    // Lombok (опционально, для сокращения кода)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+bootJar {
+    mainClass = 'com.weblab.Application'
+}

@@ -1,0 +1,127 @@
+<div class="app-container">
+  <header class="header">
+    <div class="header-content">
+      <span><b>ФИО:</b> Ануфриев Андрей Сергеевич</span>
+      <span><b>Группа:</b> P3219</span>
+      <span><b>Вариант:</b> 48585</span>
+    </div>
+    <div class="header-controls">
+      <button (click)="toggleTheme()" class="btn-control" [title]="theme === 'light' ? 'Переключить на тёмную тему' : 'Переключить на светлую тему'">
+        <span *ngIf="theme === 'light'">Тёмная</span>
+        <span *ngIf="theme === 'dark'">Светлая</span>
+        тема
+      </button>
+      <button (click)="toggleViewMode()" class="btn-control" title="Переключить режим отображения">
+        Режим: {{viewModeLabel}}
+      </button>
+    </div>
+  </header>
+
+  <div class="content-body" [ngClass]="'mode-' + currentMode">
+    <div class="card form-container">
+      <div class="input-block">
+        <label class="input-label">Координата X:</label>
+        <div class="checkbox-group">
+          <label *ngFor="let option of xOptions" class="checkbox-label">
+            <input type="radio" name="x" [value]="option" [(ngModel)]="x">
+            <span>{{option}}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <label class="input-label">Координата Y (от -3 до 3):</label>
+        <input type="text" [(ngModel)]="y" placeholder="Введите Y" class="text-input"
+               (input)="onYInput($event)" pattern="-?[0-9]*\.?[0-9]*">
+      </div>
+
+      <div class="input-block">
+        <label class="input-label">Радиус R:</label>
+        <div class="checkbox-group">
+          <label *ngFor="let option of rOptions" class="checkbox-label">
+            <input type="radio" name="r" [value]="option" [(ngModel)]="r" (ngModelChange)="onRadiusChange()">
+            <span>{{option}}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="btns">
+        <button (click)="onSend()" class="btn-check">Проверить</button>
+        <button (click)="clearResults()" class="btn-clear">Очистить результаты</button>
+        <button (click)="logout()" class="btn-exit">Выйти</button>
+      </div>
+    </div>
+
+    <div class="card graph-container">
+      <svg id="graph" [attr.width]="graphSize" [attr.height]="graphSize" (click)="onSvgClick($event)"
+           style="background: white; border: 1px solid #ccc;">
+        <rect [attr.width]="graphSize" [attr.height]="graphSize" fill="white" />
+
+        <rect *ngIf="numR > 0" [attr.x]="graphCenter" [attr.y]="graphCenter - numR*scale"
+              [attr.width]="numR*scale/2" [attr.height]="numR*scale"
+              fill="#FFB3BA" fill-opacity="0.6"></rect>
+
+        <path *ngIf="numR > 0" [attr.d]="'M ' + graphCenter + ',' + graphCenter + ' L ' + graphCenter + ',' + (graphCenter - numR*scale) + ' A ' + (numR*scale) + ',' + (numR*scale) +
+              ' 0 0 0 ' + (graphCenter - numR*scale) + ',' + graphCenter + ' Z'"
+              fill="#BAFFC9" fill-opacity="0.6"></path>
+
+        <polygon *ngIf="numR > 0" [attr.points]="graphCenter + ',' + graphCenter + ' ' + (graphCenter + numR*scale/2) + ',' + graphCenter + ' ' + graphCenter + ',' + (graphCenter + numR*scale)"
+                 fill="#BAE1FF" fill-opacity="0.6"></polygon>
+
+        <line [attr.x1]="graphSize * 0.05" [attr.y1]="graphCenter" [attr.x2]="graphSize * 0.95" [attr.y2]="graphCenter" stroke="black" stroke-width="1.5" />
+        <line [attr.x1]="graphCenter" [attr.y1]="graphSize * 0.05" [attr.x2]="graphCenter" [attr.y2]="graphSize * 0.95" stroke="black" stroke-width="1.5" />
+        <polygon [attr.points]="(graphSize * 0.95) + ',' + graphCenter + ' ' + (graphSize * 0.95 - 8) + ',' + (graphCenter - 4) + ' ' + (graphSize * 0.95 - 8) + ',' + (graphCenter + 4)" fill="black" />
+        <polygon [attr.points]="graphCenter + ',' + (graphSize * 0.05) + ' ' + (graphCenter - 4) + ',' + (graphSize * 0.05 + 8) + ' ' + (graphCenter + 4) + ',' + (graphSize * 0.05 + 8)" fill="black" />
+        <text [attr.x]="graphSize * 0.9" [attr.y]="graphCenter - 10" font-size="14" font-weight="bold">X</text>
+        <text [attr.x]="graphCenter + 10" [attr.y]="graphSize * 0.08" font-size="14" font-weight="bold">Y</text>
+
+        <line *ngFor="let val of [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]"
+              [attr.x1]="graphCenter + val * scale" [attr.y1]="graphCenter - 5"
+              [attr.x2]="graphCenter + val * scale" [attr.y2]="graphCenter + 5" stroke="black" stroke-width="1" />
+        <text *ngFor="let val of [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]"
+              [attr.x]="graphCenter + val * scale - 6" [attr.y]="graphCenter + 20" font-size="11">{{val}}</text>
+        <text [attr.x]="graphCenter - 5" [attr.y]="graphCenter + 20" font-size="11">0</text>
+
+        <line *ngFor="let val of [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]"
+              [attr.x1]="graphCenter - 5" [attr.y1]="graphCenter - val * scale"
+              [attr.x2]="graphCenter + 5" [attr.y2]="graphCenter - val * scale" stroke="black" stroke-width="1" />
+        <text *ngFor="let val of [1, 2, 3, 4, 5]"
+              [attr.x]="graphCenter - 20" [attr.y]="graphCenter - val * scale + 5" font-size="11">{{val}}</text>
+        <text *ngFor="let val of [-1, -2, -3, -4, -5]"
+              [attr.x]="graphCenter - 25" [attr.y]="graphCenter - val * scale + 5" font-size="11">{{val}}</text>
+
+        <circle *ngFor="let p of points" [attr.cx]="graphCenter + p.x * scale" [attr.cy]="graphCenter - p.y * scale" r="5"
+                [attr.fill]="isHitClient(p.x, p.y, numR) ? '#00C853' : '#FF1744'"
+                stroke="white" stroke-width="1.5">
+        </circle>
+      </svg>
+    </div>
+
+    <div class="card table-card">
+      <div class="table-container">
+        <table>
+          <thead>
+          <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>R</th>
+            <th>Результат</th>
+            <th>Время выполнения</th>
+            <th>Время создания</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let p of points">
+            <td>{{p.x}}</td>
+            <td>{{p.y}}</td>
+            <td>{{p.r}}</td>
+            <td [style.color]="p.hit ? 'green' : 'red'">{{p.hit ? 'Да' : 'Нет'}}</td>
+            <td>{{p.executionTime}} мкс</td>
+            <td>{{p.createdAt}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

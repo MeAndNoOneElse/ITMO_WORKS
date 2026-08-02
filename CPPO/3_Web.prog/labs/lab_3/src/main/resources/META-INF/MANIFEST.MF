@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: lab_3.4
+Implementation-Version: 3.4
+Implementation-Vendor: ITMO University
+Built-By: Eternal_Core
+Build-Jdk: 17
+Main-Class: service.AreaCheckService

@@ -1,0 +1,26 @@
+<div class="session-modal-overlay" *ngIf="visible">
+  <div class="session-modal">
+    <h2>Active Sessions</h2>
+    <p class="info">You have {{ sessions.length }} active session(s) on other devices</p>
+
+    <div class="sessions-list">
+      <div *ngFor="let session of sessions" class="session-item">
+        <div class="session-info">
+          <div class="device-name">{{ session.deviceName }}</div>
+          <div class="session-details">
+            <span>IP: {{ session.ipAddress }}</span>
+            <span>Created: {{ formatDate(session.createdAt) }}</span>
+          </div>
+        </div>
+        <button (click)="closeSession(session.id)" class="btn-close-session">Close</button>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button (click)="closeAllOthers()" class="btn-danger">Close All Others</button>
+      <button (click)="continueWithNew()" class="btn-primary">Continue with New Session</button>
+      <button (click)="cancel()" class="btn-secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+
