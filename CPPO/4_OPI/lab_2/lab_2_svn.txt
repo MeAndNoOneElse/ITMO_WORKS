@@ -1,0 +1,406 @@
+svnadmin create svn_repo
+
+svn mkdir file:///$HOME/Opi/svn_repo/trunk -m "Created trunk"
+svn mkdir file:///$HOME/Opi/svn_repo/branches -m "Created branches"
+svn mkdir file:///$HOME/Opi/svn_repo/tags -m "Created tags"
+
+svn checkout file:///$HOME/Opi/svn_repo/trunk red0
+
+cd red0
+cp ../data/commit0/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "Init commit"
+
+svn copy ^/trunk ^/branches/1 -m "Create branch1"
+
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/1 red1
+
+cd red1
+
+cp ../data/commit1/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r1 commit in branch1"
+
+cp ../data/commit2/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r2 commit in branch1"
+
+svn copy ^/trunk ^/branches/2 -m "Create branch2"
+
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/2 red2
+
+cd red2
+
+cp ../data/commit3/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r3 commit in branch2"
+
+
+svn copy ^/branches/2 ^/branches/3 -m "Create branch3"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/3 blue3
+cd blue3
+cp ../data/commit4/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r4 commit in branch3"
+
+cd ~/Opi/red2
+cp ../data/commit5/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r5 commit in branch2"
+
+cp ../data/commit6/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r6 commit in branch2"
+
+
+svn copy ^/branches/2 ^/branches/4 -m "Create branch4"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/4 blue4
+
+cd blue4
+cp ../data/commit7/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r7 commit in branch4"
+
+
+
+svn copy ^/branches/4 ^/branches/5 -m "Create branch5"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/5 blue5
+
+cd blue5
+cp ../data/commit8/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r8 commit in branch5"
+
+svn copy ^/branches/5 ^/branches/6 -m "Create branch6"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/6 red6
+
+cd red6
+cp ../data/commit9/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r9 commit in branch6"
+
+cd ~/Opi/red1
+cp ../data/commit10/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r10 commit in branch1"
+
+cd ~/Opi/red2
+cp ../data/commit11/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r11 commit in branch2"
+
+svn copy ^/branches/2 ^/branches/7 -m "Create branch7"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/7 red7
+
+cd red7
+cp ../data/commit12/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r12 commit in branch7"
+
+cp ../data/commit13/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r13 commit in branch7"
+
+cd ~/Opi/red1
+cp ../data/commit14/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r14 commit in branch1"
+
+
+cd ~/Opi/red2
+cp ../data/commit15/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r15 commit in branch2"
+
+
+
+svn copy ^/branches/2 ^/branches/8 -m "Create branch8"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/8 red8
+
+cd red8
+cp ../data/commit16/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r16 commit in branch8"
+
+
+svn copy ^/branches/8 ^/branches/9 -m "Create branch9"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/9 red9
+
+cd red9
+cp ../data/commit17/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r17 commit in branch9"
+
+cd ~/Opi/red2
+cp ../data/commit18/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r18 commit in branch2"
+
+cd ~/Opi/red9
+cp ../data/commit19/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r19 commit in branch9"
+
+cd ~/Opi/red1
+cp ../data/commit20/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r20 commit in branch1"
+
+cp ../data/commit21/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r21 commit in branch1"
+
+cp ../data/commit22/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r22 commit in branch1"
+
+cd ~/Opi/red9
+cp ../data/commit23/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r23 commit in branch9"
+
+cd ~/Opi/red1
+cp ../data/commit24/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r24 commit in branch1"
+
+cd ~/Opi/red2
+cp ../data/commit25/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r25 commit in branch2"
+
+
+svn copy ^/branches/2 ^/branches/10 -m "Create branch10"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/10 blue10
+
+cd blue10
+cp ../data/commit26/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r26 commit in branch10"
+
+
+svn copy ^/branches/10 ^/branches/11 -m "Create branch11"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/11 blue11
+
+
+cd blue11
+cp ../data/commit27/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r27 commit in branch11"
+
+cd ~/Opi/red7
+cp ../data/commit28/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r28 commit in branch7"
+
+cd ~/Opi/blue4
+cp ../data/commit29/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r29 commit in branch4"
+
+
+
+cd ~/Opi/red7
+cp ../data/commit30/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r30 commit in branch7"
+
+svn update
+svn merge ^/branches/4 --accept theirs-full
+svn commit -m "r30 merge commit in branch7"
+
+svn copy ^/branches/7 ^/branches/12 -m "Create branch12"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/12 blue12
+
+cd blue12
+cp ../data/commit31/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r31 commit in branch12"
+
+cd ~/Opi/blue5
+cp ../data/commit32/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r32 commit in branch5"
+
+svn update
+svn merge ^/branches/12 --accept theirs-full
+svn commit -m "r32 merge commit in branch5"
+
+cd ~/Opi/blue11
+cp ../data/commit33/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r33 commit in branch11"
+svn update
+svn merge ^/branches/5 --accept theirs-full
+svn commit -m "r33 merge commit in branch11"
+
+cd ~/Opi/blue3
+cp ../data/commit34/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r34 commit in branch3"
+
+cd ~/Opi/red2
+cp ../data/commit35/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r35 commit in branch2"
+
+cd ~/Opi/red6
+cp ../data/commit36/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r36 commit in branch6"
+
+####################################################################
+cd ~/Opi/red1
+cp ../data/commit37/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r37 commit in branch1"
+
+svn update
+svn merge ^/branches/6 --accept theirs-full --non-interactive --force
+svn resolve --accept working LNUEyTr0nf.Zuv
+svn resolve --accept working _
+svn commit -m "r37 merge commit in branch1"
+
+cd ~/Opi/red1
+cp ../data/commit38/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r38 commit in branch1"
+
+svn update
+svn merge ^/branches/1
+svn commit -m "r38 merge commit in branch2"
+
+cp ../data/commit39/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r39 commit in branch2"
+
+cd ~/Opi/blue11
+cp ../data/commit40/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r40 commit in branch11"
+
+cd ~/Opi/blue3
+cp ../data/commit41/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r41 commit in branch3"
+
+cd ~/Opi/blue10
+cp ../data/commit42/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r42 commit in branch10"
+
+cd ~/Opi/red7
+cp ../data/commit43/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r43 commit in branch7"
+
+
+cd ~/Opi/blue11
+cp ../data/commit44/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r44 commit in branch11"
+
+svn update
+svn merge ^/branches/7 --accept theirs-full #######################################
+svn commit -m "r44 merge commit in branch11"
+
+svn copy ^/branches/11 ^/branches/13 -m "Create branch13"
+cd ~/Opi
+svn checkout file:///$HOME/Opi/svn_repo/branches/13 blue13
+
+cd blue13
+cp ../data/commit45/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r45 commit in branch13"
+
+
+cd ~/Opi/red8
+cp ../data/commit46/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r46 commit in branch8"
+
+cd ~/Opi/blue10
+cp ../data/commit47/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r47 commit in branch10"
+
+
+svn update
+svn merge ^/branches/8 --accept theirs-full
+svn commit -m "r47 merge commit in branch10"
+
+
+cd ~/Opi/blue13
+cp ../data/commit48/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r48 merge commit in branch13"
+
+cd ~/Opi/blue10
+cp ../data/commit49/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r49 merge commit in branch10"
+
+svn update
+svn merge ^/branches/13  --accept theirs-full
+svn commit -m "r49 merge commit in branch10"
+
+cd ~/Opi/blue3
+cp ../data/commit50/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r50 commit in branch3"
+
+cd ~/Opi/red9
+cp ../data/commit51/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r51 commit in branch9"
+
+svn update
+svn merge ^/branches/3  --accept theirs-full
+svn resolve --accept working LNUEyTr0nf.Zuv
+svn commit -m "r51 merge commit in branch9"
+
+cd ~/Opi/blue11
+cp ../data/commit52/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r52 commit in branch11"
+
+
+cd ~/Opi/red9
+cp ../data/commit53/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r53 commit in branch9"
+
+svn update
+svn merge ^/branches/11 --accept theirs-full
+svn commit -m "r53 merge commit in branch9"
+
+cd ~/Opi/blue10
+cp ../data/commit54/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r54 commit in branch10"
+
+svn update
+svn merge ^/branches/9 --accept theirs-full
+svn resolve --accept working Dd5ZuvLNUE.3Ep
+svn commit -m "r54 merge commit in branch10"
+
+cd ~/Opi/red2
+cp ../data/commit55/* .
+svn status | grep '^?' | awk '{print $2}' | xargs svn add
+svn commit -m "r55 commit in branch2"
+
+svn update
+svn merge ^/branches/10 --accept theirs-full
+svn commit -m "r55 merge commit in branch2"
