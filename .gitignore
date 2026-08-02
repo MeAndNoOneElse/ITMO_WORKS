@@ -1,1 +1,71 @@
-﻿
+﻿CPPO/3-4_English_B1.1/Books/
+
+# Виртуальное окружение
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Управление пакетами
+pip-log.txt
+pip-delete-this-directory.txt
+.eggs/
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE и редакторы (зависит от того, чем вы пользуетесь)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Временные файлы
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.backup
+
+# Сборка и зависимости
+build/
+dist/
+out/
+bin/
+obj/
+lib/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Файлы отладки
+*.pdb
+*.sym
+*.dSYM/
+*.suo
+*.user
