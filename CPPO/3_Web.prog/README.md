@@ -1,5 +1,5 @@
 # Веб программирование
-- **Практик:** [Ермаков Михаил Константинович](https://my.itmo.ru/persons/174292)
+- **Практик:** [Миху Вадим Дмитриевич](https://my.itmo.ru/persons/339106)
 - **Лектор:** [Егошин Алексей Васильевич](https://my.itmo.ru/persons/285578)  
 - **Pезультат - допса, потом закрыл на 3E**
 - [журнал](https://docs.google.com/spreadsheets/d/1BeeVReWsVmSmnrdg7FgdixiAGH6JmNxX0EBgBqSTk6o/edit?usp=sharing)
