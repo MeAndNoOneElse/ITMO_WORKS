@@ -1,0 +1,17 @@
+{
+  "coordinate_iters": 3,
+  "gradient_iters": 15,
+  "steepest_iters": 2,
+  "coordinate_last": [
+    6.000000806235751,
+    0.33333494081261306
+  ],
+  "gradient_last": [
+    5.999997366033652,
+    0.3334404417946926
+  ],
+  "steepest_last": [
+    6.000002895615888,
+    0.3333323681280371
+  ]
+}
