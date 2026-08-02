@@ -1,0 +1,329 @@
+\documentclass[a4paper,14pt]{article}
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm, bindingoffset=0cm]{geometry}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,graphicx}
+\usepackage{fancybox,fancyhdr}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{caption}
+
+\graphicspath{{./}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\author{Ануфриев Андрей}
+\date{\today}
+
+\begin{document}
+
+% ===== ТИТУЛЬНИК =====
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{slogan_chernyy}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{cs-logo}
+    \end{minipage}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lrlr}
+        Группа & \qquad \qquad P3219  \\
+        \cmidrule{2-2}\cmidrule{4-4}
+        Студент & \qquad \qquad Ануфриев А.С.  \\
+        \cmidrule{2-2}\cmidrule{4-4}
+        Преподаватель & \qquad \qquad Кольцова Т. Б.  \\
+        \cmidrule{2-2}\cmidrule{4-4}
+    \end{tabular}
+\end{table}
+
+\vspace{2cm}
+\begin{center}
+    \LARGE
+    Домашнее задание №\,1 \\[6pt]
+    Центральная предельная теорема и стандартная ошибка
+\end{center}
+\vspace{11cm}
+\begin{center}
+    2026 год \\ Санкт-Петербург
+\end{center}
+\newpage
+
+% ===== ЗАДАЧА 3.1 =====
+\section{Задача 3.1. Стандартная ошибка оценки средней доходности}
+
+\subsection*{Условие}
+
+Дисперсия ежедневной доходности акции $D = 0{,}04\,\%^2$.
+Сколько дней нужно наблюдать, чтобы стандартная ошибка оценки средней доходности была не более $0{,}01\,\%$?
+
+\subsection*{Теория}
+
+Пусть $X_1, X_2, \ldots, X_n$ — независимые одинаково распределённые ежедневные доходности с дисперсией $D = \mathbb{D}[X_i]$.
+Выборочное среднее $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ является несмещённой оценкой математического ожидания.
+Стандартная ошибка этой оценки (SE — standard error):
+\begin{equation}
+    \mathrm{SE}(\bar{X}_n) = \frac{\sigma}{\sqrt{n}} = \frac{\sqrt{D}}{\sqrt{n}},
+    \label{eq:se}
+\end{equation}
+где $\sigma = \sqrt{D}$ — стандартное отклонение.
+
+Условие $\mathrm{SE} \leq \mathrm{SE}_{\max}$ приводит к:
+\begin{equation}
+    \frac{\sigma}{\sqrt{n}} \leq \mathrm{SE}_{\max}
+    \quad\Longrightarrow\quad
+    n \geq \left(\frac{\sigma}{\mathrm{SE}_{\max}}\right)^2.
+    \label{eq:n_min}
+\end{equation}
+
+\subsection*{Решение}
+
+Исходные данные:
+\[
+    D = 0{,}04\,\%^2, \quad \sigma = \sqrt{0{,}04} = 0{,}20\,\%, \quad \mathrm{SE}_{\max} = 0{,}01\,\%.
+\]
+
+Подставляем в формулу~(\ref{eq:n_min}):
+\[
+    n \geq \left(\frac{0{,}20}{0{,}01}\right)^2 = 20^2 = 400.
+\]
+
+Поскольку $n$ — целое число, минимальное количество дней:
+
+\[
+    \boxed{n_{\min} = 400 \text{ дней}}
+\]
+
+\subsection*{Проверка (Python)}
+
+\begin{verbatim}
+D_pct = 0.04;  SE_pct = 0.01
+sigma_pct = math.sqrt(D_pct)          # 0.2000 %
+n_exact = (sigma_pct / SE_pct) ** 2   # 400.0
+n_min   = math.ceil(n_exact)          # 400 дней
+\end{verbatim}
+
+Результат: $n_{\min} = 400$ дней. При $n = 400$ стандартная ошибка составит ровно $0{,}01\,\%$.
+
+% ===== ЗАДАЧА 3.2 =====
+\newpage
+\section{Задача 3.2. Вероятность обслуживания более 100 клиентов за 8 часов}
+
+\subsection*{Условие}
+
+Время обслуживания клиента в банке — экспоненциальная случайная величина со средним $\mu = 5$ мин.
+Какова вероятность, что за 8 часов (480 мин) будет обслужено более 100 клиентов?
+
+\subsection*{Теория}
+
+Пусть $X_i \sim \mathrm{Exp}(\lambda)$, $\lambda = 1/\mu = 0{,}2\,\text{мин}^{-1}$ — время обслуживания $i$-го клиента.
+Тогда $\mathbb{E}[X_i] = \mu = 5$ мин, $\mathbb{D}[X_i] = \mu^2 = 25\,\text{мин}^2$.
+
+Событие «за время $T$ обслужено более $k$ клиентов» эквивалентно тому, что суммарное время обслуживания первых $k{+}1$ клиентов не превысило $T$:
+\begin{equation}
+    \{N(T) > k\} \equiv \{S_{k+1} < T\}, \quad S_n = X_1 + \cdots + X_n.
+    \label{eq:event}
+\end{equation}
+
+Сумма $n$ независимых $\mathrm{Exp}(\lambda)$ имеет распределение Гамма:
+$S_n \sim \Gamma(n,\,\mu)$, поэтому:
+\begin{equation}
+    P(N(T) > k) = P(S_{k+1} < T) = F_{\Gamma(k+1,\,\mu)}(T).
+    \label{eq:exact}
+\end{equation}
+
+По ЦПТ при достаточно большом $n$:
+\begin{equation}
+    P(S_n < T) \approx \Phi\!\left(\frac{T - n\mu}{\mu\sqrt{n}}\right),
+    \label{eq:clt2}
+\end{equation}
+где $\Phi$ — функция стандартного нормального распределения.
+
+\subsection*{Решение}
+
+Параметры: $k = 100$, $n = k{+}1 = 101$, $\mu = 5$, $T = 480$ мин.
+
+\textbf{Ожидание и стандартное отклонение} суммы $S_{101}$:
+\[
+    \mathbb{E}[S_{101}] = 101 \cdot 5 = 505\;\text{мин},
+    \quad
+    \sqrt{\mathbb{D}[S_{101}]} = \sqrt{101 \cdot 25} = 5\sqrt{101} \approx 50{,}25\;\text{мин}.
+\]
+
+\textbf{Приближение по ЦПТ:}
+\[
+    z = \frac{T - \mathbb{E}[S_{101}]}{\sqrt{\mathbb{D}[S_{101}]}}
+      = \frac{480 - 505}{50{,}25} \approx -0{,}4975,
+\]
+\[
+    P(N(480) > 100) \approx \Phi(-0{,}4975) \approx 0{,}3094.
+\]
+
+\textbf{Точное значение} (Gamma CDF):
+\[
+    P = F_{\Gamma(101,\,5)}(480) \approx 0{,}3182.
+\]
+
+\textbf{Проверка через распределение Пуассона:}
+интенсивность потока $\lambda_T = T/\mu = 480/5 = 96$ клиентов за 8 часов,
+\[
+    P(N > 100) = 1 - F_{\mathrm{Pois}(96)}(100) \approx 0{,}3182.
+\]
+
+\subsection*{Проверка (Python)}
+
+\begin{verbatim}
+n_clients = 101;  mean_S = 505;  std_S = 50.2494
+z2 = (480 - 505) / 50.2494  # = -0.4975
+p_clt2    = norm.cdf(z2)                           # 0.309412
+p_exact2  = gamma.cdf(480, a=101, scale=5)         # 0.318228
+p_poisson = 1 - poisson.cdf(100, 96)               # 0.318228
+\end{verbatim}
+
+\subsection*{Итог}
+
+\begin{table}[H]
+\centering
+\caption{Результаты для задачи 3.2}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Метод} & \textbf{Вероятность} \\
+\hline
+ЦПТ (нормальное приближение) & $0{,}3094$ \\
+Точное (Gamma CDF)            & $0{,}3182$ \\
+Пуассоновское приближение     & $0{,}3182$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\[
+    \boxed{P(N(480) > 100) \approx 0{,}318}
+\]
+
+Погрешность ЦПТ-приближения составляет $\approx 2{,}8\%$, что объясняется умеренным значением $n = 101$: нормальное приближение для Гамма-распределения ещё не является высокоточным.
+
+% ===== ЗАДАЧА 3.3 =====
+\newpage
+\section{Задача 3.3. Случайное блуждание и ЦПТ}
+
+\subsection*{Условие}
+
+На каждом шаге игрок получает $+1$ с вероятностью $p = 0{,}49$ и $-1$ с вероятностью $q = 0{,}51$.
+Какова вероятность, что после 1000 шагов игрок в плюсе?
+Использовать ЦПТ и сравнить с симуляцией.
+
+\subsection*{Теория}
+
+Пусть $X_i$ принимает значения $+1$ (с вер. $p$) и $-1$ (с вер. $q = 1-p$). Тогда:
+\begin{align}
+    \mathbb{E}[X_i] &= p - q = p - (1-p) = 2p - 1, \label{eq:ex}\\
+    \mathbb{D}[X_i] &= \mathbb{E}[X_i^2] - (\mathbb{E}[X_i])^2 = 1 - (2p-1)^2 = 4pq. \label{eq:varx}
+\end{align}
+
+Для суммы $S_n = \sum_{i=1}^n X_i$ по ЦПТ при большом $n$:
+\begin{equation}
+    S_n \xrightarrow{d} \mathcal{N}(n\mu,\; n\sigma^2),
+    \quad \mu = 2p-1,\quad \sigma^2 = 4pq.
+    \label{eq:clt3}
+\end{equation}
+
+Нас интересует $P(S_n > 0)$:
+\begin{equation}
+    P(S_n > 0) \approx 1 - \Phi\!\left(\frac{0 - n\mu}{\sigma\sqrt{n}}\right)
+    = 1 - \Phi\!\left(\frac{-n\mu}{\sqrt{n}\,\sigma}\right)
+    = 1 - \Phi\!\left(\frac{-\mu\sqrt{n}}{\sigma}\right).
+    \label{eq:p_clt3}
+\end{equation}
+
+Поскольку $S_n$ принимает только \emph{чётные} значения (сумма 1000 слагаемых $\pm 1$), точнее использовать ЦПТ с поправкой на непрерывность: $P(S_n > 0) = P(S_n \geq 2) \approx P(Z > (1 - n\mu)/(\sigma\sqrt{n}))$.
+
+\subsection*{Решение}
+
+\textbf{Параметры одного шага:}
+\[
+    \mu = 2 \cdot 0{,}49 - 1 = -0{,}02,
+    \quad
+    \sigma^2 = 4 \cdot 0{,}49 \cdot 0{,}51 = 0{,}9996,
+    \quad
+    \sigma \approx 0{,}9998.
+\]
+
+\textbf{Параметры суммы $S_{1000}$:}
+\[
+    \mathbb{E}[S_{1000}] = 1000 \cdot (-0{,}02) = -20,
+\]
+\[
+    \mathbb{D}[S_{1000}] = 1000 \cdot 0{,}9996 = 999{,}6,
+    \quad
+    \sqrt{\mathbb{D}[S_{1000}]} \approx 31{,}617.
+\]
+
+\textbf{ЦПТ без поправки:}
+\[
+    z = \frac{0 - (-20)}{31{,}617} = \frac{20}{31{,}617} \approx 0{,}6326,
+\]
+\[
+    P(S_{1000} > 0) \approx 1 - \Phi(0{,}6326) \approx 0{,}2635.
+\]
+
+\textbf{ЦПТ с поправкой на непрерывность} ($S_{1000} > 0 \Leftrightarrow S_{1000} \geq 2$, граница сдвигается к $+1$):
+\[
+    z_{\text{попр}} = \frac{1 - (-20)}{31{,}617} = \frac{21}{31{,}617} \approx 0{,}6641,
+\]
+\[
+    P(S_{1000} > 0) \approx 1 - \Phi(0{,}6641) \approx 0{,}2533.
+\]
+
+\subsection*{Симуляция (Python)}
+
+Для оценки истинного значения проведена симуляция $10^5$ независимых игр по 1000 шагов каждая:
+
+\begin{verbatim}
+np.random.seed(42)
+N_sim = 100_000
+steps = np.random.choice([1, -1], size=(N_sim, 1000), p=[0.49, 0.51])
+sums  = steps.sum(axis=1)
+p_sim = (sums > 0).mean()   # 0.253810
+\end{verbatim}
+
+\subsection*{Сравнение результатов}
+
+\begin{table}[H]
+\centering
+\caption{Сравнение ЦПТ и симуляции для задачи 3.3}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Метод} & \textbf{$P(S_{1000}>0)$} & \textbf{Отклонение от симуляции} \\
+\hline
+ЦПТ (без поправки)          & $0{,}2635$ & $0{,}0097$ ($\approx 3{,}8\,\%$) \\
+ЦПТ (с поправкой на непр.)  & $0{,}2533$ & $0{,}0005$ ($\approx 0{,}2\,\%$) \\
+Симуляция ($10^5$ игр)       & $0{,}2538$ & — \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{Вывод}
+
+\[
+    \boxed{P(S_{1000} > 0) \approx 0{,}253}
+\]
+
+Несмотря на то что вероятность проигрыша на каждом шаге лишь незначительно превышает вероятность выигрыша ($q - p = 0{,}02$), за 1000 шагов накопленный дрейф $\mathbb{E}[S_{1000}] = -20$ значительно снижает вероятность итогового выигрыша: почти в 1 раз по сравнению с честной игрой ($p = q = 0{,}5$), где $P(S_{1000} > 0) \approx 0{,}5$.
+
+ЦПТ с поправкой на непрерывность ($0{,}2533$) отлично согласуется с симуляцией ($0{,}2538$): отклонение менее $0{,}1\,\%$, тогда как ЦПТ без поправки даёт ошибку $\approx 3{,}8\,\%$.
+
+\end{document}
+
