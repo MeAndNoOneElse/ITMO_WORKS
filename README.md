@@ -63,25 +63,23 @@
 - Физкультура - закрывал в сборной по гребле
 
     </details>
-
     <details>
-        <summary>3 курс</summary>
+    <summary>3 курс</summary>
 скоро
     </details>
     <details>
-        <summary>4 курс</summary>
+    <summary>4 курс</summary>
 пока маленький
     </details>
 
 </details>
-
 
 <details>
     <summary>Робототехника</summary>
     <details>
         <summary>1 курс</summary>
 
-- [Компьютерная графика](CYUR/1_Graphics)
+- [Английский B1.1](CPPO/3-4_English_B1.1)
 - [OS Linux](CYUR/1_OS_Linux)
 - [Python](CYUR/1-2_Python)
 - [Механика](CYUR/2_Mechanics)
@@ -90,29 +88,38 @@
 - [ПНР](CYUR/2_PNR)
 - [Введение в профессиональную деятельность](CYUR/2_VPD)
 - [Хранения и обработка данных](CYUR/2_XuOD)
+- [Компьютерная графика](CYUR/1_Graphics)
+- Алгебра и алгоритмы - [перезачёт](CPPO/1-2_Linear_algebra%28prod%29)
+- Безопасность жизнедеятельности - [перезачёт](CPPO/2_Life_safety)
+- Дискретная математика - [перезачёт](CPPO/1-2_Discrete_mathematics%28prod%29)
+- История российской науки и техники - [перезачёт](CPPO/1-2_History)
+- Математический анализ - [перезачёт](CPPO/1-3_Mathematical_analysis%28prod%29)
+- Кик - [перезачёт](CPPO/2_KIK)
+- Введение в цифровую культуру, программирование и искусственный интеллект - всё было онлайн
+- Физкультура - закрывал в сборной по гребле
 
     </details>
 
     <details>
-        <summary>2 курс</summary>
+    <summary>2 курс</summary>
 
 скоро
 
-    </details>
+</details>
 
-    <details>
+<details>
         <summary>3 курс</summary>
 
 пока маленький
 
-    </details>
+</details>
 
-    <details>
+<details>
         <summary>4 курс</summary>
 
 пока маленький
 
-    </details>
+</details>
 
 </details>
 
