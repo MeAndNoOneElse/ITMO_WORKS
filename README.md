@@ -24,37 +24,37 @@
     <details>
         <summary>1 курс</summary>
 
-- [Информатика](CPPO/1%20Informatics)
-- [Дискретная математика (прод)](CPPO/1-2%20Discrete%20mathematics%28prod%29)
-- [Английский A1](CPPO/1-2%20English_A1.1)
-- [История (науки и техники)](CPPO/1-2%20History)
-- [Линейная алгебра (прод)](CPPO/1-2%20Linear%20algebra%28prod%29)
-- [Основы профессиональной деятельности](CPPO/1-2%20OPD)
-- [Java](CPPO/1-2%20Programming_Java)
-- [Математический анализ (прод)](CPPO/1-3%20Mathematical%20analysis%28prod%29)
-- [Базы данных](CPPO/2%20Data_base)
-- [КиК](CPPO/2%20KIK)
-- [БЖД](CPPO/2%20Life%20safety)
+- [Информатика](CPPO/1_Informatics)
+- [Дискретная математика (прод)](CPPO/1-2_Discrete_mathematics%28prod%29)
+- [Английский A1](CPPO/1-2_English_A1.1)
+- [История (науки и техники)](CPPO/1-2_History)
+- [Линейная алгебра (прод)](CPPO/1-2_Linear_algebra%28prod%29)
+- [Основы профессиональной деятельности](CPPO/1-2_OPD)
+- [Java](CPPO/1-2_Programming_Java)
+- [Математический анализ (прод)](CPPO/1-3_Mathematical_analysis%28prod%29)
+- [Базы данных](CPPO/2_Data_base)
+- [КиК](CPPO/2_KIK)
+- [БЖД](CPPO/2_Life_safety)
 
     </details>
 
     <details>
         <summary>2 курс</summary>
 
-- [Математический анализ (прод)](CPPO/1-3%20Mathematical%20analysis%28prod%29)
-- [Теория вероятностей](CPPO/3%20%20Probability%20theory)
-- [Языки программирования](CPPO/3%20Programming%20languages)
-- [ТФКП](CPPO/3%20TFKP)
-- [ВТП](CPPO/3%20VTP)
-- [Веб.программирование](CPPO/3%20Web.prog)
-- [Английский B1.1](CPPO/3-4%20English_B1.1)
-- [Физика](CPPO/3-4%20Phisics)
-- [Алгоритмы](CPPO/4%20Algoritms%26data.struct)
-- [Архитектура компьютера](CPPO/4%20Arch.comp)
-- [Математическая статичтика](CPPO/4%20Mat.stat)
-- [Методы оптимизации](CPPO/4%20Met.opt)
-- [Основы программмной инженерии](CPPO/4%20OPI)
-- [ТПВП](CPPO/4%20TPVP)
+- [Математический анализ (прод)](CPPO/1-3_Mathematical_analysis%28prod%29)
+- [Теория вероятностей](CPPO/3__Probability_theory)
+- [Языки программирования](CPPO/3_Programming_languages)
+- [ТФКП](CPPO/3_TFKP)
+- [ВТП](CPPO/3_VTP)
+- [Веб.программирование](CPPO/3_Web.prog)
+- [Английский B1.1](CPPO/3-4_English_B1.1)
+- [Физика](CPPO/3-4_Phisics)
+- [Алгоритмы](CPPO/4_Algoritms%26data.struct)
+- [Архитектура компьютера](CPPO/4_Arch.comp)
+- [Математическая статичтика](CPPO/4_Mat.stat)
+- [Методы оптимизации](CPPO/4_Met.opt)
+- [Основы программмной инженерии](CPPO/4_OPI)
+- [ТПВП](CPPO/4_TPVP)
 
     </details>
 
@@ -75,15 +75,15 @@
     <details>
         <summary>1 курс</summary>
 
-- [Компьютерная графика](CYUR/1%20Graphics)
-- [OS Linux](CYUR/1%20OS%20Linux)
-- [Python](CYUR/1-2%20Python)
-- [Механика](CYUR/2%20Mechanics)
-- [Основы проектной деятельности](CYUR/2%20OPD)
-- [Философия](CYUR/2%20Philosophy)
-- [ПНР](CYUR/2%20PNR)
-- [Введение в профессиональную деятельность](CYUR/2%20VPD)
-- [Хранения и обработка данных](CYUR/2%20XuOD)
+- [Компьютерная графика](CYUR/1_Graphics)
+- [OS Linux](CYUR/1_OS_Linux)
+- [Python](CYUR/1-2_Python)
+- [Механика](CYUR/2_Mechanics)
+- [Основы проектной деятельности](CYUR/2_OPD)
+- [Философия](CYUR/2_Philosophy)
+- [ПНР](CYUR/2_PNR)
+- [Введение в профессиональную деятельность](CYUR/2_VPD)
+- [Хранения и обработка данных](CYUR/2_XuOD)
 
     </details>
 
