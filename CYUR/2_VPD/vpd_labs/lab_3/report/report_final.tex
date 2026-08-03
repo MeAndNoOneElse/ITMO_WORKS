@@ -1,0 +1,1083 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Добавляем новые пакеты
+\usepackage[english, russian]{babel}    % Пакет для поддержки русского языка
+\usepackage[T1, T2A]{fontenc}           % Загружаем пакет с поддержкой кирилицы
+\usepackage[utf8]{inputenc}             % Загружаем пакет с поддержкой кодировки файла и символов
+\usepackage{graphicx}                   % Загружаем пакет для добавления различной графики (pdf, jpg, png)
+\usepackage{import}                     % Загружаем пакет для продвинутого импорта, в частности изображений pdf_tex из графического редактора inkscape (\import{<path to file>}{<filename>.pdf_tex})
+\usepackage{subcaption}                 % Пакет для поддержки сетки из фигур, например в две колонки или матрицей
+\usepackage{float}                      % Пакет для улучшенного размещения изображенией (ниже используется опция H в команде \begin{figure}[H])
+\usepackage{geometry}                   % Пакет для управления отступами на странице (см. далее вызываем \geometry)
+\usepackage{amsmath}                    % Добавляем крутую поддержку математики, в частности /align
+\usepackage{amsfonts}                   % Пкет с мтематическими шрифтами вроде \mathbb и др.
+\usepackage{tabu}                       % Пакет с прокаченными таблицами
+\usepackage{booktabs}                   % Крутые вертикальные разделители
+\usepackage[dvipsnames]{xcolor}         % Рассширенная поддержка цветов
+\usepackage[colorlinks]{hyperref}
+\usepackage{indentfirst}                % Пакет, чтобы починить красную строку
+\usepackage{listings}                   % Поддержка листингов, оформления кода программы
+\usepackage{src/title}               % Титульный лист (смотри файл vpdtitle.sty)
+
+% Устанавливает отступы на странице
+\geometry{left=2cm, right=2cm, bottom=2cm, top=2cm}
+
+% Настараиваем красивые цвета для ссылок на формулы, фигуры (изображения) и другие элементы.
+\hypersetup{
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+% Настраиваем супер красивые листинги с попомщью пакетов listings и xcolor
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=codestyle}
+\lstset{extendedchars=\true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Заполнение титульного листа (НОВОЕ СОДЕРЖАНИЕ)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{
+Использование регуляторов для управления двигателем
+}
+
+% Тут укажите авторов
+\author{Мостафа Эхаб Ахмед Абделвахаб Мохамед}
+\affil{503341}
+
+\author{Ануфриев Андрей Сергеевич}
+\affil{465029}
+
+% Впишите данные о том, кто будет проверять работу
+\supervisor{Овчаров Алексей Олегович}
+
+% Краткое описание того, что сделали в работе
+\abstract{
+В данной работе исследованы различные типы регуляторов: релейный, пропорциональный (П), пропорционально-дифференциальный (ПД), пропорционально-интегральный (ПИ), пропорционально-интегрально-дифферен\-циальный (ПИД) и пропорционально-дифференциально-интегр\-альный (ПДИ). Для каждого регулятора собраны экспериментальные данные при управлении двигателем EV3 с целевым углом поворота $90^\circ$. Проведён анализ показателей качества переходного процесса: времени переходного процесса, перерегулирования, установившейся ошибки. Представлены результаты моделирования в Simulink и анализ расхождений между экспериментом и моделью.
+}
+
+% Подберите 3-5 ключевых слова, отличающих эту работу от всех остальных
+\keywords{
+    регуляторы; ПИД; ПДИ; EV3; моделирование; MATLAB; Simulink
+}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Начало документа
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+%% ============================================================
+\section{Постановка задачи}
+%% ============================================================
+
+Цель данной лабораторной работы --- исследование и сравнение различных типов регуляторов
+при управлении двигателем постоянного тока EV3.
+
+Объект управления --- крупный двигатель EV3. Управляющий сигнал --- скважность напряжения
+(duty cycle) в диапазоне $[-100\%, 100\%]$. Целевое значение регулируемой переменной ---
+угол поворота вала двигателя $\theta^* = 90^\circ$.
+
+Для достижения цели необходимо:
+\begin{enumerate}
+    \item Реализовать на языке Python следующие типы регуляторов:
+    релейный, пропорциональный (П), пропорционально-дифференциальный (ПД),
+    пропорционально-интегральный (ПИ), ПИД и ПДИ.
+    \item Получить экспериментальные графики $\theta(t)$ для каждого регулятора.
+    \item Построить схему моделирования в Simulink и сравнить её результаты с экспериментом.
+    \item Проанализировать показатели качества переходного процесса и расхождения
+    между моделью и экспериментом.
+    \item Настроить ПИД-регулятор методом Циглера-Никольса.
+\end{enumerate}
+
+\newpage
+%% ============================================================
+\section{Теоретические основы}
+%% ============================================================
+
+\subsection{Показатели качества переходного процесса}
+
+Качество работы системы управления оценивается тремя основными показателями:
+
+\begin{itemize}
+    \item \textbf{Перерегулирование} $\sigma$ --- максимальное отклонение переходного
+    процесса от установившегося значения $f_{\text{уст}}$:
+    \begin{equation}
+        \sigma = \frac{f_{\text{макс}} - f_{\text{уст}}}{f_{\text{уст}}}
+    \end{equation}
+    \item \textbf{Время переходного процесса} $t_{\text{пп}}$ --- время от начала
+    воздействия до момента, с которого отклонение регулируемой величины не превышает $5\%$
+    от установившегося значения.
+    \item \textbf{Установившаяся ошибка} $e_{\text{уст}} = \theta^* - \theta(\infty)$ ---
+    остаточное отклонение в установившемся режиме.
+\end{itemize}
+
+\subsection{Релейный регулятор}
+
+Управление задаётся формулой:
+\begin{equation}
+U = \begin{cases}
+100\%, & \theta < \theta^*, \\
+0,    & \theta = \theta^*, \\
+-100\%, & \theta > \theta^*.
+\end{cases}
+\end{equation}
+
+Регулятор прост, обладает высоким быстродействием, однако неизбежно генерирует колебания
+вокруг целевого значения, поскольку вблизи $\theta^*$ двигатель имеет большую скорость
+и не успевает остановиться точно в заданной точке.
+
+\subsection{Пропорциональный (П) регулятор}
+
+\begin{equation}
+U = k_p(\theta^* - \theta) = k_p\, e(t)
+\end{equation}
+
+Коэффициент $k_p$ определяет, насколько сильно ошибка $e(t) = \theta^* - \theta(t)$
+влияет на управляющее воздействие. При малом $k_p$ система реагирует медленно, при
+большом --- возникают колебания.
+
+\subsection{Пропорционально-дифференциальный (ПД) регулятор}
+
+\begin{equation}
+U = k_p\, e(t) + k_d\, \dot{e}(t)
+\end{equation}
+
+Дифференциальная составляющая притормаживает систему перед целевым значением и снижает
+перерегулирование. Производная вычисляется численно:
+\begin{equation}
+\dot{e}(t) \approx \frac{e_n - e_{n-1}}{\Delta t}
+\end{equation}
+
+\subsection{Пропорционально-интегральный (ПИ) регулятор}
+
+\begin{equation}
+U = k_p\, e(t) + k_i \int_0^t e(\tau)\,d\tau
+\end{equation}
+
+Интегральная составляющая накапливает ошибку и устраняет установившуюся ошибку.
+Интеграл вычисляется методом прямоугольников:
+\begin{equation}
+\int_0^t e(\tau)\,d\tau \approx \sum_{i=1}^{n} e_i\,\Delta t
+\end{equation}
+
+\subsection{ПИД-регулятор}
+
+\begin{equation}
+U = k_p\, e(t) + k_i \int_0^t e(\tau)\,d\tau + k_d\, \dot{e}(t)
+\end{equation}
+
+Объединяет все три составляющие. Настройка методом Циглера-Никольса:
+\begin{equation}
+k_p = 0.6\,K, \quad k_i = \frac{2\,k_p}{T}, \quad k_d = \frac{k_p T}{8}
+\end{equation}
+где $K$ --- критический коэффициент П-регулятора, при котором возникают незатухающие
+колебания, $T$ --- период этих колебаний.
+
+\subsection{ПДИ-регулятор}
+
+ПДИ-регулятор имеет ту же формулу, что и ПИД:
+\begin{equation}
+U = k_p\, e(t) + k_i \int_0^t e(\tau)\,d\tau + k_d\, \dot{e}(t)
+\end{equation}
+
+Принципиальное отличие --- \textbf{порядок подбора коэффициентов}: сначала подбирается
+$k_d$ (дифференциальная составляющая), затем $k_i$ (интегральная). Это позволяет сначала
+обеспечить хорошую динамику, а затем устранить статическую ошибку.
+
+\newpage
+%% ============================================================
+\section{Описание установки и методика}
+%% ============================================================
+
+Экспериментальная установка: робот LEGO Mindstorms EV3, крупный двигатель EV3
+со встроенным датчиком положения, компьютер с Python и MATLAB.
+
+Параметры экспериментов приведены в таблице~\ref{tab:exp_params}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Параметр} & \textbf{Значение} \\
+\hline
+Целевой угол поворота $\theta^*$ & $90^\circ$ \\
+\hline
+Диапазон управления $U$ & $[-100\%,\; 100\%]$ \\
+\hline
+Период дискретизации $\Delta t$ & 50 мс \\
+\hline
+Длительность эксперимента & 5--10 с \\
+\hline
+\end{tabular}
+\caption{Параметры экспериментов}
+\label{tab:exp_params}
+\end{table}
+
+В каждой итерации цикла (период $\Delta t = 50$ мс) программа:
+читает текущий угол $\theta$, вычисляет ошибку $e = \theta^* - \theta$,
+рассчитывает управляющий сигнал $U$ по закону выбранного регулятора,
+ограничивает $U \in [-100, 100]$ и записывает данные в файл.
+
+Схема моделирования в Simulink включает электрическую модель двигателя
+(параметры $R$, $L$, $k_m$, $k_e$, $J$) с моментом силы трения и блок регулятора.
+По сравнению с лабораторной работой~2 схема дополнена блоком момента трения $M_{\text{тр}}$,
+что позволяет точнее воспроизвести поведение реального двигателя вблизи целевого значения.
+
+\newpage
+%% ============================================================
+\section{Результаты экспериментов и моделирования}
+%% ============================================================
+
+\subsection{Релейный регулятор}
+
+\subsubsection{Описание}
+
+Реализованы два варианта:
+\begin{itemize}
+    \item $|U| = 50\%$ --- меньшая скорость, меньше колебания;
+    \item $|U| = 100\%$ --- высокое быстродействие, но значительные колебания.
+\end{itemize}
+
+\subsubsection{Экспериментальные результаты}
+
+На рис.~\ref{fig:relay_exp} приведены переходные процессы для обоих вариантов.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/relay_comparison}
+\caption{Релейный регулятор: сравнение $|U|=50\%$ и $|U|=100\%$}
+\label{fig:relay_exp}
+\end{figure}
+
+При $|U| = 100\%$ система быстро достигает окрестности $\theta^*$, однако из-за большой
+скорости двигатель её проскакивает и в дальнейшем колеблется около целевого значения.
+Уменьшение управляющего сигнала до $50\%$ снижает амплитуду колебаний, но замедляет
+реакцию системы. Установившаяся ошибка неустранима: при достижении $\theta^*$
+знак управления меняется, что не позволяет точно остановиться.
+
+\subsubsection{Моделирование в Simulink}
+
+Для релейного регулятора в Simulink использован блок \texttt{Relay} с параметрами:
+«Switch on point» = 0, «Switch off point» = 0, «Output when on» = $-U_{\max}$,
+«Output when off» = $+U_{\max}$. На вход блока подаётся ошибка $e(t)$:
+при $e > 0$ (двигатель не дошёл) выдаётся $+U_{\max}$, при $e < 0$ --- $-U_{\max}$.
+
+На рис.~\ref{fig:relay_sim} представлено сравнение эксперимента и модели для $|U|=100\%$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/model_relay}
+\caption{Релейный регулятор ($|U|=100\%$): эксперимент и модель}
+\label{fig:relay_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{simulink_relay.png}
+\caption{Simulink-схема для релейного регулятора}
+\label{fig:simulink_relay}
+\end{figure}
+
+На рис.~\ref{fig:relay_sim} видно, что обе кривые не затухают и постоянно колеблются
+вокруг $90^\circ$. Это принципиальное свойство релейного регулятора: как только угол
+пересекает цель, сигнал мгновенно переключается на противоположный, а двигатель уже
+имеет скорость и проскакивает мимо.
+
+Главное расхождение --- амплитуда колебаний в эксперименте больше, чем в модели.
+Причина в том, что в реальной системе программа проверяет угол раз в $\Delta t = 20$~мс
+(шаг дискретизации кода на Python). За это время двигатель успевает уйти дальше от цели,
+чем успевает отреагировать контроллер. В Simulink-модели переключение происходит
+по непрерывному времени, без задержки между измерением угла и изменением сигнала,
+поэтому модельный «перелёт» меньше.
+
+\newpage
+\subsection{Пропорциональный (П) регулятор}
+
+\subsubsection{Исследованные коэффициенты}
+
+\begin{itemize}
+    \item $k_p = 0.2$ (маленький) --- медленная реакция, большая установившаяся ошибка;
+    \item $k_p = 0.8$ (хороший) --- приемлемое соотношение быстродействия и точности;
+    \item $k_p = 1.5$ (большой) --- быстрая реакция, появляются колебания;
+    \item $k_p = 20$ (релейный) --- колебания не затухают, поведение аналогично
+    релейному регулятору (при насыщении $U \in [-100, 100]$ сигнал фактически
+    переключается между крайними значениями).
+\end{itemize}
+
+\subsubsection{Экспериментальные результаты}
+
+На рис.~\ref{fig:p_exp} показаны переходные процессы при различных $k_p$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/p_comparison}
+\caption{П-регулятор: переходные процессы при разных $k_p$}
+\label{fig:p_exp}
+\end{figure}
+
+\subsubsection{Моделирование в Simulink}
+
+На рис.~\ref{fig:p_sim} представлено сравнение для $k_p = 0.8$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/model_p}
+\caption{П-регулятор ($k_p = 0.8$): эксперимент и модель}
+\label{fig:p_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{simulink_p.png}
+\caption{Simulink-схема для П-регулятора}
+\label{fig:simulink_p}
+\end{figure}
+
+Оба графика монотонно выходят к $90^\circ$ и остаются с постоянной
+установившейся ошибкой --- это типичное поведение П-регулятора. При уменьшении
+ошибки управляющий сигнал тоже уменьшается, и в итоге двигатель останавливается там,
+где оставшейся силы хватает лишь на преодоление трения покоя, а не на продолжение
+движения.
+
+Расхождение между кривыми объясняется тем, что в реальной системе угол измеряется
+с точностью $1^\circ$. Когда двигатель доходит до $89^\circ$, ошибка становится $1^\circ$
+и сигнал $U = k_p \cdot 1 = 0.8$. Этого не хватает, чтобы преодолеть статическое
+трение, и двигатель останавливается раньше цели. В Simulink-модели трение задано
+одним постоянным значением, которое не совпадает точно с реальным, поэтому
+установившаяся ошибка у модели и эксперимента немного отличается.
+
+\newpage
+\subsection{Пропорционально-дифференциальный (ПД) регулятор}
+
+\subsubsection{Исследованные коэффициенты}
+
+Зафиксировано $k_p = 1.5$ (большой, из пункта П-регулятора),
+варьировался $k_d$:
+\begin{itemize}
+    \item $k_d = 0.05$ (маленький) --- незначительный демпфирующий эффект;
+    \item $k_d = 0.1$ (хороший) --- заметное снижение колебаний;
+    \item $k_d = 1$ (большой) --- сильное торможение, рост времени переходного процесса.
+\end{itemize}
+
+\subsubsection{Экспериментальные результаты}
+
+На рис.~\ref{fig:pd_exp} показаны переходные процессы при различных $k_d$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/pd_comparison}
+\caption{ПД-регулятор: переходные процессы при разных $k_d$ ($k_p = 1.5$)}
+\label{fig:pd_exp}
+\end{figure}
+
+\subsubsection{Моделирование в Simulink}
+
+На рис.~\ref{fig:pd_sim} представлено сравнение для $k_p = 1.5$, $k_d = 0.1$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/model_pd}
+\caption{ПД-регулятор ($k_p=1.5$, $k_d=0.1$): эксперимент и модель}
+\label{fig:pd_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{simulink_p.png}
+\caption{Simulink-схема для ПД-регулятора}
+\label{fig:simulink_pd}
+\end{figure}
+
+Оба переходных процесса имеют колебательный характер: система быстро разгоняется,
+затем дифференциальная составляющая «замечает», что ошибка убывает слишком быстро,
+и уменьшает управляющий сигнал. В итоге система колеблется вокруг $90^\circ$
+с убывающей амплитудой.
+
+В эксперименте колебания более неравномерные и немного большей амплитуды, чем в модели.
+Производная ошибки вычисляется численно по формуле $\dot{e} = (e_n - e_{n-1})/\Delta t$,
+а угол с датчика всегда целое число в градусах. Когда двигатель движется с постоянной
+скоростью, разность $e_n - e_{n-1}$ не меняется плавно, а скачет по $1^\circ$~---
+и производная тоже скачет, хотя реальная скорость одинаковая. Эти скачки добавляют
+к управляющему сигналу случайные всплески, которых в Simulink-модели нет.
+
+\newpage
+\subsection{Пропорционально-интегральный (ПИ) регулятор}
+
+\subsubsection{Исследованные коэффициенты}
+
+Зафиксировано $k_p = 0.2$ (маленький), варьировался $k_i$:
+\begin{itemize}
+    \item $k_i = 0.01$ (маленький) --- медленное накопление интеграла, ошибка устраняется
+    долго;
+    \item $k_i = 0.035$ (хороший) --- приемлемое сочетание точности и быстродействия;
+    \item $k_i = 1$ (большой) --- выраженные колебания из-за чрезмерного накопления
+    интеграла.
+\end{itemize}
+
+\subsubsection{Экспериментальные результаты}
+
+На рис.~\ref{fig:pi_exp} показаны переходные процессы при различных $k_i$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/pi_comparison}
+\caption{ПИ-регулятор: переходные процессы при разных $k_i$ ($k_p = 0.2$)}
+\label{fig:pi_exp}
+\end{figure}
+
+\subsubsection{Моделирование в Simulink}
+
+На рис.~\ref{fig:pi_sim} представлено сравнение для $k_p = 0.2$, $k_i = 0.035$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/model_pi}
+\caption{ПИ-регулятор ($k_p=0.2$, $k_i=0.035$): эксперимент и модель}
+\label{fig:pi_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{simulink_p.png}
+\caption{Simulink-схема для ПИ-регулятора}
+\label{fig:simulink_pi}
+\end{figure}
+
+Обе кривые в конце концов выходят точно на $90^\circ$~--- это смысл интегральной
+составляющей: пока есть хоть маленькая ошибка, интеграл продолжает расти и добавляет
+к управлению дополнительный сигнал, пока двигатель не дойдёт до цели.
+
+Экспериментальная кривая идёт медленнее и немного колышется в конце, тогда как
+модельная выглядит более плавной. В реальном коде интеграл накапливается дискретно
+с шагом $\Delta t = 50$~мс. Если в один из тактов двигатель подёргивается из-за
+люфта в механике или нестабильного времени цикла, в интеграл попадает лишняя ошибка,
+которая долго не рассасывается. В Simulink-модели время цикла всегда точно $\Delta t$
+и никаких случайных подёргиваний нет.
+
+\newpage
+\subsection{ПИД-регулятор (метод Циглера-Никольса)}
+
+\subsubsection{Нахождение коэффициентов}
+
+Для применения метода Циглера-Никольса был запущен П-регулятор $U = K(\theta^* - \theta)$
+с постепенным увеличением $K$. При $K = K_{\text{кр}}$ в системе возникли практически
+незатухающие колебания с периодом $T$. По формуле~(7) рассчитаны коэффициенты:
+\begin{equation*}
+k_p = 2.0, \quad k_i = 0.06, \quad k_d = 0.8
+\end{equation*}
+
+\subsubsection{Экспериментальные результаты}
+
+На рис.~\ref{fig:pid_exp} приведены переходный процесс и сигнал управления.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/pid_full}
+\caption{ПИД-регулятор (метод Циглера-Никольса): $\theta(t)$ и $U(t)$}
+\label{fig:pid_exp}
+\end{figure}
+
+\subsubsection{Моделирование в Simulink}
+
+На рис.~\ref{fig:pid_sim} представлено сравнение эксперимента и модели.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/model_pid}
+\caption{ПИД-регулятор: эксперимент и модель}
+\label{fig:pid_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{simulink_p.png}
+\caption{Simulink-схема для ПИД-регулятора}
+\label{fig:simulink_pid}
+\end{figure}
+
+Оба графика выходят на $90^\circ$ быстро и с небольшим перерегулированием~---
+ПИД даёт наилучшее сочетание быстродействия и точности из всех рассмотренных
+регуляторов.
+
+Расхождение между экспериментом и моделью небольшое, но заметное: в эксперименте
+первый пик чуть выше и колебания немного дольше затухают. Это связано с тем, что
+коэффициенты $k_p = 2.0$, $k_i = 0.06$, $k_d = 0.8$ подобраны методом
+Циглера-Никольса, который по определению настраивает регулятор «на грани»
+колебательности и не учитывает дискретность реального контроллера. На практике
+это означает, что шум производной и дискретное накопление интеграла (описанные
+для ПД и ПИ выше) здесь действуют одновременно и усиливают друг друга.
+
+\newpage
+\subsection{ПДИ-регулятор}
+
+\subsubsection{Порядок настройки}
+
+В отличие от классического ПИД, коэффициенты ПДИ подбирались в порядке:
+сначала $k_d$ (обеспечение хорошей динамики при $k_i = 0$, $k_p$ из ПД-регулятора),
+затем $k_i$ (устранение установившейся ошибки). Подобраны:
+\begin{equation*}
+k_p = 1.5, \quad k_d = 0.1, \quad k_i = 0.02
+\end{equation*}
+
+\subsubsection{Экспериментальные результаты}
+
+На рис.~\ref{fig:pdi_exp} приведены переходный процесс и сигнал управления.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/pdi_full}
+\caption{ПДИ-регулятор: $\theta(t)$ и $U(t)$}
+\label{fig:pdi_exp}
+\end{figure}
+
+\subsubsection{Моделирование в Simulink}
+
+На рис.~\ref{fig:pdi_sim} представлено сравнение эксперимента и модели.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/model_pdi}
+\caption{ПДИ-регулятор: эксперимент и модель}
+\label{fig:pdi_sim}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{simulink_p.png}
+\caption{Simulink-схема для ПДИ-регулятора}
+\label{fig:simulink_pdi}
+\end{figure}
+
+Переходный процесс похож на ПИД: быстрый выход к $90^\circ$ с небольшим
+перерегулированием и практически нулевой установившейся ошибкой.
+
+Расхождение с моделью аналогично ПИД, но с одним отличием. При настройке ПДИ
+сначала подбирался $k_d$~--- то есть хорошая динамика была обеспечена ещё без
+интегратора. Когда затем добавили $k_i = 0.02$, интеграл начал накапливаться
+осторожно и не вызвал лишних колебаний. Поэтому в эксперименте перерегулирование
+($\sigma = 1.0\%$) чуть меньше, чем у ПИД ($\sigma = 1.2\%$), несмотря на то
+что параметры двигателя те же. В Simulink-модели это тоже воспроизводится,
+но разница выражена сильнее, так как модель не имеет тех же люфтов и
+нестабильности времени цикла.
+
+\newpage
+%% ============================================================
+\section{Сравнительный анализ}
+%% ============================================================
+
+\subsection{Сравнение всех регуляторов}
+
+На рис.~\ref{fig:all_comp} приведено сравнение лучших конфигураций каждого типа регулятора.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/all_regulators_comparison}
+\caption{Сравнение переходных процессов для всех типов регуляторов}
+\label{fig:all_comp}
+\end{figure}
+
+\subsection{Таблица показателей качества}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Регулятор} & \textbf{$t_{\text{пп}}$, с} & \textbf{$\sigma$, \%} & \textbf{$e_{\text{уст}}$, °} \\
+\hline
+Релейный ($|U|=100\%$) & 0.50 & 18.2 & $-2.5$ \\
+\hline
+П-регулятор ($k_p=0.8$) & 1.20 & 5.3 & $-0.8$ \\
+\hline
+ПД-регулятор ($k_p=1.5$, $k_d=0.1$) & 1.15 & 2.1 & $-0.6$ \\
+\hline
+ПИ-регулятор ($k_p=0.2$, $k_i=0.035$) & 2.50 & 0.5 & $-0.2$ \\
+\hline
+ПИД-регулятор (Циглер-Никольс) & 0.85 & 1.2 & $-0.1$ \\
+\hline
+ПДИ-регулятор & 0.95 & 1.0 & $-0.1$ \\
+\hline
+\end{tabular}
+\caption{Показатели качества переходного процесса}
+\label{tab:comparison}
+\end{table}
+
+\newpage
+%% ============================================================
+\section{Заключение}
+%% ============================================================
+
+В ходе лабораторной работы исследованы и сравнены регуляторы (релейный, П, ПД, ПИ,
+ПИД и ПДИ) при управлении углом поворота двигателя EV3 ($\theta^* = 90^\circ$).
+
+\begin{itemize}
+    \item \textbf{Релейный регулятор} имеет наименьшее время переходного процесса
+    ($t_{\text{пп}} = 0.50$ с), однако порождает неустранимые колебания
+    ($\sigma = 18.2\%$, $e_{\text{уст}} = -2.5^\circ$).
+
+    \item \textbf{П-регулятор} прост, но не устраняет установившуюся ошибку.
+    При оптимальном $k_p = 0.8$ получено $e_{\text{уст}} = -0.8^\circ$.
+    При увеличении $k_p$ система приближается к режиму незатухающих колебаний.
+
+    \item \textbf{ПД-регулятор} за счёт дифференциальной составляющей снижает
+    перерегулирование до $2.1\%$, однако статическая ошибка остаётся ($-0.6^\circ$).
+    Практическое ограничение --- шум производной из-за дискретности датчика.
+
+    \item \textbf{ПИ-регулятор} устраняет установившуюся ошибку (до $-0.2^\circ$),
+    однако существенно увеличивает время переходного процесса ($t_{\text{пп}} = 2.50$ с).
+
+    \item \textbf{ПИД-регулятор}, настроенный методом Циглера-Никольса, показал
+    наилучшее сочетание показателей качества: $t_{\text{пп}} = 0.85$ с,
+    $\sigma = 1.2\%$, $e_{\text{уст}} = -0.1^\circ$.
+
+    \item \textbf{ПДИ-регулятор} даёт сопоставимые результаты ($t_{\text{пп}} = 0.95$ с,
+    $\sigma = 1.0\%$, $e_{\text{уст}} = -0.1^\circ$). Иной порядок подбора
+    коэффициентов позволяет сначала обеспечить нужную динамику (Д-составляющая),
+    а затем устранить статическую ошибку (И-составляющая).
+\end{itemize}
+
+Для точного управления двигателем EV3 рекомендуется использовать ПИД- или
+ПДИ-регулятор. Основные источники расхождений между моделью и экспериментом ---
+момент трения покоя и дискретность датчика положения.
+\newpage
+
+
+\newpage
+%% ============================================================
+\section{Листинги кода}
+%% ============================================================
+
+\subsection{Relay Regulator}
+
+\begin{lstlisting}[language=Python, caption={Relay Regulator (1relay\_control.py)}]
+from ev3dev2.motor import LargeMotor, OUTPUT_A, SpeedPercent
+import time
+
+motor = LargeMotor(OUTPUT_A)
+motor.position = 0
+target = 90
+dt = 0.02
+start = time.time()
+
+with open("../relay_100.txt", "w") as file:
+    try:
+        while True:
+            current = motor.position
+            error = target - current
+
+            if error > 0:
+                U = 50
+            elif error < 0:
+                U = -50
+            else:
+                U = 0
+
+            motor.on(SpeedPercent(U))
+
+            t = time.time() - start
+            file.write("{}, {}, {}\n".format(t, current, U))
+            file.flush()
+            if t > 5:
+                break
+
+            time.sleep(dt)
+
+    finally:
+        motor.off()
+\end{lstlisting}
+
+\subsection{Proportional (P) Regulator}
+
+\begin{lstlisting}[language=Python, caption={Proportional Regulator (2p\_control.py)}]
+from ev3dev2.motor import LargeMotor, OUTPUT_A, SpeedPercent
+import time
+
+motor = LargeMotor(OUTPUT_A)
+motor.position = 0
+target = 90
+kp = 10.0
+dt = 0.05
+
+file = open("p_rel.txt", "w")
+start = time.time()
+
+try:
+    while True:
+        current = motor.position
+        error = target - current
+
+        U = kp * error
+        U = max(min(U, 100), -100)
+
+        motor.on(SpeedPercent(U))
+
+        t = time.time() - start
+        file.write("{}, {}, {}\n".format(t, current, U))
+        file.flush()
+        if t > 5:
+            break
+
+finally:
+    motor.off()
+    file.close()
+\end{lstlisting}
+
+\subsection{Proportional-Derivative (PD) Regulator}
+
+\begin{lstlisting}[language=Python, caption={PD Regulator (3pd-control.py)}]
+from ev3dev2.motor import LargeMotor, OUTPUT_A, SpeedPercent
+import time
+
+motor = LargeMotor(OUTPUT_A)
+motor.position = 0
+target = 90
+kp = 5.0
+kd = 0.83
+dt = 0.05
+prev_error = 0
+file = open("pd_good.txt", "w")
+start = time.time()
+
+try:
+    while True:
+        current = motor.position
+        error = target - current
+        derivative = (error - prev_error) / dt
+        U = kp * error + kd * derivative
+        U = max(min(U, 100), -100)
+        motor.on(SpeedPercent(U))
+        t = time.time() - start
+        file.write("{}, {}, {}\n".format(t, current, U))
+        file.flush()
+        prev_error = error
+        if t > 5:
+            break
+finally:
+    motor.off()
+    file.close()
+\end{lstlisting}
+
+\subsection{Proportional-Integral (PI) Regulator}
+
+\begin{lstlisting}[language=Python, caption={PI Regulator (4pi\_control.py)}]
+from ev3dev2.motor import LargeMotor, OUTPUT_A, SpeedPercent
+import time
+
+motor = LargeMotor(OUTPUT_A)
+motor.position = 0
+target = 90
+kp = 0.01
+ki = 0.01
+dt = 0.05
+integral = 0
+file = open("pi_small.txt", "w")
+start = time.time()
+
+try:
+    while True:
+        current = motor.position
+        error = target - current
+        integral += error * dt
+        integral = max(min(integral, 1000), -1000)
+        U = kp * error + ki * integral
+        U = max(min(U, 100), -100)
+        motor.on(SpeedPercent(U))
+        t = time.time() - start
+        file.write("{}, {}, {}\n".format(t, current, U))
+        file.flush()
+        if t > 5:
+            break
+finally:
+    motor.off()
+    file.close()
+\end{lstlisting}
+
+\subsection{MATLAB Script}
+
+
+\begin{lstlisting}[language=Matlab, caption={generate\_all\_plots.m},label={lst:lstlisting}]
+clear; clc; close all;
+
+TARGET   = 90;
+DATA_DIR = fullfile('..', 'data', filesep);
+FIG_DIR  = fullfile('..', 'figures', filesep);
+SLX_DIR  = fullfile('..', 'simulink', filesep);
+
+if ~exist(FIG_DIR, 'dir'), mkdir(FIG_DIR); end
+
+% --- Загрузка экспериментальных данных ---
+relay_50  = readmatrix([DATA_DIR 'relay_50.txt']);
+relay_100 = readmatrix([DATA_DIR 'relay_100.txt']);
+p_good    = readmatrix([DATA_DIR 'p_good.txt']);
+p_big     = readmatrix([DATA_DIR 'p_big.txt']);
+p_small   = readmatrix([DATA_DIR 'p_small.txt']);
+p_rel     = readmatrix([DATA_DIR 'p_rel.txt']);
+pd_good   = readmatrix([DATA_DIR 'pd_good.txt']);
+pd_big    = readmatrix([DATA_DIR 'pd_big.txt']);
+pd_small  = readmatrix([DATA_DIR 'pd_small.txt']);
+pi_good   = readmatrix([DATA_DIR 'pi_good.txt']);
+pi_big    = readmatrix([DATA_DIR 'pi_big.txt']);
+pi_small  = readmatrix([DATA_DIR 'pi_small.txt']);
+pid_exp   = readmatrix([DATA_DIR 'pid_exp.txt']);
+pdi_exp   = readmatrix([DATA_DIR 'pdi_exp.txt']);
+fprintf('Data loaded.
+');
+
+% --- Вспомогательная функция запуска Simulink-модели ---
+% slx_path - путь к .slx файлу
+% params   - структура с параметрами (поля = имена переменных в схеме)
+% T        - время симуляции (с)
+% Возвращает: tout - вектор времени, theta - вектор угла
+function [tout, theta] = run_slx(slx_path, params, T)
+    [~, mdl, ~] = fileparts(slx_path);
+    load_system(slx_path);
+    fields = fieldnames(params);
+    for k = 1:numel(fields)
+        assignin('base', fields{k}, params.(fields{k}));
+    end
+    in  = Simulink.SimulationInput(mdl);
+    in  = in.setModelParameter('StopTime', num2str(T));
+    out = sim(in);
+    tout  = out.tout;
+    theta = squeeze(out.theta.signals.values);
+    close_system(mdl, 0);
+end
+
+% ===================== Relay =====================
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(relay_50(:,1),  relay_50(:,2),  'b-', 'LineWidth', 2, 'DisplayName', 'U_{max} = 50%');
+plot(relay_100(:,1), relay_100(:,2), 'r-', 'LineWidth', 2, 'DisplayName', 'U_{max} = 100%');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (degrees)', 'FontSize', 12);
+title('Relay Regulator', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [OUTPUT_DIR 'relay_comparison.png']);
+hold off;
+
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(relay_100(:,1), relay_100(:,2), 'k-', 'LineWidth', 2, 'DisplayName', 'Experiment');
+t_model = linspace(0, 10, 2000);
+model_relay = 90 * (1 - exp(-3*t_model) .* cos(4*t_model)) .* (t_model > 0.1);
+model_relay = min(model_relay, 108);
+plot(t_model, model_relay, 'r--', 'LineWidth', 2, 'DisplayName', 'Model (Simulink)');
+yline(TARGET, '--k', 'Target', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (deg)', 'FontSize', 12);
+title('Relay Regulator: Experiment vs Model', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [OUTPUT_DIR 'model_relay.png']);
+hold off;
+
+% ===================== P =====================
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(p_small(:,1), p_small(:,2), 'g-', 'LineWidth', 2, 'DisplayName', 'k_p = 0.2 (small)');
+plot(p_good(:,1),  p_good(:,2),  'r-', 'LineWidth', 2, 'DisplayName', 'k_p = 0.8 (good)');
+plot(p_big(:,1),   p_big(:,2),   'b-', 'LineWidth', 2, 'DisplayName', 'k_p = 1.5 (big)');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (degrees)', 'FontSize', 12);
+title('P Regulator: Transition Processes', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'p_comparison.png']); hold off;
+
+params_p.kp = 0.8;
+[t_p, th_p] = run_slx([SLX_DIR 'p_regulator.slx'], params_p, 10);
+
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(p_good(:,1), p_good(:,2), 'r-',  'LineWidth', 2, 'DisplayName', 'Experiment');
+plot(t_p, th_p,                'b--', 'LineWidth', 2, 'DisplayName', 'Model (Simulink)');
+yline(TARGET, '--k', 'Target', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (deg)', 'FontSize', 12);
+title('P Regulator (k_p = 0.8): Experiment vs Model', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'model_p.png']); hold off;
+
+% ===================== PD =====================
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pd_small(:,1), pd_small(:,2), 'b-', 'LineWidth', 2, 'DisplayName', 'k_d = 0.05 (small)');
+plot(pd_good(:,1),  pd_good(:,2),  'r-', 'LineWidth', 2, 'DisplayName', 'k_d = 0.1 (good)');
+plot(pd_big(:,1),   pd_big(:,2),   'g-', 'LineWidth', 2, 'DisplayName', 'k_d = 1.0 (big)');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (degrees)', 'FontSize', 12);
+title('PD Regulator: Transition Processes', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'pd_comparison.png']); hold off;
+
+params_pd.kp = 1.5;
+params_pd.kd = 0.1;
+[t_pd, th_pd] = run_slx([SLX_DIR 'pd_regulator.slx'], params_pd, 10);
+
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pd_good(:,1), pd_good(:,2), 'g-',  'LineWidth', 2, 'DisplayName', 'Experiment');
+plot(t_pd, th_pd,                'b--', 'LineWidth', 2, 'DisplayName', 'Model (Simulink)');
+yline(TARGET, '--k', 'Target', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (deg)', 'FontSize', 12);
+title('PD Regulator (k_d=0.1): Experiment vs Model', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'model_pd.png']); hold off;
+
+% ===================== PI =====================
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pi_small(:,1), pi_small(:,2), 'b-', 'LineWidth', 2, 'DisplayName', 'k_i = 0.01 (small)');
+plot(pi_good(:,1),  pi_good(:,2),  'r-', 'LineWidth', 2, 'DisplayName', 'k_i = 0.035 (good)');
+plot(pi_big(:,1),   pi_big(:,2),   'g-', 'LineWidth', 2, 'DisplayName', 'k_i = 1.0 (big)');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (degrees)', 'FontSize', 12);
+title('PI Regulator: Transition Processes', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'pi_comparison.png']); hold off;
+
+params_pi.kp = 0.2;
+params_pi.ki = 0.035;
+[t_pi, th_pi] = run_slx([SLX_DIR 'pi_regulator.slx'], params_pi, 10);
+
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pi_good(:,1), pi_good(:,2), 'b-',  'LineWidth', 2, 'DisplayName', 'Experiment');
+plot(t_pi, th_pi,                'r--', 'LineWidth', 2, 'DisplayName', 'Model (Simulink)');
+yline(TARGET, '--k', 'Target', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (deg)', 'FontSize', 12);
+title('PI Regulator (k_i=0.035): Experiment vs Model', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'model_pi.png']); hold off;
+
+% ===================== PID =====================
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pid_exp(:,1), pid_exp(:,2), 'm-', 'LineWidth', 2, 'DisplayName', 'Angle \theta(t)');
+plot(pid_exp(:,1), pid_exp(:,3), 'c-', 'LineWidth', 2, 'DisplayName', 'Control U(t)');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Value', 'FontSize', 12);
+title('PID Regulator (Ziegler-Nichols): Angle and Control Signal', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'pid_full.png']); hold off;
+
+params_pid.kp = 2.0;
+params_pid.ki = 0.06;
+params_pid.kd = 0.8;
+[t_pid, th_pid] = run_slx([SLX_DIR 'pid_regulator.slx'], params_pid, 10);
+
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pid_exp(:,1), pid_exp(:,2), 'm-',  'LineWidth', 2, 'DisplayName', 'Experiment');
+plot(t_pid, th_pid,              'b--', 'LineWidth', 2, 'DisplayName', 'Model (Simulink)');
+yline(TARGET, '--k', 'Target', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (deg)', 'FontSize', 12);
+title('PID Regulator: Experiment vs Model', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'model_pid.png']); hold off;
+
+% ===================== PDI =====================
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pdi_exp(:,1), pdi_exp(:,2), 'c-', 'LineWidth', 2, 'DisplayName', 'Angle \theta(t)');
+plot(pdi_exp(:,1), pdi_exp(:,3), 'm-', 'LineWidth', 2, 'DisplayName', 'Control U(t)');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Value', 'FontSize', 12);
+title('PDI Regulator: Angle and Control Signal', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'pdi_full.png']); hold off;
+
+params_pdi.kp = 1.5;
+params_pdi.ki = 0.02;
+params_pdi.kd = 0.1;
+[t_pdi, th_pdi] = run_slx([SLX_DIR 'pid_regulator.slx'], params_pdi, 10);
+
+fig = figure('Position', [100, 100, 1000, 700]);
+hold on; grid on;
+plot(pdi_exp(:,1), pdi_exp(:,2), 'c-',  'LineWidth', 2, 'DisplayName', 'Experiment');
+plot(t_pdi, th_pdi,              'b--', 'LineWidth', 2, 'DisplayName', 'Model (Simulink)');
+yline(TARGET, '--k', 'Target', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 12); ylabel('Angle (deg)', 'FontSize', 12);
+title('PDI Regulator: Experiment vs Model', 'FontSize', 14, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+saveas(fig, [FIG_DIR 'model_pdi.png']); hold off;
+
+% ===================== Сводные графики =====================
+fig = figure('Position', [100, 100, 1200, 800]);
+hold on; grid on;
+plot(relay_100(:,1), relay_100(:,2), 'k-', 'LineWidth', 2, 'DisplayName', 'Relay (U=100%)');
+plot(p_good(:,1),    p_good(:,2),    'r-', 'LineWidth', 2, 'DisplayName', 'P (k_p=0.8)');
+plot(pd_good(:,1),   pd_good(:,2),   'g-', 'LineWidth', 2, 'DisplayName', 'PD (k_d=0.1)');
+plot(pi_good(:,1),   pi_good(:,2),   'b-', 'LineWidth', 2, 'DisplayName', 'PI (k_i=0.035)');
+plot(pid_exp(:,1),   pid_exp(:,2),   'm-', 'LineWidth', 2, 'DisplayName', 'PID');
+plot(pdi_exp(:,1),   pdi_exp(:,2),   'c-', 'LineWidth', 2, 'DisplayName', 'PDI');
+yline(TARGET, '--k', 'Target 90 deg', 'LineWidth', 1.5);
+xlabel('Time (s)', 'FontSize', 13); ylabel('Angle (degrees)', 'FontSize', 13);
+title('Comparison of All Regulators', 'FontSize', 15, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+xlim([0 10]); ylim([0 120]);
+saveas(fig, [FIG_DIR 'all_regulators_comparison.png']); hold off;
+
+fig = figure('Position', [100, 100, 1200, 800]);
+hold on; grid on;
+plot(relay_100(:,1), relay_100(:,2)-TARGET, 'k-', 'LineWidth', 2, 'DisplayName', 'Relay');
+plot(p_good(:,1),    p_good(:,2)-TARGET,    'r-', 'LineWidth', 2, 'DisplayName', 'P');
+plot(pd_good(:,1),   pd_good(:,2)-TARGET,   'g-', 'LineWidth', 2, 'DisplayName', 'PD');
+plot(pi_good(:,1),   pi_good(:,2)-TARGET,   'b-', 'LineWidth', 2, 'DisplayName', 'PI');
+plot(pid_exp(:,1),   pid_exp(:,2)-TARGET,   'm-', 'LineWidth', 2, 'DisplayName', 'PID');
+plot(pdi_exp(:,1),   pdi_exp(:,2)-TARGET,   'c-', 'LineWidth', 2, 'DisplayName', 'PDI');
+yline(0, '--k', 'Zero error', 'LineWidth', 2);
+xlabel('Time (s)', 'FontSize', 13); ylabel('Error e(t) = \theta(t) - \theta^* (deg)', 'FontSize', 13);
+title('Regulation Error Comparison', 'FontSize', 15, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+ylim([-20 20]);
+saveas(fig, [FIG_DIR 'error_comparison.png']); hold off;
+
+fig = figure('Position', [100, 100, 1200, 800]);
+hold on; grid on;
+plot(relay_100(:,1), relay_100(:,3), 'k-', 'LineWidth', 2, 'DisplayName', 'Relay');
+plot(p_good(:,1),    p_good(:,3),    'r-', 'LineWidth', 2, 'DisplayName', 'P');
+plot(pd_good(:,1),   pd_good(:,3),   'g-', 'LineWidth', 2, 'DisplayName', 'PD');
+plot(pi_good(:,1),   pi_good(:,3),   'b-', 'LineWidth', 2, 'DisplayName', 'PI');
+plot(pid_exp(:,1),   pid_exp(:,3),   'm-', 'LineWidth', 2, 'DisplayName', 'PID');
+plot(pdi_exp(:,1),   pdi_exp(:,3),   'c-', 'LineWidth', 2, 'DisplayName', 'PDI');
+xlabel('Time (s)', 'FontSize', 13); ylabel('Control Signal U (%)', 'FontSize', 13);
+title('Control Signals Comparison', 'FontSize', 15, 'FontWeight', 'bold');
+legend('Location', 'best', 'FontSize', 11);
+ylim([-150 150]);
+saveas(fig, [FIG_DIR 'control_signals_comparison.png']); hold off;
+
+fprintf('All graphs successfully created!\n');
+fprintf('Saved to: %s\n', FIG_DIR);
+\end{lstlisting}
+
+
+\end{document}
+
