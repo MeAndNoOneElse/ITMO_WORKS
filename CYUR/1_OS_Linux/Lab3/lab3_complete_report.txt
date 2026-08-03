@@ -1,0 +1,453 @@
+# Лабораторная работа № 3: Написание составных команд в bash
+
+## Введение
+
+В данной лабораторной работе изучены основные потоки в Linux (STDIN - 0, STDOUT - 1, STDERR - 2), способы их перенаправления, использование пайплайнов для связи команд, работа с переменными и потоковая обработка текстовых данных.
+
+---
+
+## 1. Подготовка к работе
+
+### 1.1 Запуск терминала
+
+Терминал был открыт стандартным способом через Ctrl+Alt+T или меню System Tools - Mate Terminal.
+
+### 1.2 Запуск протоколирования
+
+```bash
+script -a recordresultlab3
+```
+
+**Результат:** Запись всех команд и их вывода началась в файл recordresultlab3. Этот файл содержит полную историю сеанса работы в терминале.
+
+---
+
+## 2. Перенаправление потоков
+
+### 2.1 Переход в рабочий стол и просмотр файлов
+
+```bash
+cd ~/Desktop
+ls -l
+```
+
+**Результат:**
+```bash
+итого 76
+-rw------- 1 eter eter   565 сен 27 12:04  lab3_2.py
+-rw------- 1 eter eter   564 сен 27 12:04  lab3.py
+-rw------- 1 eter eter 51781 сен 27 12:04  the-matrix-reloaded.csv
+-rw------- 1 eter eter  7738 сен 27 12:04  variants.txt
+-rw------- 1 eter eter  7738 сен 27 12:04 'вводимые команды.txt'
+```
+
+На рабочем столе находятся файлы для анализа: Python-скрипты (lab3.py, lab3_2.py), текстовые данные (the-matrix-reloaded.csv, variants.txt).
+
+### 2.2 Запуск скрипта — прямой вывод на консоль
+
+```bash
+python3 lab3.py
+```
+
+**Результат:**
+```bash
+Link:  Everything's still operational. Emergency system's already rerouting power. Jesus. As soon as they open that door, it's all over.
+Trinity:  The hell it is.
+Link:  What are you… Trinity?
+Trinity:  I will not stand here and do nothing. I will not wait here to watch them die.
+Link:  Trinity, we're talking less then 5 minutes here.
+Trinity:  In 5 minutes, I'll tear that whole goddamn building down.
+Neo:  How much further?
+Keymaker:  Here, just here.
+Smith:  I'm sorry, this is a dead end.
+Link:  It's gotta be the ugliest hack I have ever done. That's as close as I can get ya. You better grow some wings.
+Link:  Operator.
+Trinity:  I'm in.
+Link:  Keep moving, 65th floor.
+Smith:  you look surprised to see me again, Mr. Anderson, that's the difference between us. I've been expecting you.
+```
+
+### 2.3 Перенаправление STDOUT в файл
+
+```bash
+python3 lab3.py > фамилия_out
+```
+
+**Результат:** Стандартный вывод программы перенаправлен в файл фамилия_out. Вывод на консоль не появляется.
+
+### 2.4 Просмотр содержимого фамилия_out
+
+```bash
+nano фамилия_out
+```
+или
+```bash
+cat фамилия_out
+```
+
+**Результат:**
+```bash
+Neo:  I told you, Kid, you found me, I didn't find you.
+Lock:  Morpheus.
+Morpheus:  Commander Lock.
+Morpheus:  I wasn't aware that my actions required any explanation.
+Lock:  You were given a direct order to return to Zion.
+Morpheus:  I did.
+Lock:  So you admit to a direct contravention of your duty.
+Morpheus:  Commander, we need a presence inside the Matrix to await contact from the Oracle.
+Morpheus:  With all due respect, Commander, there is only one way to save our city.
+```
+
+Файл содержит весь стандартный вывод программы lab3.py.
+
+### 2.5 Перенаправление STDERR в файл
+
+```bash
+python3 lab3.py 2>фамилия_err
+```
+
+**Результат:** Стандартный поток ошибок перенаправлен в файл фамилия_err.
+
+### 2.6 Просмотр содержимого фамилия_err
+
+```bash
+nano фамилия_err
+```
+или
+```bash
+cat фамилия_err
+```
+
+**Результат:**
+```bash
+Smith:  Our connection. I don't fully understand how it happened. Perhaps some part of you imprinted onto me, something overwritten or copied. That is at this point irrelevant, what matters is that whatever happened, happened for a reason.
+Neo:  Congratulations.
+Smith 2:  It is purpose that created us,
+Smith 3:  Purpose that connects us,
+Smith 5:  That guides us,
+Smith 7:  It is purpose that defines,
+```
+
+Файл содержит все ошибки или важные сообщения из stderr.
+
+### 2.7 Удаление временных файлов
+
+```bash
+rm фамилия_out фамилия_err
+```
+
+**Результат:** Файлы фамилия_out и фамилия_err удалены. Таким образом очищено рабочее пространство перед выполнением следующего этапа.
+
+### 2.8 Объединение STDOUT и STDERR в один файл
+
+```bash
+python3 lab3.py > фамилия_final 2>&1
+```
+
+**Результат:** Оба потока (STDOUT с дескриптором 1 и STDERR с дескриптором 2) объединены и перенаправлены в один файл фамилия_final. Символ "&" указывает, что "1" — это файловый дескриптор, а не имя файла.
+
+### 2.9 Просмотр объединённого результата
+
+```bash
+cat фамилия_final
+```
+
+**Результат:**
+```bash
+Morpheus:  Niobe. My apologies to all. As you are undoubtedly aware, it has become increasingly difficult to locate a secure broadcast position.
+[captain]:  Squiddies got all our best spots.
+Ice:  Mainlines are crawling with them.
+Ghost:  And if Niobe's right, in 72 hours there's gonna be a quarter of a million more.
+Ballard:  What are we gonna do about it?
+Niobe:  We're gonna do what Commander Lock ordered us to do. We'll evacuate broadcast level and return to Zion.
+Morpheus:  And does the Commander have a plan for stopping 250,000 sentinels?
+Niobe:  A strategy is still being formulated.
+Morpheus:  I'm sure it is.
+Smith:  I'm looking for Neo.
+Corrupt:  Never heard of him.
+Smith:  I have something for him. A gift. You see, he set me free.
+Corrupt:  Fine, whatever. Now piss off.
+Neo:  Who was that?
+```
+
+В единый файл собран весь диалог из программы.
+
+### 2.10 Подсчёт статистики файлов (wc)
+
+**Подсчёт количества слов:**
+```bash
+wc -w the-matrix-reloaded.csv
+wc -w variants.txt
+wc -w lab3_2.py
+```
+
+**Результаты:**
+```bash
+8893 the-matrix-reloaded.csv
+1104 variants.txt
+64 lab3_2.py
+```
+
+Команда wc -w показывает количество слов в каждом файле.
+
+**Подсчёт количества строк:**
+```bash
+wc -l the-matrix-reloaded.csv
+wc -l variants.txt
+wc -l lab3_2.py
+```
+
+**Результаты:**
+```bash
+430 the-matrix-reloaded.csv
+96 variants.txt
+22 lab3_2.py
+```
+
+---
+
+## 3. Пайплайн (Pipeline)
+
+### 3.1 Изучение мануала grep
+
+```bash
+man grep
+```
+
+**Результат:** Изучены основные опции утилиты grep:
+- `-i` — игнорировать регистр
+- `-c` — вывести количество совпадений вместо самих строк
+- `-v` — инвертировать поиск (найти строки БЕЗ шаблона)
+- `-n` — показывать номера строк
+- `^` — якорь начала строки
+
+### 3.2 Запуск генератора задания для пайплайна
+
+```bash
+python3 lab3_2.py
+```
+
+**Результат:**
+```bash
+a) The character that says a phrase is "Merovingian"
+	b) The character that is talked with/about is  "Keymaker"
+		c) Should contain punctuation "."
+			d) The subject that is talked about "very"
+```
+
+Задание: найти фразы, где Merovingian говорит о Keymaker, используется точка и упоминается слово "very".
+
+### 3.3 Поиск по критерию а (говорящий персонаж)
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian
+```
+
+**Результат (первые строки):**
+```bash
+Merovingian," Aha, here he is at last. Neo, the One himself, right? And the legendary Morpheus. And Trinity of course, si belle qu'elle me fait souffrir. I have heard so much, you honour me. Please, sit, join us. This is my wife, Persephone. Something to eat? Drink? Hmm… of course, such things are contrivances like so much here. For the sake of appearances."
+Merovingian," Yes, of course, who has time? Who has time? But then if we do not ever take time, how can we ever have time? Château Haut-Brion 1959, magnificent wine, I love French wine, like I love the French language. I have sampled every language, French is my favourite – fantastic language, especially to curse with. Nom de Dieu de putain de bordel de merde de saloperies de connards d'enculés de ta mère. You see, it's like wiping your arse with silk, I love it."
+```
+
+Строки, начинающиеся с "Merovingian" (символ ^ означает начало строки).
+
+### 3.4 Поиск по критериям а+б (говорящий упоминает персонажа)
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | grep Keymaker
+```
+
+**Результат:**
+```bash
+Merovingian," Oh yes, it is true. The Keymaker, of course. But this is not a reason, this is not a `why.' The Keymaker himself, his very nature, is means, it is not an end, and so, to look for him is to be looking for a means to do… what?"
+Merovingian," Oh yes, it is. The Keymaker is mine and I see no reason why I should give him up. No reason at all."
+Merovingian," All right. All right. Let us find out where this goes. You two, get the Keymaker."
+```
+
+Из фраз Merovingian отобраны только те, где упоминается Keymaker.
+
+### 3.5 Поиск по критериям а+б+в (с знаком препинания — точка)
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | grep Keymaker | grep \.
+```
+
+Примечание: точка экранирована символом \ (обратный слэш), так как в регулярных выражениях точка — это спецсимвол.
+
+**Результат:**
+```bash
+Merovingian," Oh yes, it is true. The Keymaker, of course. But this is not a reason, this is not a `why.' The Keymaker himself, his very nature, is means, it is not an end, and so, to look for him is to be looking for a means to do… what?"
+Merovingian," Oh yes, it is. The Keymaker is mine and I see no reason why I should give him up. No reason at all."
+```
+
+Отобраны строки, содержащие точку.
+
+### 3.6 Поиск по всем критериям а+б+в+г (со словом "very")
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | grep Keymaker | grep \. | grep very
+```
+
+**Результат:**
+```bash
+Merovingian," Oh yes, it is true. The Keymaker, of course. But this is not a reason, this is not a `why.' The Keymaker himself, his very nature, is means, it is not an end, and so, to look for him is to be looking for a means to do… what?"
+```
+
+Найдена одна строка, соответствующая всем четырём критериям одновременно.
+
+### 3.7 Подсчёт результатов — способ 1 (через wc)
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | grep Keymaker | grep \. | grep very | wc -l
+```
+
+**Результат:**
+```bash
+1
+```
+
+Количество строк, соответствующих критериям: 1.
+
+### 3.8 Подсчёт результатов — способ 2 (через grep -c)
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | grep Keymaker | grep \. | grep -c very
+```
+
+**Результат:**
+```bash
+1
+```
+
+Опция -c в grep выводит количество совпадений напрямую, без использования wc.
+
+---
+
+## 4. Переменные и потоковая обработка
+
+### 4.1 Изучение мануала sed
+
+```bash
+man sed
+```
+
+**Результат:** Изучена утилита sed (stream editor) — потоковый редактор текста. Основные команды:
+- `s/pattern/replacement/` — замена первого совпадения в строке
+- `s/pattern/replacement/g` — глобальная замена всех совпадений
+- `1i\ text` — вставка текста перед первой строкой (i = insert)
+- `d` — удаление строк
+- `-n` — подавление автоматического вывода
+
+### 4.2 Создание переменной
+
+```bash
+name='Lambert Wilson'
+echo $name
+```
+
+**Результат:**
+```bash
+Lambert Wilson
+```
+
+Переменная создана и содержит имя актёра, исполнившего роль Merovingian.
+
+### 4.3 Вставка текста перед результатом с использованием переменной
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | sed "1i\\ --Text for $name" | head -5
+```
+
+**Результат:**
+```bash
+ --Text for Lambert Wilson
+Merovingian," Aha, here he is at last. Neo, the One himself, right? And the legendary Morpheus. And Trinity of course, si belle qu'elle me fait souffrir. I have heard so much, you honour me. Please, sit, join us. This is my wife, Persephone. Something to eat? Drink? Hmm… of course, such things are contrivances like so much here. For the sake of appearances."
+Merovingian," Yes, of course, who has time? Who has time? But then if we do not ever take time, how can we ever have time? Château Haut-Brion 1959, magnificent wine, I love French wine, like I love the French language. I have sampled every language, French is my favourite – fantastic language, especially to curse with. Nom de Dieu de putain de bordel de merde de saloperies de connards d'enculés de та mère. You see, it's like wiping your arse with silk, I love it."
+Merovingian," Hmph… I am a trafficker of information, I know everything I can. The question is, do you know why you are here?"
+Merovingian," Oh yes, it is true. The Keymaker, of course. But this is not a reason, this is not a `why.' The Keymaker himself, his very nature, is means, it is not an end, and so, to look for him is to be looking for a means to do… what?"
+```
+
+Команда sed вставила строку с именем актёра перед первой цитатой. Команда head -5 показала только первые 5 строк результата.
+
+### 4.4 Замена имени персонажа на имя актёра и запись в файл
+
+```bash
+cat the-matrix-reloaded.csv | grep ^Merovingian | sed "s/Merovingian,/$name:/" > lambert_text
+```
+
+**Результат:** Все вхождения "Merovingian," заменены на "Lambert Wilson:". Результат записан в файл lambert_text.
+
+### 4.5 Просмотр файла с заменами
+
+```bash
+cat lambert_text | head -5
+```
+
+**Результат:**
+```bash
+Lambert Wilson:" Aha, here he is at last. Neo, the One himself, right? And the legendary Morpheus. And Trinity of course, si belle qu'elle me fait souffrir. I have heard so much, you honour me. Please, sit, join us. This is my wife, Persephone. Something to eat? Drink? Hmm… of course, such things are contrivances like so much here. For the sake of appearances."
+Lambert Wilson:" Yes, of course, who has time? Who has time? But then if we do not ever take time, how can we ever have time? Château Haut-Brion 1959, magnificent wine, I love French wine, like I love the French language. I have sampled every language, French is my favourite – fantastic language, especially to curse with. Nom de Dieu de putain de bordel de merde de saloperies de connards d'enculés de та mère. You see, it's like wiping your arse with silk, I love it."
+Lambert Wilson:" Hmph… I am a trafficker of information, I know everything I can. The question is, do you know why you are here?"
+Lambert Wilson:" Oh yes, it is true. The Keymaker, of course. But this is not a reason, this is not a `why.' The Keymaker himself, his very nature, is means, it is not an end, and so, to look for him is to be looking for a means to do… what?"
+Lambert Wilson:" But do you? You think you do but you do not. You are here because you were sent here, you were told to come here and you obeyed. [Laughs] It is, of course, the way of all things. You see, there is only one constant, one universal, it is the only real truth"
+```
+
+Имена успешно заменены на имя актёра.
+
+### 4.6 Нумерация строк с помощью цикла while
+
+```bash
+counter=1; while read line; do echo $counter $line; ((counter++)); done < lambert_text
+```
+
+**Результат (все строки):**
+```bash
+1 Lambert Wilson:" Aha, here he is at last. Neo, the One himself, right? And the legendary Morpheus. And Trinity of course, si belle qu'elle me fait souffrir. I have heard so much, you honour me. Please, sit, join us. This is my wife, Persephone. Something to eat? Drink? Hmm… of course, such things are contrivances like so much here. For the sake of appearances."
+2 Lambert Wilson:" Yes, of course, who has time? Who has time? But then if we do not ever take time, how can we ever have time? Château Haut-Brion 1959, magnificent wine, I love French wine, like I love the French language. I have sampled every language, French is my favourite – fantastic language, especially to curse with. Nom de Dieu de putain de bordel de merde de saloperies de connards d'enculés de та mère. You see, it's like wiping your arse with silk, I love it."
+3 Lambert Wilson:" Hmph… I am a trafficker of information, I know everything I can. The question is, do you know why you are here?"
+4 Lambert Wilson:" Oh yes, it is true. The Keymaker, of course. But this is not a reason, this is not a `why.' The Keymaker himself, his very nature, is means, it is not an end, and so, to look for him is to be looking for a means to do… what?"
+5 Lambert Wilson:" But do you? You think you do but you do not. You are here because you were sent here, you were told to come here and you obeyed. [Laughs] It is, of course, the way of all things. You see, there is only one constant, one universal, it is the only real truth"
+6 Lambert Wilson:" No. Wrong. Choice is an illusion, created between those with power, and those without. Look there, at that woman. My God, just look at her. Affecting everyone around her, so obvious, so bourgeois, so boring. But wait… Watch – you see, I have sent her dessert, a very special dessert. I wrote it myself. It starts so simply, each line of the program creating a new effect, just like poetry. First, a rush… heat… her heart flutters. You can see it, Neo, yes? She does not understand why – is it the wine? No. What is it then, what is the reason? And soon it does not matter, soon the why and the reason are gone, and all that matters is the feeling itself. This is the nature of the universe. We struggle against it, we fight to deny it, but it is of course pretense, it is a lie. Beneath our poised appearance, the truth is we are completely out of control. Causality. There is no escape from it, we are forever slaves to it. Our only hope, our only peace is to understand it, to understand the `why.' `Why' is what separates us from them, you from me. `Why' is the only real social power, without it you are powerless. And this is how you come to me, without `why,' without power. Another link in the chain. But fear not, since I have seen how good you are at following orders, I will tell you what to do next. Run back, and give the fortune teller this message"
+7 Lambert Wilson:" Oh yes, it is. The Keymaker is mine and I see no reason why I should give him up. No reason at all."
+8 Lambert Wilson:" Please, ma chérie, I've told you, we are all victims of causality. I drink too much wine, I must take a piss. Cause and effect. Au revoir."
+9 Lambert Wilson:" Oh God, my God, Persephone how could you do this, you betrayed me [speaking French]!"
+10 Lambert Wilson:" Cause? There is no cause for this, what cause?"
+11 Lambert Wilson:" Lipstick? Lipstick? What craziness you are talking about woman, there is no lipstick."
+12 Lambert Wilson:" Ai-ai-ai-ai-ai-ai, woman, this is nothing, c'est rien, c'est rien du tout. It's a game, it is only a game."
+13 Lambert Wilson:" All right. All right. Let us find out where this goes. You two, get the Keymaker."
+14 Lambert Wilson:" Handle us? You'll handle us? You know, your predecessors had much more respect."
+15 Lambert Wilson:" Okay, you have some skill. Kill him."
+16 Lambert Wilson:" You see, he's just a man."
+17 Lambert Wilson:" Damn it, woman, you will be the end of me. Mark my words, boy, and mark them well. I have survived your predecessors, and I will survive you!"
+```
+
+**Пояснение работы цикла:**
+- `counter=1` — инициализация счётчика
+- `while read line; do` — цикл, читающий каждую строку из файла
+- `echo $counter $line` — вывод номера строки и содержимого
+- `((counter++))` — инкрементирование счётчика
+- `done < lambert_text` — получение входных данных из файла lambert_text
+
+Все 17 фраз Merovingian пронумерованы.
+
+### 4.7 Завершение сеанса
+
+```bash
+exit
+```
+
+**Результат:** Сеанс bash завершён. Команда закрывает текущее окно терминала или завершает работу скрипта записи (если был запущен script).
+
+---
+
+## Заключение
+
+В ходе лабораторной работы были успешно освоены:
+
+1. **Перенаправление потоков**: перенаправление STDOUT (1) в файлы, перенаправление STDERR (2), объединение обоих потоков в один файл с помощью оператора `2>&1`.
+
+2. **Пайплайн**: использование оператора `|` для связи команд в цепочку, последовательная фильтрация данных несколькими утилитами (cat, grep, sed, wc).
+
+3. **Переменные и потоковая обработка**: создание и использование переменных в bash-командах, применение sed для замены текста, создание циклов while для обработки строк файлов с автоматической нумерацией.
+
+Практическая применимость: полученные навыки позволяют эффективно анализировать большие текстовые файлы, автоматизировать обработку данных и создавать сложные команды для решения реальных задач администрирования и обработки информации в Linux.

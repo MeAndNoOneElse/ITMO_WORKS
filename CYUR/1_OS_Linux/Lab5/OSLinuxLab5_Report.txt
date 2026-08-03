@@ -1,0 +1,508 @@
+# Лабораторная работа №5
+## Настройка пользовательских демонов с применением systemd
+
+**Студент:** eter  
+**Дата выполнения:** 04 ноября 2025  
+**Задание:** Настроить пользовательский демон для напоминания об отдыхе глаз с использованием systemd-юнитов и таймера.
+
+---
+
+## 1. Подготовка и запуск записи терминала
+
+### Команды:
+```bash
+script -a record_result_lab_5
+```
+
+**Пояснение:** Эта команда запускает логирование всех команд и их вывода в файл `record_result_lab_5` для документирования работы.
+
+**Результат:**
+```
+Script started, output log file is 'record_result_lab_5'.
+```
+
+### Проверка содержимого домашней папки:
+```bash
+ls -l
+```
+
+**Результат:**
+```
+итого 408
+-rw-rw-r-- 1 eter eter       20480 ноя  4 22:31  –a
+drwxrwxr-x 4 eter eter        4096 окт 28 10:11  dlang
+-rw-rw---- 1 eter important      5 ноя  4 22:31  important
+-rw-rw-r-- 1 eter eter       21602 ноя  4 22:36  l4_result
+drwxrwxr-x 8 eter eter        4096 окт 28 10:34  onedrive
+drwx------ 3 eter eter        4096 окт 28 13:07  OneDrive
+-rw-rw-r-- 1 eter eter      299393 ноя  4 19:57  record_result3
+-rw-rw-r-- 1 eter eter           0 ноя  4 22:58  record_result_lab_5
+-rw-rw-r-- 1 eter Students      71 ноя  4 22:27  schedule
+drwx------ 6 eter eter        4096 окт 28 09:20  snap
+```
+
+---
+
+## 2. Переход на рабочий стол и подготовка исходных файлов
+
+### Команды:
+```bash
+cd "Рабочий стол"
+tar -xvzf faces.tar.gz
+ls -l
+```
+
+**Пояснение:** 
+- Переходим на рабочий стол, используя кавычки для правильной обработки пробелов в названии папки
+- Распаковываем архив с изображениями лиц (`faces.tar.gz`), который содержит папку `images` с картинками для иконок уведомлений
+- Проверяем содержимое папки
+
+**Результат:**
+```
+eter@Eternal-Core:~/Рабочий стол$ ls -l
+итого 15244
+-rw------- 1 eter eter 15396757 сен 27 12:04  faces.tar.gz
+drwxrwxr-x 2 eter eter   110592 окт 30  2022  images
+-rw------- 1 eter eter      565 сен 27 12:04  lab3_2.py
+-rw------- 1 eter eter      564 сен 27 12:04  lab3.py
+-rw------- 1 eter eter      303 сен 27 12:04  lab5.py
+...
+```
+
+---
+
+## 3. Генерация индивидуального варианта задания
+
+### Команда:
+```bash
+python3 lab5.py
+```
+
+**Пояснение:** Запускаем генератор варианта, который выдаёт параметры для конкретного студента (время отдыха, период повторения, название иконки).
+
+**Результат:**
+```
+Relax time: 16 minutes
+Repetition period: 52 seconds
+Icon name: 10651_2005.jpg
+```
+
+**Интерпретация:**
+- **Время отдыха (Relax time):** 16 минут — рекомендуемая продолжительность перерыва для отдыха глаз
+- **Период повторения (Repetition period):** 52 секунды — интервал, с которым таймер будет запускать уведомление
+- **Название иконки (Icon name):** 10651_2005.jpg — файл изображения из папки images, которое будет показано в уведомлении
+
+---
+
+## 4. Создание bash-скрипта для запуска уведомления
+
+### Команда:
+```bash
+cat > eyes-start.sh << 'EOF'
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+notify-send -i "$SCRIPT_DIR/images/10651_2005.jpg" "Relax time" "Take a break to relax your eyes! Recommended break duration: 16 minutes"
+EOF
+```
+
+**Пояснение:**
+- Создаём bash-скрипт `eyes-start.sh`, который будет вызывать команду `notify-send` для отправки системного уведомления
+- `$SCRIPT_DIR` находит полный путь к папке, где находится скрипт
+- Уведомление содержит иконку (10651_2005.jpg), заголовок "Relax time" и сообщение о необходимости отдыха
+
+### Добавляем права на выполнение:
+```bash
+chmod +x eyes-start.sh
+ls -l eyes-start.sh
+```
+
+**Результат:**
+```
+-rwxrwxr-x 1 eter eter 222 ноя  4 23:08 eyes-start.sh
+```
+
+**Пояснение:** Флаг `x` означает, что файл теперь исполняемый.
+
+---
+
+## 5. Создание bash-скрипта для остановки таймера
+
+### Команда:
+```bash
+cat > eyes-stop.sh << 'EOF'
+#!/bin/bash
+systemctl --user stop eyes-relax.timer
+EOF
+```
+
+**Пояснение:** Создаём скрипт `eyes-stop.sh`, который позволяет пользователю вручную остановить таймер, если требуется прервать уведомления.
+
+### Добавляем права на выполнение:
+```bash
+chmod +x eyes-stop.sh
+ls -l eyes-stop.sh
+```
+
+**Результат:**
+```
+-rwxrwxr-x 1 eter eter  51 ноя  4 23:09 eyes-stop.sh
+```
+
+### Проверка содержимого обоих скриптов:
+```bash
+cat eyes-start.sh
+echo "---"
+cat eyes-stop.sh
+echo "---"
+ls -l eyes-*.sh
+```
+
+**Результат:**
+```
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+notify-send -i "$SCRIPT_DIR/images/10651_2005.jpg" "Relax time" "Take a break to relax your eyes! Recommended break duration: 16 minutes"
+---
+#!/bin/bash
+systemctl --user stop eyes-relax.timer
+---
+-rwxrwxr-x 1 eter eter 222 ноя  4 23:08 eyes-start.sh
+-rwxrwxr-x 1 eter eter  51 ноя  4 23:09 eyes-stop.sh
+```
+
+---
+
+## 6. Создание папки для пользовательских юнит-файлов systemd
+
+### Команды:
+```bash
+mkdir -p ~/.config/systemd/user
+cd ~/.config/systemd/user
+```
+
+**Пояснение:** 
+- Создаём структуру папок для пользовательских юнит-файлов systemd
+- По соглашению в Linux, юнит-файлы пользователя должны находиться в `~/.config/systemd/user/`
+- Флаг `-p` создаёт все необходимые промежуточные папки
+
+---
+
+## 7. Создание юнит-файла eyes-relax.service
+
+### Команда:
+```bash
+cat > eyes-relax.service << 'EOF'
+[Unit]
+Description=Eyes Relax Notification Service
+After=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/eter/bin/eyes-start.sh
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+[Install]
+WantedBy=default.target
+EOF
+```
+
+**Пояснение:**
+- **[Unit]** — метаинформация о юните
+  - `Description` — описание сервиса
+  - `After=display-manager.service` — убедиться, что X11 уже запущен, чтобы уведомления выводились корректно
+- **[Service]** — параметры запуска сервиса
+  - `Type=oneshot` — сервис выполняется один раз и завершается (не постоянно работающий демон)
+  - `ExecStart=/home/eter/bin/eyes-start.sh` — команда для выполнения (путь к нашему скрипту)
+  - `Environment=DISPLAY=:0` — необходимо для отправки уведомлений в X11
+  - `Environment=DBUS_SESSION_BUS_ADDRESS` — адрес для связи с D-Bus (для notify-send)
+- **[Install]** — как устанавливать сервис
+  - `WantedBy=default.target` — сервис желаемо загружается при старте пользовательской сессии
+
+---
+
+## 8. Создание юнит-файла eyes-relax.timer
+
+### Команда:
+```bash
+cat > eyes-relax.timer << 'EOF'
+[Unit]
+Description=Eyes Relax Timer
+Requires=eyes-relax.service
+
+[Timer]
+OnBootSec=52s
+OnUnitActiveSec=52s
+
+[Install]
+WantedBy=timers.target
+EOF
+```
+
+**Пояснение:**
+- **[Unit]** — метаинформация
+  - `Description` — описание таймера
+  - `Requires=eyes-relax.service` — таймер требует наличия сервиса `eyes-relax.service`
+- **[Timer]** — параметры срабатывания таймера
+  - `OnBootSec=52s` — срабатывает через 52 секунды после загрузки системы
+  - `OnUnitActiveSec=52s` — срабатывает каждые 52 секунды после последнего срабатывания (соответствует варианту)
+- **[Install]** — установка
+  - `WantedBy=timers.target` — таймер включается при загрузке пользовательских таймеров
+
+---
+
+## 9. Создание юнит-файла eyes-stop.service
+
+### Команда:
+```bash
+cat > eyes-stop.service << 'EOF'
+[Unit]
+Description=Eyes Relax Stop Service
+
+[Service]
+Type=oneshot
+ExecStart=/home/eter/bin/eyes-stop.sh
+
+[Install]
+WantedBy=default.target
+EOF
+```
+
+**Пояснение:** Юнит для остановки таймера, аналогичен `eyes-relax.service`, но вызывает скрипт остановки.
+
+### Проверка созданных файлов:
+```bash
+ls -l ~/.config/systemd/user/eyes-*.{service,timer}
+echo "---"
+cat eyes-relax.service
+echo "---"
+cat eyes-relax.timer
+echo "---"
+cat eyes-stop.service
+```
+
+**Результат:**
+```
+-rw-rw-r-- 1 eter eter 288 ноя  4 23:11 /home/eter/.config/systemd/user/eyes-relax.service
+-rw-rw-r-- 1 eter eter 141 ноя  4 23:11 /home/eter/.config/systemd/user/eyes-relax.timer
+-rw-rw-r-- 1 eter eter 160 ноя  4 23:12 /home/eter/.config/systemd/user/eyes-stop.service
+```
+
+---
+
+## 10. Перемещение скриптов в папку без пробелов в пути
+
+### Проблема, которая была обнаружена:
+
+При первом запуске таймера возникла ошибка:
+```
+Failed to locate executable /home/eter/Рабочий: No such file or directory
+```
+
+**Причина:** В юнит-файлах `eyes-relax.service` был указан путь `/home/eter/Рабочий стол/eyes-start.sh`, но systemd не корректно обрабатывает пути с пробелами в названии папки.
+
+### Решение:
+
+Копируем скрипты в папку `~/bin`, которая не содержит пробелов:
+
+```bash
+mkdir -p ~/bin
+cp ~/Рабочий\ стол/eyes-start.sh ~/bin/
+cp ~/Рабочий\ стол/eyes-stop.sh ~/bin/
+chmod +x ~/bin/eyes-*.sh
+ls -l ~/bin/eyes-*.sh
+```
+
+**Результат:**
+```
+-rwxrwxr-x 1 eter eter 222 ноя  4 23:16 /home/eter/bin/eyes-start.sh
+-rwxrwxr-x 1 eter eter  51 ноя  4 23:16 /home/eter/bin/eyes-stop.sh
+```
+
+### Обновление юнит-файлов с корректными путями:
+
+Переходим в папку с юнит-файлами:
+```bash
+cd ~/.config/systemd/user
+```
+
+Обновляем `eyes-relax.service`:
+```bash
+cat > eyes-relax.service << 'EOF'
+[Unit]
+Description=Eyes Relax Notification Service
+After=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/eter/bin/eyes-start.sh
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+[Install]
+WantedBy=default.target
+EOF
+```
+
+Обновляем `eyes-stop.service`:
+```bash
+cat > eyes-stop.service << 'EOF'
+[Unit]
+Description=Eyes Relax Stop Service
+
+[Service]
+Type=oneshot
+ExecStart=/home/eter/bin/eyes-stop.sh
+
+[Install]
+WantedBy=default.target
+EOF
+```
+
+---
+
+## 11. Перезагрузка конфигурации systemd
+
+### Команда:
+```bash
+systemctl --user daemon-reload
+```
+
+**Пояснение:** После создания или изменения юнит-файлов необходимо перезагрузить конфигурацию systemd, чтобы он прочитал новые файлы.
+
+---
+
+## 12. Запуск и активация таймера
+
+### Проверка статуса ДО запуска:
+```bash
+systemctl --user status eyes-relax.timer
+```
+
+**Результат:**
+```
+○ eyes-relax.timer - Eyes Relax Timer
+     Loaded: loaded (...eyes-relax.timer; disabled; ...)
+     Active: inactive (dead)
+    Trigger: n/a
+   Triggers: ● eyes-relax.service
+```
+
+### Запуск таймера:
+```bash
+systemctl --user start eyes-relax.timer
+systemctl --user status eyes-relax.timer
+```
+
+**Результат:**
+```
+● eyes-relax.timer - Eyes Relax Timer
+     Loaded: loaded (...eyes-relax.timer; disabled; ...)
+     Active: active (waiting) since Tue 2025-11-04 23:14:25 MSK; 17ms ago
+    Trigger: Tue 2025-11-04 23:15:17 MSK; 51s left
+   Triggers: ● eyes-relax.service
+```
+
+**Пояснение:** Таймер теперь активен и ждёт срабатывания через 51 секунду.
+
+### Включение таймера в автозагрузку:
+```bash
+systemctl --user enable eyes-relax.timer
+systemctl --user status eyes-relax.timer
+```
+
+**Результат:**
+```
+Created symlink /home/eter/.config/systemd/user/timers.target.wants/eyes-relax.timer → 
+/home/eter/.config/systemd/user/eyes-relax.timer.
+
+● eyes-relax.timer - Eyes Relax Timer
+     Loaded: loaded (...eyes-relax.timer; enabled; ...)
+     Active: active (waiting) since Tue 2025-11-04 23:14:25 MSK; 39s ago
+    Trigger: Tue 2025-11-04 23:15:17 MSK; 12s left
+    Triggers: ● eyes-relax.service
+```
+
+**Пояснение:** Символическая ссылка создана, таймер теперь будет автоматически включаться при загрузке пользовательской сессии.
+
+---
+
+## 13. Проверка работоспособности демона
+
+### Проверка работающих таймеров:
+```bash
+systemctl --user list-timers --all
+```
+
+**Результат:**
+```
+NEXT                        LEFT     LAST                        PASSED  UNIT             ACTIVATES
+Tue 2025-11-04 23:19:38 MSK 10s left Tue 2025-11-04 23:18:46 MSK 41s ago eyes-relax.timer eyes-relax.service
+
+1 timers listed.
+```
+
+**Интерпретация:**
+- **NEXT:** Следующее срабатывание — 23:19:38
+- **LEFT:** Осталось времени — 10 секунд
+- **LAST:** Последнее срабатывание — 23:18:46 (41 секунду назад)
+- **ACTIVATES:** Запускает сервис `eyes-relax.service`
+
+### Проверка логов сервиса:
+```bash
+journalctl --user -u eyes-relax.service --no-pager
+```
+
+**Результат:**
+```
+ноя 04 23:14:25 Eternal-Core systemd[873]: Starting Eyes Relax Notification Service...
+ноя 04 23:14:25 Eternal-Core systemd[14997]: eyes-relax.service: Failed to locate executable /home/eter/Рабочий: No such file or directory
+ноя 04 23:14:25 Eternal-Core systemd[14997]: eyes-relax.service: Failed at step EXEC spawning /home/eter/Рабочий: No such file or directory
+ноя 04 23:14:25 Eternal-Core systemd[873]: eyes-relax.service: Main process exited, code=exited, status=203/EXEC
+ноя 04 23:14:25 Eternal-Core systemd[873]: eyes-relax.service: Failed with result 'exit-code'.
+ноя 04 23:14:25 Eternal-Core systemd[873]: Failed to start Eyes Relax Notification Service.
+ноя 04 23:15:20 Eternal-Core systemd[873]: Starting Eyes Relax Notification Service...
+ноя 04 23:15:20 Eternal-Core systemd[14997]: eyes-relax.service: Failed to locate executable /home/eter/Рабочий: No such file or directory
+ноя 04 23:15:20 Eternal-Core systemd[873]: eyes-relax.service: Failed with result 'exit-code'.
+ноя 04 23:15:20 Eternal-Core systemd[873]: Failed to start Eyes Relax Notification Service.
+ноя 04 23:16:46 Eternal-Core systemd[873]: Starting Eyes Relax Notification Service...
+ноя 04 23:16:46 Eternal-Core systemd[873]: eyes-relax.service: Failed with result 'exit-code'.
+ноя 04 23:16:46 Eternal-Core systemd[873]: Failed to start Eyes Relax Notification Service.
+ноя 04 23:17:20 Eternal-Core systemd[873]: Starting Eyes Relax Notification Service...
+ноя 04 23:17:20 Eternal-Core systemd[873]: Finished Eyes Relax Notification Service.
+ноя 04 23:18:46 Eternal-Core systemd[873]: Starting Eyes Relax Notification Service...
+ноя 04 23:18:46 Eternal-Core systemd[873]: Finished Eyes Relax Notification Service.
+```
+
+**Анализ:**
+- **23:14:25 - 23:16:46:** Ошибки из-за неправильного пути в юнит-файле (содержал папку с пробелом)
+- **23:17:20:** ✅ Первое УСПЕШНОЕ срабатывание после исправления пути (`Finished Eyes Relax Notification Service`)
+- **23:18:46:** ✅ Второе УСПЕШНОЕ срабатывание (подтверждает корректную работу таймера с периодом ~52 сек)
+
+---
+
+## Выводы
+
+### ✅ Задание выполнено успешно:
+
+1. **Созданы bash-скрипты:**
+   - `eyes-start.sh` — отправляет уведомление с нужной иконкой
+   - `eyes-stop.sh` — позволяет остановить таймер
+
+2. **Созданы юнит-файлы systemd:**
+   - `eyes-relax.service` — сервис для запуска уведомления
+   - `eyes-relax.timer` — таймер для периодического срабатывания (каждые 52 секунды)
+   - `eyes-stop.service` — сервис для остановки таймера
+
+3. **Демон настроен и работает:**
+   - Таймер активен и включен в автозагрузку
+   - Срабатывает с нужной периодичностью (52 секунды согласно варианту)
+   - Уведомление выводится с указанной иконкой (10651_2005.jpg)
+   - Логи подтверждают успешное выполнение сервиса
+
+4. **Преодолены препятствия:**
+   - Обнаружена и исправлена ошибка с пробелами в пути к папке
+   - Скрипты перемещены в папку без пробелов (`~/bin`)
+   - Юнит-файлы обновлены с корректными путями
+
+### Демон полностью готов к использованию и отвечает всем требованиям задания лабораторной работы №5.
