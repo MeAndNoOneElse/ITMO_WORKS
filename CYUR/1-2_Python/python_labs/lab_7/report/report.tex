@@ -1,0 +1,154 @@
+%! Author = Eternal_Core
+%! Date = 06.04.2026
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\geometry{left=2.5cm,right=1.5cm,top=2cm,bottom=2cm}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    tabsize=4,
+    captionpos=b
+}
+
+\title{\textbf{Отчёт по лабораторной работе №7} \\ \large Работа с API}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section*{Цель работы}
+Изучить принципы работы с REST API, научиться формировать HTTP-запросы с параметрами, получать и обрабатывать JSON-ответы, а также создать графический интерфейс для загрузки и отображения изображений из сети.
+
+\section*{Задание 1: OpenWeatherMap API}
+\subsection*{Описание}
+Используя сервис OpenWeatherMap, реализовать программу, которая показывает температуру, ощущаемую температуру, влажность, давление, описание погоды и скорость ветра в указанном городе.
+
+\subsection*{Реализация}
+Для запросов используется библиотека \texttt{requests}. API-ключ передаётся в параметрах запроса. Базовый URL:
+\begin{lstlisting}
+https://api.openweathermap.org/data/2.5/weather
+\end{lstlisting}
+
+Параметры запроса:
+\begin{itemize}
+    \item \texttt{q} --- название города
+    \item \texttt{appid} --- API-ключ
+    \item \texttt{units=metric} --- температура в Цельсиях
+    \item \texttt{lang=ru} --- описание на русском языке
+\end{itemize}
+
+\subsection*{Фрагмент кода}
+\begin{lstlisting}
+def get_weather(city_name):
+    params = {
+        "q": city_name,
+        "appid": OWM_API_KEY,
+        "units": "metric",
+        "lang": "ru"
+    }
+    response = requests.get(OWM_BASE_URL, params=params, timeout=10)
+    response.raise_for_status()
+    data = response.json()
+\end{lstlisting}
+
+\subsection*{Результат}
+Программа запрашивает название города, отправляет GET-запрос к API и выводит структурированную информацию: температура, ощущается как, влажность, давление, описание, скорость ветра. При неверном названии города функция возвращает \texttt{False} и выводит сообщение об ошибке.
+
+\section*{Задание 2: Rick and Morty API}
+\subsection*{Описание}
+Использовать API сериала Rick and Morty для поиска персонажей и получения случайных персонажей. Вариант 9 --- \url{https://rickandmortyapi.com}.
+
+\subsection*{Реализация}
+API не требует авторизации. Для поиска персонажа используется эндпоинт:
+\begin{lstlisting}
+https://rickandmortyapi.com/api/character?name=<имя>
+\end{lstlisting}
+
+Для получения случайного персонажа сначала запрашивается общее количество персонажей через \texttt{/api/character}, затем генерируется случайный ID от 1 до \texttt{count} и запрашивается \texttt{/api/character/\{id\}}.
+
+\subsection*{Фрагмент кода}
+\begin{lstlisting}
+def get_character(name):
+    params = {"name": name}
+    response = requests.get(BASE_URL, params=params, timeout=10)
+    response.raise_for_status()
+    data = response.json()
+    char = data["results"][0]
+\end{lstlisting}
+
+\subsection*{Результат}
+Программа выводит: имя, пол, вид, статус, родной мир и текущее место персонажа. При вводе пустого имени --- выбирается случайный персонаж.
+
+\section*{Задание 3 (бонус): Генератор котиков}
+\subsection*{Описание}
+Используя \url{https://cataas.com} и библиотеку \texttt{tkinter}, создать приложение, отображающее случайную GIF-картинку с котом. Окошко состоит из картинки и кнопки, нажатие на которую загружает нового кота.
+
+\subsection*{Реализация}
+Сервис cataas.com предоставляет REST API для получения случайных изображений котов. Эндпоинт \texttt{/cat/gif} возвращает анимированную GIF-картинку. Приложение загружает бинарные данные изображения, извлекает отдельные кадры GIF с помощью \texttt{PIL.Image}, и анимирует их через \texttt{tkinter.after()} с учётом задержки каждого кадра.
+
+\subsection*{Фрагмент кода}
+\begin{lstlisting}
+CATAAS_URL = "https://cataas.com/cat/gif"
+
+def load_image(self):
+    response = requests.get(CATAAS_URL, timeout=15)
+    response.raise_for_status()
+    gif = Image.open(BytesIO(response.content))
+    if gif.format == "GIF":
+        self._load_animated_gif(gif)
+        self._play_animation()
+\end{lstlisting}
+
+\subsection*{Анимация GIF}
+Библиотека tkinter не поддерживает анимацию GIF нативно. Для отображения анимации:
+\begin{enumerate}
+    \item GIF разделяется на отдельные кадры через \texttt{gif.seek()}
+    \item Для каждого кадра извлекается задержка из \texttt{gif.info["duration"]}
+    \item Кадры последовательно показываются через \texttt{root.after(delay, callback)}
+\end{enumerate}
+
+\section*{Интерфейс командной строки}
+При запуске программы пользователю предлагается меню:
+\begin{lstlisting}
+Выберите задание:
+  1 - Погода в городе
+  2 - Персонаж Rick and Morty
+  3 - Генератор котиков
+  q - выход
+\end{lstlisting}
+
+После выполнения задания меню показывается снова. Выход --- клавиша \texttt{q}.
+
+\section*{Используемые библиотеки}
+\begin{itemize}
+    \item \texttt{requests} --- HTTP-запросы к API
+    \item \texttt{tkinter} --- графический интерфейс
+    \item \texttt{PIL (Pillow)} --- обработка изображений, извлечение кадров GIF
+    \item \texttt{io.BytesIO} --- работа с бинарными данными в памяти
+    \item \texttt{random} --- генерация случайного ID персонажа
+\end{itemize}
+
+\section*{Вывод}
+В ходе лабораторной работы были изучены принципы работы с REST API, полученные навыки формирования HTTP-запросов с параметрами, обработки JSON-ответов и ошибок сети, а также создано графическое приложение для загрузки и отображения анимированных изображений из сети.
+
+\end{document}
