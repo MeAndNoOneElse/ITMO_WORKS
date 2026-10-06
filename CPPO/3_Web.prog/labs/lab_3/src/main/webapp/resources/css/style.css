@@ -1,0 +1,371 @@
+:root {
+    --light-green: rgba(170, 255, 0, 0.7);
+    --green: #154e05;
+    --dark-green: #0b2c02;
+    --red: #FF3B30;
+    --black: #000000;
+    --dark-grey: rgba(136, 135, 135, 0.26);
+    --grey: #6a6969;
+    --light-grey: #888787;
+}
+body {
+    background:var(--black);
+    color: var(--light-green);
+    font-size: 18px;
+}
+h1 {font-size: 24px;}
+h2 {font-size: 22px;}
+h3 {font-size: 20px;}
+
+
+/*заголовки*/
+
+
+.start, .main{
+    display: flex;
+    gap: 15px;
+    background: var(--dark-green);
+    border: 5px solid var(--dark-green);
+    border-radius: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+
+#name, #info {
+    flex: 1 1 200px;
+    min-width: 300px;
+    margin: 0;
+    padding: 20px 20px;
+    background: var(--green);
+    border: 3px solid var(--black);
+    border-radius: 15px;
+    box-sizing: border-box;
+
+}
+#form, #graph {
+    flex: 1 1 400px;
+    min-width: 300px;
+    padding: 20px 20px;
+    background: var(--green);
+    border: 3px solid var(--black);
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+#graph {min-width: 425px;}
+
+@media (max-width: 750px) {
+    .main-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    #form, #graph {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/*форма и график*/
+
+
+
+
+
+/*Таблица*/
+.table-title {
+    text-align: center;
+    width: 100%;
+    margin: 18px 0 10px 0;
+    font-size: 1.35em;
+    font-weight: 600;
+    color: var(--light-green);
+}
+#end {
+    background: var(--dark-green);
+    border: 5px solid var(--dark-green);
+    border-radius: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+#table {
+    padding: 20px 20px;
+    background: var(--green);
+    border: 3px solid var(--black);
+    border-radius: 15px;
+    box-sizing: border-box;
+
+}
+
+
+
+/*кнопка очистки*/
+
+
+#clearResultsBtn {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 28px;
+    font-size: 1em;
+    font-weight: 590;
+    cursor: pointer;
+    margin: 18px 0 8px 0;
+    transition: background 0.2s, color 0.2s;
+}
+#clearResultsBtn:hover, #clearResultsBtn:focus {
+    background: #ff7300;
+    color: #fff;
+}
+
+
+/*новый блок*/
+
+
+/* Общие стили для формы */
+#checkForm {
+    font-family: Arial, sans-serif;
+    padding: 7px;
+}
+#checkForm .ui-inputfield {
+    background-color: #888787 !important;
+}
+
+#checkForm .ui-inputfield:focus {
+    background-color: #888787 !important;
+    outline: none;
+}
+
+/* Стили для меток */
+#checkForm .ui-outputlabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#checkForm .field-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Стили для спиннера (X) */
+#checkForm .ui-spinner {
+    color: black;
+    background-color: #888787;
+
+}
+
+#checkForm .ui-spinner-input {
+    border: none;
+    background-color: #888787;
+    padding: 8px;
+    margin: 0;
+    color: black;
+}
+
+#checkForm .ui-spinner-button {
+    background-color: #888787;
+
+}
+
+#checkForm .ui-spinner-button:hover {
+    background-color: #888787;
+
+}
+
+/* Стили для текстового поля (Y) */
+#checkForm .input-field {
+    background-color: #888787;
+    color: black;
+    padding: 8px;
+    width: 200px;
+    margin: 0;
+}
+
+#checkForm .input-field:focus {
+    background-color: #888787;
+
+    outline: none;
+}
+
+/* Стили для слайдера (R) */
+#checkForm .ui-slider {
+    background-color: #888787;
+
+}
+
+#checkForm .ui-slider-handle {
+    background-color: #888787;
+
+}
+
+#checkForm .ui-slider-handle:hover {
+    background-color: #888787;
+
+}
+
+#checkForm .ui-slider-range {
+    background-color: #888787;
+
+}
+
+/* Стили для поля ввода R */
+#checkForm #r {
+    background-color: #888787;
+    color: black;
+    padding: 8px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+#checkForm #r:focus {
+    background-color: #888787;
+
+    outline: none;
+}
+
+/* Стили для кнопки */
+#checkForm .ui-commandbutton {
+    background-color: #888787;
+
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+#checkForm .ui-commandbutton:hover {
+    background-color: #888787;
+
+}
+
+#checkForm .ui-commandbutton:active {
+    background-color: #888787;
+
+}
+
+/* Стили для сообщений об ошибках */
+#checkForm .error-message {
+    color: #e84118;
+    margin-top: 3px;
+    display: block;
+}
+
+/* Стили для панели сетки */
+#checkForm .ui-panelgrid {
+    border: none;
+}
+
+#checkForm .ui-panelgrid td {
+    border: none;
+    padding: 5px;
+}
+.left-align-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.left-align-panel {
+    margin-bottom: 10px;
+    width: auto !important;
+    text-align: left;
+    display: block;
+}
+
+/* Или если предыдущий вариант не работает, используйте более специфичные селекторы: */
+#checkForm .left-align-panel {
+    margin-bottom: 10px;
+    width: auto !important;
+    text-align: left;
+    display: block;
+    float: left;
+}
+/* Стили для спиннера */
+#checkForm .ui-spinner {
+    width: 200px;
+    border: 1px solid #888787;
+    background-color: #888787;
+}
+
+#checkForm .ui-spinner-input {
+    width: 200px !important;
+    border: none !important;
+    background-color: #888787 !important;
+    text-align: center;
+    color: black;
+    padding: 8px 35px 8px 8px !important;
+}
+
+#checkForm .ui-spinner-button {
+    width: 25px;
+    border: 1px solid #888787;
+    background-color: #888787;
+}
+
+#checkForm .ui-spinner-button:hover {
+    background-color: #888787;
+}
+
+#checkForm .ui-spinner-up {
+    border-bottom: none;
+}
+
+#checkForm .ui-spinner-down {
+    border-top: none;
+}
+.yellow-btn {
+    background-color: #ffeb3b !important;
+    color: #000 !important;
+    border: 1px solid #ccc !important;
+    padding: 5px 15px !important;
+    text-decoration: none !important;
+    border-radius: 0 !important; /* без скругления */
+}
+
+.yellow-btn:hover {
+    background-color: #fbc02d !important;
+    border-color: #999 !important;
+}
+/* Стили для таблицы результатов */
+#resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Заголовки таблицы */
+#resultsTable th {
+    background-color: #555;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #777;
+    font-weight: bold;
+}
+
+/* Ячейки таблицы */
+#resultsTable td {
+    background-color: #666; /* Серый фон */
+    color: white !important; /* Белый текст */
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #777;
+}
+
+/* Четные строки - немного темнее для чередования */
+#resultsTable tr:nth-child(even) td {
+    background-color: #5a5a5a;
+}
+
+/* Нечетные строки - немного светлее */
+#resultsTable tr:nth-child(odd) td {
+    background-color: #666;
+}
+
+/* Ховер эффект */
+#resultsTable tr:hover td {
+    background-color: #777;
+}

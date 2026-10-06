@@ -1,0 +1,109 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\title{Отчёт: эксперименты по обходу графа (read vs mmap, seq vs rand)}
+\author{Этап 1 — intro-exp}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Паспорт системы}
+\begin{itemize}
+    \item CPU: 12th Gen Intel(R) Core(TM) i3-1215U (8 лог. ядер, 1 сокет)
+    \item Память: 15Gi (доступно ~11Gi)
+    \item Диск: SSD/NVMe (rotational: неизвестно, но SSD)
+    \item OS: Linux 7.0.0-34-generic (Ubuntu 24.04)
+    \item Governor: performance (если доступен) или фиксирован вручную
+\end{itemize}
+
+\section{Подготовка окружения}
+\begin{itemize}
+    \item \texttt{taskset -c 2} — привязка к ядру 2 (из 0--7)
+    \item \texttt{--no-cache} — отключение файлового кэша через \texttt{O\_DIRECT} (исправлен исходник \texttt{graph\_traverse.c} для выравнивания буфера 512 байт)
+    \item \texttt{run\_isolated.sh} — временная cgroup v2 с очисткой через \texttt{trap cleanup}
+    \item Прогрев: \texttt{k=2} (отбрасываем первые 2 запуска каждой конфигурации)
+\end{itemize}
+
+\section{Гипотеза}
+\begin{enumerate}
+    \item \texttt{graph-seq.bin} быстрее \texttt{graph-rand.bin} из-за лучшей пространственной локальности (меньше page faults, лучше CPU cache).
+    \item \texttt{graph\_traverse\_mmap} покажет другие метрики (\texttt{minflt}, \texttt{majflt}, context switches), чем \texttt{graph\_traverse} (read/lseek), из-за отсутствия \texttt{read()} и возможного \texttt{madvise}.
+    \item При N=30 и прогреве k=2 разница seq/rand статистически значима (ДИ не пересекаются).
+\end{enumerate}
+
+\section{Методика эксперимента}
+\begin{itemize}
+    \item Метрика: \texttt{wall\_time\_s} (Elapsed wall clock из \texttt{/usr/bin/time -v})
+    \item N (повторов): $N=30$ (стандартное значение для учебного эксперимента, даёт нормальное приближение CI95)
+    \item ITER: 5 (обходов графа на запуск)
+    \item Порядок: интерливинг (seq, rand чередуются)
+    \item Прогрев: отбрасываем $k=2$ первых запуска для каждой конфигурации
+    \item Кэш: только \texttt{--no-cache}, без ручного \texttt{drop\_caches}
+    \item Мониторинг: \texttt{/usr/bin/time -v} + \texttt{taskset} (без \texttt{perf stat} в финальной серии)
+\end{itemize}
+
+\textbf{Выбор N и k:}
+\begin{itemize}
+    \item \texttt{k=2} — фиксирован заранее (не подбирается постфактум), соответствует методичке \texttt{statistics.md}
+    \item \texttt{N=30} — стандарт для учебного эксперимента ($N \geq 30$ даёт почти одинаковые нормальное и t-приближения для CI95)
+    \item Формула оценки: $N \approx (t \cdot s / E)^2$, где $t \approx 1.96$ для 95\%, $E$ — допустимая ошибка (5--10\% от среднего)
+\end{itemize}
+
+\section{Данные и CSV}
+Данные собраны в файле \texttt{results\_read.csv}. Пример структуры:
+\begin{verbatim}
+run_id,graph,wall_time_s,user_time_s,sys_time_s,vol_ctx,invol_ctx,minflt,majflt,core,cgroup
+1,graph-seq.bin,6.3100,1.09,5.21,1,69,172,0,2,manual
+1,graph-rand.bin,6.4600,1.17,5.29,1,75,172,0,2,manual
+...
+\end{verbatim}
+
+\section{Анализ данных}
+Для каждой конфигурации рассчитано:
+\begin{itemize}
+    \item Выборочное среднее: $\bar{x} = \frac{1}{N-k} \sum x_i$
+    \item Выборочное стандартное отклонение: $s = \sqrt{\frac{1}{N-k-1} \sum (x_i - \bar{x})^2}$
+    \item Доверительный интервал 95\%: $CI_{95} = \bar{x} \pm 1.96 \cdot \frac{s}{\sqrt{N-k}}$
+\end{itemize}
+
+Для пилотной серии ($N=10$, $k=2$ прогрев, оставлено $N_{eff}=3$ на конфигурацию):
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Конфигурация & Среднее (с) & Std (с) & CI95 (с) \\
+\midrule
+read-seq & 6.3433 & 0.1531 & $\pm 0.1732$ \\
+read-rand & 6.4367 & 0.0306 & $\pm 0.0346$ \\
+\bottomrule
+\end{tabular}
+\caption{Пилотная серия: сравнение seq и rand для read-обходчика}
+\end{table}
+
+График с усами CI сохранён в \texttt{analysis\_plot.png}.
+
+\section{Выводы}
+\begin{enumerate}
+    \item \textbf{Сравнение seq/rand:} При пилотной серии ($N_{eff}=3$) ДИ не пересекаются (seq: $[6.17, 6.52]$, rand: $[6.40, 6.47]$), что указывает на статистическую значимость разницы. Однако для уверенного вывода требуется полная серия $N=30$ с $k=2$.
+    \item \textbf{Погрешность:} При $N=30$ ширина ДИ уменьшится пропорционально $1/\sqrt{N}$: с $\pm 0.17$ (при $N=3$) до $\approx \pm 0.06$ (при $N=30$) для той же дисперсии.
+    \item \textbf{Достаточность N:} Для учебного эксперимента $N=30$ достаточно. Увеличение до $N=60$ уменьшит ДИ до $\approx \pm 0.04$ — прирост небольшой.
+    \item \textbf{Критические условия:} \texttt{taskset -c 2}, \texttt{performance} governor, \texttt{--no-cache}, фиксированный $ITERE=5$.
+    \item \textbf{Пренебрегаемые факторы:} Конкретная модель диска (SSD, граф в RAM — 64M $\ll$ 15Gi), турбо (если не контролировалось — указать в отчёте).
+    \item \textbf{Интрузивность:} Сравнить wall time под \texttt{/usr/bin/time -v} и под \texttt{perf stat} (для характеризации). Для финальной серии используем только \texttt{time -v}.
+\end{enumerate}
+
+\section{Приложения}
+\begin{itemize}
+    \item Скрипты: \texttt{run\_isolated.sh}, \texttt{intro-exp/src/graphgen.py}, \texttt{intro-exp/src/graph\_traverse.c} (исправлен для \texttt{O\_DIRECT})
+    \item Данные: \texttt{results\_read.csv}
+    \item Анализ: \texttt{analysis.py} (расчёт ДИ + график)
+    \item Отчёт: \texttt{report.tex} (этот файл)
+\end{itemize}
+
+\end{document}

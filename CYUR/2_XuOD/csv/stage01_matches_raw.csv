@@ -1,0 +1,1225 @@
+match_id,season,match_date,match_time,matchday,matchday_name,home_team_id,home_team,away_team_id,away_team,home_goals_halftime,away_goals_halftime,home_goals_fulltime,away_goals_fulltime,total_goals,winner,venue_stadium,venue_city,match_finished
+58577,2020,2020-09-18,18:30,1,1. Spieltag,40,FC Bayern München,9,FC Schalke 04,3,0,8,0,8,home,,München,True
+58579,2020,2020-09-19,13:30,1,1. Spieltag,91,Eintracht Frankfurt,83,DSC Arminia Bielefeld,0,0,1,1,2,draw,,Frankfurt,True
+58580,2020,2020-09-19,13:30,1,1. Spieltag,65,1. FC Köln,175,TSG Hoffenheim,1,2,2,3,5,away,,Köln,True
+58582,2020,2020-09-19,13:30,1,1. Spieltag,16,VfB Stuttgart,112,SC Freiburg,0,2,2,3,5,away,,Stuttgart,True
+58583,2020,2020-09-19,13:30,1,1. Spieltag,80,1. FC Union Berlin,95,FC Augsburg,0,1,1,3,4,away,,Berlin,True
+58584,2020,2020-09-19,13:30,1,1. Spieltag,134,SV Werder Bremen,54,Hertha BSC,0,1,1,4,5,away,,Bremen,True
+58578,2020,2020-09-19,16:30,1,1. Spieltag,7,Borussia Dortmund,87,Borussia Mönchengladbach,1,0,3,0,3,home,,Dortmund,True
+58581,2020,2020-09-20,13:30,1,1. Spieltag,1635,RB Leipzig,81,1. FSV Mainz 05,2,0,3,1,4,home,,Leipzig,True
+58585,2020,2020-09-20,16:00,1,1. Spieltag,131,VfL Wolfsburg,6,Bayer 04 Leverkusen,0,0,0,0,0,draw,,Wolfsburg,True
+58591,2020,2020-09-25,18:30,2,2. Spieltag,54,Hertha BSC,91,Eintracht Frankfurt,0,2,1,3,4,away,,Berlin,True
+58586,2020,2020-09-26,13:30,2,2. Spieltag,83,DSC Arminia Bielefeld,65,1. FC Köln,0,0,1,0,1,home,,Bielefeld,True
+58587,2020,2020-09-26,13:30,2,2. Spieltag,95,FC Augsburg,7,Borussia Dortmund,1,0,2,0,2,home,,Augsburg,True
+58588,2020,2020-09-26,13:30,2,2. Spieltag,6,Bayer 04 Leverkusen,1635,RB Leipzig,1,1,1,1,2,draw,,Leverkusen,True
+58589,2020,2020-09-26,13:30,2,2. Spieltag,87,Borussia Mönchengladbach,80,1. FC Union Berlin,0,0,1,1,2,draw,,Mönchengladbach,True
+58593,2020,2020-09-26,13:30,2,2. Spieltag,81,1. FSV Mainz 05,16,VfB Stuttgart,1,1,1,4,5,away,,Mainz,True
+58594,2020,2020-09-26,16:30,2,2. Spieltag,9,FC Schalke 04,134,SV Werder Bremen,0,2,1,3,4,away,,Gelsenkirchen,True
+58592,2020,2020-09-27,13:30,2,2. Spieltag,175,TSG Hoffenheim,40,FC Bayern München,2,1,4,1,5,home,,Hoffenheim,True
+58590,2020,2020-09-27,16:00,2,2. Spieltag,112,SC Freiburg,131,VfL Wolfsburg,1,1,1,1,2,draw,,Freiburg,True
+58603,2020,2020-10-02,18:30,3,3. Spieltag,80,1. FC Union Berlin,81,1. FSV Mainz 05,1,0,4,0,4,home,,Berlin,True
+58596,2020,2020-10-03,13:30,3,3. Spieltag,7,Borussia Dortmund,112,SC Freiburg,1,0,4,0,4,home,,Dortmund,True
+58597,2020,2020-10-03,13:30,3,3. Spieltag,91,Eintracht Frankfurt,175,TSG Hoffenheim,0,1,2,1,3,home,,,True
+58598,2020,2020-10-03,13:30,3,3. Spieltag,65,1. FC Köln,87,Borussia Mönchengladbach,0,2,1,3,4,away,,,True
+58602,2020,2020-10-03,13:30,3,3. Spieltag,16,VfB Stuttgart,6,Bayer 04 Leverkusen,0,1,1,1,2,draw,,,True
+58604,2020,2020-10-03,13:30,3,3. Spieltag,134,SV Werder Bremen,83,DSC Arminia Bielefeld,1,0,1,0,1,home,,,True
+58601,2020,2020-10-03,16:30,3,3. Spieltag,1635,RB Leipzig,9,FC Schalke 04,3,0,4,0,4,home,,Leipzig,True
+58605,2020,2020-10-04,13:30,3,3. Spieltag,131,VfL Wolfsburg,95,FC Augsburg,0,0,0,0,0,draw,,,True
+58595,2020,2020-10-04,16:00,3,3. Spieltag,40,FC Bayern München,54,Hertha BSC,1,0,4,3,7,home,,München,True
+58607,2020,2020-10-17,13:30,4,4. Spieltag,95,FC Augsburg,1635,RB Leipzig,0,1,0,2,2,away,,,True
+58609,2020,2020-10-17,13:30,4,4. Spieltag,112,SC Freiburg,134,SV Werder Bremen,1,1,1,1,2,draw,,,True
+58610,2020,2020-10-17,13:30,4,4. Spieltag,54,Hertha BSC,16,VfB Stuttgart,0,1,0,2,2,away,,,True
+58611,2020,2020-10-17,13:30,4,4. Spieltag,175,TSG Hoffenheim,7,Borussia Dortmund,0,0,0,1,1,away,,Sinsheim,True
+58613,2020,2020-10-17,13:30,4,4. Spieltag,81,1. FSV Mainz 05,6,Bayer 04 Leverkusen,0,1,0,1,1,away,,,True
+58606,2020,2020-10-17,16:30,4,4. Spieltag,83,DSC Arminia Bielefeld,40,FC Bayern München,0,3,1,4,5,away,,,True
+58608,2020,2020-10-17,18:30,4,4. Spieltag,87,Borussia Mönchengladbach,131,VfL Wolfsburg,0,0,1,1,2,draw,,,True
+58612,2020,2020-10-18,13:30,4,4. Spieltag,65,1. FC Köln,91,Eintracht Frankfurt,0,1,1,1,2,draw,,,True
+58614,2020,2020-10-18,16:00,4,4. Spieltag,9,FC Schalke 04,80,1. FC Union Berlin,0,0,1,1,2,draw,,,True
+58620,2020,2020-10-23,18:30,5,5. Spieltag,16,VfB Stuttgart,65,1. FC Köln,1,1,1,1,2,draw,,,True
+58616,2020,2020-10-24,13:30,5,5. Spieltag,40,FC Bayern München,91,Eintracht Frankfurt,2,0,5,0,5,home,,,True
+58618,2020,2020-10-24,13:30,5,5. Spieltag,81,1. FSV Mainz 05,87,Borussia Mönchengladbach,2,1,2,3,5,away,,,True
+58619,2020,2020-10-24,13:30,5,5. Spieltag,1635,RB Leipzig,54,Hertha BSC,1,1,2,1,3,home,,,True
+58621,2020,2020-10-24,13:30,5,5. Spieltag,80,1. FC Union Berlin,112,SC Freiburg,1,1,1,1,2,draw,,,True
+58617,2020,2020-10-24,16:30,5,5. Spieltag,7,Borussia Dortmund,9,FC Schalke 04,0,0,3,0,3,home,,Dortmund,True
+58623,2020,2020-10-25,14:30,5,5. Spieltag,131,VfL Wolfsburg,83,DSC Arminia Bielefeld,2,0,2,1,3,home,,Wolfsburg,True
+58622,2020,2020-10-25,17:00,5,5. Spieltag,134,SV Werder Bremen,175,TSG Hoffenheim,1,1,1,1,2,draw,,,True
+58615,2020,2020-10-26,19:30,5,5. Spieltag,6,Bayer 04 Leverkusen,95,FC Augsburg,1,0,3,1,4,home,,Leverkusen,True
+58632,2020,2020-10-30,19:30,6,6. Spieltag,9,FC Schalke 04,16,VfB Stuttgart,1,0,1,1,2,draw,,,True
+58624,2020,2020-10-31,14:30,6,6. Spieltag,83,DSC Arminia Bielefeld,7,Borussia Dortmund,0,0,0,2,2,away,,,True
+58625,2020,2020-10-31,14:30,6,6. Spieltag,95,FC Augsburg,81,1. FSV Mainz 05,1,0,3,1,4,home,,,True
+58627,2020,2020-10-31,14:30,6,6. Spieltag,91,Eintracht Frankfurt,134,SV Werder Bremen,0,0,1,1,2,draw,,,True
+58631,2020,2020-10-31,14:30,6,6. Spieltag,65,1. FC Köln,40,FC Bayern München,0,2,1,2,3,away,,,True
+58626,2020,2020-10-31,17:30,6,6. Spieltag,87,Borussia Mönchengladbach,1635,RB Leipzig,0,0,1,0,1,home,,,True
+58628,2020,2020-11-01,14:30,6,6. Spieltag,112,SC Freiburg,6,Bayer 04 Leverkusen,1,2,2,4,6,away,,,True
+58629,2020,2020-11-01,17:00,6,6. Spieltag,54,Hertha BSC,131,VfL Wolfsburg,1,1,1,1,2,draw,,,True
+58630,2020,2020-11-02,19:30,6,6. Spieltag,175,TSG Hoffenheim,80,1. FC Union Berlin,0,0,1,3,4,away,,,True
+58640,2020,2020-11-06,19:30,7,7. Spieltag,134,SV Werder Bremen,65,1. FC Köln,0,0,1,1,2,draw,,,True
+58633,2020,2020-11-07,14:30,7,7. Spieltag,95,FC Augsburg,54,Hertha BSC,0,1,0,3,3,away,,,True
+58636,2020,2020-11-07,14:30,7,7. Spieltag,81,1. FSV Mainz 05,9,FC Schalke 04,2,1,2,2,4,draw,,,True
+58637,2020,2020-11-07,14:30,7,7. Spieltag,1635,RB Leipzig,112,SC Freiburg,1,0,3,0,3,home,,,True
+58638,2020,2020-11-07,14:30,7,7. Spieltag,16,VfB Stuttgart,91,Eintracht Frankfurt,2,0,2,2,4,draw,,,True
+58639,2020,2020-11-07,14:30,7,7. Spieltag,80,1. FC Union Berlin,83,DSC Arminia Bielefeld,3,0,5,0,5,home,,,True
+58635,2020,2020-11-07,17:30,7,7. Spieltag,7,Borussia Dortmund,40,FC Bayern München,1,1,2,3,5,away,,,True
+58641,2020,2020-11-08,14:30,7,7. Spieltag,131,VfL Wolfsburg,175,TSG Hoffenheim,2,0,2,1,3,home,,,True
+58634,2020,2020-11-08,17:00,7,7. Spieltag,6,Bayer 04 Leverkusen,87,Borussia Mönchengladbach,2,2,4,3,7,home,,,True
+58642,2020,2020-11-21,14:30,8,8. Spieltag,83,DSC Arminia Bielefeld,6,Bayer 04 Leverkusen,0,1,1,2,3,away,,,True
+58643,2020,2020-11-21,14:30,8,8. Spieltag,40,FC Bayern München,134,SV Werder Bremen,0,1,1,1,2,draw,,,True
+58644,2020,2020-11-21,14:30,8,8. Spieltag,87,Borussia Mönchengladbach,95,FC Augsburg,1,0,1,1,2,draw,,,True
+58648,2020,2020-11-21,14:30,8,8. Spieltag,175,TSG Hoffenheim,16,VfB Stuttgart,1,2,3,3,6,draw,,,True
+58650,2020,2020-11-21,14:30,8,8. Spieltag,9,FC Schalke 04,131,VfL Wolfsburg,0,2,0,2,2,away,,,True
+58645,2020,2020-11-21,17:30,8,8. Spieltag,91,Eintracht Frankfurt,1635,RB Leipzig,1,0,1,1,2,draw,,,True
+58647,2020,2020-11-21,19:30,8,8. Spieltag,54,Hertha BSC,7,Borussia Dortmund,1,0,2,5,7,away,,,True
+58646,2020,2020-11-22,14:30,8,8. Spieltag,112,SC Freiburg,81,1. FSV Mainz 05,0,3,1,3,4,away,,,True
+58649,2020,2020-11-22,17:00,8,8. Spieltag,65,1. FC Köln,80,1. FC Union Berlin,1,1,1,2,3,away,,,True
+58660,2020,2020-11-27,19:30,9,9. Spieltag,131,VfL Wolfsburg,134,SV Werder Bremen,3,2,5,3,8,home,,Wolfsburg,True
+58651,2020,2020-11-28,14:30,9,9. Spieltag,95,FC Augsburg,112,SC Freiburg,0,0,1,1,2,draw,,,True
+58653,2020,2020-11-28,14:30,9,9. Spieltag,7,Borussia Dortmund,65,1. FC Köln,0,1,1,2,3,away,,,True
+58656,2020,2020-11-28,14:30,9,9. Spieltag,1635,RB Leipzig,83,DSC Arminia Bielefeld,1,0,2,1,3,home,,,True
+58657,2020,2020-11-28,14:30,9,9. Spieltag,16,VfB Stuttgart,40,FC Bayern München,1,2,1,3,4,away,,,True
+58658,2020,2020-11-28,14:30,9,9. Spieltag,80,1. FC Union Berlin,91,Eintracht Frankfurt,2,2,3,3,6,draw,,,True
+58654,2020,2020-11-28,17:30,9,9. Spieltag,87,Borussia Mönchengladbach,9,FC Schalke 04,2,1,4,1,5,home,,Mönchengladbach,True
+58652,2020,2020-11-29,14:30,9,9. Spieltag,6,Bayer 04 Leverkusen,54,Hertha BSC,0,0,0,0,0,draw,,Leverkusen,True
+58655,2020,2020-11-29,17:00,9,9. Spieltag,81,1. FSV Mainz 05,175,TSG Hoffenheim,1,0,1,1,2,draw,,Mainz,True
+58665,2020,2020-12-04,19:30,10,10. Spieltag,54,Hertha BSC,80,1. FC Union Berlin,0,1,3,1,4,home,,Berlin,True
+58661,2020,2020-12-05,14:30,10,10. Spieltag,83,DSC Arminia Bielefeld,81,1. FSV Mainz 05,2,0,2,1,3,home,,Bielefeld,True
+58663,2020,2020-12-05,14:30,10,10. Spieltag,91,Eintracht Frankfurt,7,Borussia Dortmund,1,0,1,1,2,draw,,Frankfurt,True
+58664,2020,2020-12-05,14:30,10,10. Spieltag,112,SC Freiburg,87,Borussia Mönchengladbach,1,1,2,2,4,draw,,Freiburg,True
+58667,2020,2020-12-05,14:30,10,10. Spieltag,65,1. FC Köln,131,VfL Wolfsburg,2,1,2,2,4,draw,,Köln,True
+58662,2020,2020-12-05,17:30,10,10. Spieltag,40,FC Bayern München,1635,RB Leipzig,2,2,3,3,6,draw,,München,True
+58669,2020,2020-12-06,14:30,10,10. Spieltag,134,SV Werder Bremen,16,VfB Stuttgart,0,1,1,2,3,away,,Bremen,True
+58668,2020,2020-12-06,17:00,10,10. Spieltag,9,FC Schalke 04,6,Bayer 04 Leverkusen,0,1,0,3,3,away,,Gelsenkirchen,True
+58666,2020,2020-12-07,19:30,10,10. Spieltag,175,TSG Hoffenheim,95,FC Augsburg,1,1,3,1,4,home,,Sinsheim,True
+58678,2020,2020-12-11,19:30,11,11. Spieltag,131,VfL Wolfsburg,91,Eintracht Frankfurt,0,0,2,1,3,home,,Wolfsburg,True
+58672,2020,2020-12-12,14:30,11,11. Spieltag,7,Borussia Dortmund,16,VfB Stuttgart,1,1,1,5,6,away,,Dortmund,True
+58673,2020,2020-12-12,14:30,11,11. Spieltag,87,Borussia Mönchengladbach,54,Hertha BSC,0,0,1,1,2,draw,,Mönchengladbach,True
+58674,2020,2020-12-12,14:30,11,11. Spieltag,112,SC Freiburg,83,DSC Arminia Bielefeld,0,0,2,0,2,home,,Freiburg,True
+58675,2020,2020-12-12,14:30,11,11. Spieltag,81,1. FSV Mainz 05,65,1. FC Köln,0,0,0,1,1,away,,Mainz,True
+58676,2020,2020-12-12,14:30,11,11. Spieltag,1635,RB Leipzig,134,SV Werder Bremen,2,0,2,0,2,home,,Leipzig,True
+58677,2020,2020-12-12,17:30,11,11. Spieltag,80,1. FC Union Berlin,40,FC Bayern München,1,0,1,1,2,draw,,Berlin,True
+58670,2020,2020-12-13,14:30,11,11. Spieltag,95,FC Augsburg,9,FC Schalke 04,1,0,2,2,4,draw,,Augsburg,True
+58671,2020,2020-12-13,17:00,11,11. Spieltag,6,Bayer 04 Leverkusen,175,TSG Hoffenheim,2,0,4,1,5,home,,Leverkusen,True
+58681,2020,2020-12-15,17:30,12,12. Spieltag,91,Eintracht Frankfurt,87,Borussia Mönchengladbach,3,1,3,3,6,draw,,Frankfurt,True
+58682,2020,2020-12-15,19:30,12,12. Spieltag,54,Hertha BSC,81,1. FSV Mainz 05,0,0,0,0,0,draw,,Berlin,True
+58686,2020,2020-12-15,19:30,12,12. Spieltag,16,VfB Stuttgart,80,1. FC Union Berlin,0,1,2,2,4,draw,,Stuttgart,True
+58687,2020,2020-12-15,19:30,12,12. Spieltag,134,SV Werder Bremen,7,Borussia Dortmund,1,1,1,2,3,away,,Bremen,True
+58685,2020,2020-12-16,17:30,12,12. Spieltag,9,FC Schalke 04,112,SC Freiburg,0,0,0,2,2,away,,Gelsenkirchen,True
+58679,2020,2020-12-16,19:30,12,12. Spieltag,83,DSC Arminia Bielefeld,95,FC Augsburg,0,0,0,1,1,away,,Bielefeld,True
+58680,2020,2020-12-16,19:30,12,12. Spieltag,40,FC Bayern München,131,VfL Wolfsburg,1,1,2,1,3,home,,München,True
+58683,2020,2020-12-16,19:30,12,12. Spieltag,175,TSG Hoffenheim,1635,RB Leipzig,0,0,0,1,1,away,,Sinsheim,True
+58684,2020,2020-12-16,19:30,12,12. Spieltag,65,1. FC Köln,6,Bayer 04 Leverkusen,0,2,0,4,4,away,,Köln,True
+58695,2020,2020-12-18,19:30,13,13. Spieltag,80,1. FC Union Berlin,7,Borussia Dortmund,0,0,2,1,3,home,,Berlin,True
+58688,2020,2020-12-19,14:30,13,13. Spieltag,95,FC Augsburg,91,Eintracht Frankfurt,0,0,0,2,2,away,,,True
+58690,2020,2020-12-19,14:30,13,13. Spieltag,87,Borussia Mönchengladbach,175,TSG Hoffenheim,1,0,1,2,3,away,,,True
+58692,2020,2020-12-19,14:30,13,13. Spieltag,81,1. FSV Mainz 05,134,SV Werder Bremen,0,0,0,1,1,away,,,True
+58693,2020,2020-12-19,14:30,13,13. Spieltag,1635,RB Leipzig,65,1. FC Köln,0,0,0,0,0,draw,,,True
+58694,2020,2020-12-19,14:30,13,13. Spieltag,9,FC Schalke 04,83,DSC Arminia Bielefeld,0,0,0,1,1,away,,,True
+58689,2020,2020-12-19,17:30,13,13. Spieltag,6,Bayer 04 Leverkusen,40,FC Bayern München,1,1,1,2,3,away,,,True
+58691,2020,2020-12-20,14:30,13,13. Spieltag,112,SC Freiburg,54,Hertha BSC,1,0,4,1,5,home,,,True
+58696,2020,2020-12-20,17:00,13,13. Spieltag,131,VfL Wolfsburg,16,VfB Stuttgart,0,0,1,0,1,home,,,True
+58697,2020,2021-01-02,14:30,14,14. Spieltag,83,DSC Arminia Bielefeld,87,Borussia Mönchengladbach,0,0,0,1,1,away,,,True
+58700,2020,2021-01-02,14:30,14,14. Spieltag,91,Eintracht Frankfurt,6,Bayer 04 Leverkusen,1,1,2,1,3,home,,,True
+58702,2020,2021-01-02,14:30,14,14. Spieltag,175,TSG Hoffenheim,112,SC Freiburg,0,3,1,3,4,away,,,True
+58703,2020,2021-01-02,14:30,14,14. Spieltag,65,1. FC Köln,95,FC Augsburg,0,0,0,1,1,away,,,True
+58705,2020,2021-01-02,14:30,14,14. Spieltag,134,SV Werder Bremen,80,1. FC Union Berlin,0,2,0,2,2,away,,,True
+58701,2020,2021-01-02,17:30,14,14. Spieltag,54,Hertha BSC,9,FC Schalke 04,1,0,3,0,3,home,,,True
+58704,2020,2021-01-02,19:30,14,14. Spieltag,16,VfB Stuttgart,1635,RB Leipzig,0,0,0,1,1,away,,,True
+58699,2020,2021-01-03,14:30,14,14. Spieltag,7,Borussia Dortmund,131,VfL Wolfsburg,0,0,2,0,2,home,,,True
+58698,2020,2021-01-03,17:00,14,14. Spieltag,40,FC Bayern München,81,1. FSV Mainz 05,0,2,5,2,7,home,,,True
+58709,2020,2021-01-08,19:30,15,15. Spieltag,87,Borussia Mönchengladbach,40,FC Bayern München,2,2,3,2,5,home,,,True
+58708,2020,2021-01-09,14:30,15,15. Spieltag,6,Bayer 04 Leverkusen,134,SV Werder Bremen,0,0,1,1,2,draw,,,True
+58710,2020,2021-01-09,14:30,15,15. Spieltag,112,SC Freiburg,65,1. FC Köln,2,0,5,0,5,home,,,True
+58711,2020,2021-01-09,14:30,15,15. Spieltag,81,1. FSV Mainz 05,91,Eintracht Frankfurt,0,1,0,2,2,away,,,True
+58713,2020,2021-01-09,14:30,15,15. Spieltag,9,FC Schalke 04,175,TSG Hoffenheim,1,0,4,0,4,home,,,True
+58714,2020,2021-01-09,14:30,15,15. Spieltag,80,1. FC Union Berlin,131,VfL Wolfsburg,1,1,2,2,4,draw,,,True
+58712,2020,2021-01-09,17:30,15,15. Spieltag,1635,RB Leipzig,7,Borussia Dortmund,0,0,1,3,4,away,,,True
+58707,2020,2021-01-10,14:30,15,15. Spieltag,95,FC Augsburg,16,VfB Stuttgart,0,2,1,4,5,away,,,True
+58706,2020,2021-01-10,17:00,15,15. Spieltag,83,DSC Arminia Bielefeld,54,Hertha BSC,0,0,1,0,1,home,,,True
+58721,2020,2021-01-15,19:30,16,16. Spieltag,80,1. FC Union Berlin,6,Bayer 04 Leverkusen,0,0,1,0,1,home,,,True
+58716,2020,2021-01-16,14:30,16,16. Spieltag,7,Borussia Dortmund,81,1. FSV Mainz 05,0,0,1,1,2,draw,,,True
+58718,2020,2021-01-16,14:30,16,16. Spieltag,175,TSG Hoffenheim,83,DSC Arminia Bielefeld,0,0,0,0,0,draw,,,True
+58719,2020,2021-01-16,14:30,16,16. Spieltag,65,1. FC Köln,54,Hertha BSC,0,0,0,0,0,draw,,,True
+58722,2020,2021-01-16,14:30,16,16. Spieltag,134,SV Werder Bremen,95,FC Augsburg,0,0,2,0,2,home,,,True
+58723,2020,2021-01-16,14:30,16,16. Spieltag,131,VfL Wolfsburg,1635,RB Leipzig,2,1,2,2,4,draw,,,True
+58720,2020,2021-01-16,17:30,16,16. Spieltag,16,VfB Stuttgart,87,Borussia Mönchengladbach,0,1,2,2,4,draw,,,True
+58715,2020,2021-01-17,14:30,16,16. Spieltag,40,FC Bayern München,112,SC Freiburg,1,0,2,1,3,home,,,True
+58717,2020,2021-01-17,17:00,16,16. Spieltag,91,Eintracht Frankfurt,9,FC Schalke 04,1,1,3,1,4,home,,,True
+58727,2020,2021-01-19,17:30,17,17. Spieltag,87,Borussia Mönchengladbach,134,SV Werder Bremen,0,0,1,0,1,home,,,True
+58726,2020,2021-01-19,19:30,17,17. Spieltag,6,Bayer 04 Leverkusen,7,Borussia Dortmund,1,0,2,1,3,home,,,True
+58729,2020,2021-01-19,19:30,17,17. Spieltag,54,Hertha BSC,175,TSG Hoffenheim,0,1,0,3,3,away,,,True
+58730,2020,2021-01-19,19:30,17,17. Spieltag,81,1. FSV Mainz 05,131,VfL Wolfsburg,0,0,0,2,2,away,,,True
+58732,2020,2021-01-20,17:30,17,17. Spieltag,9,FC Schalke 04,65,1. FC Köln,0,1,1,2,3,away,,,True
+58724,2020,2021-01-20,19:30,17,17. Spieltag,83,DSC Arminia Bielefeld,16,VfB Stuttgart,1,0,3,0,3,home,,,True
+58725,2020,2021-01-20,19:30,17,17. Spieltag,95,FC Augsburg,40,FC Bayern München,0,1,0,1,1,away,,,True
+58728,2020,2021-01-20,19:30,17,17. Spieltag,112,SC Freiburg,91,Eintracht Frankfurt,1,1,2,2,4,draw,,,True
+58731,2020,2021-01-20,19:30,17,17. Spieltag,1635,RB Leipzig,80,1. FC Union Berlin,0,0,1,0,1,home,,,True
+58736,2020,2021-01-22,19:30,18,18. Spieltag,87,Borussia Mönchengladbach,7,Borussia Dortmund,2,2,4,2,6,home,,,True
+58733,2020,2021-01-23,14:30,18,18. Spieltag,83,DSC Arminia Bielefeld,91,Eintracht Frankfurt,1,3,1,5,6,away,,,True
+58734,2020,2021-01-23,14:30,18,18. Spieltag,95,FC Augsburg,80,1. FC Union Berlin,1,1,2,1,3,home,,,True
+58735,2020,2021-01-23,14:30,18,18. Spieltag,6,Bayer 04 Leverkusen,131,VfL Wolfsburg,0,1,0,1,1,away,,,True
+58737,2020,2021-01-23,14:30,18,18. Spieltag,112,SC Freiburg,16,VfB Stuttgart,2,1,2,1,3,home,,,True
+58740,2020,2021-01-23,14:30,18,18. Spieltag,81,1. FSV Mainz 05,1635,RB Leipzig,2,2,3,2,5,home,,,True
+58738,2020,2021-01-23,17:30,18,18. Spieltag,54,Hertha BSC,134,SV Werder Bremen,1,2,1,4,5,away,,,True
+58741,2020,2021-01-24,14:30,18,18. Spieltag,9,FC Schalke 04,40,FC Bayern München,0,1,0,4,4,away,,,True
+58739,2020,2021-01-24,17:00,18,18. Spieltag,175,TSG Hoffenheim,65,1. FC Köln,2,0,3,0,3,home,,,True
+58747,2020,2021-01-29,19:30,19,19. Spieltag,16,VfB Stuttgart,81,1. FSV Mainz 05,0,0,2,0,2,home,,,True
+58742,2020,2021-01-30,14:30,19,19. Spieltag,40,FC Bayern München,175,TSG Hoffenheim,2,1,4,1,5,home,,,True
+58743,2020,2021-01-30,14:30,19,19. Spieltag,7,Borussia Dortmund,95,FC Augsburg,1,1,3,1,4,home,,,True
+58744,2020,2021-01-30,14:30,19,19. Spieltag,91,Eintracht Frankfurt,54,Hertha BSC,0,0,3,1,4,home,,,True
+58748,2020,2021-01-30,14:30,19,19. Spieltag,80,1. FC Union Berlin,87,Borussia Mönchengladbach,1,0,1,1,2,draw,,,True
+58749,2020,2021-01-30,14:30,19,19. Spieltag,134,SV Werder Bremen,9,FC Schalke 04,0,1,1,1,2,draw,,,True
+58746,2020,2021-01-30,17:30,19,19. Spieltag,1635,RB Leipzig,6,Bayer 04 Leverkusen,0,0,1,0,1,home,,,True
+58745,2020,2021-01-31,14:30,19,19. Spieltag,65,1. FC Köln,83,DSC Arminia Bielefeld,2,0,3,1,4,home,,,True
+58750,2020,2021-01-31,17:00,19,19. Spieltag,131,VfL Wolfsburg,112,SC Freiburg,2,0,3,0,3,home,,,True
+58756,2020,2021-02-05,19:00,20,20. Spieltag,54,Hertha BSC,40,FC Bayern München,0,1,0,1,1,away,,,True
+58752,2020,2021-02-06,14:30,20,20. Spieltag,95,FC Augsburg,131,VfL Wolfsburg,0,1,0,2,2,away,,,True
+58753,2020,2021-02-06,14:30,20,20. Spieltag,6,Bayer 04 Leverkusen,16,VfB Stuttgart,2,0,5,2,7,home,,,True
+58755,2020,2021-02-06,14:30,20,20. Spieltag,112,SC Freiburg,7,Borussia Dortmund,0,0,2,1,3,home,,,True
+58758,2020,2021-02-06,14:30,20,20. Spieltag,81,1. FSV Mainz 05,80,1. FC Union Berlin,1,0,1,0,1,home,,,True
+58759,2020,2021-02-06,14:30,20,20. Spieltag,9,FC Schalke 04,1635,RB Leipzig,0,1,0,3,3,away,,,True
+58754,2020,2021-02-06,17:30,20,20. Spieltag,87,Borussia Mönchengladbach,65,1. FC Köln,1,1,1,2,3,away,,,True
+58757,2020,2021-02-07,14:30,20,20. Spieltag,175,TSG Hoffenheim,91,Eintracht Frankfurt,0,1,1,3,4,away,,,True
+58764,2020,2021-02-12,19:30,21,21. Spieltag,1635,RB Leipzig,95,FC Augsburg,2,0,2,1,3,home,,,True
+58760,2020,2021-02-13,14:30,21,21. Spieltag,6,Bayer 04 Leverkusen,81,1. FSV Mainz 05,1,0,2,2,4,draw,,,True
+58762,2020,2021-02-13,14:30,21,21. Spieltag,7,Borussia Dortmund,175,TSG Hoffenheim,1,1,2,2,4,draw,,,True
+58765,2020,2021-02-13,14:30,21,21. Spieltag,16,VfB Stuttgart,54,Hertha BSC,1,0,1,1,2,draw,,,True
+58767,2020,2021-02-13,14:30,21,21. Spieltag,134,SV Werder Bremen,112,SC Freiburg,0,0,0,0,0,draw,,,True
+58766,2020,2021-02-13,17:30,21,21. Spieltag,80,1. FC Union Berlin,9,FC Schalke 04,0,0,0,0,0,draw,,,True
+58763,2020,2021-02-14,14:30,21,21. Spieltag,91,Eintracht Frankfurt,65,1. FC Köln,0,0,2,0,2,home,,,True
+58768,2020,2021-02-14,17:00,21,21. Spieltag,131,VfL Wolfsburg,87,Borussia Mönchengladbach,0,0,0,0,0,draw,,,True
+58761,2020,2021-02-15,19:30,21,21. Spieltag,40,FC Bayern München,83,DSC Arminia Bielefeld,0,2,3,3,6,draw,,,True
+58769,2020,2021-02-19,19:30,22,22. Spieltag,83,DSC Arminia Bielefeld,131,VfL Wolfsburg,0,1,0,3,3,away,,,True
+58771,2020,2021-02-20,14:30,22,22. Spieltag,87,Borussia Mönchengladbach,81,1. FSV Mainz 05,1,1,1,2,3,away,,,True
+58772,2020,2021-02-20,14:30,22,22. Spieltag,91,Eintracht Frankfurt,40,FC Bayern München,2,0,2,1,3,home,,,True
+58773,2020,2021-02-20,14:30,22,22. Spieltag,112,SC Freiburg,80,1. FC Union Berlin,0,0,0,1,1,away,,,True
+58776,2020,2021-02-20,14:30,22,22. Spieltag,65,1. FC Köln,16,VfB Stuttgart,0,0,0,1,1,away,,,True
+58777,2020,2021-02-20,17:30,22,22. Spieltag,9,FC Schalke 04,7,Borussia Dortmund,0,2,0,4,4,away,,,True
+58770,2020,2021-02-21,12:30,22,22. Spieltag,95,FC Augsburg,6,Bayer 04 Leverkusen,1,0,1,1,2,draw,,,True
+58774,2020,2021-02-21,14:30,22,22. Spieltag,54,Hertha BSC,1635,RB Leipzig,0,1,0,3,3,away,,,True
+58775,2020,2021-02-21,17:00,22,22. Spieltag,175,TSG Hoffenheim,134,SV Werder Bremen,2,0,4,0,4,home,,,True
+58785,2020,2021-02-26,19:30,23,23. Spieltag,134,SV Werder Bremen,91,Eintracht Frankfurt,0,1,2,1,3,home,,,True
+58779,2020,2021-02-27,14:30,23,23. Spieltag,40,FC Bayern München,65,1. FC Köln,2,0,5,1,6,home,,,True
+58780,2020,2021-02-27,14:30,23,23. Spieltag,7,Borussia Dortmund,83,DSC Arminia Bielefeld,0,0,3,0,3,home,,,True
+58783,2020,2021-02-27,14:30,23,23. Spieltag,16,VfB Stuttgart,9,FC Schalke 04,3,1,5,1,6,home,,,True
+58786,2020,2021-02-27,14:30,23,23. Spieltag,131,VfL Wolfsburg,54,Hertha BSC,1,0,2,0,2,home,,,True
+58782,2020,2021-02-27,17:30,23,23. Spieltag,1635,RB Leipzig,87,Borussia Mönchengladbach,0,2,3,2,5,home,,,True
+58784,2020,2021-02-28,12:30,23,23. Spieltag,80,1. FC Union Berlin,175,TSG Hoffenheim,1,1,1,1,2,draw,,,True
+58781,2020,2021-02-28,14:30,23,23. Spieltag,81,1. FSV Mainz 05,95,FC Augsburg,0,1,0,1,1,away,,,True
+58778,2020,2021-02-28,17:00,23,23. Spieltag,6,Bayer 04 Leverkusen,112,SC Freiburg,0,0,1,2,3,away,,,True
+58795,2020,2021-03-05,19:30,24,24. Spieltag,9,FC Schalke 04,81,1. FSV Mainz 05,0,0,0,0,0,draw,,,True
+58789,2020,2021-03-06,14:30,24,24. Spieltag,87,Borussia Mönchengladbach,6,Bayer 04 Leverkusen,0,0,0,1,1,away,,,True
+58790,2020,2021-03-06,14:30,24,24. Spieltag,91,Eintracht Frankfurt,16,VfB Stuttgart,0,0,1,1,2,draw,,,True
+58791,2020,2021-03-06,14:30,24,24. Spieltag,112,SC Freiburg,1635,RB Leipzig,0,1,0,3,3,away,,,True
+58792,2020,2021-03-06,14:30,24,24. Spieltag,54,Hertha BSC,95,FC Augsburg,0,1,2,1,3,home,,,True
+58793,2020,2021-03-06,14:30,24,24. Spieltag,175,TSG Hoffenheim,131,VfL Wolfsburg,2,1,2,1,3,home,,,True
+58788,2020,2021-03-06,17:30,24,24. Spieltag,40,FC Bayern München,7,Borussia Dortmund,2,2,4,2,6,home,,,True
+58794,2020,2021-03-07,14:30,24,24. Spieltag,65,1. FC Köln,134,SV Werder Bremen,0,0,1,1,2,draw,,,True
+58787,2020,2021-03-07,17:00,24,24. Spieltag,83,DSC Arminia Bielefeld,80,1. FC Union Berlin,0,0,0,0,0,draw,,,True
+58751,2020,2021-03-10,17:30,20,20. Spieltag,83,DSC Arminia Bielefeld,134,SV Werder Bremen,0,0,0,2,2,away,,Bielefeld,True
+58796,2020,2021-03-12,19:30,25,25. Spieltag,95,FC Augsburg,87,Borussia Mönchengladbach,0,0,3,1,4,home,,,True
+58799,2020,2021-03-13,14:30,25,25. Spieltag,81,1. FSV Mainz 05,112,SC Freiburg,0,0,1,0,1,home,,,True
+58802,2020,2021-03-13,14:30,25,25. Spieltag,80,1. FC Union Berlin,65,1. FC Köln,0,1,2,1,3,home,,,True
+58803,2020,2021-03-13,14:30,25,25. Spieltag,134,SV Werder Bremen,40,FC Bayern München,0,2,1,3,4,away,,,True
+58804,2020,2021-03-13,14:30,25,25. Spieltag,131,VfL Wolfsburg,9,FC Schalke 04,1,0,5,0,5,home,,,True
+58798,2020,2021-03-13,17:30,25,25. Spieltag,7,Borussia Dortmund,54,Hertha BSC,0,0,2,0,2,home,,,True
+58797,2020,2021-03-14,12:30,25,25. Spieltag,6,Bayer 04 Leverkusen,83,DSC Arminia Bielefeld,0,1,1,2,3,away,,,True
+58800,2020,2021-03-14,14:30,25,25. Spieltag,1635,RB Leipzig,91,Eintracht Frankfurt,0,0,1,1,2,draw,,,True
+58801,2020,2021-03-14,17:00,25,25. Spieltag,16,VfB Stuttgart,175,TSG Hoffenheim,1,0,2,0,2,home,,,True
+58805,2020,2021-03-19,19:30,26,26. Spieltag,83,DSC Arminia Bielefeld,1635,RB Leipzig,0,0,0,1,1,away,,,True
+58806,2020,2021-03-20,14:30,26,26. Spieltag,40,FC Bayern München,16,VfB Stuttgart,4,0,4,0,4,home,,,True
+58807,2020,2021-03-20,14:30,26,26. Spieltag,91,Eintracht Frankfurt,80,1. FC Union Berlin,4,2,5,2,7,home,,,True
+58811,2020,2021-03-20,14:30,26,26. Spieltag,65,1. FC Köln,7,Borussia Dortmund,1,1,2,2,4,draw,,,True
+58813,2020,2021-03-20,14:30,26,26. Spieltag,134,SV Werder Bremen,131,VfL Wolfsburg,1,2,1,2,3,away,,,True
+58812,2020,2021-03-20,17:30,26,26. Spieltag,9,FC Schalke 04,87,Borussia Mönchengladbach,0,1,0,3,3,away,,,True
+58810,2020,2021-03-21,12:30,26,26. Spieltag,175,TSG Hoffenheim,81,1. FSV Mainz 05,1,2,1,2,3,away,,,True
+58809,2020,2021-03-21,14:30,26,26. Spieltag,54,Hertha BSC,6,Bayer 04 Leverkusen,3,0,3,0,3,home,,,True
+58808,2020,2021-03-21,17:00,26,26. Spieltag,112,SC Freiburg,95,FC Augsburg,0,0,2,0,2,home,,,True
+58814,2020,2021-04-03,13:30,27,27. Spieltag,95,FC Augsburg,175,TSG Hoffenheim,2,0,2,1,3,home,,,True
+58815,2020,2021-04-03,13:30,27,27. Spieltag,6,Bayer 04 Leverkusen,9,FC Schalke 04,1,0,2,1,3,home,,,True
+58816,2020,2021-04-03,13:30,27,27. Spieltag,7,Borussia Dortmund,91,Eintracht Frankfurt,1,1,1,2,3,away,,,True
+58818,2020,2021-04-03,13:30,27,27. Spieltag,81,1. FSV Mainz 05,83,DSC Arminia Bielefeld,0,0,1,1,2,draw,,,True
+58822,2020,2021-04-03,13:30,27,27. Spieltag,131,VfL Wolfsburg,65,1. FC Köln,0,0,1,0,1,home,,,True
+58819,2020,2021-04-03,16:30,27,27. Spieltag,1635,RB Leipzig,40,FC Bayern München,0,1,0,1,1,away,,,True
+58817,2020,2021-04-03,18:30,27,27. Spieltag,87,Borussia Mönchengladbach,112,SC Freiburg,0,1,2,1,3,home,,,True
+58820,2020,2021-04-04,13:30,27,27. Spieltag,16,VfB Stuttgart,134,SV Werder Bremen,0,0,1,0,1,home,,,True
+58821,2020,2021-04-04,16:00,27,27. Spieltag,80,1. FC Union Berlin,54,Hertha BSC,1,1,1,1,2,draw,,,True
+58823,2020,2021-04-09,18:30,28,28. Spieltag,83,DSC Arminia Bielefeld,112,SC Freiburg,0,0,1,0,1,home,,,True
+58824,2020,2021-04-10,13:30,28,28. Spieltag,40,FC Bayern München,80,1. FC Union Berlin,0,0,1,1,2,draw,,,True
+58825,2020,2021-04-10,13:30,28,28. Spieltag,91,Eintracht Frankfurt,131,VfL Wolfsburg,2,1,4,3,7,home,,,True
+58826,2020,2021-04-10,13:30,28,28. Spieltag,54,Hertha BSC,87,Borussia Mönchengladbach,1,2,2,2,4,draw,,,True
+58831,2020,2021-04-10,13:30,28,28. Spieltag,134,SV Werder Bremen,1635,RB Leipzig,0,3,1,4,5,away,,,True
+58830,2020,2021-04-10,16:30,28,28. Spieltag,16,VfB Stuttgart,7,Borussia Dortmund,1,0,2,3,5,away,,,True
+58829,2020,2021-04-11,13:30,28,28. Spieltag,9,FC Schalke 04,95,FC Augsburg,1,0,1,0,1,home,,,True
+58828,2020,2021-04-11,16:00,28,28. Spieltag,65,1. FC Köln,81,1. FSV Mainz 05,1,1,2,3,5,away,,,True
+58827,2020,2021-04-12,18:30,28,28. Spieltag,175,TSG Hoffenheim,6,Bayer 04 Leverkusen,0,0,0,0,0,draw,,,True
+58838,2020,2021-04-16,18:30,29,29. Spieltag,1635,RB Leipzig,175,TSG Hoffenheim,0,0,0,0,0,draw,,,True
+58832,2020,2021-04-17,13:30,29,29. Spieltag,95,FC Augsburg,83,DSC Arminia Bielefeld,0,0,0,0,0,draw,,,True
+58835,2020,2021-04-17,13:30,29,29. Spieltag,87,Borussia Mönchengladbach,91,Eintracht Frankfurt,1,0,4,0,4,home,,,True
+58836,2020,2021-04-17,13:30,29,29. Spieltag,112,SC Freiburg,9,FC Schalke 04,2,0,4,0,4,home,,,True
+58839,2020,2021-04-17,13:30,29,29. Spieltag,80,1. FC Union Berlin,16,VfB Stuttgart,2,0,2,1,3,home,,,True
+58840,2020,2021-04-17,13:30,29,29. Spieltag,131,VfL Wolfsburg,40,FC Bayern München,1,3,2,3,5,away,,,True
+58833,2020,2021-04-17,16:30,29,29. Spieltag,6,Bayer 04 Leverkusen,65,1. FC Köln,1,0,3,0,3,home,,,True
+58834,2020,2021-04-18,13:30,29,29. Spieltag,7,Borussia Dortmund,134,SV Werder Bremen,3,1,4,1,5,home,,,True
+58847,2020,2021-04-20,16:30,30,30. Spieltag,65,1. FC Köln,1635,RB Leipzig,0,0,2,1,3,home,,,True
+58841,2020,2021-04-20,18:30,30,30. Spieltag,83,DSC Arminia Bielefeld,9,FC Schalke 04,0,0,1,0,1,home,,,True
+58842,2020,2021-04-20,18:30,30,30. Spieltag,40,FC Bayern München,6,Bayer 04 Leverkusen,2,0,2,0,2,home,,,True
+58844,2020,2021-04-20,18:30,30,30. Spieltag,91,Eintracht Frankfurt,95,FC Augsburg,1,0,2,0,2,home,,,True
+58843,2020,2021-04-21,18:30,30,30. Spieltag,7,Borussia Dortmund,80,1. FC Union Berlin,1,0,2,0,2,home,,,True
+58846,2020,2021-04-21,18:30,30,30. Spieltag,175,TSG Hoffenheim,87,Borussia Mönchengladbach,0,2,3,2,5,home,,,True
+58848,2020,2021-04-21,18:30,30,30. Spieltag,16,VfB Stuttgart,131,VfL Wolfsburg,0,2,1,3,4,away,,,True
+58849,2020,2021-04-21,18:30,30,30. Spieltag,134,SV Werder Bremen,81,1. FSV Mainz 05,0,1,0,1,1,away,,,True
+58850,2020,2021-04-23,18:30,31,31. Spieltag,95,FC Augsburg,65,1. FC Köln,0,3,2,3,5,away,,,True
+58853,2020,2021-04-24,13:30,31,31. Spieltag,112,SC Freiburg,175,TSG Hoffenheim,0,1,1,1,2,draw,,,True
+58854,2020,2021-04-24,13:30,31,31. Spieltag,81,1. FSV Mainz 05,40,FC Bayern München,2,0,2,1,3,home,,,True
+58857,2020,2021-04-24,13:30,31,31. Spieltag,80,1. FC Union Berlin,134,SV Werder Bremen,0,0,3,1,4,home,,,True
+58858,2020,2021-04-24,13:30,31,31. Spieltag,131,VfL Wolfsburg,7,Borussia Dortmund,0,1,0,2,2,away,,,True
+58851,2020,2021-04-24,16:30,31,31. Spieltag,6,Bayer 04 Leverkusen,91,Eintracht Frankfurt,0,0,3,1,4,home,,,True
+58855,2020,2021-04-25,13:30,31,31. Spieltag,1635,RB Leipzig,16,VfB Stuttgart,0,0,2,0,2,home,,,True
+58852,2020,2021-04-25,16:00,31,31. Spieltag,87,Borussia Mönchengladbach,83,DSC Arminia Bielefeld,3,0,5,0,5,home,,,True
+58837,2020,2021-05-03,16:00,29,29. Spieltag,81,1. FSV Mainz 05,54,Hertha BSC,1,1,1,1,2,draw,,,True
+58845,2020,2021-05-06,16:30,30,30. Spieltag,54,Hertha BSC,112,SC Freiburg,2,0,3,0,3,home,,,True
+58865,2020,2021-05-07,18:30,32,32. Spieltag,16,VfB Stuttgart,95,FC Augsburg,1,0,2,1,3,home,,,True
+58860,2020,2021-05-08,13:30,32,32. Spieltag,7,Borussia Dortmund,1635,RB Leipzig,1,0,3,2,5,home,,Dortmund,True
+58863,2020,2021-05-08,13:30,32,32. Spieltag,175,TSG Hoffenheim,9,FC Schalke 04,0,2,4,2,6,home,,,True
+58866,2020,2021-05-08,13:30,32,32. Spieltag,134,SV Werder Bremen,6,Bayer 04 Leverkusen,0,0,0,0,0,draw,,,True
+58867,2020,2021-05-08,13:30,32,32. Spieltag,131,VfL Wolfsburg,80,1. FC Union Berlin,1,0,3,0,3,home,,,True
+58859,2020,2021-05-08,16:30,32,32. Spieltag,40,FC Bayern München,87,Borussia Mönchengladbach,4,0,6,0,6,home,,,True
+58864,2020,2021-05-09,11:30,32,32. Spieltag,65,1. FC Köln,112,SC Freiburg,0,2,1,4,5,away,,,True
+58861,2020,2021-05-09,13:30,32,32. Spieltag,91,Eintracht Frankfurt,81,1. FSV Mainz 05,0,1,1,1,2,draw,,,True
+58862,2020,2021-05-09,16:00,32,32. Spieltag,54,Hertha BSC,83,DSC Arminia Bielefeld,0,0,0,0,0,draw,,,True
+58856,2020,2021-05-12,16:00,31,31. Spieltag,9,FC Schalke 04,54,Hertha BSC,1,1,1,2,3,away,,,True
+58868,2020,2021-05-15,13:30,33,33. Spieltag,83,DSC Arminia Bielefeld,175,TSG Hoffenheim,1,1,1,1,2,draw,,,True
+58869,2020,2021-05-15,13:30,33,33. Spieltag,95,FC Augsburg,134,SV Werder Bremen,0,0,2,0,2,home,,,True
+58870,2020,2021-05-15,13:30,33,33. Spieltag,6,Bayer 04 Leverkusen,80,1. FC Union Berlin,1,0,1,1,2,draw,,,True
+58871,2020,2021-05-15,13:30,33,33. Spieltag,87,Borussia Mönchengladbach,16,VfB Stuttgart,1,0,1,2,3,away,,,True
+58872,2020,2021-05-15,13:30,33,33. Spieltag,112,SC Freiburg,40,FC Bayern München,1,1,2,2,4,draw,,,True
+58873,2020,2021-05-15,13:30,33,33. Spieltag,54,Hertha BSC,65,1. FC Köln,0,0,0,0,0,draw,,,True
+58876,2020,2021-05-15,13:30,33,33. Spieltag,9,FC Schalke 04,91,Eintracht Frankfurt,1,1,4,3,7,home,,,True
+58874,2020,2021-05-16,16:00,33,33. Spieltag,81,1. FSV Mainz 05,7,Borussia Dortmund,0,2,1,3,4,away,,,True
+58875,2020,2021-05-16,18:30,33,33. Spieltag,1635,RB Leipzig,131,VfL Wolfsburg,0,2,2,2,4,draw,,,True
+58877,2020,2021-05-22,13:30,34,34. Spieltag,40,FC Bayern München,95,FC Augsburg,4,0,5,2,7,home,,München,True
+58878,2020,2021-05-22,13:30,34,34. Spieltag,7,Borussia Dortmund,6,Bayer 04 Leverkusen,1,0,3,1,4,home,,Dortmund,True
+58879,2020,2021-05-22,13:30,34,34. Spieltag,91,Eintracht Frankfurt,112,SC Freiburg,0,0,3,1,4,home,,Frankfurt,True
+58880,2020,2021-05-22,13:30,34,34. Spieltag,175,TSG Hoffenheim,54,Hertha BSC,0,1,2,1,3,home,,Sinsheim,True
+58881,2020,2021-05-22,13:30,34,34. Spieltag,65,1. FC Köln,9,FC Schalke 04,0,0,1,0,1,home,,Köln,True
+58882,2020,2021-05-22,13:30,34,34. Spieltag,16,VfB Stuttgart,83,DSC Arminia Bielefeld,0,0,0,2,2,away,,Stuttgart,True
+58883,2020,2021-05-22,13:30,34,34. Spieltag,80,1. FC Union Berlin,1635,RB Leipzig,0,0,2,1,3,home,,Berlin,True
+58884,2020,2021-05-22,13:30,34,34. Spieltag,134,SV Werder Bremen,87,Borussia Mönchengladbach,0,1,2,4,6,away,,Bremen,True
+58885,2020,2021-05-22,13:30,34,34. Spieltag,131,VfL Wolfsburg,81,1. FSV Mainz 05,0,1,2,3,5,away,,Wolfsburg,True
+60845,2021,2021-08-13,18:30,1,1. Spieltag,87,Borussia Mönchengladbach,40,FC Bayern München,1,1,1,1,2,draw,,Mönchengladbach,True
+60846,2021,2021-08-14,13:30,1,1. Spieltag,83,DSC Arminia Bielefeld,112,SC Freiburg,0,0,0,0,0,draw,,,True
+60847,2021,2021-08-14,13:30,1,1. Spieltag,95,FC Augsburg,175,TSG Hoffenheim,0,1,0,4,4,away,,,True
+60851,2021,2021-08-14,13:30,1,1. Spieltag,16,VfB Stuttgart,115,SpVgg Greuther Fürth,2,0,5,1,6,home,,,True
+60852,2021,2021-08-14,13:30,1,1. Spieltag,80,1. FC Union Berlin,6,Bayer 04 Leverkusen,1,1,1,1,2,draw,,,True
+60853,2021,2021-08-14,13:30,1,1. Spieltag,131,VfL Wolfsburg,129,VfL Bochum,1,0,1,0,1,home,,,True
+60848,2021,2021-08-14,16:30,1,1. Spieltag,7,Borussia Dortmund,91,Eintracht Frankfurt,3,1,5,2,7,home,,,True
+60850,2021,2021-08-15,13:30,1,1. Spieltag,81,1. FSV Mainz 05,1635,RB Leipzig,1,0,1,0,1,home,,,True
+60849,2021,2021-08-15,15:30,1,1. Spieltag,65,1. FC Köln,54,Hertha BSC,1,1,3,1,4,home,,,True
+60862,2021,2021-08-20,18:30,2,2. Spieltag,1635,RB Leipzig,16,VfB Stuttgart,1,0,4,0,4,home,,,True
+60856,2021,2021-08-21,13:30,2,2. Spieltag,129,VfL Bochum,81,1. FSV Mainz 05,1,0,2,0,2,home,,,True
+60857,2021,2021-08-21,13:30,2,2. Spieltag,91,Eintracht Frankfurt,95,FC Augsburg,0,0,0,0,0,draw,,,True
+60858,2021,2021-08-21,13:30,2,2. Spieltag,112,SC Freiburg,7,Borussia Dortmund,1,0,2,1,3,home,,,True
+60859,2021,2021-08-21,13:30,2,2. Spieltag,115,SpVgg Greuther Fürth,83,DSC Arminia Bielefeld,0,1,1,1,2,draw,,,True
+60860,2021,2021-08-21,13:30,2,2. Spieltag,54,Hertha BSC,131,VfL Wolfsburg,0,0,1,2,3,away,,,True
+60854,2021,2021-08-21,16:30,2,2. Spieltag,6,Bayer 04 Leverkusen,87,Borussia Mönchengladbach,2,0,4,0,4,home,,,True
+60861,2021,2021-08-22,13:30,2,2. Spieltag,175,TSG Hoffenheim,80,1. FC Union Berlin,2,1,2,2,4,draw,,,True
+60855,2021,2021-08-22,15:30,2,2. Spieltag,40,FC Bayern München,65,1. FC Köln,0,0,3,2,5,home,,,True
+60866,2021,2021-08-27,18:30,3,3. Spieltag,7,Borussia Dortmund,175,TSG Hoffenheim,0,0,3,2,5,home,,,True
+60863,2021,2021-08-28,13:30,3,3. Spieltag,83,DSC Arminia Bielefeld,91,Eintracht Frankfurt,0,1,1,1,2,draw,,,True
+60864,2021,2021-08-28,13:30,3,3. Spieltag,95,FC Augsburg,6,Bayer 04 Leverkusen,1,2,1,4,5,away,,,True
+60867,2021,2021-08-28,13:30,3,3. Spieltag,65,1. FC Köln,129,VfL Bochum,0,0,2,1,3,home,,,True
+60868,2021,2021-08-28,13:30,3,3. Spieltag,81,1. FSV Mainz 05,115,SpVgg Greuther Fürth,2,0,3,0,3,home,,,True
+60869,2021,2021-08-28,13:30,3,3. Spieltag,16,VfB Stuttgart,112,SC Freiburg,2,3,2,3,5,away,,,True
+60865,2021,2021-08-28,16:30,3,3. Spieltag,40,FC Bayern München,54,Hertha BSC,2,0,5,0,5,home,,,True
+60870,2021,2021-08-29,13:30,3,3. Spieltag,80,1. FC Union Berlin,87,Borussia Mönchengladbach,2,0,2,1,3,home,,,True
+60871,2021,2021-08-29,15:30,3,3. Spieltag,131,VfL Wolfsburg,1635,RB Leipzig,0,0,1,0,1,home,,,True
+60872,2021,2021-09-11,13:30,4,4. Spieltag,6,Bayer 04 Leverkusen,7,Borussia Dortmund,2,1,3,4,7,away,,,True
+60876,2021,2021-09-11,13:30,4,4. Spieltag,112,SC Freiburg,65,1. FC Köln,0,1,1,1,2,draw,,,True
+60877,2021,2021-09-11,13:30,4,4. Spieltag,115,SpVgg Greuther Fürth,131,VfL Wolfsburg,0,1,0,2,2,away,,,True
+60878,2021,2021-09-11,13:30,4,4. Spieltag,175,TSG Hoffenheim,81,1. FSV Mainz 05,0,1,0,2,2,away,,,True
+60880,2021,2021-09-11,13:30,4,4. Spieltag,80,1. FC Union Berlin,95,FC Augsburg,0,0,0,0,0,draw,,,True
+60879,2021,2021-09-11,16:30,4,4. Spieltag,1635,RB Leipzig,40,FC Bayern München,0,1,1,4,5,away,,,True
+60875,2021,2021-09-12,13:30,4,4. Spieltag,91,Eintracht Frankfurt,16,VfB Stuttgart,0,0,1,1,2,draw,,,True
+60873,2021,2021-09-12,15:30,4,4. Spieltag,129,VfL Bochum,54,Hertha BSC,0,2,1,3,4,away,,,True
+60874,2021,2021-09-12,17:30,4,4. Spieltag,87,Borussia Mönchengladbach,83,DSC Arminia Bielefeld,1,1,3,1,4,home,,,True
+60885,2021,2021-09-17,18:30,5,5. Spieltag,54,Hertha BSC,115,SpVgg Greuther Fürth,0,0,2,1,3,home,,,True
+60881,2021,2021-09-18,13:30,5,5. Spieltag,83,DSC Arminia Bielefeld,175,TSG Hoffenheim,0,0,0,0,0,draw,,,True
+60882,2021,2021-09-18,13:30,5,5. Spieltag,95,FC Augsburg,87,Borussia Mönchengladbach,0,0,1,0,1,home,,,True
+60883,2021,2021-09-18,13:30,5,5. Spieltag,40,FC Bayern München,129,VfL Bochum,4,0,7,0,7,home,,,True
+60887,2021,2021-09-18,13:30,5,5. Spieltag,81,1. FSV Mainz 05,112,SC Freiburg,0,0,0,0,0,draw,,,True
+60886,2021,2021-09-18,16:30,5,5. Spieltag,65,1. FC Köln,1635,RB Leipzig,0,0,1,1,2,draw,,,True
+60888,2021,2021-09-19,13:30,5,5. Spieltag,16,VfB Stuttgart,6,Bayer 04 Leverkusen,1,2,1,3,4,away,,,True
+60884,2021,2021-09-19,15:30,5,5. Spieltag,7,Borussia Dortmund,80,1. FC Union Berlin,2,0,4,2,6,home,,,True
+60889,2021,2021-09-19,17:30,5,5. Spieltag,131,VfL Wolfsburg,91,Eintracht Frankfurt,0,1,1,1,2,draw,,,True
+60895,2021,2021-09-24,18:30,6,6. Spieltag,115,SpVgg Greuther Fürth,40,FC Bayern München,0,2,1,3,4,away,,,True
+60890,2021,2021-09-25,13:30,6,6. Spieltag,6,Bayer 04 Leverkusen,81,1. FSV Mainz 05,0,0,1,0,1,home,,,True
+60893,2021,2021-09-25,13:30,6,6. Spieltag,91,Eintracht Frankfurt,65,1. FC Köln,1,1,1,1,2,draw,,,True
+60896,2021,2021-09-25,13:30,6,6. Spieltag,175,TSG Hoffenheim,131,VfL Wolfsburg,1,1,3,1,4,home,,,True
+60897,2021,2021-09-25,13:30,6,6. Spieltag,1635,RB Leipzig,54,Hertha BSC,3,0,6,0,6,home,,,True
+60898,2021,2021-09-25,13:30,6,6. Spieltag,80,1. FC Union Berlin,83,DSC Arminia Bielefeld,0,0,1,0,1,home,,,True
+60892,2021,2021-09-25,16:30,6,6. Spieltag,87,Borussia Mönchengladbach,7,Borussia Dortmund,1,0,1,0,1,home,,,True
+60891,2021,2021-09-26,13:30,6,6. Spieltag,129,VfL Bochum,16,VfB Stuttgart,0,0,0,0,0,draw,,,True
+60894,2021,2021-09-26,15:30,6,6. Spieltag,112,SC Freiburg,95,FC Augsburg,3,0,3,0,3,home,,,True
+60903,2021,2021-10-01,18:30,7,7. Spieltag,65,1. FC Köln,115,SpVgg Greuther Fürth,0,1,3,1,4,home,,,True
+60901,2021,2021-10-02,13:30,7,7. Spieltag,7,Borussia Dortmund,95,FC Augsburg,1,1,2,1,3,home,,,True
+60902,2021,2021-10-02,13:30,7,7. Spieltag,54,Hertha BSC,112,SC Freiburg,0,1,1,2,3,away,,,True
+60906,2021,2021-10-02,13:30,7,7. Spieltag,16,VfB Stuttgart,175,TSG Hoffenheim,1,0,3,1,4,home,,,True
+60907,2021,2021-10-02,13:30,7,7. Spieltag,131,VfL Wolfsburg,87,Borussia Mönchengladbach,1,2,1,3,4,away,,,True
+60905,2021,2021-10-02,16:30,7,7. Spieltag,1635,RB Leipzig,129,VfL Bochum,0,0,3,0,3,home,,,True
+60904,2021,2021-10-03,13:30,7,7. Spieltag,81,1. FSV Mainz 05,80,1. FC Union Berlin,1,0,1,2,3,away,,,True
+60900,2021,2021-10-03,15:30,7,7. Spieltag,40,FC Bayern München,91,Eintracht Frankfurt,1,1,1,2,3,away,,,True
+60899,2021,2021-10-03,17:30,7,7. Spieltag,83,DSC Arminia Bielefeld,6,Bayer 04 Leverkusen,0,2,0,4,4,away,,,True
+60915,2021,2021-10-15,18:30,8,8. Spieltag,175,TSG Hoffenheim,65,1. FC Köln,1,0,5,0,5,home,,,True
+60910,2021,2021-10-16,13:30,8,8. Spieltag,7,Borussia Dortmund,81,1. FSV Mainz 05,1,0,3,1,4,home,,,True
+60912,2021,2021-10-16,13:30,8,8. Spieltag,91,Eintracht Frankfurt,54,Hertha BSC,0,1,1,2,3,away,,,True
+60913,2021,2021-10-16,13:30,8,8. Spieltag,112,SC Freiburg,1635,RB Leipzig,0,1,1,1,2,draw,,,True
+60914,2021,2021-10-16,13:30,8,8. Spieltag,115,SpVgg Greuther Fürth,129,VfL Bochum,0,0,0,1,1,away,,,True
+60916,2021,2021-10-16,13:30,8,8. Spieltag,80,1. FC Union Berlin,131,VfL Wolfsburg,0,0,2,0,2,home,,,True
+60911,2021,2021-10-16,16:30,8,8. Spieltag,87,Borussia Mönchengladbach,16,VfB Stuttgart,1,1,1,1,2,draw,,,True
+60909,2021,2021-10-17,13:30,8,8. Spieltag,6,Bayer 04 Leverkusen,40,FC Bayern München,0,5,1,5,6,away,,,True
+60908,2021,2021-10-17,15:30,8,8. Spieltag,95,FC Augsburg,83,DSC Arminia Bielefeld,1,0,1,1,2,draw,,,True
+60922,2021,2021-10-22,18:30,9,9. Spieltag,81,1. FSV Mainz 05,95,FC Augsburg,3,0,4,1,5,home,,,True
+60917,2021,2021-10-23,13:30,9,9. Spieltag,83,DSC Arminia Bielefeld,7,Borussia Dortmund,0,2,1,3,4,away,,,True
+60918,2021,2021-10-23,13:30,9,9. Spieltag,40,FC Bayern München,175,TSG Hoffenheim,2,0,4,0,4,home,,,True
+60923,2021,2021-10-23,13:30,9,9. Spieltag,1635,RB Leipzig,115,SpVgg Greuther Fürth,0,1,4,1,5,home,,,True
+60925,2021,2021-10-23,13:30,9,9. Spieltag,131,VfL Wolfsburg,112,SC Freiburg,0,1,0,2,2,away,,,True
+60920,2021,2021-10-23,16:30,9,9. Spieltag,54,Hertha BSC,87,Borussia Mönchengladbach,1,0,1,0,1,home,,,True
+60921,2021,2021-10-24,13:30,9,9. Spieltag,65,1. FC Köln,6,Bayer 04 Leverkusen,0,2,2,2,4,draw,,,True
+60924,2021,2021-10-24,15:30,9,9. Spieltag,16,VfB Stuttgart,80,1. FC Union Berlin,0,1,1,1,2,draw,,,True
+60919,2021,2021-10-24,17:30,9,9. Spieltag,129,VfL Bochum,91,Eintracht Frankfurt,1,0,2,0,2,home,,,True
+60933,2021,2021-10-29,18:30,10,10. Spieltag,175,TSG Hoffenheim,54,Hertha BSC,2,0,2,0,2,home,,,True
+60926,2021,2021-10-30,13:30,10,10. Spieltag,83,DSC Arminia Bielefeld,81,1. FSV Mainz 05,1,1,1,2,3,away,,,True
+60928,2021,2021-10-30,13:30,10,10. Spieltag,6,Bayer 04 Leverkusen,131,VfL Wolfsburg,0,0,0,2,2,away,,,True
+60929,2021,2021-10-30,13:30,10,10. Spieltag,7,Borussia Dortmund,65,1. FC Köln,1,0,2,0,2,home,,,True
+60932,2021,2021-10-30,13:30,10,10. Spieltag,112,SC Freiburg,115,SpVgg Greuther Fürth,2,0,3,1,4,home,,,True
+60934,2021,2021-10-30,13:30,10,10. Spieltag,80,1. FC Union Berlin,40,FC Bayern München,1,3,2,5,7,away,,,True
+60931,2021,2021-10-30,16:30,10,10. Spieltag,91,Eintracht Frankfurt,1635,RB Leipzig,0,1,1,1,2,draw,,,True
+60927,2021,2021-10-31,14:30,10,10. Spieltag,95,FC Augsburg,16,VfB Stuttgart,1,1,4,1,5,home,,,True
+60930,2021,2021-10-31,16:30,10,10. Spieltag,87,Borussia Mönchengladbach,129,VfL Bochum,2,0,2,1,3,home,,,True
+60940,2021,2021-11-05,19:30,11,11. Spieltag,81,1. FSV Mainz 05,87,Borussia Mönchengladbach,0,1,1,1,2,draw,,,True
+60935,2021,2021-11-06,14:30,11,11. Spieltag,40,FC Bayern München,112,SC Freiburg,1,0,2,1,3,home,,,True
+60936,2021,2021-11-06,14:30,11,11. Spieltag,129,VfL Bochum,175,TSG Hoffenheim,0,0,2,0,2,home,,,True
+60942,2021,2021-11-06,14:30,11,11. Spieltag,16,VfB Stuttgart,83,DSC Arminia Bielefeld,0,1,0,1,1,away,,,True
+60943,2021,2021-11-06,14:30,11,11. Spieltag,131,VfL Wolfsburg,95,FC Augsburg,1,0,1,0,1,home,,,True
+60941,2021,2021-11-06,17:30,11,11. Spieltag,1635,RB Leipzig,7,Borussia Dortmund,1,0,2,1,3,home,,,True
+60938,2021,2021-11-07,14:30,11,11. Spieltag,54,Hertha BSC,6,Bayer 04 Leverkusen,1,0,1,1,2,draw,,,True
+60939,2021,2021-11-07,16:30,11,11. Spieltag,65,1. FC Köln,80,1. FC Union Berlin,1,2,2,2,4,draw,,,True
+60937,2021,2021-11-07,18:30,11,11. Spieltag,115,SpVgg Greuther Fürth,91,Eintracht Frankfurt,0,0,1,2,3,away,,,True
+60945,2021,2021-11-19,19:30,12,12. Spieltag,95,FC Augsburg,40,FC Bayern München,2,1,2,1,3,home,,,True
+60944,2021,2021-11-20,14:30,12,12. Spieltag,83,DSC Arminia Bielefeld,131,VfL Wolfsburg,1,0,2,2,4,draw,,,True
+60946,2021,2021-11-20,14:30,12,12. Spieltag,6,Bayer 04 Leverkusen,129,VfL Bochum,1,0,1,0,1,home,,,True
+60947,2021,2021-11-20,14:30,12,12. Spieltag,7,Borussia Dortmund,16,VfB Stuttgart,0,0,2,1,3,home,,,True
+60948,2021,2021-11-20,14:30,12,12. Spieltag,87,Borussia Mönchengladbach,115,SpVgg Greuther Fürth,3,0,4,0,4,home,,,True
+60950,2021,2021-11-20,14:30,12,12. Spieltag,175,TSG Hoffenheim,1635,RB Leipzig,1,0,2,0,2,home,,,True
+60952,2021,2021-11-20,17:30,12,12. Spieltag,80,1. FC Union Berlin,54,Hertha BSC,2,0,2,0,2,home,,,True
+60949,2021,2021-11-21,14:30,12,12. Spieltag,112,SC Freiburg,91,Eintracht Frankfurt,0,2,0,2,2,away,,,True
+60951,2021,2021-11-21,16:30,12,12. Spieltag,81,1. FSV Mainz 05,65,1. FC Köln,1,0,1,1,2,draw,,,True
+60960,2021,2021-11-26,19:30,13,13. Spieltag,16,VfB Stuttgart,81,1. FSV Mainz 05,1,1,2,1,3,home,,,True
+60954,2021,2021-11-27,14:30,13,13. Spieltag,129,VfL Bochum,112,SC Freiburg,0,0,2,1,3,home,,,True
+60956,2021,2021-11-27,14:30,13,13. Spieltag,115,SpVgg Greuther Fürth,175,TSG Hoffenheim,1,2,3,6,9,away,,,True
+60957,2021,2021-11-27,14:30,13,13. Spieltag,54,Hertha BSC,95,FC Augsburg,1,0,1,1,2,draw,,,True
+60958,2021,2021-11-27,14:30,13,13. Spieltag,65,1. FC Köln,87,Borussia Mönchengladbach,0,0,4,1,5,home,,,True
+60961,2021,2021-11-27,14:30,13,13. Spieltag,131,VfL Wolfsburg,7,Borussia Dortmund,1,1,1,3,4,away,,,True
+60953,2021,2021-11-27,17:30,13,13. Spieltag,40,FC Bayern München,83,DSC Arminia Bielefeld,0,0,1,0,1,home,,,True
+60955,2021,2021-11-28,14:30,13,13. Spieltag,91,Eintracht Frankfurt,80,1. FC Union Berlin,1,0,2,1,3,home,,,True
+60959,2021,2021-11-28,16:30,13,13. Spieltag,1635,RB Leipzig,6,Bayer 04 Leverkusen,0,2,1,3,4,away,,,True
+60970,2021,2021-12-03,19:30,14,14. Spieltag,80,1. FC Union Berlin,1635,RB Leipzig,1,1,2,1,3,home,,,True
+60962,2021,2021-12-04,14:30,14,14. Spieltag,83,DSC Arminia Bielefeld,65,1. FC Köln,0,1,1,1,2,draw,,,True
+60963,2021,2021-12-04,14:30,14,14. Spieltag,95,FC Augsburg,129,VfL Bochum,0,3,2,3,5,away,,,True
+60964,2021,2021-12-04,14:30,14,14. Spieltag,6,Bayer 04 Leverkusen,115,SpVgg Greuther Fürth,3,1,7,1,8,home,,,True
+60967,2021,2021-12-04,14:30,14,14. Spieltag,175,TSG Hoffenheim,91,Eintracht Frankfurt,2,1,3,2,5,home,,,True
+60968,2021,2021-12-04,14:30,14,14. Spieltag,81,1. FSV Mainz 05,131,VfL Wolfsburg,2,0,3,0,3,home,,,True
+60965,2021,2021-12-04,17:30,14,14. Spieltag,7,Borussia Dortmund,40,FC Bayern München,1,2,2,3,5,away,,,True
+60969,2021,2021-12-05,14:30,14,14. Spieltag,16,VfB Stuttgart,54,Hertha BSC,2,1,2,2,4,draw,,,True
+60966,2021,2021-12-05,16:30,14,14. Spieltag,87,Borussia Mönchengladbach,112,SC Freiburg,0,6,0,6,6,away,,,True
+60977,2021,2021-12-10,19:30,15,15. Spieltag,65,1. FC Köln,95,FC Augsburg,0,0,0,2,2,away,,,True
+60971,2021,2021-12-11,14:30,15,15. Spieltag,40,FC Bayern München,81,1. FSV Mainz 05,0,1,2,1,3,home,,,True
+60972,2021,2021-12-11,14:30,15,15. Spieltag,129,VfL Bochum,7,Borussia Dortmund,1,0,1,1,2,draw,,,True
+60974,2021,2021-12-11,14:30,15,15. Spieltag,112,SC Freiburg,175,TSG Hoffenheim,1,1,1,2,3,away,,,True
+60976,2021,2021-12-11,14:30,15,15. Spieltag,54,Hertha BSC,83,DSC Arminia Bielefeld,0,0,2,0,2,home,,,True
+60978,2021,2021-12-11,14:30,15,15. Spieltag,1635,RB Leipzig,87,Borussia Mönchengladbach,2,0,4,1,5,home,,,True
+60979,2021,2021-12-11,17:30,15,15. Spieltag,131,VfL Wolfsburg,16,VfB Stuttgart,0,1,0,2,2,away,,,True
+60975,2021,2021-12-12,14:30,15,15. Spieltag,115,SpVgg Greuther Fürth,80,1. FC Union Berlin,0,0,1,0,1,home,,,True
+60973,2021,2021-12-12,16:30,15,15. Spieltag,91,Eintracht Frankfurt,6,Bayer 04 Leverkusen,2,2,5,2,7,home,,,True
+60986,2021,2021-12-14,17:30,16,16. Spieltag,16,VfB Stuttgart,40,FC Bayern München,0,1,0,5,5,away,,,True
+60980,2021,2021-12-14,19:30,16,16. Spieltag,83,DSC Arminia Bielefeld,129,VfL Bochum,0,0,2,0,2,home,,,True
+60985,2021,2021-12-14,19:30,16,16. Spieltag,81,1. FSV Mainz 05,54,Hertha BSC,2,0,4,0,4,home,,,True
+60988,2021,2021-12-14,19:30,16,16. Spieltag,131,VfL Wolfsburg,65,1. FC Köln,1,1,2,3,5,away,,,True
+60984,2021,2021-12-15,17:30,16,16. Spieltag,87,Borussia Mönchengladbach,91,Eintracht Frankfurt,1,1,2,3,5,away,,,True
+60981,2021,2021-12-15,19:30,16,16. Spieltag,95,FC Augsburg,1635,RB Leipzig,0,1,1,1,2,draw,,,True
+60982,2021,2021-12-15,19:30,16,16. Spieltag,6,Bayer 04 Leverkusen,175,TSG Hoffenheim,1,0,2,2,4,draw,,,True
+60983,2021,2021-12-15,19:30,16,16. Spieltag,7,Borussia Dortmund,115,SpVgg Greuther Fürth,1,0,3,0,3,home,,,True
+60987,2021,2021-12-15,19:30,16,16. Spieltag,80,1. FC Union Berlin,112,SC Freiburg,0,0,0,0,0,draw,,,True
+60989,2021,2021-12-17,19:30,17,17. Spieltag,40,FC Bayern München,131,VfL Wolfsburg,1,0,4,0,4,home,,,True
+60990,2021,2021-12-18,14:30,17,17. Spieltag,129,VfL Bochum,80,1. FC Union Berlin,0,1,0,1,1,away,,,True
+60991,2021,2021-12-18,14:30,17,17. Spieltag,91,Eintracht Frankfurt,81,1. FSV Mainz 05,1,0,1,0,1,home,,,True
+60993,2021,2021-12-18,14:30,17,17. Spieltag,115,SpVgg Greuther Fürth,95,FC Augsburg,0,0,0,0,0,draw,,,True
+60995,2021,2021-12-18,14:30,17,17. Spieltag,175,TSG Hoffenheim,87,Borussia Mönchengladbach,0,1,1,1,2,draw,,,True
+60997,2021,2021-12-18,14:30,17,17. Spieltag,1635,RB Leipzig,83,DSC Arminia Bielefeld,0,0,0,2,2,away,,,True
+60994,2021,2021-12-18,17:30,17,17. Spieltag,54,Hertha BSC,7,Borussia Dortmund,0,1,3,2,5,home,,,True
+60992,2021,2021-12-19,14:30,17,17. Spieltag,112,SC Freiburg,6,Bayer 04 Leverkusen,1,1,2,1,3,home,,,True
+60996,2021,2021-12-19,16:30,17,17. Spieltag,65,1. FC Köln,16,VfB Stuttgart,0,0,1,0,1,home,,,True
+60999,2021,2022-01-07,19:30,18,18. Spieltag,40,FC Bayern München,87,Borussia Mönchengladbach,1,2,1,2,3,away,,,True
+60998,2021,2022-01-08,14:30,18,18. Spieltag,6,Bayer 04 Leverkusen,80,1. FC Union Berlin,1,1,2,2,4,draw,,,True
+61002,2021,2022-01-08,14:30,18,18. Spieltag,112,SC Freiburg,83,DSC Arminia Bielefeld,1,0,2,2,4,draw,,,True
+61003,2021,2022-01-08,14:30,18,18. Spieltag,115,SpVgg Greuther Fürth,16,VfB Stuttgart,0,0,0,0,0,draw,,,True
+61005,2021,2022-01-08,14:30,18,18. Spieltag,175,TSG Hoffenheim,95,FC Augsburg,2,1,3,1,4,home,,,True
+61006,2021,2022-01-08,14:30,18,18. Spieltag,1635,RB Leipzig,81,1. FSV Mainz 05,1,0,4,1,5,home,,,True
+61001,2021,2022-01-08,17:30,18,18. Spieltag,91,Eintracht Frankfurt,7,Borussia Dortmund,2,0,2,3,5,away,,,True
+61004,2021,2022-01-09,14:30,18,18. Spieltag,54,Hertha BSC,65,1. FC Köln,0,2,1,3,4,away,,,True
+61000,2021,2022-01-09,16:30,18,18. Spieltag,129,VfL Bochum,131,VfL Wolfsburg,0,0,1,0,1,home,,,True
+61009,2021,2022-01-14,19:30,19,19. Spieltag,7,Borussia Dortmund,112,SC Freiburg,3,0,5,1,6,home,,,True
+61011,2021,2022-01-15,14:30,19,19. Spieltag,65,1. FC Köln,40,FC Bayern München,0,2,0,4,4,away,,,True
+61012,2021,2022-01-15,14:30,19,19. Spieltag,81,1. FSV Mainz 05,129,VfL Bochum,0,0,1,0,1,home,,,True
+61013,2021,2022-01-15,14:30,19,19. Spieltag,16,VfB Stuttgart,1635,RB Leipzig,0,1,0,2,2,away,,,True
+61014,2021,2022-01-15,14:30,19,19. Spieltag,80,1. FC Union Berlin,175,TSG Hoffenheim,1,1,2,1,3,home,,,True
+61015,2021,2022-01-15,14:30,19,19. Spieltag,131,VfL Wolfsburg,54,Hertha BSC,0,0,0,0,0,draw,,,True
+61010,2021,2022-01-15,17:30,19,19. Spieltag,87,Borussia Mönchengladbach,6,Bayer 04 Leverkusen,0,0,1,2,3,away,,,True
+61008,2021,2022-01-16,14:30,19,19. Spieltag,95,FC Augsburg,91,Eintracht Frankfurt,1,1,1,1,2,draw,,,True
+61007,2021,2022-01-16,16:30,19,19. Spieltag,83,DSC Arminia Bielefeld,115,SpVgg Greuther Fürth,1,1,2,2,4,draw,,,True
+61019,2021,2022-01-21,19:30,20,20. Spieltag,91,Eintracht Frankfurt,83,DSC Arminia Bielefeld,0,2,0,2,2,away,,,True
+61016,2021,2022-01-22,14:30,20,20. Spieltag,6,Bayer 04 Leverkusen,95,FC Augsburg,2,0,5,1,6,home,,,True
+61018,2021,2022-01-22,14:30,20,20. Spieltag,87,Borussia Mönchengladbach,80,1. FC Union Berlin,1,1,1,2,3,away,,,True
+61020,2021,2022-01-22,14:30,20,20. Spieltag,112,SC Freiburg,16,VfB Stuttgart,1,0,2,0,2,home,,,True
+61021,2021,2022-01-22,14:30,20,20. Spieltag,115,SpVgg Greuther Fürth,81,1. FSV Mainz 05,1,0,2,1,3,home,,,True
+61023,2021,2022-01-22,14:30,20,20. Spieltag,175,TSG Hoffenheim,7,Borussia Dortmund,1,1,2,3,5,away,,,True
+61017,2021,2022-01-22,17:30,20,20. Spieltag,129,VfL Bochum,65,1. FC Köln,1,2,2,2,4,draw,,,True
+61024,2021,2022-01-23,14:30,20,20. Spieltag,1635,RB Leipzig,131,VfL Wolfsburg,0,0,2,0,2,home,,,True
+61022,2021,2022-01-23,16:30,20,20. Spieltag,54,Hertha BSC,40,FC Bayern München,0,2,1,4,5,away,,,True
+61029,2021,2022-02-04,19:30,21,21. Spieltag,54,Hertha BSC,129,VfL Bochum,1,0,1,1,2,draw,,,True
+61025,2021,2022-02-05,14:30,21,21. Spieltag,83,DSC Arminia Bielefeld,87,Borussia Mönchengladbach,1,1,1,1,2,draw,,,True
+61026,2021,2022-02-05,14:30,21,21. Spieltag,95,FC Augsburg,80,1. FC Union Berlin,1,0,2,0,2,home,,,True
+61030,2021,2022-02-05,14:30,21,21. Spieltag,65,1. FC Köln,112,SC Freiburg,1,0,1,0,1,home,,,True
+61031,2021,2022-02-05,14:30,21,21. Spieltag,81,1. FSV Mainz 05,175,TSG Hoffenheim,0,0,2,0,2,home,,,True
+61032,2021,2022-02-05,14:30,21,21. Spieltag,16,VfB Stuttgart,91,Eintracht Frankfurt,1,1,2,3,5,away,,,True
+61027,2021,2022-02-05,17:30,21,21. Spieltag,40,FC Bayern München,1635,RB Leipzig,2,1,3,2,5,home,,,True
+61028,2021,2022-02-06,14:30,21,21. Spieltag,7,Borussia Dortmund,6,Bayer 04 Leverkusen,1,3,2,5,7,away,,,True
+61033,2021,2022-02-06,16:30,21,21. Spieltag,131,VfL Wolfsburg,115,SpVgg Greuther Fürth,1,1,4,1,5,home,,,True
+61041,2021,2022-02-11,19:30,22,22. Spieltag,1635,RB Leipzig,65,1. FC Köln,1,0,3,1,4,home,,,True
+61035,2021,2022-02-12,14:30,22,22. Spieltag,129,VfL Bochum,40,FC Bayern München,4,1,4,2,6,home,,,True
+61036,2021,2022-02-12,14:30,22,22. Spieltag,87,Borussia Mönchengladbach,95,FC Augsburg,1,0,3,2,5,home,,,True
+61037,2021,2022-02-12,14:30,22,22. Spieltag,91,Eintracht Frankfurt,131,VfL Wolfsburg,0,1,0,2,2,away,,,True
+61038,2021,2022-02-12,14:30,22,22. Spieltag,112,SC Freiburg,81,1. FSV Mainz 05,0,1,1,1,2,draw,,,True
+61039,2021,2022-02-12,14:30,22,22. Spieltag,115,SpVgg Greuther Fürth,54,Hertha BSC,1,0,2,1,3,home,,,True
+61034,2021,2022-02-12,17:30,22,22. Spieltag,6,Bayer 04 Leverkusen,16,VfB Stuttgart,1,0,4,2,6,home,,,True
+61042,2021,2022-02-13,14:30,22,22. Spieltag,80,1. FC Union Berlin,7,Borussia Dortmund,0,2,0,3,3,away,,,True
+61040,2021,2022-02-13,16:30,22,22. Spieltag,175,TSG Hoffenheim,83,DSC Arminia Bielefeld,1,0,2,0,2,home,,,True
+61049,2021,2022-02-18,19:30,23,23. Spieltag,81,1. FSV Mainz 05,6,Bayer 04 Leverkusen,0,1,3,2,5,home,,,True
+61043,2021,2022-02-19,14:30,23,23. Spieltag,83,DSC Arminia Bielefeld,80,1. FC Union Berlin,0,0,1,0,1,home,,,True
+61044,2021,2022-02-19,14:30,23,23. Spieltag,95,FC Augsburg,112,SC Freiburg,1,2,1,2,3,away,,,True
+61050,2021,2022-02-19,14:30,23,23. Spieltag,16,VfB Stuttgart,129,VfL Bochum,0,0,1,1,2,draw,,,True
+61051,2021,2022-02-19,14:30,23,23. Spieltag,131,VfL Wolfsburg,175,TSG Hoffenheim,1,0,1,2,3,away,,,True
+61048,2021,2022-02-19,17:30,23,23. Spieltag,65,1. FC Köln,91,Eintracht Frankfurt,0,0,1,0,1,home,,,True
+61045,2021,2022-02-20,14:30,23,23. Spieltag,40,FC Bayern München,115,SpVgg Greuther Fürth,0,1,4,1,5,home,,,True
+61046,2021,2022-02-20,16:30,23,23. Spieltag,7,Borussia Dortmund,87,Borussia Mönchengladbach,2,0,6,0,6,home,,,True
+61047,2021,2022-02-20,18:30,23,23. Spieltag,54,Hertha BSC,1635,RB Leipzig,0,1,1,6,7,away,,,True
+61059,2021,2022-02-25,19:30,24,24. Spieltag,175,TSG Hoffenheim,16,VfB Stuttgart,0,0,2,1,3,home,,,True
+61053,2021,2022-02-26,14:30,24,24. Spieltag,6,Bayer 04 Leverkusen,83,DSC Arminia Bielefeld,1,0,3,0,3,home,,,True
+61055,2021,2022-02-26,14:30,24,24. Spieltag,87,Borussia Mönchengladbach,131,VfL Wolfsburg,1,2,2,2,4,draw,,,True
+61057,2021,2022-02-26,14:30,24,24. Spieltag,112,SC Freiburg,54,Hertha BSC,1,0,3,0,3,home,,,True
+61058,2021,2022-02-26,14:30,24,24. Spieltag,115,SpVgg Greuther Fürth,65,1. FC Köln,0,0,1,1,2,draw,,,True
+61060,2021,2022-02-26,14:30,24,24. Spieltag,80,1. FC Union Berlin,81,1. FSV Mainz 05,1,0,3,1,4,home,,,True
+61056,2021,2022-02-26,17:30,24,24. Spieltag,91,Eintracht Frankfurt,40,FC Bayern München,0,0,0,1,1,away,,,True
+61054,2021,2022-02-27,14:30,24,24. Spieltag,129,VfL Bochum,1635,RB Leipzig,0,0,0,1,1,away,,,True
+61052,2021,2022-02-27,16:30,24,24. Spieltag,95,FC Augsburg,7,Borussia Dortmund,0,1,1,1,2,draw,,,True
+61061,2021,2022-03-04,19:30,25,25. Spieltag,83,DSC Arminia Bielefeld,95,FC Augsburg,0,0,0,1,1,away,,,True
+61062,2021,2022-03-05,14:30,25,25. Spieltag,40,FC Bayern München,6,Bayer 04 Leverkusen,1,1,1,1,2,draw,,,True
+61063,2021,2022-03-05,14:30,25,25. Spieltag,129,VfL Bochum,115,SpVgg Greuther Fürth,1,0,2,1,3,home,,,True
+61064,2021,2022-03-05,14:30,25,25. Spieltag,54,Hertha BSC,91,Eintracht Frankfurt,0,1,1,4,5,away,,,True
+61067,2021,2022-03-05,14:30,25,25. Spieltag,1635,RB Leipzig,112,SC Freiburg,0,1,1,1,2,draw,,,True
+61069,2021,2022-03-05,14:30,25,25. Spieltag,131,VfL Wolfsburg,80,1. FC Union Berlin,1,0,1,0,1,home,,,True
+61068,2021,2022-03-05,17:30,25,25. Spieltag,16,VfB Stuttgart,87,Borussia Mönchengladbach,1,2,3,2,5,home,,,True
+61065,2021,2022-03-06,16:30,25,25. Spieltag,65,1. FC Köln,175,TSG Hoffenheim,0,0,0,1,1,away,,,True
+61075,2021,2022-03-12,14:30,26,26. Spieltag,112,SC Freiburg,131,VfL Wolfsburg,2,0,3,2,5,home,,,True
+61077,2021,2022-03-12,14:30,26,26. Spieltag,175,TSG Hoffenheim,40,FC Bayern München,1,1,1,1,2,draw,,,True
+61078,2021,2022-03-12,14:30,26,26. Spieltag,80,1. FC Union Berlin,16,VfB Stuttgart,1,0,1,1,2,draw,,,True
+61073,2021,2022-03-12,17:30,26,26. Spieltag,87,Borussia Mönchengladbach,54,Hertha BSC,1,0,2,0,2,home,,,True
+61071,2021,2022-03-13,14:30,26,26. Spieltag,6,Bayer 04 Leverkusen,65,1. FC Köln,0,0,0,1,1,away,,,True
+61072,2021,2022-03-13,16:30,26,26. Spieltag,7,Borussia Dortmund,83,DSC Arminia Bielefeld,1,0,1,0,1,home,,,True
+61074,2021,2022-03-13,16:30,26,26. Spieltag,91,Eintracht Frankfurt,129,VfL Bochum,0,1,2,1,3,home,,,True
+61076,2021,2022-03-13,18:30,26,26. Spieltag,115,SpVgg Greuther Fürth,1635,RB Leipzig,1,4,1,6,7,away,,,True
+61066,2021,2022-03-16,17:30,25,25. Spieltag,81,1. FSV Mainz 05,7,Borussia Dortmund,0,0,0,1,1,away,,,True
+61080,2021,2022-03-18,19:30,27,27. Spieltag,129,VfL Bochum,87,Borussia Mönchengladbach,0,0,0,2,2,away,,,True
+61081,2021,2022-03-19,14:30,27,27. Spieltag,115,SpVgg Greuther Fürth,112,SC Freiburg,0,0,0,0,0,draw,,,True
+61082,2021,2022-03-19,14:30,27,27. Spieltag,54,Hertha BSC,175,TSG Hoffenheim,1,0,3,0,3,home,,,True
+61084,2021,2022-03-19,14:30,27,27. Spieltag,81,1. FSV Mainz 05,83,DSC Arminia Bielefeld,1,0,4,0,4,home,,,True
+61086,2021,2022-03-19,14:30,27,27. Spieltag,16,VfB Stuttgart,95,FC Augsburg,1,2,3,2,5,home,,,True
+61079,2021,2022-03-19,17:30,27,27. Spieltag,40,FC Bayern München,80,1. FC Union Berlin,3,0,4,0,4,home,,,True
+61085,2021,2022-03-20,14:30,27,27. Spieltag,1635,RB Leipzig,91,Eintracht Frankfurt,0,0,0,0,0,draw,,,True
+61087,2021,2022-03-20,16:30,27,27. Spieltag,131,VfL Wolfsburg,6,Bayer 04 Leverkusen,0,0,0,2,2,away,,,True
+61083,2021,2022-03-20,18:30,27,27. Spieltag,65,1. FC Köln,7,Borussia Dortmund,1,1,1,1,2,draw,,,True
+61096,2021,2022-04-01,18:30,28,28. Spieltag,80,1. FC Union Berlin,65,1. FC Köln,0,0,1,0,1,home,,,True
+61088,2021,2022-04-02,13:30,28,28. Spieltag,83,DSC Arminia Bielefeld,16,VfB Stuttgart,0,1,1,1,2,draw,,,True
+61090,2021,2022-04-02,13:30,28,28. Spieltag,6,Bayer 04 Leverkusen,54,Hertha BSC,2,1,2,1,3,home,,,True
+61093,2021,2022-04-02,13:30,28,28. Spieltag,91,Eintracht Frankfurt,115,SpVgg Greuther Fürth,0,0,0,0,0,draw,,,True
+61094,2021,2022-04-02,13:30,28,28. Spieltag,112,SC Freiburg,40,FC Bayern München,0,0,1,4,5,away,,,True
+61095,2021,2022-04-02,13:30,28,28. Spieltag,175,TSG Hoffenheim,129,VfL Bochum,0,1,1,2,3,away,,,True
+61091,2021,2022-04-02,16:30,28,28. Spieltag,7,Borussia Dortmund,1635,RB Leipzig,0,2,1,4,5,away,,,True
+61089,2021,2022-04-03,13:30,28,28. Spieltag,95,FC Augsburg,131,VfL Wolfsburg,1,0,3,0,3,home,,,True
+61092,2021,2022-04-03,15:30,28,28. Spieltag,87,Borussia Mönchengladbach,81,1. FSV Mainz 05,1,0,1,1,2,draw,,,True
+61070,2021,2022-04-06,16:30,26,26. Spieltag,95,FC Augsburg,81,1. FSV Mainz 05,1,0,2,1,3,home,,,True
+61104,2021,2022-04-08,18:30,29,29. Spieltag,16,VfB Stuttgart,7,Borussia Dortmund,0,1,0,2,2,away,,,True
+61097,2021,2022-04-09,13:30,29,29. Spieltag,40,FC Bayern München,95,FC Augsburg,0,0,1,0,1,home,,,True
+61100,2021,2022-04-09,13:30,29,29. Spieltag,115,SpVgg Greuther Fürth,87,Borussia Mönchengladbach,0,2,0,2,2,away,,,True
+61102,2021,2022-04-09,13:30,29,29. Spieltag,65,1. FC Köln,81,1. FSV Mainz 05,0,1,3,2,5,home,,,True
+61105,2021,2022-04-09,13:30,29,29. Spieltag,131,VfL Wolfsburg,83,DSC Arminia Bielefeld,2,0,4,0,4,home,,,True
+61101,2021,2022-04-09,16:30,29,29. Spieltag,54,Hertha BSC,80,1. FC Union Berlin,0,1,1,4,5,away,,,True
+61098,2021,2022-04-10,13:30,29,29. Spieltag,129,VfL Bochum,6,Bayer 04 Leverkusen,0,0,0,0,0,draw,,,True
+61099,2021,2022-04-10,15:30,29,29. Spieltag,91,Eintracht Frankfurt,112,SC Freiburg,0,1,1,2,3,away,,,True
+61103,2021,2022-04-10,17:30,29,29. Spieltag,1635,RB Leipzig,175,TSG Hoffenheim,3,0,3,0,3,home,,,True
+61107,2021,2022-04-16,13:30,30,30. Spieltag,95,FC Augsburg,54,Hertha BSC,0,0,0,1,1,away,,,True
+61109,2021,2022-04-16,13:30,30,30. Spieltag,7,Borussia Dortmund,131,VfL Wolfsburg,5,0,6,1,7,home,,,True
+61111,2021,2022-04-16,13:30,30,30. Spieltag,112,SC Freiburg,129,VfL Bochum,2,0,3,0,3,home,,,True
+61113,2021,2022-04-16,13:30,30,30. Spieltag,81,1. FSV Mainz 05,16,VfB Stuttgart,0,0,0,0,0,draw,,,True
+61110,2021,2022-04-16,16:30,30,30. Spieltag,87,Borussia Mönchengladbach,65,1. FC Köln,0,3,1,3,4,away,,,True
+61106,2021,2022-04-17,13:30,30,30. Spieltag,83,DSC Arminia Bielefeld,40,FC Bayern München,0,2,0,3,3,away,,,True
+61112,2021,2022-04-17,15:30,30,30. Spieltag,175,TSG Hoffenheim,115,SpVgg Greuther Fürth,0,0,0,0,0,draw,,,True
+61114,2021,2022-04-17,15:30,30,30. Spieltag,80,1. FC Union Berlin,91,Eintracht Frankfurt,2,0,2,0,2,home,,,True
+61108,2021,2022-04-17,17:30,30,30. Spieltag,6,Bayer 04 Leverkusen,1635,RB Leipzig,0,0,0,1,1,away,,,True
+61123,2021,2022-04-22,18:30,31,31. Spieltag,131,VfL Wolfsburg,81,1. FSV Mainz 05,5,0,5,0,5,home,,,True
+61117,2021,2022-04-23,13:30,31,31. Spieltag,91,Eintracht Frankfurt,175,TSG Hoffenheim,1,1,2,2,4,draw,,,True
+61118,2021,2022-04-23,13:30,31,31. Spieltag,112,SC Freiburg,87,Borussia Mönchengladbach,0,2,3,3,6,draw,,,True
+61119,2021,2022-04-23,13:30,31,31. Spieltag,115,SpVgg Greuther Fürth,6,Bayer 04 Leverkusen,1,2,1,4,5,away,,,True
+61121,2021,2022-04-23,13:30,31,31. Spieltag,65,1. FC Köln,83,DSC Arminia Bielefeld,2,1,3,1,4,home,,,True
+61122,2021,2022-04-23,13:30,31,31. Spieltag,1635,RB Leipzig,80,1. FC Union Berlin,0,0,1,2,3,away,,,True
+61115,2021,2022-04-23,16:30,31,31. Spieltag,40,FC Bayern München,7,Borussia Dortmund,2,0,3,1,4,home,,,True
+61116,2021,2022-04-24,13:30,31,31. Spieltag,129,VfL Bochum,95,FC Augsburg,0,2,0,2,2,away,,,True
+61120,2021,2022-04-24,15:30,31,31. Spieltag,54,Hertha BSC,16,VfB Stuttgart,1,0,2,0,2,home,,,True
+61132,2021,2022-04-29,18:30,32,32. Spieltag,80,1. FC Union Berlin,115,SpVgg Greuther Fürth,0,1,1,1,2,draw,,,True
+61124,2021,2022-04-30,13:30,32,32. Spieltag,83,DSC Arminia Bielefeld,54,Hertha BSC,0,0,1,1,2,draw,,,True
+61125,2021,2022-04-30,13:30,32,32. Spieltag,95,FC Augsburg,65,1. FC Köln,0,2,1,4,5,away,,,True
+61127,2021,2022-04-30,13:30,32,32. Spieltag,7,Borussia Dortmund,129,VfL Bochum,2,2,3,4,7,away,,,True
+61130,2021,2022-04-30,13:30,32,32. Spieltag,81,1. FSV Mainz 05,40,FC Bayern München,2,1,3,1,4,home,,,True
+61131,2021,2022-04-30,13:30,32,32. Spieltag,16,VfB Stuttgart,131,VfL Wolfsburg,0,1,1,1,2,draw,,,True
+61129,2021,2022-04-30,16:30,32,32. Spieltag,175,TSG Hoffenheim,112,SC Freiburg,1,1,3,4,7,away,,,True
+61126,2021,2022-05-02,18:30,32,32. Spieltag,6,Bayer 04 Leverkusen,91,Eintracht Frankfurt,1,0,2,0,2,home,,,True
+61128,2021,2022-05-02,18:30,32,32. Spieltag,87,Borussia Mönchengladbach,1635,RB Leipzig,2,1,3,1,4,home,,,True
+61134,2021,2022-05-06,18:30,33,33. Spieltag,129,VfL Bochum,83,DSC Arminia Bielefeld,1,1,2,1,3,home,,,True
+61136,2021,2022-05-07,13:30,33,33. Spieltag,112,SC Freiburg,80,1. FC Union Berlin,0,3,1,4,5,away,,,True
+61137,2021,2022-05-07,13:30,33,33. Spieltag,115,SpVgg Greuther Fürth,7,Borussia Dortmund,0,1,1,3,4,away,,,True
+61139,2021,2022-05-07,13:30,33,33. Spieltag,175,TSG Hoffenheim,6,Bayer 04 Leverkusen,2,1,2,4,6,away,,,True
+61140,2021,2022-05-07,13:30,33,33. Spieltag,65,1. FC Köln,131,VfL Wolfsburg,0,1,0,1,1,away,,,True
+61138,2021,2022-05-07,16:30,33,33. Spieltag,54,Hertha BSC,81,1. FSV Mainz 05,1,1,1,2,3,away,,,True
+61135,2021,2022-05-08,13:30,33,33. Spieltag,91,Eintracht Frankfurt,87,Borussia Mönchengladbach,0,1,1,1,2,draw,,,True
+61133,2021,2022-05-08,15:30,33,33. Spieltag,40,FC Bayern München,16,VfB Stuttgart,2,1,2,2,4,draw,,,True
+61141,2021,2022-05-08,17:30,33,33. Spieltag,1635,RB Leipzig,95,FC Augsburg,1,0,4,0,4,home,,,True
+61142,2021,2022-05-14,13:30,34,34. Spieltag,83,DSC Arminia Bielefeld,1635,RB Leipzig,0,0,1,1,2,draw,,,True
+61143,2021,2022-05-14,13:30,34,34. Spieltag,95,FC Augsburg,115,SpVgg Greuther Fürth,1,1,2,1,3,home,,,True
+61144,2021,2022-05-14,13:30,34,34. Spieltag,6,Bayer 04 Leverkusen,112,SC Freiburg,0,0,2,1,3,home,,,True
+61145,2021,2022-05-14,13:30,34,34. Spieltag,7,Borussia Dortmund,54,Hertha BSC,0,1,2,1,3,home,,,True
+61146,2021,2022-05-14,13:30,34,34. Spieltag,87,Borussia Mönchengladbach,175,TSG Hoffenheim,3,1,5,1,6,home,,,True
+61147,2021,2022-05-14,13:30,34,34. Spieltag,81,1. FSV Mainz 05,91,Eintracht Frankfurt,1,2,2,2,4,draw,,,True
+61148,2021,2022-05-14,13:30,34,34. Spieltag,16,VfB Stuttgart,65,1. FC Köln,1,0,2,1,3,home,,,True
+61149,2021,2022-05-14,13:30,34,34. Spieltag,80,1. FC Union Berlin,129,VfL Bochum,2,0,3,2,5,home,,,True
+61150,2021,2022-05-14,13:30,34,34. Spieltag,131,VfL Wolfsburg,40,FC Bayern München,1,2,2,2,4,draw,,,True
+63864,2022,2022-08-05,18:30,1,1. Spieltag,91,Eintracht Frankfurt,40,FC Bayern München,0,5,1,6,7,away,,Frankfurt,True
+63865,2022,2022-08-06,13:30,1,1. Spieltag,95,FC Augsburg,112,SC Freiburg,0,0,0,4,4,away,,Augsburg,True
+63866,2022,2022-08-06,13:30,1,1. Spieltag,129,VfL Bochum,81,1. FSV Mainz 05,1,1,1,2,3,away,,,True
+63868,2022,2022-08-06,13:30,1,1. Spieltag,87,Borussia Mönchengladbach,175,TSG Hoffenheim,1,1,3,1,4,home,,,True
+63871,2022,2022-08-06,13:30,1,1. Spieltag,80,1. FC Union Berlin,54,Hertha BSC,1,0,3,1,4,home,,Berlin,True
+63872,2022,2022-08-06,13:30,1,1. Spieltag,131,VfL Wolfsburg,134,SV Werder Bremen,1,2,2,2,4,draw,,,True
+63867,2022,2022-08-06,16:30,1,1. Spieltag,7,Borussia Dortmund,6,Bayer 04 Leverkusen,1,0,1,0,1,home,,,True
+63870,2022,2022-08-07,13:30,1,1. Spieltag,16,VfB Stuttgart,1635,RB Leipzig,1,1,1,1,2,draw,,,True
+63869,2022,2022-08-07,15:30,1,1. Spieltag,65,1. FC Köln,9,FC Schalke 04,0,0,3,1,4,home,,,True
+63875,2022,2022-08-12,18:30,2,2. Spieltag,112,SC Freiburg,7,Borussia Dortmund,1,0,1,3,4,away,,,True
+63873,2022,2022-08-13,13:30,2,2. Spieltag,6,Bayer 04 Leverkusen,95,FC Augsburg,1,1,1,2,3,away,,,True
+63876,2022,2022-08-13,13:30,2,2. Spieltag,54,Hertha BSC,91,Eintracht Frankfurt,1,0,1,1,2,draw,,,True
+63877,2022,2022-08-13,13:30,2,2. Spieltag,175,TSG Hoffenheim,129,VfL Bochum,2,2,3,2,5,home,,,True
+63879,2022,2022-08-13,13:30,2,2. Spieltag,1635,RB Leipzig,65,1. FC Köln,1,1,2,2,4,draw,,,True
+63881,2022,2022-08-13,13:30,2,2. Spieltag,134,SV Werder Bremen,16,VfB Stuttgart,1,1,2,2,4,draw,,,True
+63880,2022,2022-08-13,16:30,2,2. Spieltag,9,FC Schalke 04,87,Borussia Mönchengladbach,1,0,2,2,4,draw,,,True
+63878,2022,2022-08-14,13:30,2,2. Spieltag,81,1. FSV Mainz 05,80,1. FC Union Berlin,0,0,0,0,0,draw,,,True
+63874,2022,2022-08-14,15:30,2,2. Spieltag,40,FC Bayern München,131,VfL Wolfsburg,2,0,2,0,2,home,,,True
+63886,2022,2022-08-19,18:30,3,3. Spieltag,87,Borussia Mönchengladbach,54,Hertha BSC,1,0,1,0,1,home,,,True
+63882,2022,2022-08-20,13:30,3,3. Spieltag,95,FC Augsburg,81,1. FSV Mainz 05,1,1,1,2,3,away,,,True
+63883,2022,2022-08-20,13:30,3,3. Spieltag,6,Bayer 04 Leverkusen,175,TSG Hoffenheim,0,2,0,3,3,away,,,True
+63885,2022,2022-08-20,13:30,3,3. Spieltag,7,Borussia Dortmund,134,SV Werder Bremen,1,0,2,3,5,away,,,True
+63888,2022,2022-08-20,13:30,3,3. Spieltag,16,VfB Stuttgart,112,SC Freiburg,0,1,0,1,1,away,,,True
+63890,2022,2022-08-20,13:30,3,3. Spieltag,131,VfL Wolfsburg,9,FC Schalke 04,0,0,0,0,0,draw,,,True
+63889,2022,2022-08-20,16:30,3,3. Spieltag,80,1. FC Union Berlin,1635,RB Leipzig,2,0,2,1,3,home,,,True
+63887,2022,2022-08-21,13:30,3,3. Spieltag,91,Eintracht Frankfurt,65,1. FC Köln,0,0,1,1,2,draw,,,True
+63884,2022,2022-08-21,15:30,3,3. Spieltag,129,VfL Bochum,40,FC Bayern München,0,4,0,7,7,away,,,True
+63892,2022,2022-08-26,18:30,4,4. Spieltag,112,SC Freiburg,129,VfL Bochum,0,0,1,0,1,home,,,True
+63893,2022,2022-08-27,13:30,4,4. Spieltag,54,Hertha BSC,7,Borussia Dortmund,0,1,0,1,1,away,,,True
+63894,2022,2022-08-27,13:30,4,4. Spieltag,175,TSG Hoffenheim,95,FC Augsburg,1,0,1,0,1,home,,,True
+63896,2022,2022-08-27,13:30,4,4. Spieltag,81,1. FSV Mainz 05,6,Bayer 04 Leverkusen,0,3,0,3,3,away,,,True
+63897,2022,2022-08-27,13:30,4,4. Spieltag,1635,RB Leipzig,131,VfL Wolfsburg,1,0,2,0,2,home,,,True
+63898,2022,2022-08-27,13:30,4,4. Spieltag,9,FC Schalke 04,80,1. FC Union Berlin,1,3,1,6,7,away,,,True
+63891,2022,2022-08-27,16:30,4,4. Spieltag,40,FC Bayern München,87,Borussia Mönchengladbach,0,1,1,1,2,draw,,,True
+63895,2022,2022-08-28,13:30,4,4. Spieltag,65,1. FC Köln,16,VfB Stuttgart,0,0,0,0,0,draw,,,True
+63899,2022,2022-08-28,15:30,4,4. Spieltag,134,SV Werder Bremen,91,Eintracht Frankfurt,2,3,3,4,7,away,,,True
+63904,2022,2022-09-02,18:30,5,5. Spieltag,7,Borussia Dortmund,175,TSG Hoffenheim,1,0,1,0,1,home,,,True
+63902,2022,2022-09-03,13:30,5,5. Spieltag,6,Bayer 04 Leverkusen,112,SC Freiburg,1,0,2,3,5,away,,,True
+63903,2022,2022-09-03,13:30,5,5. Spieltag,129,VfL Bochum,134,SV Werder Bremen,0,0,0,2,2,away,,,True
+63907,2022,2022-09-03,13:30,5,5. Spieltag,16,VfB Stuttgart,9,FC Schalke 04,1,1,1,1,2,draw,,,True
+63908,2022,2022-09-03,13:30,5,5. Spieltag,80,1. FC Union Berlin,40,FC Bayern München,1,1,1,1,2,draw,,,True
+63909,2022,2022-09-03,13:30,5,5. Spieltag,131,VfL Wolfsburg,65,1. FC Köln,1,3,2,4,6,away,,,True
+63906,2022,2022-09-03,16:30,5,5. Spieltag,91,Eintracht Frankfurt,1635,RB Leipzig,2,0,4,0,4,home,,,True
+63900,2022,2022-09-04,13:30,5,5. Spieltag,95,FC Augsburg,54,Hertha BSC,0,0,0,2,2,away,,,True
+63905,2022,2022-09-04,15:30,5,5. Spieltag,87,Borussia Mönchengladbach,81,1. FSV Mainz 05,0,0,0,1,1,away,,,True
+63918,2022,2022-09-09,18:30,6,6. Spieltag,134,SV Werder Bremen,95,FC Augsburg,0,0,0,1,1,away,,,True
+63910,2022,2022-09-10,13:30,6,6. Spieltag,40,FC Bayern München,16,VfB Stuttgart,1,0,2,2,4,draw,,,True
+63911,2022,2022-09-10,13:30,6,6. Spieltag,91,Eintracht Frankfurt,131,VfL Wolfsburg,0,0,0,1,1,away,,,True
+63913,2022,2022-09-10,13:30,6,6. Spieltag,54,Hertha BSC,6,Bayer 04 Leverkusen,0,0,2,2,4,draw,,,True
+63914,2022,2022-09-10,13:30,6,6. Spieltag,175,TSG Hoffenheim,81,1. FSV Mainz 05,0,0,4,1,5,home,,,True
+63916,2022,2022-09-10,13:30,6,6. Spieltag,1635,RB Leipzig,7,Borussia Dortmund,2,0,3,0,3,home,,,True
+63917,2022,2022-09-10,16:30,6,6. Spieltag,9,FC Schalke 04,129,VfL Bochum,1,0,3,1,4,home,,,True
+63915,2022,2022-09-11,13:30,6,6. Spieltag,65,1. FC Köln,80,1. FC Union Berlin,0,1,0,1,1,away,,,True
+63912,2022,2022-09-11,15:30,6,6. Spieltag,112,SC Freiburg,87,Borussia Mönchengladbach,0,0,0,0,0,draw,,,True
+63925,2022,2022-09-16,18:30,7,7. Spieltag,81,1. FSV Mainz 05,54,Hertha BSC,0,1,1,1,2,draw,,,True
+63919,2022,2022-09-17,13:30,7,7. Spieltag,95,FC Augsburg,40,FC Bayern München,0,0,1,0,1,home,,,True
+63920,2022,2022-09-17,13:30,7,7. Spieltag,6,Bayer 04 Leverkusen,134,SV Werder Bremen,0,0,1,1,2,draw,,,True
+63922,2022,2022-09-17,13:30,7,7. Spieltag,7,Borussia Dortmund,9,FC Schalke 04,0,0,1,0,1,home,,,True
+63926,2022,2022-09-17,13:30,7,7. Spieltag,16,VfB Stuttgart,91,Eintracht Frankfurt,0,1,1,3,4,away,,,True
+63923,2022,2022-09-17,16:30,7,7. Spieltag,87,Borussia Mönchengladbach,1635,RB Leipzig,2,0,3,0,3,home,,,True
+63927,2022,2022-09-18,13:30,7,7. Spieltag,80,1. FC Union Berlin,131,VfL Wolfsburg,0,0,2,0,2,home,,,True
+63921,2022,2022-09-18,15:30,7,7. Spieltag,129,VfL Bochum,65,1. FC Köln,1,0,1,1,2,draw,,,True
+63924,2022,2022-09-18,17:30,7,7. Spieltag,175,TSG Hoffenheim,112,SC Freiburg,0,0,0,0,0,draw,,,True
+63928,2022,2022-09-30,18:30,8,8. Spieltag,40,FC Bayern München,6,Bayer 04 Leverkusen,3,0,4,0,4,home,,,True
+63929,2022,2022-10-01,13:30,8,8. Spieltag,91,Eintracht Frankfurt,80,1. FC Union Berlin,2,0,2,0,2,home,,,True
+63930,2022,2022-10-01,13:30,8,8. Spieltag,112,SC Freiburg,81,1. FSV Mainz 05,2,0,2,1,3,home,,,True
+63932,2022,2022-10-01,13:30,8,8. Spieltag,65,1. FC Köln,7,Borussia Dortmund,0,1,3,2,5,home,,,True
+63933,2022,2022-10-01,13:30,8,8. Spieltag,1635,RB Leipzig,129,VfL Bochum,2,0,4,0,4,home,,,True
+63936,2022,2022-10-01,13:30,8,8. Spieltag,131,VfL Wolfsburg,16,VfB Stuttgart,2,2,3,2,5,home,,,True
+63935,2022,2022-10-01,16:30,8,8. Spieltag,134,SV Werder Bremen,87,Borussia Mönchengladbach,4,0,5,1,6,home,,,True
+63931,2022,2022-10-02,13:30,8,8. Spieltag,54,Hertha BSC,175,TSG Hoffenheim,1,1,1,1,2,draw,,,True
+63934,2022,2022-10-02,15:30,8,8. Spieltag,9,FC Schalke 04,95,FC Augsburg,1,2,2,3,5,away,,,True
+63943,2022,2022-10-07,18:30,9,9. Spieltag,175,TSG Hoffenheim,134,SV Werder Bremen,1,1,1,2,3,away,,,True
+63937,2022,2022-10-08,13:30,9,9. Spieltag,95,FC Augsburg,131,VfL Wolfsburg,0,1,1,1,2,draw,,,True
+63938,2022,2022-10-08,13:30,9,9. Spieltag,6,Bayer 04 Leverkusen,9,FC Schalke 04,2,0,4,0,4,home,,,True
+63939,2022,2022-10-08,13:30,9,9. Spieltag,129,VfL Bochum,91,Eintracht Frankfurt,0,0,3,0,3,home,,,True
+63944,2022,2022-10-08,13:30,9,9. Spieltag,81,1. FSV Mainz 05,1635,RB Leipzig,1,0,1,1,2,draw,,,True
+63940,2022,2022-10-08,16:30,9,9. Spieltag,7,Borussia Dortmund,40,FC Bayern München,0,1,2,2,4,draw,,,True
+63941,2022,2022-10-09,13:30,9,9. Spieltag,87,Borussia Mönchengladbach,65,1. FC Köln,2,1,5,2,7,home,,,True
+63942,2022,2022-10-09,15:30,9,9. Spieltag,54,Hertha BSC,112,SC Freiburg,1,1,2,2,4,draw,,,True
+63945,2022,2022-10-09,17:30,9,9. Spieltag,16,VfB Stuttgart,80,1. FC Union Berlin,0,0,0,1,1,away,,,True
+63950,2022,2022-10-14,18:30,10,10. Spieltag,9,FC Schalke 04,175,TSG Hoffenheim,0,2,0,3,3,away,,,True
+63947,2022,2022-10-15,13:30,10,10. Spieltag,91,Eintracht Frankfurt,6,Bayer 04 Leverkusen,1,0,5,1,6,home,,,True
+63951,2022,2022-10-15,13:30,10,10. Spieltag,16,VfB Stuttgart,129,VfL Bochum,2,1,4,1,5,home,,,True
+63953,2022,2022-10-15,13:30,10,10. Spieltag,134,SV Werder Bremen,81,1. FSV Mainz 05,0,1,0,2,2,away,,,True
+63954,2022,2022-10-15,13:30,10,10. Spieltag,131,VfL Wolfsburg,87,Borussia Mönchengladbach,1,1,2,2,4,draw,,,True
+63949,2022,2022-10-15,16:30,10,10. Spieltag,1635,RB Leipzig,54,Hertha BSC,3,0,3,2,5,home,,,True
+63948,2022,2022-10-16,13:30,10,10. Spieltag,65,1. FC Köln,95,FC Augsburg,0,1,3,2,5,home,,,True
+63952,2022,2022-10-16,15:30,10,10. Spieltag,80,1. FC Union Berlin,7,Borussia Dortmund,2,0,2,0,2,home,,,True
+63946,2022,2022-10-16,17:30,10,10. Spieltag,40,FC Bayern München,112,SC Freiburg,2,0,5,0,5,home,,,True
+63963,2022,2022-10-21,18:30,11,11. Spieltag,81,1. FSV Mainz 05,65,1. FC Köln,3,0,5,0,5,home,,,True
+63955,2022,2022-10-22,13:30,11,11. Spieltag,95,FC Augsburg,1635,RB Leipzig,1,0,3,3,6,draw,,,True
+63956,2022,2022-10-22,13:30,11,11. Spieltag,6,Bayer 04 Leverkusen,131,VfL Wolfsburg,1,1,2,2,4,draw,,,True
+63958,2022,2022-10-22,13:30,11,11. Spieltag,7,Borussia Dortmund,16,VfB Stuttgart,3,0,5,0,5,home,,,True
+63960,2022,2022-10-22,13:30,11,11. Spieltag,112,SC Freiburg,134,SV Werder Bremen,0,0,2,0,2,home,,,True
+63962,2022,2022-10-22,13:30,11,11. Spieltag,175,TSG Hoffenheim,40,FC Bayern München,0,2,0,2,2,away,,,True
+63959,2022,2022-10-22,16:30,11,11. Spieltag,87,Borussia Mönchengladbach,91,Eintracht Frankfurt,0,3,1,3,4,away,,,True
+63957,2022,2022-10-23,13:30,11,11. Spieltag,129,VfL Bochum,80,1. FC Union Berlin,1,0,2,1,3,home,,,True
+63961,2022,2022-10-23,15:30,11,11. Spieltag,54,Hertha BSC,9,FC Schalke 04,0,0,2,1,3,home,,,True
+63971,2022,2022-10-28,18:30,12,12. Spieltag,134,SV Werder Bremen,54,Hertha BSC,0,0,1,0,1,home,,,True
+63964,2022,2022-10-29,13:30,12,12. Spieltag,40,FC Bayern München,81,1. FSV Mainz 05,3,1,6,2,8,home,,,True
+63967,2022,2022-10-29,13:30,12,12. Spieltag,1635,RB Leipzig,6,Bayer 04 Leverkusen,1,0,2,0,2,home,,,True
+63969,2022,2022-10-29,13:30,12,12. Spieltag,16,VfB Stuttgart,95,FC Augsburg,1,1,2,1,3,home,,,True
+63972,2022,2022-10-29,13:30,12,12. Spieltag,131,VfL Wolfsburg,129,VfL Bochum,2,0,4,0,4,home,,,True
+63965,2022,2022-10-29,16:30,12,12. Spieltag,91,Eintracht Frankfurt,7,Borussia Dortmund,1,1,1,2,3,away,,,True
+63970,2022,2022-10-30,14:30,12,12. Spieltag,80,1. FC Union Berlin,87,Borussia Mönchengladbach,0,1,2,1,3,home,,,True
+63968,2022,2022-10-30,16:30,12,12. Spieltag,9,FC Schalke 04,112,SC Freiburg,0,1,0,2,2,away,,,True
+63966,2022,2022-10-30,18:30,12,12. Spieltag,65,1. FC Köln,175,TSG Hoffenheim,1,1,1,1,2,draw,,,True
+63976,2022,2022-11-04,19:30,13,13. Spieltag,87,Borussia Mönchengladbach,16,VfB Stuttgart,2,1,3,1,4,home,,,True
+63973,2022,2022-11-05,14:30,13,13. Spieltag,95,FC Augsburg,91,Eintracht Frankfurt,1,1,1,2,3,away,,,True
+63975,2022,2022-11-05,14:30,13,13. Spieltag,7,Borussia Dortmund,129,VfL Bochum,3,0,3,0,3,home,,,True
+63978,2022,2022-11-05,14:30,13,13. Spieltag,54,Hertha BSC,40,FC Bayern München,2,3,2,3,5,away,,,True
+63979,2022,2022-11-05,14:30,13,13. Spieltag,175,TSG Hoffenheim,1635,RB Leipzig,0,1,1,3,4,away,,,True
+63980,2022,2022-11-05,14:30,13,13. Spieltag,81,1. FSV Mainz 05,131,VfL Wolfsburg,0,1,0,3,3,away,,,True
+63981,2022,2022-11-05,17:30,13,13. Spieltag,134,SV Werder Bremen,9,FC Schalke 04,1,0,2,1,3,home,,,True
+63974,2022,2022-11-06,14:30,13,13. Spieltag,6,Bayer 04 Leverkusen,80,1. FC Union Berlin,0,0,5,0,5,home,,,True
+63977,2022,2022-11-06,16:30,13,13. Spieltag,112,SC Freiburg,65,1. FC Köln,0,0,2,0,2,home,,,True
+63990,2022,2022-11-08,17:30,14,14. Spieltag,131,VfL Wolfsburg,7,Borussia Dortmund,1,0,2,0,2,home,,,True
+63982,2022,2022-11-08,19:30,14,14. Spieltag,40,FC Bayern München,134,SV Werder Bremen,4,1,6,1,7,home,,,True
+63983,2022,2022-11-08,19:30,14,14. Spieltag,129,VfL Bochum,87,Borussia Mönchengladbach,2,0,2,1,3,home,,,True
+63988,2022,2022-11-08,19:30,14,14. Spieltag,16,VfB Stuttgart,54,Hertha BSC,1,1,2,1,3,home,,,True
+63985,2022,2022-11-09,17:30,14,14. Spieltag,65,1. FC Köln,6,Bayer 04 Leverkusen,1,0,1,2,3,away,,,True
+63984,2022,2022-11-09,19:30,14,14. Spieltag,91,Eintracht Frankfurt,175,TSG Hoffenheim,3,1,4,2,6,home,,,True
+63986,2022,2022-11-09,19:30,14,14. Spieltag,1635,RB Leipzig,112,SC Freiburg,0,0,3,1,4,home,,,True
+63987,2022,2022-11-09,19:30,14,14. Spieltag,9,FC Schalke 04,81,1. FSV Mainz 05,1,0,1,0,1,home,,,True
+63989,2022,2022-11-09,19:30,14,14. Spieltag,80,1. FC Union Berlin,95,FC Augsburg,2,2,2,2,4,draw,,,True
+63993,2022,2022-11-11,19:30,15,15. Spieltag,87,Borussia Mönchengladbach,7,Borussia Dortmund,3,2,4,2,6,home,,,True
+63991,2022,2022-11-12,14:30,15,15. Spieltag,95,FC Augsburg,129,VfL Bochum,0,0,0,1,1,away,,,True
+63992,2022,2022-11-12,14:30,15,15. Spieltag,6,Bayer 04 Leverkusen,16,VfB Stuttgart,1,0,2,0,2,home,,,True
+63995,2022,2022-11-12,14:30,15,15. Spieltag,54,Hertha BSC,65,1. FC Köln,1,0,2,0,2,home,,,True
+63996,2022,2022-11-12,14:30,15,15. Spieltag,175,TSG Hoffenheim,131,VfL Wolfsburg,1,1,1,2,3,away,,,True
+63999,2022,2022-11-12,14:30,15,15. Spieltag,134,SV Werder Bremen,1635,RB Leipzig,0,1,1,2,3,away,,,True
+63998,2022,2022-11-12,17:30,15,15. Spieltag,9,FC Schalke 04,40,FC Bayern München,0,1,0,2,2,away,,,True
+63997,2022,2022-11-13,14:30,15,15. Spieltag,81,1. FSV Mainz 05,91,Eintracht Frankfurt,1,0,1,1,2,draw,,,True
+63994,2022,2022-11-13,16:30,15,15. Spieltag,112,SC Freiburg,80,1. FC Union Berlin,4,0,4,1,5,home,,,True
+64005,2022,2023-01-20,19:30,16,16. Spieltag,1635,RB Leipzig,40,FC Bayern München,0,1,1,1,2,draw,,,True
+64000,2022,2023-01-21,14:30,16,16. Spieltag,129,VfL Bochum,54,Hertha BSC,2,0,3,1,4,home,,,True
+64003,2022,2023-01-21,14:30,16,16. Spieltag,91,Eintracht Frankfurt,9,FC Schalke 04,1,0,3,0,3,home,,,True
+64006,2022,2023-01-21,14:30,16,16. Spieltag,16,VfB Stuttgart,81,1. FSV Mainz 05,1,1,1,1,2,draw,,,True
+64007,2022,2023-01-21,14:30,16,16. Spieltag,80,1. FC Union Berlin,175,TSG Hoffenheim,0,1,3,1,4,home,,,True
+64008,2022,2023-01-21,14:30,16,16. Spieltag,131,VfL Wolfsburg,112,SC Freiburg,3,0,6,0,6,home,,,True
+64004,2022,2023-01-21,17:30,16,16. Spieltag,65,1. FC Köln,134,SV Werder Bremen,5,1,7,1,8,home,,,True
+64001,2022,2023-01-22,14:30,16,16. Spieltag,7,Borussia Dortmund,95,FC Augsburg,2,2,4,3,7,home,,,True
+64002,2022,2023-01-22,16:30,16,16. Spieltag,87,Borussia Mönchengladbach,6,Bayer 04 Leverkusen,0,2,2,3,5,away,,,True
+64016,2022,2023-01-24,17:30,17,17. Spieltag,9,FC Schalke 04,1635,RB Leipzig,0,4,1,6,7,away,,,True
+64011,2022,2023-01-24,19:30,17,17. Spieltag,40,FC Bayern München,65,1. FC Köln,0,1,1,1,2,draw,,,True
+64013,2022,2023-01-24,19:30,17,17. Spieltag,54,Hertha BSC,131,VfL Wolfsburg,0,3,0,5,5,away,,,True
+64014,2022,2023-01-24,19:30,17,17. Spieltag,175,TSG Hoffenheim,16,VfB Stuttgart,1,1,2,2,4,draw,,,True
+64015,2022,2023-01-25,17:30,17,17. Spieltag,81,1. FSV Mainz 05,7,Borussia Dortmund,1,1,1,2,3,away,,,True
+64009,2022,2023-01-25,19:30,17,17. Spieltag,95,FC Augsburg,87,Borussia Mönchengladbach,0,0,1,0,1,home,,,True
+64010,2022,2023-01-25,19:30,17,17. Spieltag,6,Bayer 04 Leverkusen,129,VfL Bochum,1,0,2,0,2,home,,,True
+64012,2022,2023-01-25,19:30,17,17. Spieltag,112,SC Freiburg,91,Eintracht Frankfurt,0,1,1,1,2,draw,,,True
+64017,2022,2023-01-25,19:30,17,17. Spieltag,134,SV Werder Bremen,80,1. FC Union Berlin,1,1,1,2,3,away,,,True
+64024,2022,2023-01-27,19:30,18,18. Spieltag,1635,RB Leipzig,16,VfB Stuttgart,1,0,2,1,3,home,,,True
+64020,2022,2023-01-28,14:30,18,18. Spieltag,112,SC Freiburg,95,FC Augsburg,2,1,3,1,4,home,,,True
+64021,2022,2023-01-28,14:30,18,18. Spieltag,54,Hertha BSC,80,1. FC Union Berlin,0,1,0,2,2,away,,,True
+64022,2022,2023-01-28,14:30,18,18. Spieltag,175,TSG Hoffenheim,87,Borussia Mönchengladbach,0,2,1,4,5,away,,,True
+64023,2022,2023-01-28,14:30,18,18. Spieltag,81,1. FSV Mainz 05,129,VfL Bochum,3,0,5,2,7,home,,,True
+64026,2022,2023-01-28,14:30,18,18. Spieltag,134,SV Werder Bremen,131,VfL Wolfsburg,1,0,2,1,3,home,,,True
+64019,2022,2023-01-28,17:30,18,18. Spieltag,40,FC Bayern München,91,Eintracht Frankfurt,1,0,1,1,2,draw,,,True
+64025,2022,2023-01-29,14:30,18,18. Spieltag,9,FC Schalke 04,65,1. FC Köln,0,0,0,0,0,draw,,,True
+64018,2022,2023-01-29,16:30,18,18. Spieltag,6,Bayer 04 Leverkusen,7,Borussia Dortmund,0,1,0,2,2,away,,,True
+64027,2022,2023-02-03,19:30,19,19. Spieltag,95,FC Augsburg,6,Bayer 04 Leverkusen,0,0,1,0,1,home,,,True
+64028,2022,2023-02-04,14:30,19,19. Spieltag,129,VfL Bochum,175,TSG Hoffenheim,3,0,5,2,7,home,,,True
+64029,2022,2023-02-04,14:30,19,19. Spieltag,7,Borussia Dortmund,112,SC Freiburg,1,1,5,1,6,home,,,True
+64031,2022,2023-02-04,14:30,19,19. Spieltag,91,Eintracht Frankfurt,54,Hertha BSC,2,0,3,0,3,home,,,True
+64032,2022,2023-02-04,14:30,19,19. Spieltag,65,1. FC Köln,1635,RB Leipzig,0,0,0,0,0,draw,,,True
+64034,2022,2023-02-04,14:30,19,19. Spieltag,80,1. FC Union Berlin,81,1. FSV Mainz 05,1,0,2,1,3,home,,,True
+64030,2022,2023-02-04,17:30,19,19. Spieltag,87,Borussia Mönchengladbach,9,FC Schalke 04,0,0,0,0,0,draw,,,True
+64033,2022,2023-02-05,14:30,19,19. Spieltag,16,VfB Stuttgart,134,SV Werder Bremen,0,0,0,2,2,away,,,True
+64035,2022,2023-02-05,16:30,19,19. Spieltag,131,VfL Wolfsburg,40,FC Bayern München,1,3,2,4,6,away,,,True
+64043,2022,2023-02-10,19:30,20,20. Spieltag,9,FC Schalke 04,131,VfL Wolfsburg,0,0,0,0,0,draw,,,True
+64036,2022,2023-02-11,14:30,20,20. Spieltag,40,FC Bayern München,129,VfL Bochum,1,0,3,0,3,home,,,True
+64037,2022,2023-02-11,14:30,20,20. Spieltag,112,SC Freiburg,16,VfB Stuttgart,0,1,2,1,3,home,,,True
+64039,2022,2023-02-11,14:30,20,20. Spieltag,175,TSG Hoffenheim,6,Bayer 04 Leverkusen,0,1,1,3,4,away,,,True
+64041,2022,2023-02-11,14:30,20,20. Spieltag,81,1. FSV Mainz 05,95,FC Augsburg,2,1,3,1,4,home,,,True
+64044,2022,2023-02-11,14:30,20,20. Spieltag,134,SV Werder Bremen,7,Borussia Dortmund,0,0,0,2,2,away,,,True
+64042,2022,2023-02-11,17:30,20,20. Spieltag,1635,RB Leipzig,80,1. FC Union Berlin,1,0,1,2,3,away,,,True
+64038,2022,2023-02-12,14:30,20,20. Spieltag,54,Hertha BSC,87,Borussia Mönchengladbach,1,1,4,1,5,home,,,True
+64040,2022,2023-02-12,16:30,20,20. Spieltag,65,1. FC Köln,91,Eintracht Frankfurt,0,0,3,0,3,home,,,True
+64045,2022,2023-02-17,19:30,21,21. Spieltag,95,FC Augsburg,175,TSG Hoffenheim,0,0,1,0,1,home,,,True
+64047,2022,2023-02-18,14:30,21,21. Spieltag,129,VfL Bochum,112,SC Freiburg,0,1,0,2,2,away,,,True
+64049,2022,2023-02-18,14:30,21,21. Spieltag,87,Borussia Mönchengladbach,40,FC Bayern München,1,1,3,2,5,home,,,True
+64051,2022,2023-02-18,14:30,21,21. Spieltag,16,VfB Stuttgart,65,1. FC Köln,1,0,3,0,3,home,,,True
+64053,2022,2023-02-18,14:30,21,21. Spieltag,131,VfL Wolfsburg,1635,RB Leipzig,0,1,0,3,3,away,,,True
+64050,2022,2023-02-18,17:30,21,21. Spieltag,91,Eintracht Frankfurt,134,SV Werder Bremen,1,0,2,0,2,home,,,True
+64052,2022,2023-02-19,14:30,21,21. Spieltag,80,1. FC Union Berlin,9,FC Schalke 04,0,0,0,0,0,draw,,,True
+64048,2022,2023-02-19,16:30,21,21. Spieltag,7,Borussia Dortmund,54,Hertha BSC,2,0,4,1,5,home,,,True
+64046,2022,2023-02-19,18:30,21,21. Spieltag,6,Bayer 04 Leverkusen,81,1. FSV Mainz 05,1,2,2,3,5,away,,,True
+64059,2022,2023-02-24,19:30,22,22. Spieltag,81,1. FSV Mainz 05,87,Borussia Mönchengladbach,1,0,4,0,4,home,,,True
+64056,2022,2023-02-25,14:30,22,22. Spieltag,54,Hertha BSC,95,FC Augsburg,0,0,2,0,2,home,,,True
+64057,2022,2023-02-25,14:30,22,22. Spieltag,175,TSG Hoffenheim,7,Borussia Dortmund,0,1,0,1,1,away,,,True
+64058,2022,2023-02-25,14:30,22,22. Spieltag,65,1. FC Köln,131,VfL Wolfsburg,0,1,0,2,2,away,,,True
+64060,2022,2023-02-25,14:30,22,22. Spieltag,1635,RB Leipzig,91,Eintracht Frankfurt,2,0,2,1,3,home,,,True
+64062,2022,2023-02-25,14:30,22,22. Spieltag,134,SV Werder Bremen,129,VfL Bochum,2,0,3,0,3,home,,,True
+64061,2022,2023-02-25,17:30,22,22. Spieltag,9,FC Schalke 04,16,VfB Stuttgart,2,0,2,1,3,home,,,True
+64055,2022,2023-02-26,14:30,22,22. Spieltag,112,SC Freiburg,6,Bayer 04 Leverkusen,1,0,1,1,2,draw,,,True
+64054,2022,2023-02-26,16:30,22,22. Spieltag,40,FC Bayern München,80,1. FC Union Berlin,3,0,3,0,3,home,,,True
+64066,2022,2023-03-03,19:30,23,23. Spieltag,7,Borussia Dortmund,1635,RB Leipzig,2,0,2,1,3,home,,,True
+64063,2022,2023-03-04,14:30,23,23. Spieltag,95,FC Augsburg,134,SV Werder Bremen,1,1,2,1,3,home,,,True
+64065,2022,2023-03-04,14:30,23,23. Spieltag,129,VfL Bochum,9,FC Schalke 04,0,1,0,2,2,away,,,True
+64067,2022,2023-03-04,14:30,23,23. Spieltag,87,Borussia Mönchengladbach,112,SC Freiburg,0,0,0,0,0,draw,,,True
+64068,2022,2023-03-04,14:30,23,23. Spieltag,81,1. FSV Mainz 05,175,TSG Hoffenheim,1,0,1,0,1,home,,,True
+64070,2022,2023-03-04,14:30,23,23. Spieltag,80,1. FC Union Berlin,65,1. FC Köln,0,0,0,0,0,draw,,,True
+64069,2022,2023-03-04,17:30,23,23. Spieltag,16,VfB Stuttgart,40,FC Bayern München,0,1,1,2,3,away,,,True
+64064,2022,2023-03-05,14:30,23,23. Spieltag,6,Bayer 04 Leverkusen,54,Hertha BSC,2,0,4,1,5,home,,,True
+64071,2022,2023-03-05,16:30,23,23. Spieltag,131,VfL Wolfsburg,91,Eintracht Frankfurt,2,2,2,2,4,draw,,,True
+64076,2022,2023-03-10,19:30,24,24. Spieltag,65,1. FC Köln,129,VfL Bochum,0,1,0,2,2,away,,Köln,True
+64072,2022,2023-03-11,14:30,24,24. Spieltag,40,FC Bayern München,95,FC Augsburg,4,1,5,3,8,home,,München,True
+64073,2022,2023-03-11,14:30,24,24. Spieltag,91,Eintracht Frankfurt,16,VfB Stuttgart,0,0,1,1,2,draw,,Frankfurt,True
+64075,2022,2023-03-11,14:30,24,24. Spieltag,54,Hertha BSC,81,1. FSV Mainz 05,1,0,1,1,2,draw,,Berlin,True
+64077,2022,2023-03-11,14:30,24,24. Spieltag,1635,RB Leipzig,87,Borussia Mönchengladbach,0,0,3,0,3,home,,Leipzig,True
+64078,2022,2023-03-11,17:30,24,24. Spieltag,9,FC Schalke 04,7,Borussia Dortmund,0,1,2,2,4,draw,,Gelsenkirchen,True
+64074,2022,2023-03-12,14:30,24,24. Spieltag,112,SC Freiburg,175,TSG Hoffenheim,1,0,2,1,3,home,,Freiburg,True
+64079,2022,2023-03-12,16:30,24,24. Spieltag,134,SV Werder Bremen,6,Bayer 04 Leverkusen,1,1,2,3,5,away,,Bremen,True
+64080,2022,2023-03-12,18:30,24,24. Spieltag,131,VfL Wolfsburg,80,1. FC Union Berlin,0,0,1,1,2,draw,,Wolfsburg,True
+64085,2022,2023-03-17,19:30,25,25. Spieltag,87,Borussia Mönchengladbach,134,SV Werder Bremen,0,0,2,2,4,draw,,Mönchengladbach,True
+64081,2022,2023-03-18,14:30,25,25. Spieltag,95,FC Augsburg,9,FC Schalke 04,0,0,1,1,2,draw,,Augsburg,True
+64083,2022,2023-03-18,14:30,25,25. Spieltag,129,VfL Bochum,1635,RB Leipzig,0,0,1,0,1,home,,Bochum,True
+64086,2022,2023-03-18,14:30,25,25. Spieltag,175,TSG Hoffenheim,54,Hertha BSC,2,0,3,1,4,home,,Sinsheim,True
+64088,2022,2023-03-18,14:30,25,25. Spieltag,16,VfB Stuttgart,131,VfL Wolfsburg,0,0,0,1,1,away,,Stuttgart,True
+64084,2022,2023-03-18,17:30,25,25. Spieltag,7,Borussia Dortmund,65,1. FC Köln,4,1,6,1,7,home,,Dortmund,True
+64089,2022,2023-03-19,14:30,25,25. Spieltag,80,1. FC Union Berlin,91,Eintracht Frankfurt,0,0,2,0,2,home,,Berlin,True
+64082,2022,2023-03-19,16:30,25,25. Spieltag,6,Bayer 04 Leverkusen,40,FC Bayern München,0,1,2,1,3,home,,Leverkusen,True
+64087,2022,2023-03-19,18:30,25,25. Spieltag,81,1. FSV Mainz 05,112,SC Freiburg,0,0,1,1,2,draw,,Mainz,True
+64091,2022,2023-03-31,18:30,26,26. Spieltag,91,Eintracht Frankfurt,129,VfL Bochum,1,1,1,1,2,draw,,Frankfurt,True
+64092,2022,2023-04-01,13:30,26,26. Spieltag,112,SC Freiburg,54,Hertha BSC,0,0,1,1,2,draw,,Freiburg,True
+64094,2022,2023-04-01,13:30,26,26. Spieltag,1635,RB Leipzig,81,1. FSV Mainz 05,0,1,0,3,3,away,,Leipzig,True
+64095,2022,2023-04-01,13:30,26,26. Spieltag,9,FC Schalke 04,6,Bayer 04 Leverkusen,0,0,0,3,3,away,,Gelsenkirchen,True
+64096,2022,2023-04-01,13:30,26,26. Spieltag,80,1. FC Union Berlin,16,VfB Stuttgart,0,0,3,0,3,home,,Berlin,True
+64098,2022,2023-04-01,13:30,26,26. Spieltag,131,VfL Wolfsburg,95,FC Augsburg,0,1,2,2,4,draw,,Wolfsburg,True
+64090,2022,2023-04-01,16:30,26,26. Spieltag,40,FC Bayern München,7,Borussia Dortmund,3,0,4,2,6,home,,München,True
+64093,2022,2023-04-02,13:30,26,26. Spieltag,65,1. FC Köln,87,Borussia Mönchengladbach,0,0,0,0,0,draw,,Köln,True
+64097,2022,2023-04-02,15:30,26,26. Spieltag,134,SV Werder Bremen,175,TSG Hoffenheim,0,0,1,2,3,away,,Bremen,True
+64099,2022,2023-04-08,13:30,27,27. Spieltag,95,FC Augsburg,65,1. FC Köln,1,2,1,3,4,away,,Augsburg,True
+64100,2022,2023-04-08,13:30,27,27. Spieltag,6,Bayer 04 Leverkusen,91,Eintracht Frankfurt,2,0,3,1,4,home,,Leverkusen,True
+64102,2022,2023-04-08,13:30,27,27. Spieltag,7,Borussia Dortmund,80,1. FC Union Berlin,1,0,2,1,3,home,,Dortmund,True
+64104,2022,2023-04-08,13:30,27,27. Spieltag,112,SC Freiburg,40,FC Bayern München,0,0,0,1,1,away,,Freiburg,True
+64107,2022,2023-04-08,13:30,27,27. Spieltag,81,1. FSV Mainz 05,134,SV Werder Bremen,0,0,2,2,4,draw,,Mainz,True
+64105,2022,2023-04-08,16:30,27,27. Spieltag,54,Hertha BSC,1635,RB Leipzig,0,1,0,1,1,away,,Berlin,True
+64103,2022,2023-04-09,13:30,27,27. Spieltag,87,Borussia Mönchengladbach,131,VfL Wolfsburg,1,0,2,0,2,home,,Mönchengladbach,True
+64101,2022,2023-04-09,15:30,27,27. Spieltag,129,VfL Bochum,16,VfB Stuttgart,0,1,2,3,5,away,,Bochum,True
+64106,2022,2023-04-09,17:30,27,27. Spieltag,175,TSG Hoffenheim,9,FC Schalke 04,1,0,2,0,2,home,,Sinsheim,True
+64112,2022,2023-04-14,18:30,28,28. Spieltag,9,FC Schalke 04,54,Hertha BSC,2,1,5,2,7,home,,,True
+64108,2022,2023-04-15,13:30,28,28. Spieltag,40,FC Bayern München,175,TSG Hoffenheim,1,0,1,1,2,draw,,,True
+64110,2022,2023-04-15,13:30,28,28. Spieltag,65,1. FC Köln,81,1. FSV Mainz 05,0,1,1,1,2,draw,,,True
+64111,2022,2023-04-15,13:30,28,28. Spieltag,1635,RB Leipzig,95,FC Augsburg,3,1,3,2,5,home,,,True
+64113,2022,2023-04-15,13:30,28,28. Spieltag,16,VfB Stuttgart,7,Borussia Dortmund,0,2,3,3,6,draw,,,True
+64109,2022,2023-04-15,16:30,28,28. Spieltag,91,Eintracht Frankfurt,87,Borussia Mönchengladbach,0,1,1,1,2,draw,,,True
+64115,2022,2023-04-16,13:30,28,28. Spieltag,134,SV Werder Bremen,112,SC Freiburg,0,0,1,2,3,away,,,True
+64114,2022,2023-04-16,15:30,28,28. Spieltag,80,1. FC Union Berlin,129,VfL Bochum,1,0,1,1,2,draw,,,True
+64116,2022,2023-04-16,17:30,28,28. Spieltag,131,VfL Wolfsburg,6,Bayer 04 Leverkusen,0,0,0,0,0,draw,,,True
+64117,2022,2023-04-21,18:30,29,29. Spieltag,95,FC Augsburg,16,VfB Stuttgart,1,0,1,1,2,draw,,,True
+64119,2022,2023-04-22,13:30,29,29. Spieltag,129,VfL Bochum,131,VfL Wolfsburg,0,3,1,5,6,away,,,True
+64123,2022,2023-04-22,13:30,29,29. Spieltag,54,Hertha BSC,134,SV Werder Bremen,0,2,2,4,6,away,,,True
+64124,2022,2023-04-22,13:30,29,29. Spieltag,175,TSG Hoffenheim,65,1. FC Köln,0,2,1,3,4,away,,,True
+64125,2022,2023-04-22,13:30,29,29. Spieltag,81,1. FSV Mainz 05,40,FC Bayern München,0,1,3,1,4,home,,,True
+64120,2022,2023-04-22,16:30,29,29. Spieltag,7,Borussia Dortmund,91,Eintracht Frankfurt,3,0,4,0,4,home,,,True
+64122,2022,2023-04-23,13:30,29,29. Spieltag,112,SC Freiburg,9,FC Schalke 04,2,0,4,0,4,home,,,True
+64118,2022,2023-04-23,15:30,29,29. Spieltag,6,Bayer 04 Leverkusen,1635,RB Leipzig,1,0,2,0,2,home,,,True
+64121,2022,2023-04-23,17:30,29,29. Spieltag,87,Borussia Mönchengladbach,80,1. FC Union Berlin,0,0,0,1,1,away,,,True
+64127,2022,2023-04-28,18:30,30,30. Spieltag,129,VfL Bochum,7,Borussia Dortmund,1,1,1,1,2,draw,,,True
+64128,2022,2023-04-29,13:30,30,30. Spieltag,91,Eintracht Frankfurt,95,FC Augsburg,1,0,1,1,2,draw,,,True
+64129,2022,2023-04-29,13:30,30,30. Spieltag,65,1. FC Köln,112,SC Freiburg,0,0,0,1,1,away,,,True
+64130,2022,2023-04-29,13:30,30,30. Spieltag,1635,RB Leipzig,175,TSG Hoffenheim,1,0,1,0,1,home,,,True
+64132,2022,2023-04-29,13:30,30,30. Spieltag,16,VfB Stuttgart,87,Borussia Mönchengladbach,1,0,2,1,3,home,,,True
+64133,2022,2023-04-29,13:30,30,30. Spieltag,80,1. FC Union Berlin,6,Bayer 04 Leverkusen,0,0,0,0,0,draw,,,True
+64131,2022,2023-04-29,16:30,30,30. Spieltag,9,FC Schalke 04,134,SV Werder Bremen,0,1,2,1,3,home,,,True
+64126,2022,2023-04-30,13:30,30,30. Spieltag,40,FC Bayern München,54,Hertha BSC,0,0,2,0,2,home,,,True
+64134,2022,2023-04-30,15:30,30,30. Spieltag,131,VfL Wolfsburg,81,1. FSV Mainz 05,3,0,3,0,3,home,,,True
+64136,2022,2023-05-05,18:30,31,31. Spieltag,6,Bayer 04 Leverkusen,65,1. FC Köln,1,2,1,2,3,away,,,True
+64142,2022,2023-05-05,18:30,31,31. Spieltag,81,1. FSV Mainz 05,9,FC Schalke 04,0,1,2,3,5,away,,,True
+64135,2022,2023-05-06,13:30,31,31. Spieltag,95,FC Augsburg,80,1. FC Union Berlin,0,0,1,0,1,home,,,True
+64138,2022,2023-05-06,13:30,31,31. Spieltag,87,Borussia Mönchengladbach,129,VfL Bochum,1,0,2,0,2,home,,,True
+64139,2022,2023-05-06,13:30,31,31. Spieltag,112,SC Freiburg,1635,RB Leipzig,0,0,0,1,1,away,,,True
+64140,2022,2023-05-06,13:30,31,31. Spieltag,54,Hertha BSC,16,VfB Stuttgart,2,1,2,1,3,home,,,True
+64141,2022,2023-05-06,13:30,31,31. Spieltag,175,TSG Hoffenheim,91,Eintracht Frankfurt,3,0,3,1,4,home,,,True
+64143,2022,2023-05-06,16:30,31,31. Spieltag,134,SV Werder Bremen,40,FC Bayern München,0,0,1,2,3,away,,,True
+64137,2022,2023-05-07,15:30,31,31. Spieltag,7,Borussia Dortmund,131,VfL Wolfsburg,3,0,6,0,6,home,,,True
+64148,2022,2023-05-12,18:30,32,32. Spieltag,65,1. FC Köln,54,Hertha BSC,3,2,5,2,7,home,,,True
+64144,2022,2023-05-13,13:30,32,32. Spieltag,40,FC Bayern München,9,FC Schalke 04,2,0,6,0,6,home,,,True
+64145,2022,2023-05-13,13:30,32,32. Spieltag,129,VfL Bochum,95,FC Augsburg,1,1,3,2,5,home,,,True
+64147,2022,2023-05-13,13:30,32,32. Spieltag,91,Eintracht Frankfurt,81,1. FSV Mainz 05,2,0,3,0,3,home,,,True
+64151,2022,2023-05-13,13:30,32,32. Spieltag,80,1. FC Union Berlin,112,SC Freiburg,3,0,4,2,6,home,,,True
+64152,2022,2023-05-13,13:30,32,32. Spieltag,131,VfL Wolfsburg,175,TSG Hoffenheim,1,0,2,1,3,home,,,True
+64146,2022,2023-05-13,16:30,32,32. Spieltag,7,Borussia Dortmund,87,Borussia Mönchengladbach,4,0,5,2,7,home,,,True
+64150,2022,2023-05-14,13:30,32,32. Spieltag,16,VfB Stuttgart,6,Bayer 04 Leverkusen,0,0,1,1,2,draw,,,True
+64149,2022,2023-05-14,15:30,32,32. Spieltag,1635,RB Leipzig,134,SV Werder Bremen,0,0,2,1,3,home,,,True
+64156,2022,2023-05-19,18:30,33,33. Spieltag,112,SC Freiburg,131,VfL Wolfsburg,0,0,2,0,2,home,,,True
+64157,2022,2023-05-20,13:30,33,33. Spieltag,54,Hertha BSC,129,VfL Bochum,0,0,1,1,2,draw,,,True
+64158,2022,2023-05-20,13:30,33,33. Spieltag,175,TSG Hoffenheim,80,1. FC Union Berlin,2,1,4,2,6,home,,,True
+64160,2022,2023-05-20,13:30,33,33. Spieltag,9,FC Schalke 04,91,Eintracht Frankfurt,1,1,2,2,4,draw,,,True
+64161,2022,2023-05-20,13:30,33,33. Spieltag,134,SV Werder Bremen,65,1. FC Köln,0,1,1,1,2,draw,,,True
+64155,2022,2023-05-20,16:30,33,33. Spieltag,40,FC Bayern München,1635,RB Leipzig,1,0,1,3,4,away,,,True
+64159,2022,2023-05-21,13:30,33,33. Spieltag,81,1. FSV Mainz 05,16,VfB Stuttgart,1,1,1,4,5,away,,,True
+64153,2022,2023-05-21,15:30,33,33. Spieltag,95,FC Augsburg,7,Borussia Dortmund,0,0,0,3,3,away,,,True
+64154,2022,2023-05-21,17:30,33,33. Spieltag,6,Bayer 04 Leverkusen,87,Borussia Mönchengladbach,2,0,2,2,4,draw,,,True
+64162,2022,2023-05-27,13:30,34,34. Spieltag,129,VfL Bochum,6,Bayer 04 Leverkusen,2,0,3,0,3,home,,,True
+64163,2022,2023-05-27,13:30,34,34. Spieltag,7,Borussia Dortmund,81,1. FSV Mainz 05,0,2,2,2,4,draw,,,True
+64164,2022,2023-05-27,13:30,34,34. Spieltag,87,Borussia Mönchengladbach,95,FC Augsburg,2,0,2,0,2,home,,,True
+64165,2022,2023-05-27,13:30,34,34. Spieltag,91,Eintracht Frankfurt,112,SC Freiburg,0,1,2,1,3,home,,,True
+64166,2022,2023-05-27,13:30,34,34. Spieltag,65,1. FC Köln,40,FC Bayern München,0,1,1,2,3,away,,,True
+64167,2022,2023-05-27,13:30,34,34. Spieltag,1635,RB Leipzig,9,FC Schalke 04,2,1,4,2,6,home,,,True
+64168,2022,2023-05-27,13:30,34,34. Spieltag,16,VfB Stuttgart,175,TSG Hoffenheim,0,0,1,1,2,draw,,,True
+64169,2022,2023-05-27,13:30,34,34. Spieltag,80,1. FC Union Berlin,134,SV Werder Bremen,0,0,1,0,1,home,,,True
+64170,2022,2023-05-27,13:30,34,34. Spieltag,131,VfL Wolfsburg,54,Hertha BSC,1,0,1,2,3,away,,,True
+66630,2023,2023-08-18,18:30,1,1. Spieltag,134,SV Werder Bremen,40,FC Bayern München,0,1,0,4,4,away,,,True
+66633,2023,2023-08-19,13:30,1,1. Spieltag,6,Bayer 04 Leverkusen,1635,RB Leipzig,2,1,3,2,5,home,,,True
+66635,2023,2023-08-19,13:30,1,1. Spieltag,131,VfL Wolfsburg,199,1. FC Heidenheim 1846,2,0,2,0,2,home,,,True
+66636,2023,2023-08-19,13:30,1,1. Spieltag,175,TSG Hoffenheim,112,SC Freiburg,0,2,1,2,3,away,,,True
+66637,2023,2023-08-19,13:30,1,1. Spieltag,95,FC Augsburg,87,Borussia Mönchengladbach,3,3,4,4,8,draw,,,True
+66638,2023,2023-08-19,13:30,1,1. Spieltag,16,VfB Stuttgart,129,VfL Bochum,2,0,5,0,5,home,,,True
+66631,2023,2023-08-19,16:30,1,1. Spieltag,7,Borussia Dortmund,65,1. FC Köln,0,0,1,0,1,home,,,True
+66632,2023,2023-08-20,13:30,1,1. Spieltag,80,1. FC Union Berlin,81,1. FSV Mainz 05,2,0,4,1,5,home,,,True
+66634,2023,2023-08-20,15:30,1,1. Spieltag,91,Eintracht Frankfurt,118,SV Darmstadt 98,1,0,1,0,1,home,,,True
+66640,2023,2023-08-25,18:30,2,2. Spieltag,1635,RB Leipzig,16,VfB Stuttgart,0,1,5,1,6,home,,,True
+66641,2023,2023-08-26,13:30,2,2. Spieltag,112,SC Freiburg,134,SV Werder Bremen,0,0,1,0,1,home,,,True
+66644,2023,2023-08-26,13:30,2,2. Spieltag,65,1. FC Köln,131,VfL Wolfsburg,0,0,1,2,3,away,,,True
+66645,2023,2023-08-26,13:30,2,2. Spieltag,129,VfL Bochum,7,Borussia Dortmund,1,0,1,1,2,draw,,,True
+66646,2023,2023-08-26,13:30,2,2. Spieltag,199,1. FC Heidenheim 1846,175,TSG Hoffenheim,1,0,2,3,5,away,,,True
+66647,2023,2023-08-26,13:30,2,2. Spieltag,118,SV Darmstadt 98,80,1. FC Union Berlin,1,3,1,4,5,away,,,True
+66643,2023,2023-08-26,16:30,2,2. Spieltag,87,Borussia Mönchengladbach,6,Bayer 04 Leverkusen,0,2,0,3,3,away,,,True
+66642,2023,2023-08-27,13:30,2,2. Spieltag,81,1. FSV Mainz 05,91,Eintracht Frankfurt,1,0,1,1,2,draw,,,True
+66639,2023,2023-08-27,15:30,2,2. Spieltag,40,FC Bayern München,95,FC Augsburg,2,0,3,1,4,home,,,True
+66648,2023,2023-09-01,18:30,3,3. Spieltag,7,Borussia Dortmund,199,1. FC Heidenheim 1846,2,0,2,2,4,draw,,,True
+66650,2023,2023-09-02,13:30,3,3. Spieltag,6,Bayer 04 Leverkusen,118,SV Darmstadt 98,1,1,5,1,6,home,,,True
+66653,2023,2023-09-02,13:30,3,3. Spieltag,175,TSG Hoffenheim,131,VfL Wolfsburg,1,1,3,1,4,home,,,True
+66654,2023,2023-09-02,13:30,3,3. Spieltag,134,SV Werder Bremen,81,1. FSV Mainz 05,1,0,4,0,4,home,,,True
+66655,2023,2023-09-02,13:30,3,3. Spieltag,95,FC Augsburg,129,VfL Bochum,1,1,2,2,4,draw,,,True
+66656,2023,2023-09-02,13:30,3,3. Spieltag,16,VfB Stuttgart,112,SC Freiburg,3,0,5,0,5,home,,,True
+66652,2023,2023-09-02,16:30,3,3. Spieltag,87,Borussia Mönchengladbach,40,FC Bayern München,1,0,1,2,3,away,,,True
+66651,2023,2023-09-03,13:30,3,3. Spieltag,91,Eintracht Frankfurt,65,1. FC Köln,0,1,1,1,2,draw,,,True
+66649,2023,2023-09-03,15:30,3,3. Spieltag,80,1. FC Union Berlin,1635,RB Leipzig,0,0,0,3,3,away,,,True
+66657,2023,2023-09-15,18:30,4,4. Spieltag,40,FC Bayern München,6,Bayer 04 Leverkusen,1,1,2,2,4,draw,,,True
+66658,2023,2023-09-16,13:30,4,4. Spieltag,1635,RB Leipzig,95,FC Augsburg,3,0,3,0,3,home,,,True
+66659,2023,2023-09-16,13:30,4,4. Spieltag,112,SC Freiburg,7,Borussia Dortmund,2,1,2,4,6,away,,,True
+66660,2023,2023-09-16,13:30,4,4. Spieltag,131,VfL Wolfsburg,80,1. FC Union Berlin,2,1,2,1,3,home,,,True
+66661,2023,2023-09-16,13:30,4,4. Spieltag,81,1. FSV Mainz 05,16,VfB Stuttgart,0,0,1,3,4,away,,,True
+66662,2023,2023-09-16,13:30,4,4. Spieltag,65,1. FC Köln,175,TSG Hoffenheim,0,2,1,3,4,away,,,True
+66663,2023,2023-09-16,16:30,4,4. Spieltag,129,VfL Bochum,91,Eintracht Frankfurt,0,0,1,1,2,draw,,,True
+66664,2023,2023-09-17,13:30,4,4. Spieltag,199,1. FC Heidenheim 1846,134,SV Werder Bremen,2,0,4,2,6,home,,,True
+66665,2023,2023-09-17,15:30,4,4. Spieltag,118,SV Darmstadt 98,87,Borussia Mönchengladbach,3,0,3,3,6,draw,,,True
+66674,2023,2023-09-22,18:30,5,5. Spieltag,16,VfB Stuttgart,118,SV Darmstadt 98,2,1,3,1,4,home,,,True
+66666,2023,2023-09-23,13:30,5,5. Spieltag,40,FC Bayern München,129,VfL Bochum,4,0,7,0,7,home,,,True
+66667,2023,2023-09-23,13:30,5,5. Spieltag,7,Borussia Dortmund,131,VfL Wolfsburg,0,0,1,0,1,home,,,True
+66668,2023,2023-09-23,13:30,5,5. Spieltag,80,1. FC Union Berlin,175,TSG Hoffenheim,0,2,0,2,2,away,,,True
+66671,2023,2023-09-23,13:30,5,5. Spieltag,87,Borussia Mönchengladbach,1635,RB Leipzig,0,0,0,1,1,away,,,True
+66673,2023,2023-09-23,13:30,5,5. Spieltag,95,FC Augsburg,81,1. FSV Mainz 05,2,1,2,1,3,home,,,True
+66672,2023,2023-09-23,16:30,5,5. Spieltag,134,SV Werder Bremen,65,1. FC Köln,1,1,2,1,3,home,,,True
+66669,2023,2023-09-24,13:30,5,5. Spieltag,6,Bayer 04 Leverkusen,199,1. FC Heidenheim 1846,1,0,4,1,5,home,,,True
+66670,2023,2023-09-24,15:30,5,5. Spieltag,91,Eintracht Frankfurt,112,SC Freiburg,0,0,0,0,0,draw,,,True
+66680,2023,2023-09-29,18:30,6,6. Spieltag,175,TSG Hoffenheim,7,Borussia Dortmund,1,2,1,3,4,away,,,True
+66677,2023,2023-09-30,13:30,6,6. Spieltag,131,VfL Wolfsburg,91,Eintracht Frankfurt,1,0,2,0,2,home,,,True
+66678,2023,2023-09-30,13:30,6,6. Spieltag,81,1. FSV Mainz 05,6,Bayer 04 Leverkusen,0,1,0,3,3,away,,,True
+66679,2023,2023-09-30,13:30,6,6. Spieltag,65,1. FC Köln,16,VfB Stuttgart,0,0,0,2,2,away,,,True
+66681,2023,2023-09-30,13:30,6,6. Spieltag,129,VfL Bochum,87,Borussia Mönchengladbach,0,3,1,3,4,away,,,True
+66682,2023,2023-09-30,13:30,6,6. Spieltag,199,1. FC Heidenheim 1846,80,1. FC Union Berlin,0,0,1,0,1,home,,,True
+66675,2023,2023-09-30,16:30,6,6. Spieltag,1635,RB Leipzig,40,FC Bayern München,2,0,2,2,4,draw,,,True
+66683,2023,2023-10-01,13:30,6,6. Spieltag,118,SV Darmstadt 98,134,SV Werder Bremen,2,0,4,2,6,home,,,True
+66676,2023,2023-10-01,15:30,6,6. Spieltag,112,SC Freiburg,95,FC Augsburg,1,0,2,0,2,home,,,True
+66689,2023,2023-10-06,18:30,7,7. Spieltag,87,Borussia Mönchengladbach,81,1. FSV Mainz 05,1,1,2,2,4,draw,,,True
+66685,2023,2023-10-07,13:30,7,7. Spieltag,7,Borussia Dortmund,80,1. FC Union Berlin,1,2,4,2,6,home,,,True
+66686,2023,2023-10-07,13:30,7,7. Spieltag,1635,RB Leipzig,129,VfL Bochum,0,0,0,0,0,draw,,,True
+66691,2023,2023-10-07,13:30,7,7. Spieltag,95,FC Augsburg,118,SV Darmstadt 98,0,0,1,2,3,away,,,True
+66692,2023,2023-10-07,13:30,7,7. Spieltag,16,VfB Stuttgart,131,VfL Wolfsburg,0,1,3,1,4,home,,,True
+66690,2023,2023-10-07,16:30,7,7. Spieltag,134,SV Werder Bremen,175,TSG Hoffenheim,1,2,2,3,5,away,,,True
+66687,2023,2023-10-08,13:30,7,7. Spieltag,6,Bayer 04 Leverkusen,65,1. FC Köln,2,0,3,0,3,home,,,True
+66684,2023,2023-10-08,15:30,7,7. Spieltag,40,FC Bayern München,112,SC Freiburg,2,0,3,0,3,home,,,True
+66688,2023,2023-10-08,17:30,7,7. Spieltag,91,Eintracht Frankfurt,199,1. FC Heidenheim 1846,1,0,2,0,2,home,,,True
+66693,2023,2023-10-20,18:30,8,8. Spieltag,7,Borussia Dortmund,134,SV Werder Bremen,0,0,1,0,1,home,,,True
+66694,2023,2023-10-21,13:30,8,8. Spieltag,80,1. FC Union Berlin,16,VfB Stuttgart,0,1,0,3,3,away,,,True
+66695,2023,2023-10-21,13:30,8,8. Spieltag,112,SC Freiburg,129,VfL Bochum,2,1,2,1,3,home,,,True
+66696,2023,2023-10-21,13:30,8,8. Spieltag,131,VfL Wolfsburg,6,Bayer 04 Leverkusen,1,1,1,2,3,away,,,True
+66699,2023,2023-10-21,13:30,8,8. Spieltag,175,TSG Hoffenheim,91,Eintracht Frankfurt,1,3,1,3,4,away,,,True
+66701,2023,2023-10-21,13:30,8,8. Spieltag,118,SV Darmstadt 98,1635,RB Leipzig,1,2,1,3,4,away,,,True
+66697,2023,2023-10-21,16:30,8,8. Spieltag,81,1. FSV Mainz 05,40,FC Bayern München,1,2,1,3,4,away,,,True
+66698,2023,2023-10-22,13:30,8,8. Spieltag,65,1. FC Köln,87,Borussia Mönchengladbach,1,0,3,1,4,home,,,True
+66700,2023,2023-10-22,15:30,8,8. Spieltag,199,1. FC Heidenheim 1846,95,FC Augsburg,2,3,2,5,7,away,,,True
+66708,2023,2023-10-27,18:30,9,9. Spieltag,129,VfL Bochum,81,1. FSV Mainz 05,1,0,2,2,4,draw,,,True
+66702,2023,2023-10-28,13:30,9,9. Spieltag,40,FC Bayern München,118,SV Darmstadt 98,1,0,8,0,8,home,,,True
+66706,2023,2023-10-28,13:30,9,9. Spieltag,87,Borussia Mönchengladbach,199,1. FC Heidenheim 1846,1,1,2,1,3,home,,,True
+66707,2023,2023-10-28,13:30,9,9. Spieltag,134,SV Werder Bremen,80,1. FC Union Berlin,1,0,2,0,2,home,,,True
+66709,2023,2023-10-28,13:30,9,9. Spieltag,95,FC Augsburg,131,VfL Wolfsburg,1,2,3,2,5,home,,,True
+66710,2023,2023-10-28,13:30,9,9. Spieltag,16,VfB Stuttgart,175,TSG Hoffenheim,0,2,2,3,5,away,,,True
+66703,2023,2023-10-28,16:30,9,9. Spieltag,1635,RB Leipzig,65,1. FC Köln,4,0,6,0,6,home,,,True
+66705,2023,2023-10-29,14:30,9,9. Spieltag,91,Eintracht Frankfurt,7,Borussia Dortmund,2,1,3,3,6,draw,,,True
+66704,2023,2023-10-29,16:30,9,9. Spieltag,6,Bayer 04 Leverkusen,112,SC Freiburg,1,0,2,1,3,home,,,True
+66719,2023,2023-11-03,19:30,10,10. Spieltag,118,SV Darmstadt 98,129,VfL Bochum,1,1,1,2,3,away,,,True
+66712,2023,2023-11-04,14:30,10,10. Spieltag,80,1. FC Union Berlin,91,Eintracht Frankfurt,0,2,0,3,3,away,,,True
+66713,2023,2023-11-04,14:30,10,10. Spieltag,112,SC Freiburg,87,Borussia Mönchengladbach,1,3,3,3,6,draw,,,True
+66715,2023,2023-11-04,14:30,10,10. Spieltag,81,1. FSV Mainz 05,1635,RB Leipzig,0,0,2,0,2,home,,,True
+66716,2023,2023-11-04,14:30,10,10. Spieltag,65,1. FC Köln,95,FC Augsburg,1,1,1,1,2,draw,,,True
+66717,2023,2023-11-04,14:30,10,10. Spieltag,175,TSG Hoffenheim,6,Bayer 04 Leverkusen,0,2,2,3,5,away,,,True
+66711,2023,2023-11-04,17:30,10,10. Spieltag,7,Borussia Dortmund,40,FC Bayern München,0,2,0,4,4,away,,,True
+66714,2023,2023-11-05,14:30,10,10. Spieltag,131,VfL Wolfsburg,134,SV Werder Bremen,1,1,2,2,4,draw,,,True
+66718,2023,2023-11-05,16:30,10,10. Spieltag,199,1. FC Heidenheim 1846,16,VfB Stuttgart,0,0,2,0,2,home,,,True
+66723,2023,2023-11-10,19:30,11,11. Spieltag,87,Borussia Mönchengladbach,131,VfL Wolfsburg,2,0,4,0,4,home,,,True
+66720,2023,2023-11-11,14:30,11,11. Spieltag,40,FC Bayern München,199,1. FC Heidenheim 1846,2,0,4,2,6,home,,,True
+66726,2023,2023-11-11,14:30,11,11. Spieltag,95,FC Augsburg,175,TSG Hoffenheim,0,1,1,1,2,draw,,,True
+66727,2023,2023-11-11,14:30,11,11. Spieltag,16,VfB Stuttgart,7,Borussia Dortmund,1,1,2,1,3,home,,,True
+66728,2023,2023-11-11,14:30,11,11. Spieltag,118,SV Darmstadt 98,81,1. FSV Mainz 05,0,0,0,0,0,draw,,,True
+66725,2023,2023-11-11,17:30,11,11. Spieltag,129,VfL Bochum,65,1. FC Köln,1,0,1,1,2,draw,,,True
+66722,2023,2023-11-12,14:30,11,11. Spieltag,6,Bayer 04 Leverkusen,80,1. FC Union Berlin,1,0,4,0,4,home,,,True
+66724,2023,2023-11-12,16:30,11,11. Spieltag,134,SV Werder Bremen,91,Eintracht Frankfurt,1,0,2,2,4,draw,,,True
+66721,2023,2023-11-12,18:30,11,11. Spieltag,1635,RB Leipzig,112,SC Freiburg,1,1,3,1,4,home,,,True
+66734,2023,2023-11-24,19:30,12,12. Spieltag,65,1. FC Köln,40,FC Bayern München,0,1,0,1,1,away,,,True
+66729,2023,2023-11-25,14:30,12,12. Spieltag,7,Borussia Dortmund,87,Borussia Mönchengladbach,3,2,4,2,6,home,,,True
+66730,2023,2023-11-25,14:30,12,12. Spieltag,80,1. FC Union Berlin,95,FC Augsburg,0,1,1,1,2,draw,,,True
+66731,2023,2023-11-25,14:30,12,12. Spieltag,112,SC Freiburg,118,SV Darmstadt 98,1,1,1,1,2,draw,,,True
+66733,2023,2023-11-25,14:30,12,12. Spieltag,131,VfL Wolfsburg,1635,RB Leipzig,1,0,2,1,3,home,,,True
+66736,2023,2023-11-25,14:30,12,12. Spieltag,134,SV Werder Bremen,6,Bayer 04 Leverkusen,0,2,0,3,3,away,,,True
+66732,2023,2023-11-25,17:30,12,12. Spieltag,91,Eintracht Frankfurt,16,VfB Stuttgart,1,2,1,2,3,away,,,True
+66737,2023,2023-11-26,14:30,12,12. Spieltag,199,1. FC Heidenheim 1846,129,VfL Bochum,0,0,0,0,0,draw,,,True
+66735,2023,2023-11-26,16:30,12,12. Spieltag,175,TSG Hoffenheim,81,1. FSV Mainz 05,0,1,1,1,2,draw,,,True
+66746,2023,2023-12-01,19:30,13,13. Spieltag,118,SV Darmstadt 98,65,1. FC Köln,0,0,0,1,1,away,,,True
+66739,2023,2023-12-02,14:30,13,13. Spieltag,1635,RB Leipzig,199,1. FC Heidenheim 1846,2,1,2,1,3,home,,,True
+66742,2023,2023-12-02,14:30,13,13. Spieltag,87,Borussia Mönchengladbach,175,TSG Hoffenheim,0,0,2,1,3,home,,,True
+66743,2023,2023-12-02,14:30,13,13. Spieltag,129,VfL Bochum,131,VfL Wolfsburg,2,1,3,1,4,home,,,True
+66745,2023,2023-12-02,17:30,13,13. Spieltag,16,VfB Stuttgart,134,SV Werder Bremen,1,0,2,0,2,home,,,True
+66741,2023,2023-12-03,14:30,13,13. Spieltag,81,1. FSV Mainz 05,112,SC Freiburg,0,0,0,1,1,away,,,True
+66740,2023,2023-12-03,16:30,13,13. Spieltag,6,Bayer 04 Leverkusen,7,Borussia Dortmund,0,1,1,1,2,draw,,,True
+66744,2023,2023-12-03,18:30,13,13. Spieltag,95,FC Augsburg,91,Eintracht Frankfurt,1,0,2,1,3,home,,,True
+66752,2023,2023-12-08,19:30,14,14. Spieltag,175,TSG Hoffenheim,129,VfL Bochum,2,0,3,1,4,home,,,True
+66748,2023,2023-12-09,14:30,14,14. Spieltag,80,1. FC Union Berlin,87,Borussia Mönchengladbach,1,0,3,1,4,home,,,True
+66749,2023,2023-12-09,14:30,14,14. Spieltag,91,Eintracht Frankfurt,40,FC Bayern München,3,1,5,1,6,home,,,True
+66750,2023,2023-12-09,14:30,14,14. Spieltag,131,VfL Wolfsburg,112,SC Freiburg,0,0,0,1,1,away,,,True
+66753,2023,2023-12-09,14:30,14,14. Spieltag,134,SV Werder Bremen,95,FC Augsburg,1,0,2,0,2,home,,,True
+66755,2023,2023-12-09,14:30,14,14. Spieltag,199,1. FC Heidenheim 1846,118,SV Darmstadt 98,1,0,3,2,5,home,,,True
+66747,2023,2023-12-09,17:30,14,14. Spieltag,7,Borussia Dortmund,1635,RB Leipzig,1,1,2,3,5,away,,,True
+66754,2023,2023-12-10,14:30,14,14. Spieltag,16,VfB Stuttgart,6,Bayer 04 Leverkusen,1,0,1,1,2,draw,,,True
+66751,2023,2023-12-10,16:30,14,14. Spieltag,65,1. FC Köln,81,1. FSV Mainz 05,0,0,0,0,0,draw,,,True
+66761,2023,2023-12-15,19:30,15,15. Spieltag,87,Borussia Mönchengladbach,134,SV Werder Bremen,1,1,2,2,4,draw,,,True
+66760,2023,2023-12-16,14:30,15,15. Spieltag,81,1. FSV Mainz 05,199,1. FC Heidenheim 1846,0,1,0,1,1,away,,,True
+66762,2023,2023-12-16,14:30,15,15. Spieltag,129,VfL Bochum,80,1. FC Union Berlin,1,0,3,0,3,home,,,True
+66763,2023,2023-12-16,14:30,15,15. Spieltag,95,FC Augsburg,7,Borussia Dortmund,1,1,1,1,2,draw,,,True
+66764,2023,2023-12-16,14:30,15,15. Spieltag,118,SV Darmstadt 98,131,VfL Wolfsburg,0,0,0,1,1,away,,,True
+66757,2023,2023-12-16,17:30,15,15. Spieltag,1635,RB Leipzig,175,TSG Hoffenheim,1,1,3,1,4,home,,,True
+66758,2023,2023-12-17,14:30,15,15. Spieltag,112,SC Freiburg,65,1. FC Köln,0,0,2,0,2,home,,,True
+66759,2023,2023-12-17,16:30,15,15. Spieltag,6,Bayer 04 Leverkusen,91,Eintracht Frankfurt,1,0,3,0,3,home,,,True
+66756,2023,2023-12-17,18:30,15,15. Spieltag,40,FC Bayern München,16,VfB Stuttgart,1,0,3,0,3,home,,,True
+66772,2023,2023-12-19,17:30,16,16. Spieltag,134,SV Werder Bremen,1635,RB Leipzig,0,0,1,1,2,draw,,,True
+66765,2023,2023-12-19,19:30,16,16. Spieltag,7,Borussia Dortmund,81,1. FSV Mainz 05,1,1,1,1,2,draw,,,True
+66771,2023,2023-12-19,19:30,16,16. Spieltag,175,TSG Hoffenheim,118,SV Darmstadt 98,2,1,3,3,6,draw,,,True
+66766,2023,2023-12-20,17:30,16,16. Spieltag,80,1. FC Union Berlin,65,1. FC Köln,0,0,2,0,2,home,,,True
+66768,2023,2023-12-20,19:30,16,16. Spieltag,6,Bayer 04 Leverkusen,129,VfL Bochum,3,0,4,0,4,home,,,True
+66769,2023,2023-12-20,19:30,16,16. Spieltag,91,Eintracht Frankfurt,87,Borussia Mönchengladbach,0,1,2,1,3,home,,,True
+66770,2023,2023-12-20,19:30,16,16. Spieltag,131,VfL Wolfsburg,40,FC Bayern München,1,2,1,2,3,away,,,True
+66773,2023,2023-12-20,19:30,16,16. Spieltag,16,VfB Stuttgart,95,FC Augsburg,2,0,3,0,3,home,,,True
+66774,2023,2023-12-20,19:30,16,16. Spieltag,199,1. FC Heidenheim 1846,112,SC Freiburg,0,1,3,2,5,home,,,True
+66775,2023,2024-01-12,19:30,17,17. Spieltag,40,FC Bayern München,175,TSG Hoffenheim,1,0,3,0,3,home,,,True
+66776,2023,2024-01-13,14:30,17,17. Spieltag,1635,RB Leipzig,91,Eintracht Frankfurt,0,1,0,1,1,away,,,True
+66777,2023,2024-01-13,14:30,17,17. Spieltag,112,SC Freiburg,80,1. FC Union Berlin,0,0,0,0,0,draw,,,True
+66778,2023,2024-01-13,14:30,17,17. Spieltag,81,1. FSV Mainz 05,131,VfL Wolfsburg,0,1,1,1,2,draw,,,True
+66780,2023,2024-01-13,14:30,17,17. Spieltag,65,1. FC Köln,199,1. FC Heidenheim 1846,1,0,1,1,2,draw,,,True
+66782,2023,2024-01-13,14:30,17,17. Spieltag,95,FC Augsburg,6,Bayer 04 Leverkusen,0,0,0,1,1,away,,,True
+66783,2023,2024-01-13,17:30,17,17. Spieltag,118,SV Darmstadt 98,7,Borussia Dortmund,0,1,0,3,3,away,,,True
+66781,2023,2024-01-14,14:30,17,17. Spieltag,129,VfL Bochum,134,SV Werder Bremen,0,0,1,1,2,draw,,,True
+66779,2023,2024-01-14,16:30,17,17. Spieltag,87,Borussia Mönchengladbach,16,VfB Stuttgart,2,0,3,1,4,home,,,True
+66786,2023,2024-01-20,14:30,18,18. Spieltag,112,SC Freiburg,175,TSG Hoffenheim,1,0,3,2,5,home,,,True
+66789,2023,2024-01-20,14:30,18,18. Spieltag,65,1. FC Köln,7,Borussia Dortmund,0,1,0,4,4,away,,,True
+66790,2023,2024-01-20,14:30,18,18. Spieltag,129,VfL Bochum,16,VfB Stuttgart,0,0,1,0,1,home,,,True
+66791,2023,2024-01-20,14:30,18,18. Spieltag,199,1. FC Heidenheim 1846,131,VfL Wolfsburg,1,1,1,1,2,draw,,,True
+66792,2023,2024-01-20,14:30,18,18. Spieltag,118,SV Darmstadt 98,91,Eintracht Frankfurt,0,1,2,2,4,draw,,,True
+66785,2023,2024-01-20,17:30,18,18. Spieltag,1635,RB Leipzig,6,Bayer 04 Leverkusen,1,0,2,3,5,away,,,True
+66784,2023,2024-01-21,14:30,18,18. Spieltag,40,FC Bayern München,134,SV Werder Bremen,0,0,0,1,1,away,,,True
+66788,2023,2024-01-21,16:30,18,18. Spieltag,87,Borussia Mönchengladbach,95,FC Augsburg,1,0,1,2,3,away,,,True
+66738,2023,2024-01-24,19:30,13,13. Spieltag,40,FC Bayern München,80,1. FC Union Berlin,0,0,1,0,1,home,,,True
+66796,2023,2024-01-26,19:30,19,19. Spieltag,91,Eintracht Frankfurt,81,1. FSV Mainz 05,0,0,1,0,1,home,,,True
+66797,2023,2024-01-27,14:30,19,19. Spieltag,131,VfL Wolfsburg,65,1. FC Köln,1,1,1,1,2,draw,,,True
+66798,2023,2024-01-27,14:30,19,19. Spieltag,175,TSG Hoffenheim,199,1. FC Heidenheim 1846,1,1,1,1,2,draw,,,True
+66799,2023,2024-01-27,14:30,19,19. Spieltag,134,SV Werder Bremen,112,SC Freiburg,1,1,3,1,4,home,,,True
+66800,2023,2024-01-27,14:30,19,19. Spieltag,95,FC Augsburg,40,FC Bayern München,0,2,2,3,5,away,,,True
+66801,2023,2024-01-27,14:30,19,19. Spieltag,16,VfB Stuttgart,1635,RB Leipzig,2,1,5,2,7,home,,,True
+66795,2023,2024-01-27,17:30,19,19. Spieltag,6,Bayer 04 Leverkusen,87,Borussia Mönchengladbach,0,0,0,0,0,draw,,,True
+66794,2023,2024-01-28,14:30,19,19. Spieltag,80,1. FC Union Berlin,118,SV Darmstadt 98,0,0,1,0,1,home,,,True
+66793,2023,2024-01-28,16:30,19,19. Spieltag,7,Borussia Dortmund,129,VfL Bochum,1,1,3,1,4,home,,,True
+66809,2023,2024-02-02,19:30,20,20. Spieltag,199,1. FC Heidenheim 1846,7,Borussia Dortmund,0,0,0,0,0,draw,,,True
+66802,2023,2024-02-03,14:30,20,20. Spieltag,40,FC Bayern München,87,Borussia Mönchengladbach,1,1,3,1,4,home,,,True
+66804,2023,2024-02-03,14:30,20,20. Spieltag,112,SC Freiburg,16,VfB Stuttgart,1,2,1,3,4,away,,,True
+66806,2023,2024-02-03,14:30,20,20. Spieltag,81,1. FSV Mainz 05,134,SV Werder Bremen,0,1,0,1,1,away,,,True
+66808,2023,2024-02-03,14:30,20,20. Spieltag,129,VfL Bochum,95,FC Augsburg,1,0,1,1,2,draw,,,True
+66810,2023,2024-02-03,14:30,20,20. Spieltag,118,SV Darmstadt 98,6,Bayer 04 Leverkusen,0,1,0,2,2,away,,,True
+66807,2023,2024-02-03,17:30,20,20. Spieltag,65,1. FC Köln,91,Eintracht Frankfurt,0,0,2,0,2,home,,,True
+66805,2023,2024-02-04,14:30,20,20. Spieltag,131,VfL Wolfsburg,175,TSG Hoffenheim,0,1,2,2,4,draw,,,True
+66803,2023,2024-02-04,16:30,20,20. Spieltag,1635,RB Leipzig,80,1. FC Union Berlin,1,0,2,0,2,home,,,True
+66787,2023,2024-02-07,17:30,18,18. Spieltag,81,1. FSV Mainz 05,80,1. FC Union Berlin,1,1,1,1,2,draw,,,True
+66811,2023,2024-02-09,19:30,21,21. Spieltag,7,Borussia Dortmund,112,SC Freiburg,2,0,3,0,3,home,,,True
+66812,2023,2024-02-10,14:30,21,21. Spieltag,80,1. FC Union Berlin,131,VfL Wolfsburg,1,0,1,0,1,home,,,True
+66814,2023,2024-02-10,14:30,21,21. Spieltag,91,Eintracht Frankfurt,129,VfL Bochum,1,1,1,1,2,draw,,,True
+66815,2023,2024-02-10,14:30,21,21. Spieltag,87,Borussia Mönchengladbach,118,SV Darmstadt 98,0,0,0,0,0,draw,,,True
+66817,2023,2024-02-10,14:30,21,21. Spieltag,134,SV Werder Bremen,199,1. FC Heidenheim 1846,1,2,1,2,3,away,,,True
+66818,2023,2024-02-10,14:30,21,21. Spieltag,95,FC Augsburg,1635,RB Leipzig,1,1,2,2,4,draw,,,True
+66813,2023,2024-02-10,17:30,21,21. Spieltag,6,Bayer 04 Leverkusen,40,FC Bayern München,1,0,3,0,3,home,,,True
+66819,2023,2024-02-11,14:30,21,21. Spieltag,16,VfB Stuttgart,81,1. FSV Mainz 05,2,0,3,1,4,home,,,True
+66816,2023,2024-02-11,16:30,21,21. Spieltag,175,TSG Hoffenheim,65,1. FC Köln,0,0,1,1,2,draw,,,True
+66824,2023,2024-02-16,19:30,22,22. Spieltag,65,1. FC Köln,134,SV Werder Bremen,0,0,0,1,1,away,,,True
+66822,2023,2024-02-17,14:30,22,22. Spieltag,131,VfL Wolfsburg,7,Borussia Dortmund,0,1,1,1,2,draw,,,True
+66823,2023,2024-02-17,14:30,22,22. Spieltag,81,1. FSV Mainz 05,95,FC Augsburg,1,0,1,0,1,home,,,True
+66825,2023,2024-02-17,14:30,22,22. Spieltag,175,TSG Hoffenheim,80,1. FC Union Berlin,0,0,0,1,1,away,,,True
+66827,2023,2024-02-17,14:30,22,22. Spieltag,199,1. FC Heidenheim 1846,6,Bayer 04 Leverkusen,0,1,1,2,3,away,,,True
+66828,2023,2024-02-17,14:30,22,22. Spieltag,118,SV Darmstadt 98,16,VfB Stuttgart,0,1,1,2,3,away,,,True
+66820,2023,2024-02-17,17:30,22,22. Spieltag,1635,RB Leipzig,87,Borussia Mönchengladbach,1,0,2,0,2,home,,,True
+66821,2023,2024-02-18,14:30,22,22. Spieltag,112,SC Freiburg,91,Eintracht Frankfurt,2,2,3,3,6,draw,,,True
+66826,2023,2024-02-18,16:30,22,22. Spieltag,129,VfL Bochum,40,FC Bayern München,2,1,3,2,5,home,,,True
+66832,2023,2024-02-23,19:30,23,23. Spieltag,6,Bayer 04 Leverkusen,81,1. FSV Mainz 05,1,1,2,1,3,home,,,True
+66831,2023,2024-02-24,14:30,23,23. Spieltag,80,1. FC Union Berlin,199,1. FC Heidenheim 1846,2,1,2,2,4,draw,,,True
+66834,2023,2024-02-24,14:30,23,23. Spieltag,87,Borussia Mönchengladbach,129,VfL Bochum,2,0,5,2,7,home,,,True
+66835,2023,2024-02-24,14:30,23,23. Spieltag,134,SV Werder Bremen,118,SV Darmstadt 98,1,1,1,1,2,draw,,,True
+66837,2023,2024-02-24,14:30,23,23. Spieltag,16,VfB Stuttgart,65,1. FC Köln,0,0,1,1,2,draw,,,True
+66829,2023,2024-02-24,17:30,23,23. Spieltag,40,FC Bayern München,1635,RB Leipzig,0,0,2,1,3,home,,,True
+66833,2023,2024-02-25,14:30,23,23. Spieltag,91,Eintracht Frankfurt,131,VfL Wolfsburg,1,2,2,2,4,draw,,,True
+66830,2023,2024-02-25,16:30,23,23. Spieltag,7,Borussia Dortmund,175,TSG Hoffenheim,2,1,2,3,5,away,,,True
+66836,2023,2024-02-25,18:30,23,23. Spieltag,95,FC Augsburg,112,SC Freiburg,0,1,2,1,3,home,,,True
+66839,2023,2024-03-01,19:30,24,24. Spieltag,112,SC Freiburg,40,FC Bayern München,1,1,2,2,4,draw,,,True
+66838,2023,2024-03-02,14:30,24,24. Spieltag,80,1. FC Union Berlin,7,Borussia Dortmund,0,1,0,2,2,away,,,True
+66841,2023,2024-03-02,14:30,24,24. Spieltag,81,1. FSV Mainz 05,87,Borussia Mönchengladbach,1,0,1,1,2,draw,,,True
+66844,2023,2024-03-02,14:30,24,24. Spieltag,129,VfL Bochum,1635,RB Leipzig,1,1,1,4,5,away,,,True
+66845,2023,2024-03-02,14:30,24,24. Spieltag,199,1. FC Heidenheim 1846,91,Eintracht Frankfurt,0,1,1,2,3,away,,,True
+66846,2023,2024-03-02,14:30,24,24. Spieltag,118,SV Darmstadt 98,95,FC Augsburg,0,5,0,6,6,away,,,True
+66840,2023,2024-03-02,17:30,24,24. Spieltag,131,VfL Wolfsburg,16,VfB Stuttgart,0,1,2,3,5,away,,,True
+66842,2023,2024-03-03,14:30,24,24. Spieltag,65,1. FC Köln,6,Bayer 04 Leverkusen,0,1,0,2,2,away,,,True
+66843,2023,2024-03-03,16:30,24,24. Spieltag,175,TSG Hoffenheim,134,SV Werder Bremen,2,0,2,1,3,home,,,True
+66855,2023,2024-03-08,19:30,25,25. Spieltag,16,VfB Stuttgart,80,1. FC Union Berlin,1,0,2,0,2,home,,,True
+66847,2023,2024-03-09,14:30,25,25. Spieltag,40,FC Bayern München,81,1. FSV Mainz 05,3,1,8,1,9,home,,,True
+66848,2023,2024-03-09,14:30,25,25. Spieltag,1635,RB Leipzig,118,SV Darmstadt 98,1,0,2,0,2,home,,,True
+66851,2023,2024-03-09,14:30,25,25. Spieltag,87,Borussia Mönchengladbach,65,1. FC Köln,1,1,3,3,6,draw,,,True
+66854,2023,2024-03-09,14:30,25,25. Spieltag,95,FC Augsburg,199,1. FC Heidenheim 1846,1,0,1,0,1,home,,,True
+66852,2023,2024-03-09,17:30,25,25. Spieltag,134,SV Werder Bremen,7,Borussia Dortmund,0,2,1,2,3,away,,,True
+66853,2023,2024-03-10,14:30,25,25. Spieltag,129,VfL Bochum,112,SC Freiburg,0,1,1,2,3,away,,,True
+66850,2023,2024-03-10,16:30,25,25. Spieltag,91,Eintracht Frankfurt,175,TSG Hoffenheim,1,1,3,1,4,home,,,True
+66849,2023,2024-03-10,18:30,25,25. Spieltag,6,Bayer 04 Leverkusen,131,VfL Wolfsburg,1,0,2,0,2,home,,,True
+66861,2023,2024-03-15,19:30,26,26. Spieltag,65,1. FC Köln,1635,RB Leipzig,1,1,1,5,6,away,,,True
+66857,2023,2024-03-16,14:30,26,26. Spieltag,80,1. FC Union Berlin,134,SV Werder Bremen,0,0,2,1,3,home,,,True
+66859,2023,2024-03-16,14:30,26,26. Spieltag,131,VfL Wolfsburg,95,FC Augsburg,1,1,1,3,4,away,,,True
+66860,2023,2024-03-16,14:30,26,26. Spieltag,81,1. FSV Mainz 05,129,VfL Bochum,1,0,2,0,2,home,,,True
+66863,2023,2024-03-16,14:30,26,26. Spieltag,199,1. FC Heidenheim 1846,87,Borussia Mönchengladbach,0,1,1,1,2,draw,,,True
+66864,2023,2024-03-16,14:30,26,26. Spieltag,118,SV Darmstadt 98,40,FC Bayern München,1,2,2,5,7,away,,,True
+66862,2023,2024-03-16,17:30,26,26. Spieltag,175,TSG Hoffenheim,16,VfB Stuttgart,0,2,0,3,3,away,,,True
+66858,2023,2024-03-17,14:30,26,26. Spieltag,112,SC Freiburg,6,Bayer 04 Leverkusen,1,2,2,3,5,away,,,True
+66856,2023,2024-03-17,16:30,26,26. Spieltag,7,Borussia Dortmund,91,Eintracht Frankfurt,1,1,3,1,4,home,,,True
+66866,2023,2024-03-30,14:30,27,27. Spieltag,1635,RB Leipzig,81,1. FSV Mainz 05,0,0,0,0,0,draw,,,True
+66867,2023,2024-03-30,14:30,27,27. Spieltag,6,Bayer 04 Leverkusen,175,TSG Hoffenheim,0,1,2,1,3,home,,,True
+66868,2023,2024-03-30,14:30,27,27. Spieltag,91,Eintracht Frankfurt,80,1. FC Union Berlin,0,0,0,0,0,draw,,,True
+66869,2023,2024-03-30,14:30,27,27. Spieltag,87,Borussia Mönchengladbach,112,SC Freiburg,0,1,0,3,3,away,,,True
+66870,2023,2024-03-30,14:30,27,27. Spieltag,134,SV Werder Bremen,131,VfL Wolfsburg,0,1,0,2,2,away,,,True
+66865,2023,2024-03-30,17:30,27,27. Spieltag,40,FC Bayern München,7,Borussia Dortmund,0,1,0,2,2,away,,,True
+66872,2023,2024-03-31,13:30,27,27. Spieltag,95,FC Augsburg,65,1. FC Köln,1,1,1,1,2,draw,,,True
+66873,2023,2024-03-31,15:30,27,27. Spieltag,16,VfB Stuttgart,199,1. FC Heidenheim 1846,1,0,3,3,6,draw,,,True
+66871,2023,2024-03-31,17:30,27,27. Spieltag,129,VfL Bochum,118,SV Darmstadt 98,1,0,2,2,4,draw,,,True
+66877,2023,2024-04-05,18:30,28,28. Spieltag,91,Eintracht Frankfurt,134,SV Werder Bremen,0,0,1,1,2,draw,,,True
+66875,2023,2024-04-06,13:30,28,28. Spieltag,80,1. FC Union Berlin,6,Bayer 04 Leverkusen,0,1,0,1,1,away,,,True
+66876,2023,2024-04-06,13:30,28,28. Spieltag,112,SC Freiburg,1635,RB Leipzig,0,3,1,4,5,away,,,True
+66879,2023,2024-04-06,13:30,28,28. Spieltag,81,1. FSV Mainz 05,118,SV Darmstadt 98,1,0,4,0,4,home,,,True
+66880,2023,2024-04-06,13:30,28,28. Spieltag,65,1. FC Köln,129,VfL Bochum,0,0,2,1,3,home,,,True
+66882,2023,2024-04-06,13:30,28,28. Spieltag,199,1. FC Heidenheim 1846,40,FC Bayern München,0,2,3,2,5,home,,,True
+66874,2023,2024-04-06,16:30,28,28. Spieltag,7,Borussia Dortmund,16,VfB Stuttgart,0,0,0,1,1,away,,,True
+66881,2023,2024-04-07,13:30,28,28. Spieltag,175,TSG Hoffenheim,95,FC Augsburg,2,0,3,1,4,home,,,True
+66878,2023,2024-04-07,15:30,28,28. Spieltag,131,VfL Wolfsburg,87,Borussia Mönchengladbach,1,0,1,3,4,away,,,True
+66889,2023,2024-04-12,18:30,29,29. Spieltag,95,FC Augsburg,80,1. FC Union Berlin,0,0,2,0,2,home,,,True
+66883,2023,2024-04-13,13:30,29,29. Spieltag,40,FC Bayern München,65,1. FC Köln,0,0,2,0,2,home,,,True
+66884,2023,2024-04-13,13:30,29,29. Spieltag,1635,RB Leipzig,131,VfL Wolfsburg,1,0,3,0,3,home,,,True
+66886,2023,2024-04-13,13:30,29,29. Spieltag,81,1. FSV Mainz 05,175,TSG Hoffenheim,0,1,4,1,5,home,,,True
+66887,2023,2024-04-13,13:30,29,29. Spieltag,87,Borussia Mönchengladbach,7,Borussia Dortmund,1,2,1,2,3,away,,,True
+66888,2023,2024-04-13,13:30,29,29. Spieltag,129,VfL Bochum,199,1. FC Heidenheim 1846,0,0,1,1,2,draw,,,True
+66890,2023,2024-04-13,16:30,29,29. Spieltag,16,VfB Stuttgart,91,Eintracht Frankfurt,3,0,3,0,3,home,,,True
+66891,2023,2024-04-14,13:30,29,29. Spieltag,118,SV Darmstadt 98,112,SC Freiburg,0,1,0,1,1,away,,,True
+66885,2023,2024-04-14,15:30,29,29. Spieltag,6,Bayer 04 Leverkusen,134,SV Werder Bremen,1,0,5,0,5,home,,,True
+66895,2023,2024-04-19,18:30,30,30. Spieltag,91,Eintracht Frankfurt,95,FC Augsburg,0,1,3,1,4,home,,,True
+66896,2023,2024-04-20,13:30,30,30. Spieltag,131,VfL Wolfsburg,129,VfL Bochum,1,0,1,0,1,home,,,True
+66897,2023,2024-04-20,13:30,30,30. Spieltag,65,1. FC Köln,118,SV Darmstadt 98,0,0,0,2,2,away,,,True
+66898,2023,2024-04-20,13:30,30,30. Spieltag,175,TSG Hoffenheim,87,Borussia Mönchengladbach,1,1,4,3,7,home,,,True
+66900,2023,2024-04-20,13:30,30,30. Spieltag,199,1. FC Heidenheim 1846,1635,RB Leipzig,0,1,1,2,3,away,,,True
+66893,2023,2024-04-20,16:30,30,30. Spieltag,80,1. FC Union Berlin,40,FC Bayern München,0,2,1,5,6,away,,,True
+66899,2023,2024-04-21,13:30,30,30. Spieltag,134,SV Werder Bremen,16,VfB Stuttgart,1,0,2,1,3,home,,,True
+66892,2023,2024-04-21,15:30,30,30. Spieltag,7,Borussia Dortmund,6,Bayer 04 Leverkusen,0,0,1,1,2,draw,,,True
+66894,2023,2024-04-21,17:30,30,30. Spieltag,112,SC Freiburg,81,1. FSV Mainz 05,0,0,1,1,2,draw,,,True
+66907,2023,2024-04-26,18:30,31,31. Spieltag,129,VfL Bochum,175,TSG Hoffenheim,2,0,3,2,5,home,,,True
+66901,2023,2024-04-27,13:30,31,31. Spieltag,40,FC Bayern München,91,Eintracht Frankfurt,1,1,2,1,3,home,,,True
+66902,2023,2024-04-27,13:30,31,31. Spieltag,1635,RB Leipzig,7,Borussia Dortmund,2,1,4,1,5,home,,,True
+66903,2023,2024-04-27,13:30,31,31. Spieltag,112,SC Freiburg,131,VfL Wolfsburg,1,0,1,2,3,away,,,True
+66908,2023,2024-04-27,13:30,31,31. Spieltag,95,FC Augsburg,134,SV Werder Bremen,0,0,0,3,3,away,,,True
+66904,2023,2024-04-27,16:30,31,31. Spieltag,6,Bayer 04 Leverkusen,16,VfB Stuttgart,0,0,2,2,4,draw,,,True
+66906,2023,2024-04-28,13:30,31,31. Spieltag,87,Borussia Mönchengladbach,80,1. FC Union Berlin,0,0,0,0,0,draw,,,True
+66905,2023,2024-04-28,15:30,31,31. Spieltag,81,1. FSV Mainz 05,65,1. FC Köln,1,0,1,1,2,draw,,,True
+66909,2023,2024-04-28,17:30,31,31. Spieltag,118,SV Darmstadt 98,199,1. FC Heidenheim 1846,0,0,0,1,1,away,,,True
+66915,2023,2024-05-03,18:30,32,32. Spieltag,175,TSG Hoffenheim,1635,RB Leipzig,0,1,1,1,2,draw,,,True
+66910,2023,2024-05-04,13:30,32,32. Spieltag,7,Borussia Dortmund,95,FC Augsburg,4,1,5,1,6,home,,,True
+66913,2023,2024-05-04,13:30,32,32. Spieltag,131,VfL Wolfsburg,118,SV Darmstadt 98,2,0,3,0,3,home,,,True
+66916,2023,2024-05-04,13:30,32,32. Spieltag,134,SV Werder Bremen,87,Borussia Mönchengladbach,1,1,2,2,4,draw,,,True
+66917,2023,2024-05-04,13:30,32,32. Spieltag,16,VfB Stuttgart,40,FC Bayern München,1,1,3,1,4,home,,,True
+66914,2023,2024-05-04,16:30,32,32. Spieltag,65,1. FC Köln,112,SC Freiburg,0,0,0,0,0,draw,,,True
+66911,2023,2024-05-05,13:30,32,32. Spieltag,80,1. FC Union Berlin,129,VfL Bochum,0,3,3,4,7,away,,,True
+66912,2023,2024-05-05,15:30,32,32. Spieltag,91,Eintracht Frankfurt,6,Bayer 04 Leverkusen,1,2,1,5,6,away,,,True
+66918,2023,2024-05-05,17:30,32,32. Spieltag,199,1. FC Heidenheim 1846,81,1. FSV Mainz 05,0,1,1,1,2,draw,,,True
+66926,2023,2024-05-10,18:30,33,33. Spieltag,95,FC Augsburg,16,VfB Stuttgart,0,0,0,1,1,away,,,True
+66920,2023,2024-05-11,13:30,33,33. Spieltag,1635,RB Leipzig,134,SV Werder Bremen,0,1,1,1,2,draw,,,True
+66921,2023,2024-05-11,13:30,33,33. Spieltag,112,SC Freiburg,199,1. FC Heidenheim 1846,1,1,1,1,2,draw,,,True
+66923,2023,2024-05-11,13:30,33,33. Spieltag,87,Borussia Mönchengladbach,91,Eintracht Frankfurt,1,1,1,1,2,draw,,,True
+66924,2023,2024-05-11,13:30,33,33. Spieltag,65,1. FC Köln,80,1. FC Union Berlin,1,2,3,2,5,home,,,True
+66922,2023,2024-05-11,16:30,33,33. Spieltag,81,1. FSV Mainz 05,7,Borussia Dortmund,3,0,3,0,3,home,,,True
+66927,2023,2024-05-12,13:30,33,33. Spieltag,118,SV Darmstadt 98,175,TSG Hoffenheim,0,5,0,6,6,away,,,True
+66919,2023,2024-05-12,15:30,33,33. Spieltag,40,FC Bayern München,131,VfL Wolfsburg,2,0,2,0,2,home,,,True
+66925,2023,2024-05-12,17:30,33,33. Spieltag,129,VfL Bochum,6,Bayer 04 Leverkusen,0,2,0,5,5,away,,,True
+66928,2023,2024-05-18,13:30,34,34. Spieltag,7,Borussia Dortmund,118,SV Darmstadt 98,2,0,4,0,4,home,,,True
+66929,2023,2024-05-18,13:30,34,34. Spieltag,80,1. FC Union Berlin,112,SC Freiburg,0,0,2,1,3,home,,,True
+66930,2023,2024-05-18,13:30,34,34. Spieltag,6,Bayer 04 Leverkusen,95,FC Augsburg,2,0,2,1,3,home,,,True
+66931,2023,2024-05-18,13:30,34,34. Spieltag,91,Eintracht Frankfurt,1635,RB Leipzig,0,1,2,2,4,draw,,,True
+66932,2023,2024-05-18,13:30,34,34. Spieltag,131,VfL Wolfsburg,81,1. FSV Mainz 05,1,1,1,3,4,away,,,True
+66933,2023,2024-05-18,13:30,34,34. Spieltag,175,TSG Hoffenheim,40,FC Bayern München,1,2,4,2,6,home,,,True
+66934,2023,2024-05-18,13:30,34,34. Spieltag,134,SV Werder Bremen,129,VfL Bochum,1,0,4,1,5,home,,,True
+66935,2023,2024-05-18,13:30,34,34. Spieltag,16,VfB Stuttgart,87,Borussia Mönchengladbach,2,0,4,0,4,home,,,True
+66936,2023,2024-05-18,13:30,34,34. Spieltag,199,1. FC Heidenheim 1846,65,1. FC Köln,3,0,4,1,5,home,,,True

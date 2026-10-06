@@ -1,0 +1,157 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{color}
+
+
+\geometry{margin=1.5cm}
+% Пример темы в стиле тёмной IDE
+\definecolor{intj-bg}{HTML}{2B2B2B}
+\definecolor{intj-key}{HTML}{CC7832}
+\definecolor{intj-str}{HTML}{6A8759}
+\definecolor{intj-comm}{HTML}{808080}
+\definecolor{intj-id}{HTML}{A9B7C6}
+\definecolor{intj-num}{HTML}{6897BB}
+
+\lstdefinestyle{intellij}{
+    language=C++,
+    backgroundcolor=\color{intj-bg},
+    basicstyle=\ttfamily\small\color{intj-id},
+    keywordstyle=\color{intj-key}\bfseries,
+    stringstyle=\color{intj-str},
+    commentstyle=\itshape\color{intj-comm},
+    numberstyle=\color{intj-comm}\tiny,
+    stepnumber=1,
+    frame=single,
+    rulecolor=\color{intj-comm},
+    showstringspaces=false,
+    breaklines=true,
+    tabsize=4
+}
+
+
+
+
+\begin{document}
+
+% ---------- Титульный лист ----------
+    \begin{titlepage}
+        \begin{center}
+            \textbf{Федеральное государственное автономное образовательное учреждение высшего образования «Национальный исследовательский университет ИТМО} \\
+            \vspace{1cm}
+
+            \textbf{Факультет программной инженерии и компьютерной техники} \\
+            \vspace{1cm}
+
+            \Large{\textbf{ОТЧЁТ}} \\
+            \Large{\textbf{по задачам: E-H}} \\
+            \large{по дисциплине «Алгоритмы и структуры данных»} \\
+            \vspace{2cm}
+        \end{center}
+
+        \begin{flushright}
+            \textbf{Выполнил:} \\
+            Ануфриев Андрей Сергеевич \\
+            P3219 \\
+        \end{flushright}
+
+        \vfill
+        \begin{center}
+            Санкт-Петербург 2026
+        \end{center}
+    \end{titlepage}
+
+% ---------- Содержание ----------
+    \tableofcontents
+    \newpage
+
+% ========== ЗАДАНИЕ 1 ==========
+
+
+    \section{Задание E. Коровы в стойла}
+
+    \lstinputlisting[style=intellij, label=lst:taskE]{../tasks/E.cpp}
+
+    \subsection*{Суть решения}
+    \textbf{Ключевая идея:} использование бинарного поиска по ответу. Ищем нужное расстояние между коровами, которое можно достичь при расстановке k коров в n стойл.\\
+    \textbf{Основной алгоритм:}
+    \begin{enumerate}
+        \item \textbf{Инициализация бин.поиска}: диапазон поиска от 0 до (последнее стойло - первое стойло).
+        \item \textbf{Бин.поиск}: для каждого проверяемого расстояния mid проверяем возможность расстановки.
+        \item \textbf{Жадно расставляем}:
+        \begin{itemize}
+            \item первую корову на первое стойло.
+            \item Для следующего стойла: если расстоянии >= mid, ставим туда и обновляем last\_pos.
+            \item Если удалось расставить, увеличиваем mid.
+            \item Если не удалось, уменьшаем.
+        \end{itemize}
+    \end{enumerate}
+    Реализация простого бин.поиска\\
+    \textbf{Время: O(n log(max\_dist))}\\
+    \textbf{Память: O(n)}
+
+
+% ========== ЗАДАНИЕ 2 ==========
+    \newpage
+
+
+    \section{Задание F. Число}
+
+    \lstinputlisting[style=intellij, label=lst:taskF]{../tasks/F.cpp}
+
+    \subsection*{Суть решения}
+    \textbf{Ключевая идея:} делаем красивую сортировку чисел как букв\\
+    \textbf{Почему это работает:} если a+b > b+a, то в любом числе, где a и b стоят рядом, a должна быть перед b для максимизации.\\
+    \textbf{Время: O(n log(n L))} - где n - количество фрагментов, L - средняя длина фрагмента.\\
+    \textbf{Память: O(S)}
+
+% ========== ЗАДАНИЕ 3 ==========
+    \newpage
+
+
+    \section{Задание G. Кошмар в замке}
+
+    \lstinputlisting[style=intellij,  label=lst:taskG]{../tasks/G.cpp}
+
+    \subsection*{Суть решения}
+    \textbf{Ключевая идея:} для каждой буквы с частотой > 1, максимальное расстояние между её вхождениями достигается, когда одно вхождение находится в начале строки, а другое - в конце. Буквы с большим весом должны быть размещены на максимальные расстояния.\\
+
+    \textbf{Основной алгоритм:}
+    \begin{enumerate}
+        \item Подсчет частот и чтение весов
+        \item Создание списка букв
+        \item Сортировка по убыванию веса
+        \item Используем два указателя: left и right
+        \item и расставляем буквы с частотой > 1 по краям, а остальные в середину.
+    \end{enumerate}
+    Я с начала думал, что учитывается вес каждой буквы(каждого вхождения) и пытался как-то расставлять буквы, которые встречаются >2раз.
+    Но потом потыкавшись в тесты, я понял, что надо внимательнее читать задание.\\
+    \textbf{Время: O(n + k log k)} - где n - длина строки, k <= 26\\
+    \textbf{Память: O(n)}
+
+
+% ========== ЗАДАНИЕ 4 ==========
+    \newpage
+
+
+    \section{Задание H. Магазин}
+
+    \lstinputlisting[style=intellij, label=lst:taskH]{../tasks/H.cpp}
+
+    \subsection*{Суть решения}
+    \textbf{Ключевая идея:} жадный алгоритм с сортировкой.
+    \textbf{Основной алгоритм:}
+    \begin{enumerate}
+        \item Сортировка в порядке убывания
+        \item Подсчет суммы с пропусками
+    \end{enumerate}
+    \textbf{Время: O(n log n)}\\
+    \textbf{Память: O(n)}
+
+\end{document}

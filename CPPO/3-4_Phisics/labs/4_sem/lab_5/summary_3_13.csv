@@ -1,0 +1,17 @@
+metric,value
+alpha_mode,250_minus_raw; working_alpha_gt_0
+n_points,14
+phi_effective_deg,160.0
+bh_fit_uT,8.690330027823327
+bh_fit_se_uT,0.24228335794743913
+bh_fit_ci95_low_uT,8.162394590855858
+bh_fit_ci95_high_uT,9.218265464790797
+fit_intercept_uT,12.548090807570073
+fit_r2,0.990758896049584
+bh_fit0_uT,19.523649207872005
+bh_fit0_se_uT,1.1684586247538935
+bh_fit0_ci95_low_uT,16.999778578403593
+bh_fit0_ci95_high_uT,22.047519837340417
+fit0_r2_like,0.9555079572446018
+bh_ref_uT,16.5
+delta_vs_ref_percent,47.331333164707104

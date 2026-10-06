@@ -1,0 +1,27 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Цель работы}{3}{}%
+\contentsline {section}{\numberline {2}Исходные данные}{3}{}%
+\contentsline {section}{\numberline {3}Теоретическая справка и формулы}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Оценки числовых моментов}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Доверительный интервал}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Автокорреляция}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Аппроксимация закона распределения}{4}{}%
+\contentsline {subsection}{\numberline {3.5}Корреляция между последовательностями}{4}{}%
+\contentsline {section}{\numberline {4}Числовые характеристики заданной последовательности}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Таблица результатов (форма 1)}{5}{}%
+\contentsline {section}{\numberline {5}График значений последовательности и анализ её характера}{5}{}%
+\contentsline {section}{\numberline {6}Автокорреляционный анализ}{6}{}%
+\contentsline {subsection}{\numberline {6.1}Таблица коэффициентов автокорреляции (форма 3)}{6}{}%
+\contentsline {subsection}{\numberline {6.2}График автокорреляции}{6}{}%
+\contentsline {section}{\numberline {7}Гистограмма распределения частот}{7}{}%
+\contentsline {section}{\numberline {8}Аппроксимация закона распределения}{7}{}%
+\contentsline {section}{\numberline {9}Алгоритм формирования аппроксимирующего закона и генератор случайных величин}{8}{}%
+\contentsline {section}{\numberline {10}Сравнительный анализ сгенерированной и заданной последовательностей}{9}{}%
+\contentsline {subsection}{\numberline {10.1}Графики сравнения}{9}{}%
+\contentsline {subsection}{\numberline {10.2}Таблица числовых характеристик сгенерированной ЧП (форма 2)}{10}{}%
+\contentsline {subsection}{\numberline {10.3}Корреляционный анализ сгенерированной и заданной последовательностей}{10}{}%
+\contentsline {section}{\numberline {11}Выводы и заключения}{11}{}%
+\contentsline {subsection}{\numberline {11.1}По каждому пункту отчёта}{11}{}%
+\contentsline {section}{Список источников}{11}{}%
+\contentsline {section}{Приложение А}{12}{}%
+\contentsline {section}{Приложение Б}{12}{}%

@@ -1,0 +1,508 @@
+cd ..
+rm -rf repo_git
+mkdir repo_git
+cd repo_git
+git init
+
+git config --global alias.commit-red '!git -c user.name="Red" -c user.email="red@local.dev" commit'
+git config --global alias.commit-blue '!git -c user.name="Blue" -c user.email="blue@local.dev" commit'
+
+#r0
+git checkout -b 0_red
+git commit --allow-empty -m "Create branch 0_red"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp ../commits/0_red/commit0/* .
+git add .
+git commit-red -m "r0 in branch 0_red"
+
+#r1
+git checkout -b 1_red 0_red
+git commit --allow-empty -m "Create branch 1_red"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit1/* .
+git add .
+git commit-red -m "r1 in branch 1_red"
+
+#r2
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit2/* .
+git add .
+git commit-red -m "r2 in branch 1_red"
+
+#r3
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit3/* .
+git add .
+git commit-red -m "r3 in branch 0_red"
+
+#r4
+git checkout -b 2_blue 0_red
+git commit --allow-empty -m "Create branch 2_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/2_blue/commit4/* .
+git add .
+git commit-blue -m "r4 in branch 2_blue"
+
+#r5
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit5/* .
+git add .
+git commit-red -m "r5 in branch 0_red"
+
+#r6
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit6/* .
+git add .
+git commit-red -m "r6 in branch 0_red"
+
+#r7
+git checkout -b 3_blue 0_red
+git commit --allow-empty -m "Create branch 3_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/3_blue/commit7/* .
+git add .
+git commit-blue -m "r7 in branch 3_blue"
+
+#r8
+git checkout -b 4_blue 3_blue
+git commit --allow-empty -m "Create branch 4_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/4_blue/commit8/* .
+git add .
+git commit-blue -m "r8 in branch 4_blue"
+
+#r9
+git checkout -b 5_red 4_blue
+git commit --allow-empty -m "Create branch 5_red"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/5_red/commit9/* .
+git add .
+git commit-red -m "r9 in branch 5_red"
+
+#r10
+git checkout 1_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit10/* .
+git add .
+git commit-red -m "r10 in branch 1_red"
+
+#r11
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit11/* .
+git add .
+git commit-red -m "r11 in branch 0_red"
+
+#r12
+git checkout -b 6_red 0_red
+git commit --allow-empty -m "Create branch 6_red"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/6_red/commit12/* .
+git add .
+git commit-red -m "r12 in branch 6_red"
+
+#r13
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/6_red/commit13/* .
+git add .
+git commit-red -m "r13 in branch 6_red"
+
+#r14
+git checkout 1_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit14/* .
+git add .
+git commit-red -m "r14 in branch 1_red"
+
+#r15
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit15/* .
+git add .
+git commit-red -m "r15 in branch 0_red"
+
+#r16
+git checkout -b 7_red 0_red
+git commit --allow-empty -m "Create branch 7_red"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/7_red/commit16/* .
+git add .
+git commit-red -m "r16 in branch 7_red"
+
+#r17
+git checkout -b 8_red 7_red
+git commit --allow-empty -m "Create branch 8_red"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/8_red/commit17/* .
+git add .
+git commit-red -m "r17 in branch 8_red"
+
+#r18
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit18/* .
+git add .
+git commit-red -m "r18 in branch 0_red"
+
+#r19
+git checkout 8_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/8_red/commit19/* .
+git add .
+git commit-red -m "r19 in branch 8_red"
+
+#r20
+git checkout 1_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit20/* .
+git add .
+git commit-red -m "r20 in branch 1_red"
+
+#r21
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit21/* .
+git add .
+git commit-red -m "r21 in branch 1_red"
+
+#r22
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit22/* .
+git add .
+git commit-red -m "r22 in branch 1_red"
+
+#r23
+git checkout 8_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/8_red/commit23/* .
+git add .
+git commit-red -m "r23 in branch 8_red"
+
+#r24
+git checkout 1_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit24/* .
+git add .
+git commit-red -m "r24 in branch 1_red"
+
+#r25
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit25/* .
+git add .
+git commit-red -m "r25 in branch 0_red"
+
+#r26
+git checkout -b 9_blue 0_red
+git commit --allow-empty -m "Create branch 9_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/9_blue/commit26/* .
+git add .
+git commit-blue -m "r26 in branch 9_blue"
+
+#r27
+git checkout -b 10_blue 9_blue
+git commit --allow-empty -m "Create branch 10_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/10_blue/commit27/* .
+git add .
+git commit-blue -m "r27 in branch 10_blue"
+
+#r28
+git checkout 6_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/6_red/commit28/* .
+git add .
+git commit-red -m "r28 in branch 6_red"
+
+#r29
+git checkout 3_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/3_blue/commit29/* .
+git add .
+git commit-blue -m "r29 in branch 3_blue"
+
+#r30
+git checkout 6_red
+git merge 3_blue
+git checkout --theirs F.java
+git add F.java
+git commit-red --no-edit
+
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/6_red/commit30/* .
+git add .
+git commit-red -m "r30 in branch 6_red"
+
+#r31
+git checkout -b 11_blue 6_red
+git commit --allow-empty -m "Create branch 11_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/11_blue/commit31/* .
+git add .
+git commit-blue -m "r31 in branch 11_blue"
+
+#r32
+git checkout 4_blue
+git merge 11_blue --no-ff --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/4_blue/commit32/* .
+git add .
+git commit-blue -m "r32 in branch 4_blue"
+
+#r33
+git checkout 10_blue
+git merge 4_blue --no-ff --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/10_blue/commit33/* .
+git add .
+git commit-blue -m "r33 in branch 10_blue"
+
+#r34
+git checkout 2_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/2_blue/commit34/* .
+git add .
+git commit-blue -m "r34 in branch 2_blue"
+
+#r35
+git checkout 0_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit35/* .
+git add .
+git commit-red -m "r35 in branch 0_red"
+
+#r36
+git checkout 5_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/5_red/commit36/* .
+git add .
+git commit-red -m "r36 in branch 5_red"
+
+#r37
+git checkout 1_red
+git merge 5_red --no-ff --no-edit
+
+git checkout --theirs F.java
+git add F.java
+git commit-red --no-edit
+
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/1_red/commit37/* .
+git add .
+git commit-red -m "r37 in branch 1_red"
+
+#r38
+git checkout 0_red
+git merge 1_red --no-ff --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit38/* .
+git add .
+git commit-red -m "r38 in branch 0_red"
+
+#r39
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit39/* .
+git add .
+git commit-red -m "r39 in branch 0_red"
+
+#r40
+git checkout 10_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/10_blue/commit40/* .
+git add .
+git commit-blue -m "r40 in branch 10_blue"
+
+#r41
+git checkout 2_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/2_blue/commit41/* .
+git add .
+git commit-blue -m "r41 in branch 2_blue"
+
+#r42
+git checkout 9_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/9_blue/commit42/* .
+git add .
+git commit-blue -m "r42 in branch 9_blue"
+
+#r43
+git checkout 6_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/6_red/commit43/* .
+git add .
+git commit-red -m "r43 in branch 6_red"
+
+#r44
+git checkout 10_blue
+git merge 6_red --no-ff --no-edit
+
+git checkout --theirs G.java H.java I.java
+git add G.java H.java I.java
+
+git commit-blue --no-edit
+
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/10_blue/commit44/* .
+git add .
+git commit-blue -m "r44 in branch 10_blue"
+
+#r45
+git checkout -b 12_blue 10_blue
+git commit --allow-empty -m "Create branch 12_blue"
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/12_blue/commit45/* .
+git add .
+git commit-blue -m "r45 in branch 12_blue"
+
+#r46
+git checkout 7_red
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/7_red/commit46/* .
+git add .
+git commit-red -m "r46 in branch 7_red"
+
+#r47
+git checkout 9_blue
+git merge 7_red --no-ff --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/9_blue/commit47/* .
+git add .
+git commit-blue -m "r47 in branch 9_blue"
+
+#r48
+git checkout 12_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/12_blue/commit48/* .
+git add .
+git commit-blue -m "r48 in branch 12_blue"
+
+#r49
+git checkout 9_blue
+git merge 12_blue --no-ff --no-edit
+git checkout --theirs F.java
+git add F.java
+git commit-red --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/9_blue/commit49/* .
+git add .
+git commit-blue -m "r49 in branch 9_blue"
+
+#r50
+git checkout 2_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/2_blue/commit50/* .
+git add .
+git commit-blue -m "r50 in branch 2_blue"
+
+#r51
+git checkout 8_red
+git merge 2_blue --no-ff --no-edit
+git checkout --theirs F.java
+git add F.java
+git commit-red --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/8_red/commit51/* .
+git add .
+git commit-red -m "r51 in branch 8_red"
+
+#r52
+git checkout 10_blue
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/10_blue/commit52/* .
+git add .
+git commit-blue -m "r52 in branch 10_blue"
+
+#r53
+git checkout 8_red
+git merge 10_blue --no-ff --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/8_red/commit53/* .
+git add .
+git commit-red -m "r53 in branch 8_red"
+
+#r54
+git checkout 9_blue
+git merge 8_red --no-ff --no-edit
+git checkout --theirs G.java H.java I.java F.java
+git rm _
+git add G.java H.java I.java F.java
+
+git commit-blue --no-edit
+
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/9_blue/commit54/* .
+git add .
+git commit-blue -m "r54 in branch 9_blue"
+
+#r55
+git checkout 0_red
+git merge 9_blue --no-ff --no-edit
+git checkout --theirs G.java H.java I.java F.java
+git rm _
+git add G.java H.java I.java F.java
+
+git commit-blue --no-edit
+git rm -r --cached . 2>/dev/null || true
+rm -rf *
+cp  ../commits/0_red/commit55/* .
+git add .
+git commit-red -m "r55 in branch 0_red"

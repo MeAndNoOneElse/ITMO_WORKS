@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<week_schedule>
+	<weekday1>  ср, 6 ноября
+	<day_schedule>
+		<lesson_1>
+			<time>
+				<lesson_time_start> 08:20 </lesson_time_start>
+				<lesson_time_end> 09:50 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Лекция </lesson_type>
+				<lesson_name> Информатика </lesson_name>
+				<lesson_teacher> Балакшин Павел Валерьевич </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. Актовый зал (1216/0 (усл)) </room>
+					<address> ул.Ломоносова, д.9, лит.М </address>
+				</lesson_place>
+			</body>
+		</lesson_1>
+		<lesson_2>
+			<time>
+				<lesson_time_start> 10:00 </lesson_time_start>
+				<lesson_time_end> 11:30 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Лекция </lesson_type>
+				<lesson_name> Основы профессиональной деятельности </lesson_name>
+				<lesson_teacher> Клименков Сергей Викторович</lesson_teacher>
+				<lesson_place>
+					<room> Ауд. Актовый зал (1216/0 (усл)) </room>
+					<address> ул.Ломоносова, д.9, лит.М </address>
+				</lesson_place>
+			</body>
+		</lesson_2>
+		<lesson_3>
+			<time>
+				<lesson_time_start> 19:00 </lesson_time_start>
+				<lesson_time_end> 21:00 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Занятие спортом </lesson_type>
+				<lesson_name> Гребной спорт (мужская сборная команда) </lesson_name>
+				<lesson_teacher> Фомченко Андрей Александрович </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. Гребной клуб "Стрела" </room>
+					<address> Северная дорога, 25 </address>
+				</lesson_place>
+			</body>
+		</lesson_3>
+	</day_schedule>
+	</weekday1>
+	<weekday2>  пят, 8 ноября
+	<day_schedule>
+		<lesson_1>
+			<time>
+				<lesson_time_start> 10:00 </lesson_time_start>
+				<lesson_time_end> 11:30 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Практика </lesson_type>
+				<lesson_name> Специальные разделыматематического анализа </lesson_name>
+				<lesson_teacher> Старков Александр Сергеевич </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. 2337 </room>
+					<address> Кронверский пр., д.49, лит.А </address>
+				</lesson_place>
+			</body>
+		</lesson_1>
+		<lesson_2>
+			<time>
+				<lesson_time_start> 11:40 </lesson_time_start>
+				<lesson_time_end> 13:10 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Практика </lesson_type>
+				<lesson_name> Математический анализ (продвинутый уровень) </lesson_name>
+				<lesson_teacher> Блинова Ирина Владимировна </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. 2316 </room>
+					<address> Кронверский пр., д.49, лит.А </address>
+				</lesson_place>
+			</body>
+		</lesson_2>
+		<lesson_3>
+			<time>
+				<lesson_time_start> 17:00 </lesson_time_start>
+				<lesson_time_end> 18:30 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Лабораторная </lesson_type>
+				<lesson_name> Основы профессиональной деятельности </lesson_name>
+				<lesson_teacher> Остапенко Ольга Денисовна </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. 2308 </room>
+					<address> Кронверский пр., д.49, лит.А </address>
+				</lesson_place>
+			</body>
+		</lesson_3>
+		<lesson_4>
+			<time>
+				<lesson_time_start> 18:40 </lesson_time_start>
+				<lesson_time_end> 20:10 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Лабораторная </lesson_type>
+				<lesson_name> Основы профессиональной деятельности </lesson_name>
+				<lesson_teacher> Остапенко Ольга Денисовна </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. 2308 </room>
+					<address> Кронверский пр., д.49, лит.А </address>
+				</lesson_place>
+			</body>
+		</lesson_4>
+		<lesson_5>
+			<time>
+				<lesson_time_start> 19:00 </lesson_time_start>
+				<lesson_time_end> 21:00 </lesson_time_end>
+			</time>
+			<body>
+				<lesson_type> Занятие спортом </lesson_type>
+				<lesson_name> Гребной спорт (мужская сборная команда) </lesson_name>
+				<lesson_teacher> Фомченко Андрей Александрович </lesson_teacher>
+				<lesson_place>
+					<room> Ауд. Гребной клуб "Стрела" </room>
+					<address> Северная дорога, 25 </address>
+				</lesson_place>
+			</body>
+		</lesson_5>
+	</day_schedule>
+	</weekday2>
+</week_schedule>

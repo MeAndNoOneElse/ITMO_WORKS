@@ -1,0 +1,71 @@
+week_schedule:
+  weekday1:
+    day_schedule:
+      lesson_1:
+        time:
+          lesson_time_start:  08:20 
+          lesson_time_end:  09:50 
+        body:
+          lesson_type:  Лекция 
+          lesson_name:  Информатика 
+          lesson_teacher:  Балакшин Павел Валерьевич 
+          lesson_place:
+            room:  Ауд. Актовый зал (1216/0 (усл)) 
+            address:  ул.Ломоносова, д.9, лит.М 
+      lesson_2:
+        time:
+          lesson_time_start:  10:00 
+          lesson_time_end:  11:30 
+        body:
+          lesson_type:  Лекция 
+          lesson_name:  Основы профессиональной деятельности 
+          lesson_teacher:  Клименков Сергей Викторович
+          lesson_place:
+            room:  Ауд. Актовый зал (1216/0 (усл)) 
+            address:  ул.Ломоносова, д.9, лит.М 
+      lesson_3:
+        time:
+          lesson_time_start:  19:00 
+          lesson_time_end:  21:00 
+        body:
+          lesson_type:  Занятие спортом 
+          lesson_name:  Гребной спорт (мужская сборная команда) 
+          lesson_teacher:  Фомченко Андрей Александрович 
+          lesson_place:
+            room:  Ауд. Гребной клуб "Стрела" 
+            address:  Северная дорога, 25 
+  weekday2:
+    day_schedule:
+      lesson_1:
+        time:
+          lesson_time_start:  08:20 
+          lesson_time_end:  09:50 
+        body:
+          lesson_type:  Лекция 
+          lesson_name:  Информатика 
+          lesson_teacher:  Балакшин Павел Валерьевич 
+          lesson_place:
+            room:  Ауд. Актовый зал (1216/0 (усл)) 
+            address:  ул.Ломоносова, д.9, лит.М 
+      lesson_2:
+        time:
+          lesson_time_start:  10:00 
+          lesson_time_end:  11:30 
+        body:
+          lesson_type:  Лекция 
+          lesson_name:  Основы профессиональной деятельности 
+          lesson_teacher:  Клименков Сергей Викторович
+          lesson_place:
+            room:  Ауд. Актовый зал (1216/0 (усл)) 
+            address:  ул.Ломоносова, д.9, лит.М 
+      lesson_3:
+        time:
+          lesson_time_start:  19:00 
+          lesson_time_end:  21:00 
+        body:
+          lesson_type:  Занятие спортом 
+          lesson_name:  Гребной спорт (мужская сборная команда) 
+          lesson_teacher:  Фомченко Андрей Александрович 
+          lesson_place:
+            room:  Ауд. Гребной клуб "Стрела" 
+            address:  Северная дорога, 25 

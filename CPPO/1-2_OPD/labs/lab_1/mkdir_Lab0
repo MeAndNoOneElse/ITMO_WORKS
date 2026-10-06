@@ -1,0 +1,91 @@
+mkdir Lab0
+cd Lab0
+mkdir boldore4
+cd boldore4
+touch  vanillish gastrodon slowking
+
+cat > vanillish << EOF
+Xo Icy Wind Iron Defense Magic Coat Magnet Rise Signal Beam Sleep Talk Snore Uproar
+EOF
+
+cat > gastrodon << EOF
+Развитые способности Sand 
+Force
+EOF
+
+cat > slowking << EOF
+Xоды After You Aqua Tail Avalanche Block Body Slam
+Brine Counter Dive Double-Edge Drain Punch Dynamicpunch Focus Punch Foul Play Fury Cutter Hidden Power+ Ice Punch Icy Wind Iron Defense Iron Tail Magic Coat Mega Kick Mega Punch Mud-Slap Power Gem‡ Recycle Role Play Seismic Toss Signal Beam Skill Swap Sleep Talk Snore Swift Trick Wonder Room Zen Headbutt
+EOF
+
+cd ..
+chmod 
+mkdir crustle6
+cd crustle6
+touch stunky volcarona blastoise krabby
+
+cat > stunky << EOF
+Тип покемона POISON
+DARK
+EOF
+
+cat > volcarona << EOF
+Развитые способности Flare
+Boost
+EOF
+
+cat > blastoise << EOF
+BoзMOжHOCти Overland 4 Surface=12 Underwater=10 Jump1=0 Power=4 Intelligence=4 Fountain=0
+EOF
+
+cat > krabby << EOF
+Развитые способности
+Sheer Force
+EOF
+mkdir sealeo altaria 
+cd ..
+
+mkdir hoothoot0
+cd hoothoot0
+
+touch koffing doduo gorebyss  jolteon totodile
+cat > koffing << EOF
+Способности Venom Levitate White
+Smoke
+EOF
+cat > doduo << EOF
+weigth=86.4 height=55.0 atk=9 def=5
+EOF
+cat > gorebyss << EOF
+Живет
+Ocean
+EOF
+cat > jolteon << EOF
+Способности Overcharge Volt Absorb Motor
+Drive
+EOF
+cat > totodile << EOF
+Живет Beach Freshwater Marsh
+EOF
+
+mkdir abomasnow
+cd ..
+
+touch grotle5 ninetales2 quagsire9
+
+cat > grotle5 << EOF
+Способности Withdraw Absorb Razor Leaf Curse
+Bite Mega Drain Leech Seed Synthesis Crunch Giga Drain Leaf Storm
+EOF
+
+cat > ninetales2 << EOF
+Живет
+Grassland Mountain
+EOF
+cat > quagsire9 << EOF
+Возможности Overland=7 Surface=8
+Underwater=7 Jump 3 Power=3 Intelligence=4 Fountain=0 Gilled=0
+
+EOF
+
+cd ..

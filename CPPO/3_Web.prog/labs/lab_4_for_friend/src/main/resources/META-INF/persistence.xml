@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.1"
+             xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd">
+
+    <persistence-unit name="weblabPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <class>com.weblab.entity.UserEntity</class>
+        <class>com.weblab.entity.PointEntity</class>
+        <class>com.weblab.entity.RefreshTokenEntity</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!-- Derby embedded, файловая БД в ~/.weblab_derby/weblab -->
+            <property name="jakarta.persistence.jdbc.driver"   value="org.apache.derby.jdbc.EmbeddedDriver"/>
+            <property name="jakarta.persistence.jdbc.url"      value="jdbc:derby:${user.home}/.weblab_derby/weblab;create=true"/>
+            <property name="jakarta.persistence.jdbc.user"     value="app"/>
+            <property name="jakarta.persistence.jdbc.password" value="app"/>
+
+            <!-- Схема: создаём таблицы если не существуют -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.schema-generation.create-source"   value="metadata"/>
+
+            <!-- EclipseLink logging -->
+            <property name="eclipselink.logging.level"         value="WARNING"/>
+            <property name="eclipselink.logging.level.sql"     value="WARNING"/>
+            <property name="eclipselink.target-database"       value="Derby"/>
+
+            <!-- Кеш отключён для простоты -->
+            <property name="eclipselink.cache.shared.default"  value="false"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
+

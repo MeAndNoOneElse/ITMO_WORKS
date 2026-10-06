@@ -1,0 +1,541 @@
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
+.app-container {
+  font-family: sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== СВЕТЛАЯ ТЕМА (ЗЕЛЁНАЯ) ========== */
+:host-context(.light-theme) .app-container,
+.app-container {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+:host-context(.light-theme) .header,
+.header {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: white;
+}
+
+:host-context(.light-theme) .card,
+.card {
+  background: white;
+  border: 1px solid #a5d6a7;
+}
+
+:host-context(.light-theme) .btn-check,
+.btn-check {
+  background: #43a047;
+  color: white;
+}
+
+:host-context(.light-theme) .btn-clear,
+.btn-clear {
+  background: #66bb6a;
+  color: white;
+}
+
+:host-context(.light-theme) .btn-exit,
+.btn-exit {
+  background: #ef5350;
+  color: white;
+}
+
+:host-context(.light-theme) th,
+th {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+/* ========== ТЁМНАЯ ТЕМА (ЗЕЛЁНАЯ) ========== */
+:host-context(.dark-theme) .app-container {
+  background: #1b3a1e;
+  color: #a5d6a7;
+}
+
+:host-context(.dark-theme) .header {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  color: #e8f5e9;
+}
+
+:host-context(.dark-theme) .card {
+  background: #263829;
+  border: 1px solid #2e7d32;
+  color: #c8e6c9;
+}
+
+:host-context(.dark-theme) .btn-check {
+  background: #2e7d32;
+  color: #e8f5e9;
+}
+
+:host-context(.dark-theme) .btn-clear {
+  background: #388e3c;
+  color: #e8f5e9;
+}
+
+:host-context(.dark-theme) .btn-exit {
+  background: #c62828;
+  color: white;
+}
+
+:host-context(.dark-theme) th {
+  background: #1b5e20;
+  color: #a5d6a7;
+}
+
+:host-context(.dark-theme) td {
+  border-bottom: 1px solid #2e7d32;
+}
+
+:host-context(.dark-theme) .text-input {
+  background: #1b3a1e;
+  color: #c8e6c9;
+  border-color: #2e7d32;
+}
+
+:host-context(.dark-theme) .checkbox-label {
+  border-color: #2e7d32;
+  color: #a5d6a7;
+}
+
+:host-context(.dark-theme) .checkbox-label:hover {
+  background: #1b5e20;
+  border-color: #43a047;
+}
+
+:host-context(.dark-theme) #graph {
+  background: #1b3a1e !important;
+  border-color: #2e7d32 !important;
+}
+
+:host-context(.dark-theme) #graph rect[fill="white"] {
+  fill: #1b3a1e;
+}
+
+:host-context(.dark-theme) #graph line,
+:host-context(.dark-theme) #graph polygon {
+  stroke: #a5d6a7;
+  fill: #a5d6a7;
+}
+
+:host-context(.dark-theme) #graph text {
+  fill: #a5d6a7;
+}
+
+/* ========== HEADER ========== */
+.header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-control {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-control:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========== КАРТОЧКИ ========== */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* ========== ФОРМЫ ========== */
+.text-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.input-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-block {
+  margin-bottom: 20px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.checkbox-label:hover {
+  border-color: #43a047;
+  transform: translateY(-1px);
+}
+
+.checkbox-label input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="radio"]:checked + span {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+:host-context(.dark-theme) .checkbox-label input[type="radio"]:checked + span {
+  color: #66bb6a;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== ТАБЛИЦА ========== */
+.table-card {
+  border: 1px solid #a5d6a7;
+  border-radius: 4px;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 350px; /* Фиксированная высота для таблицы */
+}
+
+:host-context(.dark-theme) .table-card {
+  border-color: #2e7d32;
+  background: #263829;
+}
+
+/* Контейнер с прокруткой для таблицы */
+.table-container {
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 100%;
+  flex: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  display: table;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #c8e6c9;
+}
+
+th {
+  background: #c8e6c9;
+  color: #1b5e20;
+  padding: 10px 8px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #a5d6a7;
+  white-space: nowrap;
+}
+
+:host-context(.dark-theme) thead {
+  background: #1b5e20;
+}
+
+:host-context(.dark-theme) th {
+  background: #1b5e20;
+  color: #a5d6a7;
+  border-bottom: 2px solid #2e7d32;
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+:host-context(.dark-theme) td {
+  border-bottom: 1px solid #2e7d32;
+  color: #c8e6c9;
+}
+
+tbody {
+  display: table-row-group;
+}
+
+tbody tr {
+  display: table-row;
+}
+
+tbody tr:hover {
+  background: rgba(67, 160, 71, 0.1);
+}
+
+:host-context(.dark-theme) tbody tr:hover {
+  background: rgba(67, 160, 71, 0.2);
+}
+
+/* Стилизация скроллбара для контейнера таблицы */
+.table-container::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+:host-context(.dark-theme) .table-container::-webkit-scrollbar-track {
+  background: #1b3a1e;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #66bb6a;
+  border-radius: 6px;
+  border: 2px solid #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #43a047;
+}
+
+:host-context(.dark-theme) .table-container::-webkit-scrollbar-thumb {
+  background: #43a047;
+  border-color: #1b3a1e;
+}
+
+:host-context(.dark-theme) .table-container::-webkit-scrollbar-thumb:hover {
+  background: #2e7d32;
+}
+
+/* Для Firefox */
+.table-container {
+  scrollbar-width: thin;
+  scrollbar-color: #66bb6a #f1f1f1;
+}
+
+:host-context(.dark-theme) .table-container {
+  scrollbar-color: #43a047 #1b3a1e;
+}
+
+:host-context(.dark-theme) table::-webkit-scrollbar-thumb:hover {
+  background: #66bb6a;
+}
+
+/* ========== ГРАФИК ========== */
+#graph {
+  display: block;
+  margin: 0 auto;
+  cursor: crosshair;
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+}
+
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+/* ========== РЕЖИМЫ ОТОБРАЖЕНИЯ ========== */
+
+/* ДЕСКТОПНЫЙ РЕЖИМ */
+.content-body.mode-desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  padding: 20px;
+  gap: 20px;
+  align-items: start;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.content-body.mode-desktop .form-container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.content-body.mode-desktop .graph-container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  min-height: 400px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.content-body.mode-desktop .table-card {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  max-width: 100%;
+  overflow: hidden;
+  height: 400px; /* Фиксированная высота для десктопа */
+}
+
+/* ПЛАНШЕТНЫЙ РЕЖИМ */
+.content-body.mode-tablet {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+  padding: 20px;
+  gap: 20px;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.content-body.mode-tablet .form-container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.content-body.mode-tablet .graph-container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  min-height: 350px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.content-body.mode-tablet .table-card {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 300px; /* Фиксированная высота для планшета */
+}
+
+/* МОБИЛЬНЫЙ РЕЖИМ */
+.content-body.mode-mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.content-body.mode-mobile .form-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.content-body.mode-mobile .graph-container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.content-body.mode-mobile .table-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 250px; /* Фиксированная высота для мобильного */
+}
+
+.content-body.mode-mobile .card {
+  padding: 15px;
+}
+
+.content-body.mode-mobile table {
+  font-size: 12px;
+}
+
+.content-body.mode-mobile th,
+.content-body.mode-mobile td {
+  padding: 8px 5px;
+}
+
+.content-body.mode-mobile button {
+  padding: 10px;
+}
+
+.content-body.mode-mobile .header-content {
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ========== АДАПТАЦИЯ ПОД ШИРИНУ (fallback) ========== */
+@media screen and (max-width: 709px) {
+  .header-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-control {
+    flex: 1;
+  }
+}

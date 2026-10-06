@@ -1,0 +1,100 @@
+<div class="page-container">
+  <header class="header">
+    <div class="header-info">
+      <div class="info-item"><b>ФИО:</b> Ануфриев Андрей Сергеевич</div>
+      <div class="info-item"><b>Группа:</b> P3219</div>
+      <div class="info-item"><b>Вариант:</b> 48585</div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="session-alert" *ngIf="sessionExpiredMessage">
+      <div class="alert-content">
+        <span class="alert-message">{{ sessionExpiredMessage }}</span>
+        <button class="alert-close" (click)="sessionExpiredMessage = null">✕</button>
+      </div>
+    </div>
+
+    <div class="auth-box">
+      <h1>Вход</h1>
+
+      <div class="form-group">
+        <label for="login">логин</label>
+        <input id="login" type="text" [(ngModel)]="credentials.username" placeholder="Введите логин">
+      </div>
+
+      <div class="form-group">
+        <label for="password">пароль</label>
+        <input id="password" type="password" [(ngModel)]="credentials.password" placeholder="Введите пароль">
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" (click)="onLogin()">Войти</button>
+      </div>
+
+      <div class="register-link">
+        <p>Нет аккаунта? <a routerLink="/register" class="link">Зарегистрироваться</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="session-modal-overlay" *ngIf="showSessionModal">
+  <div class="session-modal">
+    <h2>Управление сессиями</h2>
+    <p class="info">
+      Новая сессия создана!
+      У вас {{ activeSessions.length === 1 ? 'есть 1 другая активная сессия' : 'есть ' + activeSessions.length + ' других активных сессий' }}
+    </p>
+
+    <div class="sessions-list">
+      <div *ngFor="let session of activeSessions" class="session-item">
+        <div class="session-info">
+          <div class="device-name">{{ session.deviceName }}</div>
+          <div class="session-details">
+            <span>IP: {{ session.ipAddress }}</span>
+            <span>Создано: {{ formatDate(session.createdAt) }}</span>
+          </div>
+        </div>
+        <button
+          *ngIf="activeSessions.length > 1"
+          (click)="onCloseSession(session.id)"
+          class="btn-close-session">
+          Закрыть
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-message">
+      <p><strong>Что вы хотите сделать?</strong></p>
+      <ul *ngIf="activeSessions.length === 1">
+        <li><strong>Войти в новую сессию</strong> - продолжить работу с новой сессией</li>
+        <li><strong>Закрыть активную и войти</strong> - закрыть старую сессию и войти в новую</li>
+        <li><strong>Назад</strong> - отменить вход и закрыть новую сессию</li>
+      </ul>
+      <ul *ngIf="activeSessions.length > 1">
+        <li><strong>Войти в новую сессию</strong> - продолжить работу с новой сессией</li>
+        <li><strong>Закрыть все и войти</strong> - закрыть все старые сессии и войти в новую</li>
+        <li><strong>Закрыть конкретную</strong> - нажмите "Закрыть" у нужной сессии</li>
+        <li><strong>Назад</strong> - отменить вход и закрыть новую сессию</li>
+      </ul>
+    </div>
+
+    <div class="modal-actions">
+      <ng-container *ngIf="activeSessions.length === 1">
+        <button (click)="onContinueWithNew()" class="btn-primary">Войти в новую сессию</button>
+        <button (click)="onCloseAllAndLogin()" class="btn-warning">Закрыть активную и войти</button>
+        <button (click)="onCancel()" class="btn-secondary">Назад</button>
+      </ng-container>
+
+      <ng-container *ngIf="activeSessions.length > 1">
+        <button (click)="onContinueWithNew()" class="btn-primary">Войти в новую сессию</button>
+        <button (click)="onCloseAllAndLogin()" class="btn-danger">Закрыть все и войти</button>
+        <button (click)="onCancel()" class="btn-secondary">Назад</button>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+
+

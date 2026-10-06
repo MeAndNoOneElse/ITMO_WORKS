@@ -1,0 +1,18 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Основные понятия и оценки}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Математическое ожидание (оценка)}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Дисперсия (несмещённая оценка)}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Среднеквадратическое отклонение и коэффициент вариации}{2}{}%
+\contentsline {subsection}{\numberline {1.4}Доверительный интервал для математического ожидания}{2}{}%
+\contentsline {section}{\numberline {2}Коэффициент автокорреляции}{3}{}%
+\contentsline {section}{\numberline {3}Типовые распределения и их числовые характеристики}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Равномерный закон (равномерное распределение)}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Экспоненциальный закон}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Распределение Эрланга}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Нормированное распределение Эрланга}{4}{}%
+\contentsline {subsection}{\numberline {3.5}Гиперэкспоненциальное распределение}{4}{}%
+\contentsline {section}{\numberline {4}Аппроксимация распределения по двум моментам}{4}{}%
+\contentsline {section}{\numberline {5}Гистограмма распределения частот}{4}{}%
+\contentsline {section}{\numberline {6}Генерация случайных величин}{5}{}%
+\contentsline {section}{\numberline {7}Сравнительный анализ}{5}{}%
+\contentsline {section}{\numberline {8}Заключение по защите}{5}{}%

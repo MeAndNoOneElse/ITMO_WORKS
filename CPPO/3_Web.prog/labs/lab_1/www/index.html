@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №1 - Проверка попадания точки в область</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Шапка с информацией о студенте -->
+<header class="header">
+    <div class="header-content">
+        <div class="header-left">
+            <h1 class="main-title">Лабораторная работа №1</h1>
+            <p class="subtitle">Проверка попадания точки в область</p>
+        </div>
+        <div class="student-info">
+            <div class="info-card">
+                <p><span class="info-label">ФИО: </span> Ануфриев Андрей Сергеевич</p>
+                <p><span class="info-label">Группа: </span> P3219</p>
+                <p><span class="info-label">Вариант: </span> 465029</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main-container">
+    <!-- Форма ввода данных -->
+    <section class="input-section card">
+        <h2 class="section-title">
+            Введите координаты точки
+        </h2>
+        <form id="coordinateForm" class="coordinate-form">
+            <!-- Координата X - Radio кнопки -->
+            <div class="form-group">
+                <label class="form-label">
+                    Координата X:
+                </label>
+                <div class="x-radios" id="x-radios">
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="-4">
+                        <div class="radio-content">
+                            <span class="radio-value">-4</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="-3">
+                        <div class="radio-content">
+                            <span class="radio-value">-3</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="-2">
+                        <div class="radio-content">
+                            <span class="radio-value">-2</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="-1">
+                        <div class="radio-content">
+                            <span class="radio-value">-1</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="0">
+                        <div class="radio-content">
+                            <span class="radio-value">0</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="1">
+                        <div class="radio-content">
+                            <span class="radio-value">1</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="2">
+                        <div class="radio-content">
+                            <span class="radio-value">2</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="3">
+                        <div class="radio-content">
+                            <span class="radio-value">3</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="x" value="4">
+                        <div class="radio-content">
+                            <span class="radio-value">4</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="error-message" id="x-error"></div>
+            </div>
+
+            <!-- Координата Y - Текстовое поле -->
+            <div class="form-group">
+                <label for="y-input" class="form-label">
+                    Координата Y:
+                </label>
+                <div class="input-group">
+                    <input type="text" id="y-input" name="y" class="ios-input" placeholder="от -3 до 5" required>
+                    <span class="input-hint">(-3 ... 5)</span>
+                </div>
+                <div class="error-message" id="y-error"></div>
+            </div>
+
+            <!-- Параметр R - Радио кнопки -->
+            <div class="form-group">
+                <label class="form-label">
+                    Параметр R:
+                </label>
+                <div class="r-radios" id="r-radios">
+                    <label class="radio-card">
+                        <input type="radio" id="r1" name="r" value="1">
+                        <div class="radio-content">
+                            <span class="radio-value">1</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" id="r1_5" name="r" value="1.5">
+                        <div class="radio-content">
+                            <span class="radio-value">1.5</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" id="r2" name="r" value="2">
+                        <div class="radio-content">
+                            <span class="radio-value">2</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" id="r2_5" name="r" value="2.5">
+                        <div class="radio-content">
+                            <span class="radio-value">2.5</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" id="r3" name="r" value="3">
+                        <div class="radio-content">
+                            <span class="radio-value">3</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="error-message" id="r-error"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                    <span class="btn-content">
+                        <span class="btn-text">Проверить точку</span>
+                    </span>
+            </button>
+        </form>
+    </section>
+
+    <!-- Координатная плоскость -->
+    <section class="canvas-section card">
+        <h2 class="section-title">
+            Координатная плоскость
+        </h2>
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <canvas id="coordinatePlane" width="600" height="600"></canvas>
+            </div>
+            <div class="canvas-info">
+                <p class="canvas-hint">
+                    Чтобы добавить точку надо тыкнуть
+                </p>
+                <p class="current-r-display">
+                    Текущий R = <span id="current-r" class="r-value">-</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Таблица результатов -->
+    <section class="results-section card">
+        <h2 class="section-title">
+            Результаты проверки
+        </h2>
+        <div class="table-container">
+            <table id="resultsTable" class="results-table">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Результат</th>
+                    <th>Дата и время</th>
+                    <th>Время выполнения</th>
+                </tr>
+                </thead>
+                <tbody id="results-body">
+                <!-- Результаты будут добавляться здесь -->
+                </tbody>
+            </table>
+            <div id="empty-state" class="empty-state">
+                <p>Пока нет результатов</p>
+                <small>Нужно отметить хотябы 1 точку</small>
+            </div>
+        </div>
+        <button id="clear-results" class="clear-btn">
+                <span class="btn-content">
+                    <span class="btn-text">Очистить результаты</span>
+                </span>
+        </button>
+    </section>
+</main>
+
+<!-- Модальное окно для ошибок -->
+<div id="error-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Ошибка</h3>
+            <button class="close-btn" type="button">×</button>
+        </div>
+        <div class="modal-body">
+            <p id="error-text"></p>
+        </div>
+    </div>
+</div>
+
+<!-- Загрузочный индикатор -->
+<div id="loading" class="loading">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Отправка запроса...</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="canvas.js"></script>
+</body>
+</html>

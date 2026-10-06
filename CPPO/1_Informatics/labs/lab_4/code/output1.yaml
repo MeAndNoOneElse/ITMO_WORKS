@@ -1,0 +1,95 @@
+week_schedule:
+  weekday1:
+    '#text': ср, 6 ноября
+    day_schedule:
+      lesson_1:
+        body:
+          lesson_name: Информатика
+          lesson_place:
+            address: ул.Ломоносова, д.9, лит.М
+            room: Ауд. Актовый зал (1216/0 (усл))
+          lesson_teacher: Балакшин Павел Валерьевич
+          lesson_type: Лекция
+        time:
+          lesson_time_end: 09:50
+          lesson_time_start: 08:20
+      lesson_2:
+        body:
+          lesson_name: Основы профессиональной деятельности
+          lesson_place:
+            address: ул.Ломоносова, д.9, лит.М
+            room: Ауд. Актовый зал (1216/0 (усл))
+          lesson_teacher: Клименков Сергей Викторович
+          lesson_type: Лекция
+        time:
+          lesson_time_end: '11:30'
+          lesson_time_start: '10:00'
+      lesson_3:
+        body:
+          lesson_name: Гребной спорт (мужская сборная команда)
+          lesson_place:
+            address: Северная дорога, 25
+            room: Ауд. Гребной клуб "Стрела"
+          lesson_teacher: Фомченко Андрей Александрович
+          lesson_type: Занятие спортом
+        time:
+          lesson_time_end: '21:00'
+          lesson_time_start: '19:00'
+  weekday2:
+    '#text': пят, 8 ноября
+    day_schedule:
+      lesson_1:
+        body:
+          lesson_name: Специальные разделыматематического анализа
+          lesson_place:
+            address: Кронверский пр., д.49, лит.А
+            room: Ауд. 2337
+          lesson_teacher: Старков Александр Сергеевич
+          lesson_type: Практика
+        time:
+          lesson_time_end: '11:30'
+          lesson_time_start: '10:00'
+      lesson_2:
+        body:
+          lesson_name: Математический анализ (продвинутый уровень)
+          lesson_place:
+            address: Кронверский пр., д.49, лит.А
+            room: Ауд. 2316
+          lesson_teacher: Блинова Ирина Владимировна
+          lesson_type: Практика
+        time:
+          lesson_time_end: '13:10'
+          lesson_time_start: '11:40'
+      lesson_3:
+        body:
+          lesson_name: Основы профессиональной деятельности
+          lesson_place:
+            address: Кронверский пр., д.49, лит.А
+            room: Ауд. 2308
+          lesson_teacher: Остапенко Ольга Денисовна
+          lesson_type: Лабораторная
+        time:
+          lesson_time_end: '18:30'
+          lesson_time_start: '17:00'
+      lesson_4:
+        body:
+          lesson_name: Основы профессиональной деятельности
+          lesson_place:
+            address: Кронверский пр., д.49, лит.А
+            room: Ауд. 2308
+          lesson_teacher: Остапенко Ольга Денисовна
+          lesson_type: Лабораторная
+        time:
+          lesson_time_end: '20:10'
+          lesson_time_start: '18:40'
+      lesson_5:
+        body:
+          lesson_name: Гребной спорт (мужская сборная команда)
+          lesson_place:
+            address: Северная дорога, 25
+            room: Ауд. Гребной клуб "Стрела"
+          lesson_teacher: Фомченко Андрей Александрович
+          lesson_type: Занятие спортом
+        time:
+          lesson_time_end: '21:00'
+          lesson_time_start: '19:00'

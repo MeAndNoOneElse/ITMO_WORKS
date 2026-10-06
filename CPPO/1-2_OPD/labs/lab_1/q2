@@ -1,0 +1,33 @@
+
+cd Lab0
+chmod 361 boldore4
+cd boldore4
+chmod 620 vanillish
+chmod 400 gastrodon
+chmod 046 slowking
+cd ..
+chmod 752 crustle6
+cd crustle6
+chmod 351 sealeo
+chmod 404 stunky
+chmod 620 volcarona
+chmod 500 altaria
+chmod 046 blastoise
+chmod 062 krabby
+cd ..
+chmod 622 grotle5
+chmod 357 hoothoot0
+cd hoothoot0
+chmod 440 koffing
+chmod 400 doduo
+chmod 444 gorebyss
+chmod 737 abomasnow
+chmod 400 jolteon
+chmod 604 totodile
+cd ..
+chmod 660 ninetales2
+chmod 440 quagsire9
+cd .. 
+cd ..
+
+

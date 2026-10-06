@@ -1,0 +1,115 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Добавляем новые пакеты
+\usepackage[english, russian]{babel}    % Пакет для поддержки русского языка
+\usepackage[T1, T2A]{fontenc}           % Загружаем пакет с поддержкой кирилицы
+\usepackage[utf8]{inputenc}             % Загружаем пакет с поддержкой кодировки файла и символов
+\usepackage{graphicx}                   % Загружаем пакет для добавления различной графики (pdf, jpg, png)
+\usepackage{import}                     % Загружаем пакет для продвинутого импорта, в частности изображений pdf_tex из графического редактора inkscape (\import{<path to file>}{<filename>.pdf_tex})
+\usepackage{subcaption}                 % Пакет для поддержки сетки из фигур, например в две колонки или матрицей
+\usepackage{float}                      % Пакет для улучшенного размещения изображенией (ниже используется опция H в команде \begin{figure}[H])
+\usepackage{geometry}                   % Пакет для управления отступами на странице (см. далее вызываем \geometry)
+\usepackage{amsmath}                    % Добавляем крутую поддержку математики, в частности /align
+\usepackage{amsfonts}                   % Пкет с мтематическими шрифтами вроде \mathbb и др.
+\usepackage{tabu}                       % Пакет с прокаченными таблицами
+\usepackage{booktabs}                   % Крутые вертикальные разделители
+\usepackage[dvipsnames]{xcolor}         % Рассширенная поддержка цветов
+\usepackage[colorlinks]{hyperref}
+\usepackage{indentfirst}                % Пакет, чтобы починить красную строку
+\usepackage{listings}                   % Поддержка листингов, оформления кода программы
+\usepackage{src/title}               % Титульный лист (смотри файл vpdtitle.sty)
+
+% Устанавливает отступы на странице
+\geometry{left=2cm, right=2cm, bottom=2cm, top=2cm}
+
+% Настараиваем красивые цвета для ссылок на формулы, фигуры (изображения) и другие элементы.
+\hypersetup{
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+% Настраиваем супер красивые листинги с попомщью пакетов listings и xcolor
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=codestyle}
+\lstset{extendedchars=\true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Заполнение титульного листа (НОВОЕ СОДЕРЖАНИЕ)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{
+Робот с дифференциальным приводом
+}
+
+% Тут укажите авторов
+\author{Мостафа Эхаб Ахмед Абделвахаб Мохамед}
+\affil{503341}
+
+\author{Ануфриев Андрей Сергеевич}
+\affil{465029}
+
+% Впишите данные о том, кто будет проверять работу
+\supervisor{Овчаров Алексей Олегович}
+
+% Краткое описание того, что сделали в работе
+\abstract{
+В данной работе проведено экспериментальное исследование траекторий робота при движении по замкнутому пути. Реализованы и проанализированы два типа регуляторов управления: пропорциональный (П) и касательный (Tangential). Разработаны математические модели дифференциального привода с учетом одометрических вычислений координат. Построены модели в Simulink для симуляции движения. Проведен сравнительный анализ экспериментальных данных и результатов моделирования. Определены параметры метамодели, описывающей динамику робота.
+}
+
+% Подберите 3-5 ключевых слова, отличающих эту работу от всех остальных
+\keywords{
+    дифференциальный привод; одометрия; метамодель; траектория; регуляторы; Simulink; EV3
+}
+
+\date{12.05.2026}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Начала всего-всего текста. Здесь идет сам документ, все пишется именно сюда
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+    \maketitle
+    \section{Постановка задачи}
+        %TODO как цели из методички
+    \section{Теоретическая часть}
+        \subsection{Математическая модель робота}
+        \subsection{Одометрия}
+        \subsection{П-регулятор}
+            %TODO вставить images/p_shema.png
+        \subsection{Тангенциальный-регулятор}
+            %TODO вставить images/t_shema.png
+
+    \section{Результаты экспериментов}
+        %TODO графики из папки graphics (это то, что в матлабе строится), нужно сделать анализ, почему так получилось, почему отличаются регуляторы между собой и почему от модели
+    \section{Выводы}
+        %TODO Проверка, что все поставленные цели выполнены (честно)
+    \section{Листинги}
+        \subsection{Python}
+            %TODO файл lab_4/prog/main.py целиком, но без копирования (чтобы вставилось то, что в файле)
+        \subsection{Matlab}
+            %TODO файл lab_4/matlab/run_all.m но без копирования (чтобы вставилось то, что в файле)
+\end{document}

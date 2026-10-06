@@ -1,0 +1,7 @@
+Метрика: wall_time_s (Elapsed wall clock из /usr/bin/time -v)
+N (повторов): 30
+ITER: 5
+Порядок: интерливинг (seq, rand чередуются)
+Прогрев: отбрасываем k=2 первых запуска для каждой конфигурации
+Кэш: только --no-cache, без drop_caches
+Мониторинг финала: /usr/bin/time -v + taskset (без perf stat/strace на каждый запуск)

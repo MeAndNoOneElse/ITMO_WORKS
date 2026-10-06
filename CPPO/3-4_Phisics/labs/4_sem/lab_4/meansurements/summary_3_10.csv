@@ -1,0 +1,12 @@
+metric,value
+fit_k_lambda_per_ohm,0.005004633872458441
+fit_b_lambda,0.32413157307659257
+Rm_at_lambda0_ohm,-64.76629086901984
+R0_ohm,64.76629086901984
+L_avg_mH,8.682206210876757
+L_sem_mH,0.23860552716466127
+L_nominal_mH,10.0
+fit_A_for_Q_equals_A_div_R,620.7711530377577
+R_crit_theory_c1_ohm,1256.41670930951
+R_crit_theory_c4_ohm,271.82920499518224
+R_crit_exp_total_from_c4_ohm,254.76629086901983
