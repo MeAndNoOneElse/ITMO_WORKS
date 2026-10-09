@@ -4,7 +4,7 @@ import openpyxl
 from scipy import stats
 
 # Read data
-path = "data.xlsx"
+path = "../data/data.xlsx"
 wb = openpyxl.load_workbook(path, data_only=True)
 ws = wb["Лист1"]
 vals_full = np.array([row[0] for row in ws.iter_rows(values_only=True) if row[0] is not None], dtype=float)
@@ -121,7 +121,7 @@ plt.close()
 
 M = ref_mean
 nu = ref_cv
-k = 2
+k = 3
 alpha_erl = k / M
 print(f"\nApproximation: Normalized Erlang k={k}, alpha={alpha_erl:.6f}, mean={k / alpha_erl:.2f}")
 
@@ -135,8 +135,8 @@ print(
 plt.figure(figsize=(10, 5))
 bins = np.linspace(min(min(sub), min(generated)), max(max(sub), max(generated)), 30)
 plt.hist(sub, bins=bins, alpha=0.6, label='Original', color='steelblue', edgecolor='black')
-plt.hist(generated, bins=bins, alpha=0.6, label='Generated (Erlang k=2)', color='coral', edgecolor='black')
-plt.title("Histogram comparison: Original vs Generated (Erlang k=2)")
+plt.hist(generated, bins=bins, alpha=0.6, label='Generated (Erlang k=3)', color='coral', edgecolor='black')
+plt.title("Histogram comparison: Original vs Generated (Erlang k=3)")
 plt.xlabel("Value")
 plt.ylabel("Frequency")
 plt.legend()
@@ -150,7 +150,7 @@ plt.close()
 # Generated sequence plot
 plt.figure(figsize=(10, 4))
 plt.plot(generated, marker='.', linestyle='-', markersize=3, alpha=0.7, color='coral')
-plt.title("Sequence plot (generated, Erlang k=2, n=300)")
+plt.title("Sequence plot (generated, Erlang k=3, n=300)")
 plt.xlabel("Index")
 plt.ylabel("Value")
 plt.grid(True, alpha=0.3)
