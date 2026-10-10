@@ -1,4 +1,0 @@
-Гипотеза:
-- graph-seq.bin быстрее graph-rand.bin из-за лучшей пространственной локальности (меньше page faults, лучше CPU cache).
-- graph_traverse_mmap покажет другие context-switch/page-fault метрики, чем graph_traverse (read/lseek), из-за отсутствия read()/lseek() и возможного madvise.
-- Если граф в RAM (64M << RAM), разница между seq/rand меньше, чем на HDD.
