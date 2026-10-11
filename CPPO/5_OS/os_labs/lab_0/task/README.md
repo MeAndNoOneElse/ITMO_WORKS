@@ -77,8 +77,8 @@
 
 > [!NOTE]
 > Детали реализации `--no-cache` не так важны, но если интересно, их можно
-  почерпнуть в комментариях к [`src/graph_io.h`](src/graph_io.h) и
-  [`src/graph_traverse_mmap.c`](src/graph_traverse_mmap.c).
+  почерпнуть в комментариях к [`src/graph_io.h`](../../intro-exp/src/graph_io.h) и
+  [`src/graph_traverse_mmap.c`](../../intro-exp/src/graph_traverse_mmap.c).
 
 ## 2. Подготовка тестовых данных
 

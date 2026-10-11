@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # --- параметры ---
-N=30
+N=32
 ITER_READ_CACHED=10
 ITER_READ_NOCACHE=1
 ITER_MMAP_CACHED=200
