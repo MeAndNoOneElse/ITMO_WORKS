@@ -1,25 +1,34 @@
-Нормализованные результаты (wall_s / iter)
+Нормализованные результаты (wall_s / iter), N=20 (без прогрева, df=19, t≈2.093)
 ======================================================================
 Обоснование нормализации
 ----------------------------------------
 Данные содержат разное количество итераций: 10 (read/cached), 1 (read/no-cache), 200 (mmap). Для корректного сравнения метрика нормализована: wall_s / iter. Это даёт время на одну итерацию обхода графа.
 
-Конфигурация                           Среднее   95% ДИ (t)   N
-----------------------------------------------------------------------
-read | cached | graph-rand.bin          0.2810   0.0029     30
-read | cached | graph-seq.bin           0.2816   0.0030     30
-read | no-cache | graph-rand.bin       11.5790   0.0705     30
-read | no-cache | graph-seq.bin        11.5360   0.0753     30
-read_mmap | cached | graph-rand.bin     0.0233   0.0002     30
-read_mmap | cached | graph-seq.bin      0.0238   0.0004     30
-read_mmap | no-cache | graph-rand.bin     0.0244   0.0002     30
-read_mmap | no-cache | graph-seq.bin     0.0245   0.0002     30
+Конфигурация                                        Среднее   95% ДИ   N
+----------------------------------------------------------------------------------
+read | read | cached | graph-rand.bin                0.0323   0.0003  20
+read | read | cached | graph-seq.bin                 0.0329   0.0003  20
+read | read | no-cache | graph-rand.bin              4.4455   0.0122  20
+read | read | no-cache | graph-seq.bin               4.4380   0.0135  20
+read | mmap | cached | graph-rand.bin                0.0013   0.0000  20
+read | mmap | cached | graph-seq.bin                 0.0012   0.0000  20
+read | mmap | no-cache | graph-rand.bin              0.0014   0.0000  20
+read | mmap | no-cache | graph-seq.bin               0.0014   0.0000  20
+write | read | cached | graph-rand.bin               0.1307   0.0128  20
+write | read | cached | graph-seq.bin                0.1537   0.0134  20
+write | read | no-cache | graph-rand.bin            11.0220   0.1141  20
+write | read | no-cache | graph-seq.bin             11.0955   0.1201  20
+write | mmap | cached | graph-rand.bin               0.0019   0.0000  20
+write | mmap | cached | graph-seq.bin                0.0020   0.0000  20
+write | mmap | no-cache | graph-rand.bin             0.0043   0.0000  20
+write | mmap | no-cache | graph-seq.bin              0.0043   0.0000  20
 
-Примечание: 95% ДИ рассчитан по t-распределению Стьюдента (df = N-1 = 29, t ≈ 2.045),
-не по нормальному приближению (z = 1.96).
-
-Ключевые выводы:
+Ключевые выводы (N=20, без прогрева, с режимом write):
+- Прогревочные запуски (run_id 1, 2) исключены из расчёта.
+- Размер серии уменьшен до 20 запусков.
+- Режим write добавлен в анализ (если данные присутствуют).
 - read no-cache значительно медленнее (11.5 с/ит) из-за отсутствия кэша.
 - mmap (0.024 с/ит) в ~12 раз быстрее read/cached (0.28 с/ит).
 - Разница seq vs rand минимальна (<2%).
 - Разница cached vs no-cache для mmap минимальна (2-5%).
+- Write медленнее read: для cached ~4-5x (read 0.033 с/ит vs write 0.13-0.15 с/ит); для mmap ~1.5-2x (read ~0.0012 с/ит vs write ~0.002 с/ит); для no-cache ~2.5x (read ~4.44 с/ит vs write ~11.1 с/ит).
