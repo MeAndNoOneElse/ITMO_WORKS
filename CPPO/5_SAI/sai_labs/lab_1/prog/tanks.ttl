@@ -1,0 +1,347 @@
+@prefix :        <http://example.org/tanks#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@base <http://example.org/tanks> .
+
+# ============================================================
+# ОНТОЛОГИЯ
+# ============================================================
+
+<http://example.org/tanks> a owl:Ontology ;
+    rdfs:label "Tanks Blitz Knowledge Base" ;
+    rdfs:comment "Онтология танков VII–VIII уровня (WoT Blitz)" .
+
+
+# ============================================================
+# КЛАССЫ
+# ============================================================
+
+:Nation       a owl:Class .
+:TankClass    a owl:Class .
+:Manufacturer a owl:Class .
+:Level        a owl:Class .
+:Tank         a owl:Class .
+:Team         a owl:Class .
+
+:Durable     a owl:Class ; rdfs:subClassOf :Tank ;
+             rdfs:comment "HP >= 1800" .
+
+:HardHitter  a owl:Class ; rdfs:subClassOf :Tank ;
+             rdfs:comment "Пробитие >= 220 мм" .
+
+:AllRounder  a owl:Class ; rdfs:subClassOf :Durable, :HardHitter ;
+             rdfs:comment "И durable, И hard_hitter" .
+
+:GlassCannon a owl:Class ; rdfs:subClassOf :HardHitter ;
+             rdfs:comment "Hard hitter, но НЕ durable" .
+
+
+# ============================================================
+# OBJECT PROPERTIES
+# ============================================================
+
+:hasNation a owl:ObjectProperty ;
+    rdfs:domain :Tank ; rdfs:range :Nation .
+
+:hasClass a owl:ObjectProperty ;
+    rdfs:domain :Tank ; rdfs:range :TankClass .
+
+:hasLevel a owl:ObjectProperty ;
+    rdfs:domain :Tank ; rdfs:range :Level .
+
+:builtBy a owl:ObjectProperty ;
+    rdfs:domain :Tank ; rdfs:range :Manufacturer .
+
+:unlockedFrom a owl:ObjectProperty ;
+    rdfs:domain :Tank ; rdfs:range :Tank ;
+    rdfs:comment "Танк VIII уровня открывается с танка VII уровня" .
+
+:unlocks a owl:ObjectProperty ;
+    owl:inverseOf :unlockedFrom .
+
+:hasMember a owl:ObjectProperty ;
+    rdfs:domain :Team ; rdfs:range :Tank .
+
+:opponentOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:domain :Tank ; rdfs:range :Tank ;
+    rdfs:comment "Симметричное отношение противников" .
+
+
+# ============================================================
+# DATA PROPERTIES
+# ============================================================
+
+:name        a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:string .
+:hp          a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+:alpha       a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+:penetration a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+:armor       a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+:caliber     a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+:reload      a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:decimal .
+:year        a owl:DatatypeProperty ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+:title       a owl:DatatypeProperty ; rdfs:domain :Team ; rdfs:range xsd:string .
+
+
+# ============================================================
+# ПРАВИЛА (эквивалентные классы)
+# ============================================================
+
+# Правило 1. Durable: Танк И HP >= 1800
+:Durable owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+        :Tank
+        [
+            a owl:Restriction ;
+            owl:onProperty :hp ;
+            owl:someValuesFrom [
+                a owl:Datatype ;
+                owl:onDatatype xsd:integer ;
+                owl:withRestrictions (
+                    [ xsd:minInclusive "1800"^^xsd:integer ]
+                )
+            ]
+        ]
+    )
+] .
+
+# Правило 2. HardHitter: Танк И Пробитие >= 220
+:HardHitter owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+        :Tank
+        [
+            a owl:Restriction ;
+            owl:onProperty :penetration ;
+            owl:someValuesFrom [
+                a owl:Datatype ;
+                owl:onDatatype xsd:integer ;
+                owl:withRestrictions (
+                    [ xsd:minInclusive "220"^^xsd:integer ]
+                )
+            ]
+        ]
+    )
+] .
+
+# Правило 3. AllRounder: Durable И HardHitter
+:AllRounder owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf ( :Durable :HardHitter )
+] .
+
+# Правило 4. GlassCannon: HardHitter И НЕ Durable
+:GlassCannon owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+        :HardHitter
+        [ a owl:Class ; owl:complementOf :Durable ]
+    )
+] .
+
+
+# ============================================================
+# ИНДИВИДЫ: НАЦИИ
+# ============================================================
+
+:ussr    a :Nation ; rdfs:label "СССР" .
+:germany a :Nation ; rdfs:label "Германия" .
+:usa     a :Nation ; rdfs:label "США" .
+
+
+# ============================================================
+# ИНДИВИДЫ: КЛАССЫ ТЕХНИКИ
+# ============================================================
+
+:heavy          a :TankClass ; rdfs:label "Тяжёлый танк" .
+:medium         a :TankClass ; rdfs:label "Средний танк" .
+:tank_destroyer a :TankClass ; rdfs:label "ПТ-САУ" .
+
+
+# ============================================================
+# ИНДИВИДЫ: ПРОИЗВОДИТЕЛИ
+# ============================================================
+
+:chelyabinsk_kirov_plant a :Manufacturer ; rdfs:label "Челябинский Кировский завод" .
+:henschel                a :Manufacturer ; rdfs:label "Henschel" .
+:us_army_ordnance        a :Manufacturer ; rdfs:label "US Army Ordnance" .
+:kharkiv_plant_75        a :Manufacturer ; rdfs:label "Харьковский завод №75" .
+
+
+# ============================================================
+# ИНДИВИДЫ: УРОВНИ
+# ============================================================
+
+:level7 a :Level ; rdfs:label "7" .
+:level8 a :Level ; rdfs:label "8" .
+
+
+# ============================================================
+# ИНДИВИДЫ: ТАНКИ — СССР
+# ============================================================
+
+:is_3 a :Tank ;
+    :name "ИС-3" ; :hp 1800 ; :alpha 400 ; :penetration 225 ;
+    :armor 110 ; :caliber 122 ; :reload 12.21 ;
+    :hasNation :ussr ; :hasClass :heavy ; :hasLevel :level8 ;
+    :builtBy :chelyabinsk_kirov_plant ; :year 1945 ;
+    :unlockedFrom :is .
+
+:t_44 a :Tank ;
+    :name "Т-44" ; :hp 1400 ; :alpha 400 ; :penetration 230 ;
+    :armor 90 ; :caliber 122 ; :reload 16.72 ;
+    :hasNation :ussr ; :hasClass :medium ; :hasLevel :level8 ;
+    :builtBy :kharkiv_plant_75 ; :year 1944 ;
+    :unlockedFrom :t_43 .
+
+:isu_152 a :Tank ;
+    :name "ИСУ-152" ; :hp 1100 ; :alpha 640 ; :penetration 286 ;
+    :armor 90 ; :caliber 152 ; :reload 12.12 ;
+    :hasNation :ussr ; :hasClass :tank_destroyer ; :hasLevel :level8 ;
+    :builtBy :chelyabinsk_kirov_plant ; :year 1943 ;
+    :unlockedFrom :su_152 .
+
+:is a :Tank ;
+    :name "ИС" ; :hp 1500 ; :alpha 390 ; :penetration 175 ;
+    :armor 120 ; :caliber 122 ; :reload 12.00 ;
+    :hasNation :ussr ; :hasClass :heavy ; :hasLevel :level7 ;
+    :builtBy :chelyabinsk_kirov_plant ; :year 1943 .
+
+:t_43 a :Tank ;
+    :name "Т-43" ; :hp 1250 ; :alpha 390 ; :penetration 175 ;
+    :armor 75 ; :caliber 100 ; :reload 8.50 ;
+    :hasNation :ussr ; :hasClass :medium ; :hasLevel :level7 ;
+    :builtBy :kharkiv_plant_75 ; :year 1942 .
+
+:su_152 a :Tank ;
+    :name "СУ-152" ; :hp 1200 ; :alpha 640 ; :penetration 250 ;
+    :armor 110 ; :caliber 152 ; :reload 17.00 ;
+    :hasNation :ussr ; :hasClass :tank_destroyer ; :hasLevel :level7 ;
+    :builtBy :chelyabinsk_kirov_plant ; :year 1943 .
+
+
+# ============================================================
+# ИНДИВИДЫ: ТАНКИ — ГЕРМАНИЯ
+# ============================================================
+
+:tiger_ii a :Tank ;
+    :name "Tiger II" ; :hp 1850 ; :alpha 310 ; :penetration 225 ;
+    :armor 150 ; :caliber 105 ; :reload 7.58 ;
+    :hasNation :germany ; :hasClass :heavy ; :hasLevel :level8 ;
+    :builtBy :henschel ; :year 1944 ;
+    :unlockedFrom :tiger_i .
+
+:panther_ii a :Tank ;
+    :name "Panther II" ; :hp 1400 ; :alpha 220 ; :penetration 203 ;
+    :armor 100 ; :caliber 88 ; :reload 5.14 ;
+    :hasNation :germany ; :hasClass :medium ; :hasLevel :level8 ;
+    :builtBy :henschel ; :year 1943 ;
+    :unlockedFrom :panther_i .
+
+:ferdinand a :Tank ;
+    :name "Ferdinand" ; :hp 1400 ; :alpha 460 ; :penetration 246 ;
+    :armor 200 ; :caliber 128 ; :reload 10.10 ;
+    :hasNation :germany ; :hasClass :tank_destroyer ; :hasLevel :level8 ;
+    :builtBy :henschel ; :year 1942 ;
+    :unlockedFrom :jpanther .
+
+:tiger_i a :Tank ;
+    :name "Tiger I" ; :hp 1500 ; :alpha 310 ; :penetration 203 ;
+    :armor 178 ; :caliber 105 ; :reload 8.00 ;
+    :hasNation :germany ; :hasClass :heavy ; :hasLevel :level7 ;
+    :builtBy :henschel ; :year 1937 .
+
+:panther_i a :Tank ;
+    :name "Panther I" ; :hp 1300 ; :alpha 280 ; :penetration 198 ;
+    :armor 100 ; :caliber 88 ; :reload 5.50 ;
+    :hasNation :germany ; :hasClass :medium ; :hasLevel :level7 ;
+    :builtBy :henschel ; :year 1941 .
+
+:jpanther a :Tank ;
+    :name "Jagdpanther" ; :hp 1400 ; :alpha 460 ; :penetration 226 ;
+    :armor 150 ; :caliber 105 ; :reload 10.00 ;
+    :hasNation :germany ; :hasClass :tank_destroyer ; :hasLevel :level7 ;
+    :builtBy :henschel ; :year 1942 .
+
+
+# ============================================================
+# ИНДИВИДЫ: ТАНКИ — США
+# ============================================================
+
+:t32 a :Tank ;
+    :name "T32" ; :hp 1850 ; :alpha 310 ; :penetration 218 ;
+    :armor 150 ; :caliber 105 ; :reload 8.60 ;
+    :hasNation :usa ; :hasClass :heavy ; :hasLevel :level8 ;
+    :builtBy :us_army_ordnance ; :year 1945 ;
+    :unlockedFrom :t29 .
+
+:pershing a :Tank ;
+    :name "Pershing" ; :hp 1400 ; :alpha 240 ; :penetration 180 ;
+    :armor 90 ; :caliber 90 ; :reload 8.00 ;
+    :hasNation :usa ; :hasClass :medium ; :hasLevel :level8 ;
+    :builtBy :us_army_ordnance ; :year 1942 ;
+    :unlockedFrom :t_20 .
+
+:t28_prot a :Tank ;
+    :name "T28 Prot." ; :hp 1250 ; :alpha 400 ; :penetration 248 ;
+    :armor 200 ; :caliber 120 ; :reload 12.00 ;
+    :hasNation :usa ; :hasClass :tank_destroyer ; :hasLevel :level8 ;
+    :builtBy :us_army_ordnance ; :year 1943 ;
+    :unlockedFrom :t_25_2 .
+
+:t29 a :Tank ;
+    :name "T29" ; :hp 1600 ; :alpha 400 ; :penetration 198 ;
+    :armor 140 ; :caliber 105 ; :reload 10.00 ;
+    :hasNation :usa ; :hasClass :heavy ; :hasLevel :level7 ;
+    :builtBy :us_army_ordnance ; :year 1944 .
+
+:t_20 a :Tank ;
+    :name "T20" ; :hp 1300 ; :alpha 240 ; :penetration 180 ;
+    :armor 80 ; :caliber 90 ; :reload 7.00 ;
+    :hasNation :usa ; :hasClass :medium ; :hasLevel :level7 ;
+    :builtBy :us_army_ordnance ; :year 1942 .
+
+:t_25_2 a :Tank ;
+    :name "T25/2" ; :hp 1250 ; :alpha 240 ; :penetration 180 ;
+    :armor 100 ; :caliber 90 ; :reload 8.00 ;
+    :hasNation :usa ; :hasClass :tank_destroyer ; :hasLevel :level7 ;
+    :builtBy :us_army_ordnance ; :year 1943 .
+
+
+# ============================================================
+# ИНДИВИДЫ: КОМАНДЫ
+# ============================================================
+
+:ussr_8 a :Team ; :title "8 уровень СССР" ;
+    :hasMember :is_3, :t_44, :isu_152 .
+
+:germany_8 a :Team ; :title "8 уровень Германия" ;
+    :hasMember :tiger_ii, :panther_ii, :ferdinand .
+
+:usa_8 a :Team ; :title "8 уровень США" ;
+    :hasMember :t32, :pershing, :t28_prot .
+
+:ussr_7 a :Team ; :title "7 уровень СССР" ;
+    :hasMember :is, :t_43, :su_152 .
+
+:germany_7 a :Team ; :title "7 уровень Германия" ;
+    :hasMember :tiger_i, :panther_i, :jpanther .
+
+:usa_7 a :Team ; :title "7 уровень США" ;
+    :hasMember :t29, :t_20, :t_25_2 .
+
+
+# ============================================================
+# ПРОТИВНИКИ (симметричное свойство, пары задаём вручную)
+# ============================================================
+
+:tiger_ii   :opponentOf :is_3 , :t_44 , :isu_152 , :t32 , :pershing , :t28_prot .
+:panther_ii :opponentOf :is_3 , :t_44 , :isu_152 , :t32 , :pershing , :t28_prot .
+:ferdinand  :opponentOf :is_3 , :t_44 , :isu_152 , :t32 , :pershing , :t28_prot .
+
+:tiger_i   :opponentOf :is , :t_43 , :su_152 , :t29 , :t_20 , :t_25_2 .
+:panther_i :opponentOf :is , :t_43 , :su_152 , :t29 , :t_20 , :t_25_2 .
+:jpanther  :opponentOf :is , :t_43 , :su_152 , :t29 , :t_20 , :t_25_2 .
