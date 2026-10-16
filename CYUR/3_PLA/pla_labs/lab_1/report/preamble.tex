@@ -1,0 +1,67 @@
+% Добавляем новые пакеты
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguage{english}
+
+\setmainfont{Times New Roman} 
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\newfontfamily{\cyrillicfontsf}{Arial}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+
+\usepackage{graphicx}         % Загружаем пакет для добавления различной графики
+\usepackage{import}           % Загружаем пакет для продвинутого импорта
+\usepackage{subcaption}       % Поддержка сетки из фигур
+\usepackage{float}            % Улучшенное размещение изображений (опция H)
+\usepackage{geometry}         % Управление отступами на странице
+\usepackage{amsmath}          % Поддержка математики
+\usepackage{amsfonts}         % Математические шрифты (\mathbb)
+\usepackage{booktabs}         % Вертикальные разделители
+\usepackage[dvipsnames]{xcolor}% Расширенная поддержка цветов
+\usepackage[colorlinks]{hyperref}
+\usepackage{indentfirst}      % Красная строка в первом абзаце
+\usepackage{listings}         % Поддержка листингов кода
+\usepackage[title,titletoc]{appendix}
+\usepackage{title}         % Собственный титульный лист (vpdtitle.sty)
+
+\setcounter{MaxMatrixCols}{20}
+
+% Отступы на странице
+\geometry{left=2cm, right=2cm, bottom=2cm, top=2cm}
+
+% Настройка гиперссылок
+\hypersetup{
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+% Цвета для подсветки кода
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Стиль листингов кода
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=codestyle}
+\lstset{extendedchars=\true}

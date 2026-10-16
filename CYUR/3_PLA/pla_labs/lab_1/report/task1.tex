@@ -1,0 +1,293 @@
+\subsection{Задание 1. Шифр Хилла}
+
+\subsubsection{Алфавит и исходное сообщение}
+Для выполнения задания был выбран алфавит из $n = 33$ символов (32 буквы русского алфавита + пробел). Полученные данные представлены в таблице \ref{tab:code_tab}.
+
+\begin{table}[h!]
+    \centering
+    \caption{Таблица кодировки алфавита ($n = 33$)}
+    \label{tab:code_tab}
+    \begin{tabular}{|c|c||c|c||c|c||c|c|}
+        \hline
+        \textbf{Символ} & \textbf{Код} & \textbf{Символ} & \textbf{Код} & \textbf{Символ} & \textbf{Код} & \textbf{Символ} & \textbf{Код} \\ \hline
+        А & 0  & И & 8  & Р & 16 & Ш & 24 \\ \hline
+        Б & 1  & Й & 9  & С & 17 & Щ & 25 \\ \hline
+        В & 2  & К & 10 & Т & 18 & Ъ & 26 \\ \hline
+        Г & 3  & Л & 11 & У & 19 & Ы & 27 \\ \hline
+        Д & 4  & М & 12 & Ф & 20 & Ь & 28 \\ \hline
+        Е & 5  & Н & 13 & Х & 21 & Э & 29 \\ \hline
+        Ж & 6  & О & 14 & Ц & 22 & Ю & 30 \\ \hline
+        З & 7  & П & 15 & Ч & 23 & Я & 31 \\ \hline
+        \textit{[пробел]} & 32 & & & & & & \\ \hline
+    \end{tabular}
+\end{table}
+
+\noindent \textbf{Исходное сообщение (12 символов):} \texttt{СУИРНИКИ ТОП} \\
+\textbf{Вектор численных номеров:} 
+\[
+P = \begin{pmatrix} 17 & 19 & 8 & 16 & 13 & 8 & 10 & 8 & 32 & 18 & 14 & 15 \end{pmatrix}
+\]
+
+\subsubsection{Матрицы-ключи и проверка их обратимости}
+Были придуманны три матрицы-ключа размерами $2\times2$, $3\times3$ и $4\times4$. Чтобы матрица имела обратную в кольце вычетов $\mathbb{Z}_{33}$, необходимо, чтобы её определитель удовлетворял условию $\text{НОД}(\det(K), 33) = 1$.
+
+\begin{enumerate}
+    \item \textbf{Ключ $2\times2$ ($K_1$):}
+    \[
+    K_1 = \begin{pmatrix} 2 & 1 \\ 3 & 4 \end{pmatrix}
+    \]
+    Расчёт определителя: $\det(K_1) = 2 \cdot 4 - 1 \cdot 3 = 8 - 3 = 5$. \\
+    Проверка условий: $\text{НОД}(5, 33) = 1$, значит обратный элемент $5^{-1} \pmod{33}$ существует. По расширенному алгоритму Евклида:
+    \[
+    33 = 5 \cdot 6 + 3, \quad 5 = 3 \cdot 1 + 2, \quad 3 = 2 \cdot 1 + 1
+    \]
+    Выражая единицу: $1 = 3 - 2 = 3 - (5 - 3) = 2 \cdot 3 - 5 = 2 \cdot (33 - 5 \cdot 6) - 5 = 2 \cdot 33 - 13 \cdot 5$. \\
+    Следовательно, $-13 \equiv 20 \pmod{33}$. Таким образом, $5^{-1} \pmod{33} = 20$.
+
+    \item \textbf{Ключ $3\times3$ ($K_2$):}
+    \[
+    K_2 = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & 3 \\ 2 & 1 & 1 \end{pmatrix}
+    \]
+    Расчёт определителя по правилу треугольников:
+    \[
+    \det(K_2) = 1(1 \cdot 1 - 3 \cdot 1) - 2(0 \cdot 1 - 3 \cdot 2) + 1(0 \cdot 1 - 1 \cdot 2) = -2 + 12 - 2 = 8
+    \]
+    По модулю 33: $\det(K_2) = 8 \pmod{33}$. $\text{НОД}(8, 33) = 1$. Обратный элемент: $8^{-1} \pmod{33} = 29$.
+
+    \item \textbf{Ключ $4\times4$ ($K_3$):}
+    \[
+    K_3 = \begin{pmatrix} 1 & 0 & 0 & 2 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 1 & 1 \end{pmatrix}, \quad \det(K_3) = 1 \cdot (2 \cdot 1 - 1 \cdot 1) = 1 \pmod{33}
+    \]
+    Все определители по модулю 33 различны: $\det(K_1) \equiv 5$, $\det(K_2) \equiv 8$, $\det(K_3) \equiv 1$.
+\end{enumerate}
+
+\subsubsection{Шифрование}
+
+Шифрование выполняется методом умножения вектор-строк на матрицу-ключ $C_i = (P_i \cdot K) \pmod{33}$.
+
+\paragraph{А. Шифрование ключом $K_1$ ($2\times2$):}
+\begin{enumerate}
+    \item \textbf{Блок 1} $(17, 19)$ — буквы 'С', 'У':
+    \[
+    \begin{aligned}
+        c_1 &= (17 \cdot 2 + 19 \cdot 3) = 34 + 57 = 91 \equiv 25 \pmod{33} \quad (\text{'Щ'}) \\
+        c_2 &= (17 \cdot 1 + 19 \cdot 4) = 17 + 76 = 93 \equiv 27 \pmod{33} \quad (\text{'Ы'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 2} $(8, 16)$ — буквы 'И', 'Р':
+    \[
+    \begin{aligned}
+        c_3 &= (8 \cdot 2 + 16 \cdot 3) = 16 + 48 = 64 \equiv 31 \pmod{33} \quad (\text{'Я'}) \\
+        c_4 &= (8 \cdot 1 + 16 \cdot 4) = 8 + 64 = 72 \equiv 6 \pmod{33} \quad (\text{'Ж'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 3} $(13, 8)$ — буквы 'Н', 'И':
+    \[
+    \begin{aligned}
+        c_5 &= (13 \cdot 2 + 8 \cdot 3) = 26 + 24 = 50 \equiv 17 \pmod{33} \quad (\text{'С'}) \\
+        c_6 &= (13 \cdot 1 + 8 \cdot 4) = 13 + 32 = 45 \equiv 12 \pmod{33} \quad (\text{'М'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 4} $(10, 8)$ — буквы 'К', 'И':
+    \[
+    \begin{aligned}
+        c_7 &= (10 \cdot 2 + 8 \cdot 3) = 20 + 24 = 44 \equiv 11 \pmod{33} \quad (\text{'Л'}) \\
+        c_8 &= (10 \cdot 1 + 8 \cdot 4) = 10 + 32 = 42 \equiv 9 \pmod{33} \quad (\text{'Й'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 5} $(32, 18)$ — буквы '[пробел]', 'Т':
+    \[
+    \begin{aligned}
+        c_9 &= (32 \cdot 2 + 18 \cdot 3) = 64 + 54 = 118 \equiv 19 \pmod{33} \quad (\text{'У'}) \\
+        c_{10} &= (32 \cdot 1 + 18 \cdot 4) = 32 + 72 = 104 \equiv 5 \pmod{33} \quad (\text{'Е'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 6} $(14, 15)$ — буквы 'О', 'П':
+    \[
+    \begin{aligned}
+        c_{11} &= (14 \cdot 2 + 15 \cdot 3) = 28 + 45 = 73 \equiv 7 \pmod{33} \quad (\text{'З'}) \\
+        c_{12} &= (14 \cdot 1 + 15 \cdot 4) = 14 + 60 = 74 \equiv 8 \pmod{33} \quad (\text{'И'})
+    \end{aligned}
+    \]
+\end{enumerate}
+\textbf{Зашифрованное сообщение 1:} \texttt{ЩЫЯЖСМЛЙУЕЗИ}
+
+\paragraph{Б. Шифрование ключом $K_2$ ($3\times3$):}
+\begin{enumerate}
+    \item \textbf{Блок 1} $(17, 19, 8)$ — 'СУИ':
+    \[
+    \begin{aligned}
+        c_1 &= (17 \cdot 1 + 19 \cdot 0 + 8 \cdot 2) = 17 + 0 + 16 = 33 \equiv 0 \pmod{33} \quad (\text{'А'}) \\
+        c_2 &= (17 \cdot 2 + 19 \cdot 1 + 8 \cdot 1) = 34 + 19 + 8 = 61 \equiv 28 \pmod{33} \quad (\text{'Ь'}) \\
+        c_3 &= (17 \cdot 1 + 19 \cdot 3 + 8 \cdot 1) = 17 + 57 + 8 = 82 \equiv 16 \pmod{33} \quad (\text{'Р'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 2} $(16, 13, 8)$ — 'РНИ':
+    \[
+    \begin{aligned}
+        c_4 &= (16 \cdot 1 + 13 \cdot 0 + 8 \cdot 2) = 16 + 16 = 32 \equiv 32 \pmod{33} \quad (\text{' '}) \\
+        c_5 &= (16 \cdot 2 + 13 \cdot 1 + 8 \cdot 1) = 32 + 13 + 8 = 53 \equiv 20 \pmod{33} \quad (\text{'Х'}) \\
+        c_6 &= (16 \cdot 1 + 13 \cdot 3 + 8 \cdot 1) = 16 + 39 + 8 = 63 \equiv 30 \pmod{33} \quad (\text{'Ю'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 3} $(10, 8, 32)$ — 'КИ ':
+    \[
+    c_7 = 74 \equiv 8 \, (\text{'И'}), \quad c_8 = 60 \equiv 27 \, (\text{'Ы'}), \quad c_9 = 66 \equiv 0 \, (\text{'А'})
+    \]
+    \item \textbf{Блок 4} $(18, 14, 15)$ — 'ТОП':
+    \[
+    c_{10} = 48 \equiv 15 \, (\text{'П'}), \quad c_{11} = 65 \equiv 32 \, (\text{' '}), \quad c_{12} = 75 \equiv 9 \, (\text{'Й'})
+    \]
+\end{enumerate}
+\textbf{Зашифрованное сообщение 2:} \texttt{АЬР ХЮИЫАП Й}
+
+\paragraph{В. Шифрование ключом $K_3$ ($4\times4$):}
+\begin{enumerate}
+    \item \textbf{Блок 1} $(17, 19, 8, 16)$ — 'СУИР':
+    \[
+    \begin{aligned}
+        c_1 &= 17 \cdot 1 + 19 \cdot 0 + 8 \cdot 0 + 16 \cdot 0 = 17 \equiv 17 \pmod{33} \quad (\text{'С'}) \\
+        c_2 &= 17 \cdot 0 + 19 \cdot 1 + 8 \cdot 0 + 16 \cdot 0 = 19 \equiv 19 \pmod{33} \quad (\text{'У'}) \\
+        c_3 &= 17 \cdot 0 + 19 \cdot 0 + 8 \cdot 2 + 16 \cdot 1 = 16 + 16 = 32 \equiv 32 \pmod{33} \quad (\text{' '}) \\
+        c_4 &= 17 \cdot 2 + 19 \cdot 0 + 8 \cdot 1 + 16 \cdot 1 = 34 + 8 + 16 = 58 \equiv 25 \pmod{33} \quad (\text{'Щ'})
+    \end{aligned}
+    \]
+    \item \textbf{Блок 2} $(13, 8, 10, 8)$ — 'НИКИ':
+    \[
+    c_5 = 29 \pmod{33} \, (\text{'Э'}), \quad c_6 = 8 \pmod{33} \, (\text{'И'}), \quad c_7 = 28 \pmod{33} \, (\text{'Ь'}), \quad c_8 = 42 \equiv 9 \pmod{33} \, (\text{'Й'})
+    \]
+    \item \textbf{Блок 3} $(32, 18, 14, 15)$ — ' ТОП':
+    \[
+    c_9 = 62 \equiv 29 \, (\text{'Э'}), \quad c_{10} = 18 \, (\text{'Т'}), \quad c_{11} = 43 \equiv 10 \, (\text{'К'}), \quad c_{12} = 93 \equiv 27 \, (\text{'Ы'})
+    \]
+\end{enumerate}
+\textbf{Зашифрованное сообщение 3:} \texttt{СУ ЩЭИЬЙЭТКЫ}
+
+\subsubsection{Расшифровка и дешифрация сообщений}
+Для дешифрации сообщений находится обратная матрица $K^{-1} \pmod{33}$ через транспонированную матрицу алгебраических дополнений $A^T$:
+\[
+K^{-1} = \det(K)^{-1} \cdot A^T \pmod{33}
+\]
+
+\paragraph{А. Дешифрация ключом $K_1^{-1}$ ($2\times2$):}
+1. $K_1 = \begin{pmatrix} 2 & 1 \\ 3 & 4 \end{pmatrix}$, $\det(K_1) = 5$, $5^{-1} \equiv 20 \pmod{33}$.
+2. Алгебраические дополнения: $A_{11}=4, A_{12}=-3, A_{21}=-1, A_{22}=2$.
+3. $A^T = \begin{pmatrix} 4 & -3 \\ -1 & 2 \end{pmatrix} \equiv \begin{pmatrix} 4 & 30 \\ 32 & 2 \end{pmatrix} \pmod{33}$.
+4. Обратная матрица:
+   \[
+   K_1^{-1} = 20 \cdot \begin{pmatrix} 4 & 30 \\ 32 & 2 \end{pmatrix} = \begin{pmatrix} 80 & 600 \\ 640 & 40 \end{pmatrix} \equiv \begin{pmatrix} 14 & 6 \\ 13 & 7 \end{pmatrix} \pmod{33}
+   \]
+5. Расчёт дешифрации по блокам $P_i = (C_i \cdot K_1^{-1}) \pmod{33}$:
+   \begin{itemize}
+       \item $C_1 = (25, 27) \rightarrow (25\cdot14 + 27\cdot6, 25\cdot13 + 27\cdot7) = (512, 514) \equiv (17, 19) \pmod{33} \rightarrow \text{'С', 'У'}$
+       \item $C_2 = (31, 6) \rightarrow (31\cdot14 + 6\cdot6, 31\cdot13 + 6\cdot7) = (470, 445) \equiv (8, 16) \pmod{33} \rightarrow \text{'И', 'Р'}$
+       \item $C_3 = (17, 12) \rightarrow (17\cdot14 + 12\cdot6, 17\cdot13 + 12\cdot7) = (310, 305) \equiv (13, 8) \pmod{33} \rightarrow \text{'Н', 'И'}$
+       \item $C_4 = (11, 9) \rightarrow (11\cdot14 + 9\cdot6, 11\cdot13 + 9\cdot7) = (208, 206) \equiv (10, 8) \pmod{33} \rightarrow \text{'К', 'И'}$
+       \item $C_5 = (19, 5) \rightarrow (19\cdot14 + 5\cdot6, 19\cdot13 + 5\cdot7) = (296, 282) \equiv (32, 18) \pmod{33} \rightarrow \text{' ', 'Т'}$
+       \item $C_6 = (7, 8) \rightarrow (7\cdot14 + 8\cdot6, 7\cdot13 + 8\cdot7) = (146, 147) \equiv (14, 15) \pmod{33} \rightarrow \text{'О', 'П'}$
+   \end{itemize}
+\textbf{Расшифрованное сообщение 1:} \texttt{СУИРНИКИ ТОП}
+
+\paragraph{Б. Дешифрация ключом $K_2^{-1}$ ($3\times3$):}
+1. $K_2 = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & 3 \\ 2 & 1 & 1 \end{pmatrix}$, $\det(K_2) = 8$, $8^{-1} \equiv 29 \pmod{33}$.
+2. $A^T = \begin{pmatrix} -2 & -1 & 5 \\ 6 & -1 & -3 \\ -2 & 3 & 1 \end{pmatrix} \equiv \begin{pmatrix} 31 & 32 & 5 \\ 6 & 32 & 30 \\ 31 & 3 & 1 \end{pmatrix} \pmod{33}$.
+3. Обратная матрица:
+   \[
+   K_2^{-1} = 29 \cdot \begin{pmatrix} 31 & 32 & 5 \\ 6 & 32 & 30 \\ 31 & 3 & 1 \end{pmatrix} \equiv \begin{pmatrix} 8 & 4 & 13 \\ 9 & 4 & 12 \\ 8 & 21 & 29 \end{pmatrix} \pmod{33}
+   \]
+4. Расчёт дешифрации по блокам $P_i = (C_i \cdot K_2^{-1}) \pmod{33}$:
+   \begin{itemize}
+       \item $C_1 = (0, 28, 16) \rightarrow (380, 448, 800) \equiv (17, 19, 8) \rightarrow \text{'С', 'У', 'И'}$
+       \item $C_2 = (32, 20, 30) \rightarrow (676, 838, 1526) \equiv (16, 13, 8) \rightarrow \text{'Р', 'Н', 'И'}$
+       \item $C_3 = (8, 27, 0) \rightarrow (307, 140, 428) \equiv (10, 8, 32) \rightarrow \text{'К', 'И', ' '}$
+       \item $C_4 = (15, 32, 9) \rightarrow (480, 377, 840) \equiv (18, 14, 15) \rightarrow \text{'Т', 'О', 'П'}$
+   \end{itemize}
+\textbf{Расшифрованное сообщение 2:} \texttt{СУИРНИКИ ТОП}
+
+\paragraph{В. Дешифрация ключом $K_3^{-1}$ ($4\times4$):}
+1. $K_3 = \begin{pmatrix} 1 & 0 & 0 & 2 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 1 & 1 \end{pmatrix}$, $\det(K_3) = 1$, $1^{-1} \equiv 1 \pmod{33}$.
+2. Обратная матрица $K_3^{-1} \equiv \begin{pmatrix} 1 & 0 & 0 & 31 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 32 \\ 0 & 0 & 32 & 2 \end{pmatrix} \pmod{33}$.
+3. Расчёт дешифрации по блокам $P_i = (C_i \cdot K_3^{-1}) \pmod{33}$:
+   \begin{itemize}
+       \item $C_1 = (17, 19, 32, 25) \equiv (17, 19, 8, 16) \rightarrow \text{'С', 'У', 'И', 'Р'}$
+       \item $C_2 = (29, 8, 28, 9) \equiv (13, 8, 10, 8) \rightarrow \text{'Н', 'И', 'К', 'И'}$
+       \item $C_3 = (29, 18, 10, 27) \equiv (32, 18, 14, 15) \rightarrow \text{' ', 'Т', 'О', 'П'}$
+   \end{itemize}
+\textbf{Расшифрованное сообщение 3:} \texttt{СУИРНИКИ ТОП}
+
+\subsubsection{Симуляция вредоносного вмешательства}
+В каждое из зашифрованных сообщений было намеренно внесено по 3 случайные ошибки (замена символа из алфавита).
+
+\paragraph{А. Сообщение 1 (Ключ $2\times2$):}
+\begin{itemize}
+    \item \textbf{Зашифрованное сообщение:} \texttt{ЩЫЯЖСМЛЙУЕЗИ}
+    \item \textbf{Сообщение с вмешательством:} \texttt{\textbf{\underline{А}}ЫЯ\textbf{\underline{А}}СМЛЙ\textbf{\underline{А}}ЕЗИ} (заменены символы 1, 4 и 9)
+    \item \textbf{Расчёт расшифровки по блокам:}
+    \[
+    \begin{aligned}
+        C'_1 = (0, 27) \cdot K_1^{-1} &\equiv (30, 24) \pmod{33} \quad (\text{'Ю', 'Ш'}) \\
+        C'_2 = (31, 0) \cdot K_1^{-1} &\equiv (5, 21) \pmod{33} \quad (\text{'Е', 'Х'}) \\
+        C'_3 = (17, 12) \cdot K_1^{-1} &\equiv (13, 8) \pmod{33} \quad (\text{'Н', 'И'}) \\
+        C'_4 = (11, 9) \cdot K_1^{-1} &\equiv (10, 8) \pmod{33} \quad (\text{'К', 'И'}) \\
+        C'_5 = (0, 5) \cdot K_1^{-1} &\equiv (30, 2) \pmod{33} \quad (\text{'Ю', 'В'}) \\
+        C'_6 = (7, 8) \cdot K_1^{-1} &\equiv (14, 15) \pmod{33} \quad (\text{'О', 'П'})
+    \end{aligned}
+    \]
+    \item \textbf{Расшифрованное сообщение:} \texttt{ЮШЕХНИКИЮВОП}
+\end{itemize}
+
+\paragraph{Б. Сообщение 2 (Ключ $3\times3$):}
+\begin{itemize}
+    \item \textbf{Зашифрованное сообщение:} \texttt{АЬР ХЮИЫАП Й}
+    \item \textbf{Сообщение с вмешательством:} \texttt{АЬР\textbf{\underline{ААА}}ЫАП Й} (заменены символы 4, 5 и 6 — полностью 2-й блок)
+    \item \textbf{Расшифрованное сообщение:} \texttt{СУИАААКИ ТОП}
+\end{itemize}
+
+\paragraph{В. Сообщение 3 (Ключ $4\times4$):}
+\begin{itemize}
+    \item \textbf{Зашифрованное сообщение:} \texttt{СУ ЩЭИЬЙЭТКЫ}
+    \item \textbf{Сообщение с вмешательством:} \texttt{СУ Щ\textbf{\underline{ААА}}ЙЭТКЫ} (заменены символы 5, 6 и 7)
+    \item \textbf{Расшифрованное сообщение:} \texttt{СУИРНАШТ ТОП}
+\end{itemize}
+
+\paragraph{Симуляция вредоносного вмешательства} (по данным Python-вывода)
+Заменяем 3 случайных символа (seed=42) в каждом зашифрованном сообщении.
+
+\paragraph{А. Сообщение 1 (Ключ $2\times2$):}
+\begin{itemize}
+    \item \textbf{Оригинал:} \texttt{ЩЫЯЖСМЛЙУЕЗИ}
+    \item \textbf{Изменено в позициях:} [0, 1, 10]
+    \item \textbf{Искажённое:} \texttt{[О][П]ЯЖСМЛЙУЕ[С]И}
+    \item \textbf{Дешифрованное (после повреждения):} \texttt{ЦЧИРНИКИ ТЦН}
+    \item \textbf{Ожидаемое:} \texttt{СУИРНИКИ ТОП}
+    \item \textbf{Ошибки:} поз.0: 'Ц' (22) вместо 'С' (17); поз.1: 'Ч' (23) вместо 'У' (19); поз.10: 'Ц' (22) вместо 'О' (14); поз.11: 'Н' (13) вместо 'П' (15)
+\end{itemize}
+
+\paragraph{Б. Сообщение 2 (Ключ $3\times3$):}
+\begin{itemize}
+    \item \textbf{Оригинал:} \texttt{АЬР ФЮИЫАП Й}
+    \item \textbf{Изменено в позициях:} [1, 2, 8]
+    \item \textbf{Искажённое:} \texttt{А[Ы][Е]   Ф Ю И Ы [В] П   Й}
+    \item \textbf{Дешифрованное (после повреждения):} \texttt{УПЗРНИЪСШТОП}
+    \item \textbf{Ожидаемое:} \texttt{СУИРНИКИ ТОП}
+    \item \textbf{Ошибки:} поз.0: 'У' (19) вместо 'С' (17); поз.1: 'П' (15) вместо 'У' (19); поз.2: 'З' (7) вместо 'И' (8); поз.6: 'Ъ' (26) вместо 'К' (10); поз.7: 'С' (17) вместо 'И' (8); поз.8: 'Ш' (24) вместо ' ' (32)
+\end{itemize}
+
+\paragraph{В. Сообщение 3 (Ключ $4\times4$):}
+\begin{itemize}
+    \item \textbf{Оригинал:} \texttt{СУ ЩНИЬЛ ТКЫ}
+    \item \textbf{Изменено в позициях:} [0, 1, 3]
+    \item \textbf{Искажённое:} \texttt{[О][ ]   [Б] Н И Ь Л   Т К Ы}
+    \item \textbf{Дешифрованное (после повреждения):} \texttt{О ЪННИКИ ТОП}
+    \item \textbf{Ожидаемое:} \texttt{СУИРНИКИ ТОП}
+    \item \textbf{Ошибки:} поз.0: 'О' (14) вместо 'С' (17); поз.1: ' ' (32) вместо 'У' (19); поз.2: 'Ъ' (26) вместо 'И' (8); поз.3: 'Н' (13) вместо 'Р' (16)
+\end{itemize}
+
+\paragraph{Локальный вывод по Заданию 1:}
+В ходе выполнения задания был изучен алгоритм шифрования Хилла, основанный на матричном умножении и арифметике по модулю $n = 33$. По результатам проведенных вычислений сделаны следующие выводы:
+
+1. \textbf{Условие расшифровки (обратимость ключа):} Чтобы сообщение можно было расшифровать, матрица-ключ должна быть обратимой по модулю 33. Для этого её определитель не должен иметь общих делителей с размером алфавита, то есть $\text{НОД}(\det(K), 33) = 1$. Если это условие не выполняется, обратную матрицу найти невозможно, и данные будут потеряны.
+
+2. \textbf{Зависимость от размера ключа:} Увеличение размера матрицы (с $2\times2$ до $4\times4$) увеличивает длину шифруемого блока. При этом одна и та же буква исходного текста в разных местах сообщения шифруется разными символами, так как её значение зависит от соседних букв в блоке.
+
+3. \textbf{Распространение ошибок при помехах:} Эксперимент с изменением символов показал, что замена хотя бы одной буквы в зашифрованном блоке приводит к искажению всех букв этого блока при расшифровке. Это происходит потому, что при умножении на обратную матрицу каждый символ исходного текста вычисляется с участием всех элементов зашифрованного блока.

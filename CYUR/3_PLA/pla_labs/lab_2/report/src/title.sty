@@ -1,0 +1,93 @@
+\ProvidesPackage{title}[2024/01/31 v.02 Titlepage for VPD Subject]
+
+\usepackage{paracol}                    % многоколоночный текст (нужен для титульного листа)
+\usepackage[noblocks]{authblk}          % авторы и аффилиации
+\usepackage{geometry}
+
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+\renewcommand\Authsep{, \newline }
+\renewcommand\Authand{, \newline }
+\renewcommand\Authands{, \newline }
+
+% Local definitions
+\newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand{\@supervisor}{Имя О. Фамилия}
+
+\renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
+\newcommand{\@abstract}{
+Опишите здесь что вы сделали в работе с точки зрения исследования. Что вы для себя открыли? С какими трудностями столкнулись? Какие технологии использовали?
+}
+
+\newcommand{\keywords}[1]{\gdef\@keywords{#1}}
+\newcommand{\@keywords}{
+подберите 3-5 ключевых слов, отличающих эту работу от всех остальных
+}
+
+\renewcommand\maketitle{
+
+    \begin{titlepage}
+
+        \vspace*{1cm}
+
+        \begin{center}
+
+            % ITMO University logo
+            \includegraphics[height=2cm]{../images/logo_basic_russian_black.pdf}
+
+            \vspace{3mm}
+
+            % Faculty
+            Факультет Систем Управления и Робототехники
+
+            \vspace{4cm}
+
+            % Lab work title
+            {\Large \bfseries \MakeUppercase{\@title}}
+
+        \end{center}
+
+        \vspace{3cm}
+
+        % Abstract with authors
+        \columnratio{0.7, 0.3}
+        \columnsep = 1cm
+        \begin{paracol}{2}
+            \begin{leftcolumn}
+                \sloppy
+                \textbf{Аннотация} -- \@abstract
+
+                \vspace{1em}
+
+                \noindent
+                \textbf{Ключевые слова}: \@keywords
+            \end{leftcolumn}
+
+            \begin{rightcolumn}
+                \setlength{\parindent}{0cm}
+
+                \textbf{Выполнили}
+                \vspace{1em}
+
+                {\@author}
+
+                \vspace{1em}
+
+                \textbf{Проверил}
+                \vspace{1em}
+
+                {\@supervisor}
+
+            \end{rightcolumn}
+        \end{paracol}
+
+
+        \vfill
+
+        \begin{center}
+            \@date
+        \end{center}
+
+    \end{titlepage}
+
+}
