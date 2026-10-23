@@ -1,0 +1,11 @@
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:12:13:sound_tone	0	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:22:13:sound_init	64	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:68:12:write_reg	32	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:73:12:read_reg	24	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:48:6:Board_SoundPlay	8	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:56:6:Board_SoundUpdate	8	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:78:6:Board_Init	40	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:114:5:Board_ReadKey	24	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:134:5:Board_DisplayInit	56	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:152:5:Board_DisplayPage	32	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\board_game.c:160:6:Board_Leds	16	static

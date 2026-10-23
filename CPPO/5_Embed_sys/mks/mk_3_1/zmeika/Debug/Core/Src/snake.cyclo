@@ -1,0 +1,8 @@
+../Core/Src/snake.c:4:17:random_next	1
+../Core/Src/snake.c:10:12:occupied	4
+../Core/Src/snake.c:16:13:food_place	6
+../Core/Src/snake.c:30:6:Snake_Init	3
+../Core/Src/snake.c:41:6:Snake_Turn	6
+../Core/Src/snake.c:48:6:Snake_TogglePause	4
+../Core/Src/snake.c:53:6:Snake_Step	12
+../Core/Src/snake.c:77:10:Snake_Period	2

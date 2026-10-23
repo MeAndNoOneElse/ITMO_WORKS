@@ -1,0 +1,11 @@
+../Core/Src/board_game.c:12:13:sound_tone	24	static
+../Core/Src/board_game.c:22:13:sound_init	64	static
+../Core/Src/board_game.c:48:6:Board_SoundPlay	16	static
+../Core/Src/board_game.c:56:6:Board_SoundUpdate	8	static
+../Core/Src/board_game.c:68:12:write_reg	32	static
+../Core/Src/board_game.c:73:12:read_reg	32	static
+../Core/Src/board_game.c:78:6:Board_Init	40	static
+../Core/Src/board_game.c:114:5:Board_ReadKey	24	static
+../Core/Src/board_game.c:134:5:Board_DisplayInit	64	static
+../Core/Src/board_game.c:152:5:Board_DisplayPage	40	static
+../Core/Src/board_game.c:160:6:Board_Leds	16	static

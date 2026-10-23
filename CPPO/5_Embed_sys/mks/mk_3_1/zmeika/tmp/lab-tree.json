@@ -1,0 +1,3164 @@
+{
+  "sha": "ccb06538e086048c502cee4dea04e2b94fd2fa0c",
+  "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/ccb06538e086048c502cee4dea04e2b94fd2fa0c",
+  "tree": [
+    {
+      "path": ".cproject",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36b706fccbb065dfd7b579b378a427959d81f377",
+      "size": 30254,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/36b706fccbb065dfd7b579b378a427959d81f377"
+    },
+    {
+      "path": ".mxproject",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "735dcb3448b1762f8861dda6e558b42c752d4641",
+      "size": 14206,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/735dcb3448b1762f8861dda6e558b42c752d4641"
+    },
+    {
+      "path": ".project",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd48aa22aa115d54b784c5f31c45a3c494860c03",
+      "size": 1178,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/bd48aa22aa115d54b784c5f31c45a3c494860c03"
+    },
+    {
+      "path": ".settings",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9bc6b7f599f84ccebc7e8cf3b2cbda47bbd10c82",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/9bc6b7f599f84ccebc7e8cf3b2cbda47bbd10c82"
+    },
+    {
+      "path": ".settings/com.st.stm32cube.ide.mcu.sfrview.prefs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98a69fc76aca62770448e9ac0751a140b7f1a5ad",
+      "size": 113,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/98a69fc76aca62770448e9ac0751a140b7f1a5ad"
+    },
+    {
+      "path": ".settings/language.settings.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d15aec7594a70ce2600817cb4f001669be8a5a17",
+      "size": 2148,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d15aec7594a70ce2600817cb4f001669be8a5a17"
+    },
+    {
+      "path": ".settings/org.eclipse.core.resources.prefs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99f26c0203a7844de00dbfc56e6a35d8ed3c022c",
+      "size": 55,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/99f26c0203a7844de00dbfc56e6a35d8ed3c022c"
+    },
+    {
+      "path": ".settings/stm32cubeide.project.prefs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12721fab36f3c2ec365e3ddb65c3fc1549d5dc5b",
+      "size": 263,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/12721fab36f3c2ec365e3ddb65c3fc1549d5dc5b"
+    },
+    {
+      "path": "Core",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a6450e2f231ba878c55790a156ff90b351a48ff9",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/a6450e2f231ba878c55790a156ff90b351a48ff9"
+    },
+    {
+      "path": "Core/Inc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0a56eaef8cdc66482f0067ecd5d337ffca15eee8",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/0a56eaef8cdc66482f0067ecd5d337ffca15eee8"
+    },
+    {
+      "path": "Core/Inc/FreeRTOSConfig.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "008c637eddd67e5f0fc2f6cf2dcb70ae34a8f304",
+      "size": 6319,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/008c637eddd67e5f0fc2f6cf2dcb70ae34a8f304"
+    },
+    {
+      "path": "Core/Inc/fonts.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47bd4a749e3619bd1c47f0cec9e6c78288be8190",
+      "size": 245,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/47bd4a749e3619bd1c47f0cec9e6c78288be8190"
+    },
+    {
+      "path": "Core/Inc/gpio.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ac48571d35e482cdb3bf56b8d8f62a6f5fa66b0",
+      "size": 1264,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9ac48571d35e482cdb3bf56b8d8f62a6f5fa66b0"
+    },
+    {
+      "path": "Core/Inc/i2c.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5f10f5873badd8d2e73dc15be0db89e92f6a51a",
+      "size": 1293,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e5f10f5873badd8d2e73dc15be0db89e92f6a51a"
+    },
+    {
+      "path": "Core/Inc/kb.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95108907f278b9aad423ae75245e7fc07fce8a09",
+      "size": 350,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/95108907f278b9aad423ae75245e7fc07fce8a09"
+    },
+    {
+      "path": "Core/Inc/main.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e6ffde782c024e169617d2bbb9ba5d7a2af71a8",
+      "size": 1934,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9e6ffde782c024e169617d2bbb9ba5d7a2af71a8"
+    },
+    {
+      "path": "Core/Inc/oled.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f57119cbf43d93c81058ca2717832b244da146e",
+      "size": 977,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2f57119cbf43d93c81058ca2717832b244da146e"
+    },
+    {
+      "path": "Core/Inc/pca9538.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a74b7c2ef5bb93f14282c417f99ebed845a54534",
+      "size": 785,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a74b7c2ef5bb93f14282c417f99ebed845a54534"
+    },
+    {
+      "path": "Core/Inc/sdk_uart.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c65990babdf92e407d1194b4effd16905cf32b7",
+      "size": 182,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3c65990babdf92e407d1194b4effd16905cf32b7"
+    },
+    {
+      "path": "Core/Inc/snake.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc683a486db6bcaf4b6922dacf4746eef02b6ed9",
+      "size": 781,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/bc683a486db6bcaf4b6922dacf4746eef02b6ed9"
+    },
+    {
+      "path": "Core/Inc/stm32f4xx_hal_conf.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba6c506d596ec07a08f60fe59a364ab76c270814",
+      "size": 19537,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ba6c506d596ec07a08f60fe59a364ab76c270814"
+    },
+    {
+      "path": "Core/Inc/stm32f4xx_it.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41d60d33d442f68063e13ff1773fd9373f1390d5",
+      "size": 1818,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/41d60d33d442f68063e13ff1773fd9373f1390d5"
+    },
+    {
+      "path": "Core/Inc/usart.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10c61938cc5de040ae935d53efc5664441881fea",
+      "size": 1312,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/10c61938cc5de040ae935d53efc5664441881fea"
+    },
+    {
+      "path": "Core/Src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b66321a75061bf0e341e5e0ce07ed4c330077a40",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/b66321a75061bf0e341e5e0ce07ed4c330077a40"
+    },
+    {
+      "path": "Core/Src/fonts.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdc3d95ad2d19c9525598ad9d3a72f97ba4c71d6",
+      "size": 41602,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/fdc3d95ad2d19c9525598ad9d3a72f97ba4c71d6"
+    },
+    {
+      "path": "Core/Src/freertos.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59bc5892b18b18045802631611f8d480d9aaf9f4",
+      "size": 8011,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/59bc5892b18b18045802631611f8d480d9aaf9f4"
+    },
+    {
+      "path": "Core/Src/gpio.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa7b547c3f5694a6c7e10d2b472dfa1fe0d4769c",
+      "size": 1863,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/fa7b547c3f5694a6c7e10d2b472dfa1fe0d4769c"
+    },
+    {
+      "path": "Core/Src/i2c.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ad8b1402c714a8cb555d25daf5e99149860455b",
+      "size": 3202,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9ad8b1402c714a8cb555d25daf5e99149860455b"
+    },
+    {
+      "path": "Core/Src/kb.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1b2be7be74b2fcfc297ce0ea84dc742e55810ae",
+      "size": 1842,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f1b2be7be74b2fcfc297ce0ea84dc742e55810ae"
+    },
+    {
+      "path": "Core/Src/main.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f412ae6751a55f0bcf08d14c6df9141726d20de",
+      "size": 5714,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9f412ae6751a55f0bcf08d14c6df9141726d20de"
+    },
+    {
+      "path": "Core/Src/oled.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5afec83738329f354cf8c771557d412c94d5b6f6",
+      "size": 3241,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5afec83738329f354cf8c771557d412c94d5b6f6"
+    },
+    {
+      "path": "Core/Src/pca9538.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ffecf04241964cd96f8a0424c105addbcdd1d70",
+      "size": 1213,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2ffecf04241964cd96f8a0424c105addbcdd1d70"
+    },
+    {
+      "path": "Core/Src/sdk_uart.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b4cfae85b556e90929a91386b4e9ca9244ef397",
+      "size": 503,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/1b4cfae85b556e90929a91386b4e9ca9244ef397"
+    },
+    {
+      "path": "Core/Src/snake.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db69d28c6cb0b56df789824e941bc79e60a97ecc",
+      "size": 2283,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/db69d28c6cb0b56df789824e941bc79e60a97ecc"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_hal_msp.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14a8392d4379c4562b0d073fbd5db9d3e01bdf30",
+      "size": 2237,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/14a8392d4379c4562b0d073fbd5db9d3e01bdf30"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_hal_timebase_tim.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b123371e77f74ebaf31a5405bafe6f36b9cafb73",
+      "size": 4158,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b123371e77f74ebaf31a5405bafe6f36b9cafb73"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_it.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4b604cd9da8efaab0fc3de91f0175e5a494b0fe",
+      "size": 4794,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e4b604cd9da8efaab0fc3de91f0175e5a494b0fe"
+    },
+    {
+      "path": "Core/Src/syscalls.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8884b5aad2053c71778fa066d61ddc4ec84378c1",
+      "size": 2847,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8884b5aad2053c71778fa066d61ddc4ec84378c1"
+    },
+    {
+      "path": "Core/Src/sysmem.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d9f7e67f3251ac7605138f85bf03e80e3cf856f",
+      "size": 2726,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5d9f7e67f3251ac7605138f85bf03e80e3cf856f"
+    },
+    {
+      "path": "Core/Src/system_stm32f4xx.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a61e9cf7655ad16d493260dc9afc3888c67c71c",
+      "size": 26695,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7a61e9cf7655ad16d493260dc9afc3888c67c71c"
+    },
+    {
+      "path": "Core/Src/usart.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa88673d55a746000e6b7201c433e2e86c5b679b",
+      "size": 2929,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/aa88673d55a746000e6b7201c433e2e86c5b679b"
+    },
+    {
+      "path": "Core/Startup",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ef686b3cd6c710243457ffc77c59031ad95881d",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/0ef686b3cd6c710243457ffc77c59031ad95881d"
+    },
+    {
+      "path": "Core/Startup/startup_stm32f427vitx.s",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "044a2532ab53498ec3005447ed07cb5bbf55d637",
+      "size": 24043,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/044a2532ab53498ec3005447ed07cb5bbf55d637"
+    },
+    {
+      "path": "Debug",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e183c083747324eb52bc1358e2a0be33783392c2",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/e183c083747324eb52bc1358e2a0be33783392c2"
+    },
+    {
+      "path": "Debug/Core",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e396f68924a7a0f6626631fea632a6eba06b026",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/2e396f68924a7a0f6626631fea632a6eba06b026"
+    },
+    {
+      "path": "Debug/Core/Src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "076135ac67b653bf1388feed801a68a9e98f3dc6",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/076135ac67b653bf1388feed801a68a9e98f3dc6"
+    },
+    {
+      "path": "Debug/Core/Src/fonts.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Core/Src/fonts.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a1800e67d63f325c0bc534e1caa245afb73f314",
+      "size": 3451,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8a1800e67d63f325c0bc534e1caa245afb73f314"
+    },
+    {
+      "path": "Debug/Core/Src/fonts.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "377f1c386bc5d9cb8ab78ff57680221605cdf395",
+      "size": 1176608,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/377f1c386bc5d9cb8ab78ff57680221605cdf395"
+    },
+    {
+      "path": "Debug/Core/Src/fonts.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Core/Src/freertos.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c99c43504e5840e8bb14969995f8d70c832aac38",
+      "size": 199,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c99c43504e5840e8bb14969995f8d70c832aac38"
+    },
+    {
+      "path": "Debug/Core/Src/freertos.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a82421b39ee9a3d8ad3ccd84799dcf97056d3856",
+      "size": 6015,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a82421b39ee9a3d8ad3ccd84799dcf97056d3856"
+    },
+    {
+      "path": "Debug/Core/Src/freertos.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdd014e1998367de8b792ebde9de639707a08076",
+      "size": 1244840,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/cdd014e1998367de8b792ebde9de639707a08076"
+    },
+    {
+      "path": "Debug/Core/Src/freertos.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2692cf84719ff9429c51f08e19c965eb19a70f31",
+      "size": 231,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2692cf84719ff9429c51f08e19c965eb19a70f31"
+    },
+    {
+      "path": "Debug/Core/Src/gpio.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56b69583561a3653c113e27961fdc8180fd73e4e",
+      "size": 39,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/56b69583561a3653c113e27961fdc8180fd73e4e"
+    },
+    {
+      "path": "Debug/Core/Src/gpio.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1be0b1536a65d8fda91d7deeacc461b6edcd3041",
+      "size": 3486,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/1be0b1536a65d8fda91d7deeacc461b6edcd3041"
+    },
+    {
+      "path": "Debug/Core/Src/gpio.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b75fbf9e07f032d71e0ac967daf6dd72b03b21e1",
+      "size": 1167856,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b75fbf9e07f032d71e0ac967daf6dd72b03b21e1"
+    },
+    {
+      "path": "Debug/Core/Src/gpio.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0039196af1d7805472d467151f1e0d434f8e02c",
+      "size": 47,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f0039196af1d7805472d467151f1e0d434f8e02c"
+    },
+    {
+      "path": "Debug/Core/Src/i2c.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50474babc98f9ecfa80321d22c65c4401e8ef66d",
+      "size": 123,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/50474babc98f9ecfa80321d22c65c4401e8ef66d"
+    },
+    {
+      "path": "Debug/Core/Src/i2c.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e28abe7e0dcfceee4dedbb3f3f5801bbd5adaaf5",
+      "size": 3482,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e28abe7e0dcfceee4dedbb3f3f5801bbd5adaaf5"
+    },
+    {
+      "path": "Debug/Core/Src/i2c.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e906343dff362d4f2a915c4a2e9cb2ad3c8e2009",
+      "size": 1172912,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e906343dff362d4f2a915c4a2e9cb2ad3c8e2009"
+    },
+    {
+      "path": "Debug/Core/Src/i2c.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8868d26785205248fb6368e6b1602d9bfe0e7d57",
+      "size": 146,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8868d26785205248fb6368e6b1602d9bfe0e7d57"
+    },
+    {
+      "path": "Debug/Core/Src/kb.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "693a20dbb8d9bfd4b3287f760aed75db0844512f",
+      "size": 72,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/693a20dbb8d9bfd4b3287f760aed75db0844512f"
+    },
+    {
+      "path": "Debug/Core/Src/kb.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04f4e5eeb8f246be577bb3dfc26e735aaf87f566",
+      "size": 3656,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/04f4e5eeb8f246be577bb3dfc26e735aaf87f566"
+    },
+    {
+      "path": "Debug/Core/Src/kb.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c78db8a7b132695f7b2d062e05a5b14060e747b",
+      "size": 1169012,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7c78db8a7b132695f7b2d062e05a5b14060e747b"
+    },
+    {
+      "path": "Debug/Core/Src/kb.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4b43c80d23f55daadb078069bd2ddb95dd2cd74",
+      "size": 87,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f4b43c80d23f55daadb078069bd2ddb95dd2cd74"
+    },
+    {
+      "path": "Debug/Core/Src/main.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49a459d5bad268d2da202e7374bcbb6c3e4f8c3e",
+      "size": 175,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/49a459d5bad268d2da202e7374bcbb6c3e4f8c3e"
+    },
+    {
+      "path": "Debug/Core/Src/main.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e9eef338122495e3aaf7dfef6724d9a4d7e9c1",
+      "size": 5751,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/48e9eef338122495e3aaf7dfef6724d9a4d7e9c1"
+    },
+    {
+      "path": "Debug/Core/Src/main.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb6092a54c7b4e955b7f017eeaedc9419012e0ed",
+      "size": 1230644,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/fb6092a54c7b4e955b7f017eeaedc9419012e0ed"
+    },
+    {
+      "path": "Debug/Core/Src/main.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af3a5c9d1d7f4c48ac96168324d9c073676b5744",
+      "size": 225,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/af3a5c9d1d7f4c48ac96168324d9c073676b5744"
+    },
+    {
+      "path": "Debug/Core/Src/oled.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48a2ebb84d91e7d59a230a7cf030f5f90f70761f",
+      "size": 455,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/48a2ebb84d91e7d59a230a7cf030f5f90f70761f"
+    },
+    {
+      "path": "Debug/Core/Src/oled.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e07a430da5000a23937651c167528b2f0bd09a1b",
+      "size": 3567,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e07a430da5000a23937651c167528b2f0bd09a1b"
+    },
+    {
+      "path": "Debug/Core/Src/oled.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45115d26a605f2db31abb892f9d0425059db0911",
+      "size": 1177020,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/45115d26a605f2db31abb892f9d0425059db0911"
+    },
+    {
+      "path": "Debug/Core/Src/oled.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "752731ac42220734db630123cb38de04a070d361",
+      "size": 542,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/752731ac42220734db630123cb38de04a070d361"
+    },
+    {
+      "path": "Debug/Core/Src/pca9538.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bf2b4961355e6e8a805b9a4a41b7e0bf3d31178",
+      "size": 262,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4bf2b4961355e6e8a805b9a4a41b7e0bf3d31178"
+    },
+    {
+      "path": "Debug/Core/Src/pca9538.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6f5f82fc55b602d3833128c9b92e556ad5d1812",
+      "size": 3627,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a6f5f82fc55b602d3833128c9b92e556ad5d1812"
+    },
+    {
+      "path": "Debug/Core/Src/pca9538.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa504d44212ca1c2c2c41ac3eb56bbbad91b356d",
+      "size": 1172808,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/aa504d44212ca1c2c2c41ac3eb56bbbad91b356d"
+    },
+    {
+      "path": "Debug/Core/Src/pca9538.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c4ef4542a5299a281377c205388b854cc48a6a1",
+      "size": 302,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3c4ef4542a5299a281377c205388b854cc48a6a1"
+    },
+    {
+      "path": "Debug/Core/Src/sdk_uart.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b37fc11e20495fd78e83301ddc5e9ad97bebc384",
+      "size": 87,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b37fc11e20495fd78e83301ddc5e9ad97bebc384"
+    },
+    {
+      "path": "Debug/Core/Src/sdk_uart.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9076fc389f8d7c0f347b9fe9aae8c9b7cbd8e75",
+      "size": 3546,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d9076fc389f8d7c0f347b9fe9aae8c9b7cbd8e75"
+    },
+    {
+      "path": "Debug/Core/Src/sdk_uart.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7424028b33949ad648693eece8a3cc8eb7842e87",
+      "size": 1191696,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7424028b33949ad648693eece8a3cc8eb7842e87"
+    },
+    {
+      "path": "Debug/Core/Src/sdk_uart.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55e6e7087f252537d1113e7cc6106190731261f5",
+      "size": 103,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/55e6e7087f252537d1113e7cc6106190731261f5"
+    },
+    {
+      "path": "Debug/Core/Src/snake.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3819398296552c85941a2a9c20b86b29335ee534",
+      "size": 368,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3819398296552c85941a2a9c20b86b29335ee534"
+    },
+    {
+      "path": "Debug/Core/Src/snake.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa42948473f7089304e05f31e09c543bc62dc0a0",
+      "size": 79,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/aa42948473f7089304e05f31e09c543bc62dc0a0"
+    },
+    {
+      "path": "Debug/Core/Src/snake.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f67507082dc1e40b71f22c1ed32c1326f21dbaa",
+      "size": 60296,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6f67507082dc1e40b71f22c1ed32c1326f21dbaa"
+    },
+    {
+      "path": "Debug/Core/Src/snake.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e912316f63991bd26fc05ba051b6a206eaa1f3cc",
+      "size": 436,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e912316f63991bd26fc05ba051b6a206eaa1f3cc"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_msp.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae31cf96767cae636ad4353f361d0644c16d925f",
+      "size": 51,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ae31cf96767cae636ad4353f361d0644c16d925f"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_msp.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5ea2e791dda825c11ab59806fe13d0435216834",
+      "size": 3473,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f5ea2e791dda825c11ab59806fe13d0435216834"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_msp.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "402d1bb04f5131803dc16b22d0bc7d22e93b8cea",
+      "size": 1169688,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/402d1bb04f5131803dc16b22d0bc7d22e93b8cea"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_msp.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbeb228c497b59deb59f507a3c7dff8982663031",
+      "size": 59,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/dbeb228c497b59deb59f507a3c7dff8982663031"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_timebase_tim.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f07dc67f599db30f15ab5b72a8623ef82b0f3d64",
+      "size": 191,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f07dc67f599db30f15ab5b72a8623ef82b0f3d64"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_timebase_tim.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83e8247831ef5c74af38dea8e41d5b586ad1b07c",
+      "size": 3455,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/83e8247831ef5c74af38dea8e41d5b586ad1b07c"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_timebase_tim.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b35b7fc32a67941555cfd8099d871f1d1e94fa2",
+      "size": 1175612,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7b35b7fc32a67941555cfd8099d871f1d1e94fa2"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_hal_timebase_tim.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33e0d1813097cdc190be9207b655dd14b293f56a",
+      "size": 213,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/33e0d1813097cdc190be9207b655dd14b293f56a"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_it.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "808090907060b7ee6f9d9b69d8ca3870b1f69920",
+      "size": 369,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/808090907060b7ee6f9d9b69d8ca3870b1f69920"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_it.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5586cef5be53735bc2cf1ceb6327dd05dfe869e7",
+      "size": 3521,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5586cef5be53735bc2cf1ceb6327dd05dfe869e7"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_it.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d53550800a8431071f6d037ce7717398d97189bc",
+      "size": 1171256,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d53550800a8431071f6d037ce7717398d97189bc"
+    },
+    {
+      "path": "Debug/Core/Src/stm32f4xx_it.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c2f09c0ec96c17f0a8b977e65b20040f12d2332",
+      "size": 418,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6c2f09c0ec96c17f0a8b977e65b20040f12d2332"
+    },
+    {
+      "path": "Debug/Core/Src/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09cfd7d6ecef2d95ea0fa2eb53c973a2a4c2822a",
+      "size": 4084,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/09cfd7d6ecef2d95ea0fa2eb53c973a2a4c2822a"
+    },
+    {
+      "path": "Debug/Core/Src/syscalls.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cbfdd05a3c4cecf85df1b6c77a70249bf8be9a0",
+      "size": 694,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6cbfdd05a3c4cecf85df1b6c77a70249bf8be9a0"
+    },
+    {
+      "path": "Debug/Core/Src/syscalls.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8667c7088e17e4d2ff09a5767472c8950dd307dd",
+      "size": 44,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8667c7088e17e4d2ff09a5767472c8950dd307dd"
+    },
+    {
+      "path": "Debug/Core/Src/syscalls.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b6ca24f67bab5809c94c2ca98e1ca6e837b262e",
+      "size": 83640,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3b6ca24f67bab5809c94c2ca98e1ca6e837b262e"
+    },
+    {
+      "path": "Debug/Core/Src/syscalls.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50b547ab6eb68819610a3149cd7819b35e843d47",
+      "size": 835,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/50b547ab6eb68819610a3149cd7819b35e843d47"
+    },
+    {
+      "path": "Debug/Core/Src/sysmem.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0090c10fdcd287f3e9deffcd2996882d064fd5d3",
+      "size": 34,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0090c10fdcd287f3e9deffcd2996882d064fd5d3"
+    },
+    {
+      "path": "Debug/Core/Src/sysmem.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74fecf9bbd2ee3a0f3eb51d9c593580cb8075fa2",
+      "size": 40,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/74fecf9bbd2ee3a0f3eb51d9c593580cb8075fa2"
+    },
+    {
+      "path": "Debug/Core/Src/sysmem.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "816dc4885f0e3ebe81d9d4dd1efbe77c2dc8ac86",
+      "size": 56092,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/816dc4885f0e3ebe81d9d4dd1efbe77c2dc8ac86"
+    },
+    {
+      "path": "Debug/Core/Src/sysmem.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12d5f17720e96b8a37ebbf516fdf5627f8f9b754",
+      "size": 42,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/12d5f17720e96b8a37ebbf516fdf5627f8f9b754"
+    },
+    {
+      "path": "Debug/Core/Src/system_stm32f4xx.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cc0df91ad11c0803352d282a07cd6c63c0d819a",
+      "size": 111,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4cc0df91ad11c0803352d282a07cd6c63c0d819a"
+    },
+    {
+      "path": "Debug/Core/Src/system_stm32f4xx.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc40215d843ab6e048a6f9e845934d12dfdca4c5",
+      "size": 3432,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/bc40215d843ab6e048a6f9e845934d12dfdca4c5"
+    },
+    {
+      "path": "Debug/Core/Src/system_stm32f4xx.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30e1231bfff25bdb3cacd62b325bb642da367c8f",
+      "size": 1168868,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/30e1231bfff25bdb3cacd62b325bb642da367c8f"
+    },
+    {
+      "path": "Debug/Core/Src/system_stm32f4xx.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96f1cd435c34f661d0b019a8aee9e11ee2519d02",
+      "size": 126,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/96f1cd435c34f661d0b019a8aee9e11ee2519d02"
+    },
+    {
+      "path": "Debug/Core/Src/usart.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fafd6b4c5c2da9c9848020670b0c9163c345d770",
+      "size": 137,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/fafd6b4c5c2da9c9848020670b0c9163c345d770"
+    },
+    {
+      "path": "Debug/Core/Src/usart.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "478a376d0151ae31ac45cbb797ff21fa16454f2b",
+      "size": 3490,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/478a376d0151ae31ac45cbb797ff21fa16454f2b"
+    },
+    {
+      "path": "Debug/Core/Src/usart.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c01ebc97f7247bd472b4101af491697d4646431",
+      "size": 1172292,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4c01ebc97f7247bd472b4101af491697d4646431"
+    },
+    {
+      "path": "Debug/Core/Src/usart.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20f4129c6d76063feffe7e9452690518c475aeb6",
+      "size": 160,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/20f4129c6d76063feffe7e9452690518c475aeb6"
+    },
+    {
+      "path": "Debug/Core/Startup",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6d9b061b03e794c650dbc3d0e5a8c40297517b50",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/6d9b061b03e794c650dbc3d0e5a8c40297517b50"
+    },
+    {
+      "path": "Debug/Core/Startup/startup_stm32f427vitx.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08011b4f7bc97a7460cf73cafff5d8fae8129501",
+      "size": 81,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/08011b4f7bc97a7460cf73cafff5d8fae8129501"
+    },
+    {
+      "path": "Debug/Core/Startup/startup_stm32f427vitx.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2476c1c16f8ab57d94e18f6ad1b00fa9873a4a80",
+      "size": 7548,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2476c1c16f8ab57d94e18f6ad1b00fa9873a4a80"
+    },
+    {
+      "path": "Debug/Core/Startup/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "522304da42b51501dc204358afbd0879576dfce2",
+      "size": 1384,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/522304da42b51501dc204358afbd0879576dfce2"
+    },
+    {
+      "path": "Debug/Drivers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e6eeca58f425a1e73c311359fc10fe070b40ba27",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/e6eeca58f425a1e73c311359fc10fe070b40ba27"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "514c21c13f33b8086eceac407981f10ec5a2f46c",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/514c21c13f33b8086eceac407981f10ec5a2f46c"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7eb058fff06620307e45edad9c7c1a97aa679a5c",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/7eb058fff06620307e45edad9c7c1a97aa679a5c"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69e1650cbe6e42f923a6d9001c77c74c87a30b4e",
+      "size": 2313,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/69e1650cbe6e42f923a6d9001c77c74c87a30b4e"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cc1493df57d682ba3dadffa2ecb6c6c4128fb20",
+      "size": 3477,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4cc1493df57d682ba3dadffa2ecb6c6c4128fb20"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e335442d545ddb14068b6a52599a98c91a662b7a",
+      "size": 1183224,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e335442d545ddb14068b6a52599a98c91a662b7a"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04ee6eb6d7cc2f3e754aa000f74b183feafb8ce2",
+      "size": 2519,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/04ee6eb6d7cc2f3e754aa000f74b183feafb8ce2"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04f992fd725b865a0788a27aefed7958cc422788",
+      "size": 2797,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/04f992fd725b865a0788a27aefed7958cc422788"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "533bbf112333fe9ba5a92b8f4ea926cac0c602cf",
+      "size": 3491,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/533bbf112333fe9ba5a92b8f4ea926cac0c602cf"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59920e0734252d675905b0c6e8aa6fa5611eab5d",
+      "size": 1186584,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/59920e0734252d675905b0c6e8aa6fa5611eab5d"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "985c4808f2df90384bc01b968d272ceab01473b3",
+      "size": 3189,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/985c4808f2df90384bc01b968d272ceab01473b3"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29a68e4098b7a97288a100a58ddcf6af9cf29fa6",
+      "size": 1260,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/29a68e4098b7a97288a100a58ddcf6af9cf29fa6"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a241b9e22cc714c37dadf7664537c860247f69a6",
+      "size": 3485,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a241b9e22cc714c37dadf7664537c860247f69a6"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb93ba721317191a0114b2808282290b59b3f9c8",
+      "size": 1180476,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/eb93ba721317191a0114b2808282290b59b3f9c8"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c24b90dd0821e74375c77724a4cbcbe94d636e9",
+      "size": 1376,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6c24b90dd0821e74375c77724a4cbcbe94d636e9"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8080a4a919778716f2c442d85c6a9a4b4720faeb",
+      "size": 379,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8080a4a919778716f2c442d85c6a9a4b4720faeb"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56de6ee73d36e4ab3ba8565ad00380c5f89d0996",
+      "size": 3491,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/56de6ee73d36e4ab3ba8565ad00380c5f89d0996"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33c146f00856e209150cb8ebd609471f21aa76a4",
+      "size": 1177712,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/33c146f00856e209150cb8ebd609471f21aa76a4"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b2268bd6edeb7ee22f064923c87cf8c527ce4d2",
+      "size": 409,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9b2268bd6edeb7ee22f064923c87cf8c527ce4d2"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65258b170290beb746df11296a18ffa8604926b6",
+      "size": 790,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/65258b170290beb746df11296a18ffa8604926b6"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c45abaf20f6cfa29f0e45f24572fddfbb4d70b1c",
+      "size": 3487,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c45abaf20f6cfa29f0e45f24572fddfbb4d70b1c"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b053e30908a0e7d7784b13e780344f82cc864c16",
+      "size": 1171916,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b053e30908a0e7d7784b13e780344f82cc864c16"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a14ca59f69f507de80e566a6f574a6d7cccfea5",
+      "size": 862,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8a14ca59f69f507de80e566a6f574a6d7cccfea5"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3035a468a1502a38604b247f61f79a1f98c0bc14",
+      "size": 1505,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3035a468a1502a38604b247f61f79a1f98c0bc14"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26565c9e789d5857c12afe73cec87c1bb1bfae16",
+      "size": 3489,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/26565c9e789d5857c12afe73cec87c1bb1bfae16"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "250d07a78be1a4766793995991e64d72f3d40161",
+      "size": 1176136,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/250d07a78be1a4766793995991e64d72f3d40161"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f33f48841e6509c34876a62c1c96df56af91083",
+      "size": 1655,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3f33f48841e6509c34876a62c1c96df56af91083"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f648a1953478ac487a041becc81a43119da725aa",
+      "size": 2196,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f648a1953478ac487a041becc81a43119da725aa"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d23819f65546471553428fb1970e1ee7b81b1fbd",
+      "size": 3495,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d23819f65546471553428fb1970e1ee7b81b1fbd"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d9380d1c1debf8d62bc3a800ec3d3828c7a85d1",
+      "size": 1181152,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7d9380d1c1debf8d62bc3a800ec3d3828c7a85d1"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ef74b6a825fd13f484f90ff67f248241365d811",
+      "size": 2381,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2ef74b6a825fd13f484f90ff67f248241365d811"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b5167b59f8b66f83ae5e37ba45493e1a65235b8",
+      "size": 3505,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5b5167b59f8b66f83ae5e37ba45493e1a65235b8"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8726f891a79fa75a263ba24c67a2f8019e88a6bb",
+      "size": 1164816,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8726f891a79fa75a263ba24c67a2f8019e88a6bb"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3263b38b8ded890648602697161431195f2504c5",
+      "size": 674,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3263b38b8ded890648602697161431195f2504c5"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b582f4e164894026892ef2d7fb57581d36c60aab",
+      "size": 3487,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b582f4e164894026892ef2d7fb57581d36c60aab"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ce94ad0eda2f3695d6035f31019ebb853849a31",
+      "size": 1173636,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8ce94ad0eda2f3695d6035f31019ebb853849a31"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ae13210b96a8dbdf14812915b9dd89f39689cfb",
+      "size": 736,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2ae13210b96a8dbdf14812915b9dd89f39689cfb"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d56c7657790957780d0d17e2284843e5e9f32ad4",
+      "size": 7340,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d56c7657790957780d0d17e2284843e5e9f32ad4"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66c8e43e72a29e7b322156a5f6f25525916b9292",
+      "size": 3485,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/66c8e43e72a29e7b322156a5f6f25525916b9292"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8274a5fc18cf40d2214eb02b18036a8dd6a530e",
+      "size": 1247736,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a8274a5fc18cf40d2214eb02b18036a8dd6a530e"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "135aba493b305bf1779e76bfd12f400ead9b9cdb",
+      "size": 7966,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/135aba493b305bf1779e76bfd12f400ead9b9cdb"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84b11ba76d46bd64d5e88daa40272043ea5d4ff2",
+      "size": 194,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/84b11ba76d46bd64d5e88daa40272043ea5d4ff2"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afd2c5717cf5166f9e4481bdd77408eebe2e0a78",
+      "size": 3491,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/afd2c5717cf5166f9e4481bdd77408eebe2e0a78"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bff5e742a8c0e9d04237f4f81d49cfc21c3fef6",
+      "size": 1170160,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5bff5e742a8c0e9d04237f4f81d49cfc21c3fef6"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fd0273498fb61955275734177d4faf7daa64809",
+      "size": 210,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6fd0273498fb61955275734177d4faf7daa64809"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcef845824a8f7b5ffaff398316d80f7aa472a9b",
+      "size": 1473,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/fcef845824a8f7b5ffaff398316d80f7aa472a9b"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04ac71dee09fb37e083be40b8a6b343130f72f7e",
+      "size": 3485,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/04ac71dee09fb37e083be40b8a6b343130f72f7e"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "875b5489653a97c086f068172727c734b56c33cb",
+      "size": 1174644,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/875b5489653a97c086f068172727c734b56c33cb"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4eb40e84c604b0520633db3d2e486fe13e73c8b8",
+      "size": 1659,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4eb40e84c604b0520633db3d2e486fe13e73c8b8"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "970ac44e5db74a8da122d943e0d7e9734f7f69ab",
+      "size": 867,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/970ac44e5db74a8da122d943e0d7e9734f7f69ab"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7726e9a654e04316d8a6b8809a578f7c25242cca",
+      "size": 3491,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7726e9a654e04316d8a6b8809a578f7c25242cca"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d19d6efe217ce8ed19e65ce78a2075f0f6ea57e0",
+      "size": 1173192,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d19d6efe217ce8ed19e65ce78a2075f0f6ea57e0"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afdd077157d1413de38b51ff499f2b7c626fcdc2",
+      "size": 956,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/afdd077157d1413de38b51ff499f2b7c626fcdc2"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c1483ec79d9fa86d1b68cdceaa777ec8d92dd39",
+      "size": 1191,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8c1483ec79d9fa86d1b68cdceaa777ec8d92dd39"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0c953685056b023c4acf4589a758e5c94e46418",
+      "size": 3485,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e0c953685056b023c4acf4589a758e5c94e46418"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "425215d5c9a3dd9f325e0cfe14cb6309be035c0c",
+      "size": 1179744,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/425215d5c9a3dd9f325e0cfe14cb6309be035c0c"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41041c775b748804b13a29cbf24a72b8bedafb7a",
+      "size": 1293,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/41041c775b748804b13a29cbf24a72b8bedafb7a"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e19eaa9cf971087a0e6c31c0ee2e2ae4ab86916",
+      "size": 744,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3e19eaa9cf971087a0e6c31c0ee2e2ae4ab86916"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9ade85bb0fdd49c7934d36064d91b987d738a81",
+      "size": 3491,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d9ade85bb0fdd49c7934d36064d91b987d738a81"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf3d8c1ddc3718a549001b626ce1c8832c0eeaf2",
+      "size": 1175100,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/cf3d8c1ddc3718a549001b626ce1c8832c0eeaf2"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c0d23e514bbe927b7977959b351337f970a3756",
+      "size": 806,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3c0d23e514bbe927b7977959b351337f970a3756"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "673019de01395360f79b89512f77ae9de2a2fc6f",
+      "size": 10562,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/673019de01395360f79b89512f77ae9de2a2fc6f"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47562ce9b58c0159bed47aaac285e3b4e12afe70",
+      "size": 3485,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/47562ce9b58c0159bed47aaac285e3b4e12afe70"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19d56e636a16af575cb92d557718102ebfe1d22e",
+      "size": 1259432,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/19d56e636a16af575cb92d557718102ebfe1d22e"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4fb564ade2bc2ba67e82569085730cd7dfd2091",
+      "size": 11478,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f4fb564ade2bc2ba67e82569085730cd7dfd2091"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9bfdfb78c12b865de7494e2febb45e637fed39ee",
+      "size": 3991,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9bfdfb78c12b865de7494e2febb45e637fed39ee"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "454416e098cc7ce6b912297e2526e033e90c003a",
+      "size": 3491,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/454416e098cc7ce6b912297e2526e033e90c003a"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a4b10774089e0ed88faa3137f16a791dcf803ad",
+      "size": 1203388,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0a4b10774089e0ed88faa3137f16a791dcf803ad"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dd929feae09a34098bbefa4174b390fb75d2708",
+      "size": 4313,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/1dd929feae09a34098bbefa4174b390fb75d2708"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8be370035e0c3772562ba3d4a24e17544fcbf3d1",
+      "size": 5536,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8be370035e0c3772562ba3d4a24e17544fcbf3d1"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31a3f72f3e68ffcf510f39a4ad9eeac96b72d79e",
+      "size": 3487,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/31a3f72f3e68ffcf510f39a4ad9eeac96b72d79e"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da2fa58893477598fbc3377184af940d5b01f75f",
+      "size": 1222072,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/da2fa58893477598fbc3377184af940d5b01f75f"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80e6f1c0646d90b9b7c0d93c0c358656e8e301d1",
+      "size": 6474,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/80e6f1c0646d90b9b7c0d93c0c358656e8e301d1"
+    },
+    {
+      "path": "Debug/Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c4072361e2137fd9978cc0b2e625068f5d36d2d",
+      "size": 8819,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0c4072361e2137fd9978cc0b2e625068f5d36d2d"
+    },
+    {
+      "path": "Debug/Middlewares",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "05efe0e9e3f9c15ded6c548a86268f098f25e432",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/05efe0e9e3f9c15ded6c548a86268f098f25e432"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9889df5d92feea934d7fe45e9ddceaed0aa0b375",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/9889df5d92feea934d7fe45e9ddceaed0aa0b375"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "310846e3e52b24e4b1d21489ab47c3a0ec5c1882",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/310846e3e52b24e4b1d21489ab47c3a0ec5c1882"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3128cc25c900d438f684e0071b2293558186e81a",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/3128cc25c900d438f684e0071b2293558186e81a"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "efad5fab73e1cc4edef9109b5a63f6676d66f0d2",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/efad5fab73e1cc4edef9109b5a63f6676d66f0d2"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "019efbd1f5f992d8c9a6a0dabd5fa1fa70629e99",
+      "size": 5014,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/019efbd1f5f992d8c9a6a0dabd5fa1fa70629e99"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f93a0ca55ac3eb52a54ff023db220c2ba3f15e9",
+      "size": 2351,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6f93a0ca55ac3eb52a54ff023db220c2ba3f15e9"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86b35c4d2a252a02c7332e1929a5e6a5f6e1552e",
+      "size": 133444,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/86b35c4d2a252a02c7332e1929a5e6a5f6e1552e"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab773ef9d9649dd338961ec2f810ce8bf1bde904",
+      "size": 5712,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ab773ef9d9649dd338961ec2f810ce8bf1bde904"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dddb4553fe4d7e48827c84f9f10c1703a503de05",
+      "size": 2057,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/dddb4553fe4d7e48827c84f9f10c1703a503de05"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e298c8759a4cc50e777a4cc55100a969ac119649",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/e298c8759a4cc50e777a4cc55100a969ac119649"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0388f61f91451cd2263e3b86a794b4013c6f2ca3",
+      "size": 5209,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0388f61f91451cd2263e3b86a794b4013c6f2ca3"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd9be3a35e898c33c05ab8839091cc36e90c531d",
+      "size": 2112,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/cd9be3a35e898c33c05ab8839091cc36e90c531d"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/croutine.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/croutine.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "917ef113289e85b6fdf5642ec21154824f8a0c91",
+      "size": 1373,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/917ef113289e85b6fdf5642ec21154824f8a0c91"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/croutine.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e80ed708d93a9885e1d1225304f7b75657328fa",
+      "size": 77784,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5e80ed708d93a9885e1d1225304f7b75657328fa"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/croutine.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/event_groups.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56c4d2bc4a7c4882cdaed092068f5ffb945a7d54",
+      "size": 974,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/56c4d2bc4a7c4882cdaed092068f5ffb945a7d54"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/event_groups.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2c9c62d4da88bee05c909df97f3a544114db2ba",
+      "size": 1757,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a2c9c62d4da88bee05c909df97f3a544114db2ba"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/event_groups.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eab5cb9ffdb9c1404fbd25fed41c99a0e3755c9a",
+      "size": 93692,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/eab5cb9ffdb9c1404fbd25fed41c99a0e3755c9a"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/event_groups.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b97429eedf0a1ae14b794a16fbbef1745599df2d",
+      "size": 1200,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b97429eedf0a1ae14b794a16fbbef1745599df2d"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/list.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d6cdb0851f7b6a2d7179c78d4518ff466b81f89",
+      "size": 364,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8d6cdb0851f7b6a2d7179c78d4518ff466b81f89"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/list.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a46554b447df04eac5e2bc8b568fc7d3d9588c0f",
+      "size": 1117,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a46554b447df04eac5e2bc8b568fc7d3d9588c0f"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/list.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb63082294149716abc4e09dff3879b7374af427",
+      "size": 78584,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/eb63082294149716abc4e09dff3879b7374af427"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/list.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85c93236e381831460e34f69f43433a64090c0db",
+      "size": 404,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/85c93236e381831460e34f69f43433a64090c0db"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8da8df2217aa20ccb309355f678ad64f216cff28",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/8da8df2217aa20ccb309355f678ad64f216cff28"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1cf14858536dccbb74820bb7f460bc198894cfdd",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/1cf14858536dccbb74820bb7f460bc198894cfdd"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e9b1e0ed8bd73e4d69bef63b7556066a5b1899a9",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/e9b1e0ed8bd73e4d69bef63b7556066a5b1899a9"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e446971b1b4ffd19fa4ae9cdb16efcff2aa9234",
+      "size": 1296,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6e446971b1b4ffd19fa4ae9cdb16efcff2aa9234"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24dc560f9a87787f8faf3bdedbedd7a8e9a7863f",
+      "size": 1281,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/24dc560f9a87787f8faf3bdedbedd7a8e9a7863f"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4215c7ec208c64aa195b077a2b669519634fea25",
+      "size": 87684,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4215c7ec208c64aa195b077a2b669519634fea25"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a725d29596bb45206fc820dcd01c10d808e0604",
+      "size": 1615,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5a725d29596bb45206fc820dcd01c10d808e0604"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "163d786733d872d0eda287d074f7406ec531b6e1",
+      "size": 2212,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/163d786733d872d0eda287d074f7406ec531b6e1"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "765d2903be78d74faa76330646017e78774dccaf",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/765d2903be78d74faa76330646017e78774dccaf"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fae04dca540370b92004e1f8b0cc450661cef6e",
+      "size": 774,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0fae04dca540370b92004e1f8b0cc450661cef6e"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3239dc913c763b46230597c7f33044ecc6bb328e",
+      "size": 1275,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3239dc913c763b46230597c7f33044ecc6bb328e"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "407f3d091f55335cd3fb119466e344e425b37d03",
+      "size": 86928,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/407f3d091f55335cd3fb119466e344e425b37d03"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03dea47595bf301dc05961c596603527e45c70ec",
+      "size": 874,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/03dea47595bf301dc05961c596603527e45c70ec"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd559488b4bf35d91b0ac5cccb62648a53ade9f6",
+      "size": 2142,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/dd559488b4bf35d91b0ac5cccb62648a53ade9f6"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/queue.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bb47d2be0210fa69b1561db1d7ac94a58ae0779",
+      "size": 2439,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2bb47d2be0210fa69b1561db1d7ac94a58ae0779"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/queue.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23ff8db67a3d14d4469796259a216954e5440c58",
+      "size": 1481,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/23ff8db67a3d14d4469796259a216954e5440c58"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/queue.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77b0253b04196eee2a578b8b7f6aa4fd64249658",
+      "size": 112776,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/77b0253b04196eee2a578b8b7f6aa4fd64249658"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/queue.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c54cc6e2206f8fe9bf0f47545b95c7b54160670",
+      "size": 3011,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9c54cc6e2206f8fe9bf0f47545b95c7b54160670"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c2da12e2c0b0ecf1c942211da8825763c0d680c",
+      "size": 2062,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3c2da12e2c0b0ecf1c942211da8825763c0d680c"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5439eae056dc499e10457670d3bc394833346f6",
+      "size": 1393,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c5439eae056dc499e10457670d3bc394833346f6"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7310b1d487a647ea82b729bcd57a242a9e7c4d78",
+      "size": 102076,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7310b1d487a647ea82b729bcd57a242a9e7c4d78"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea54a6cf4addefa6cfa95a98e7296300cac3d3aa",
+      "size": 2615,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ea54a6cf4addefa6cfa95a98e7296300cac3d3aa"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/subdir.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fb3abd7eedc62cf6028b56696aa3d817ab42e49",
+      "size": 4160,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4fb3abd7eedc62cf6028b56696aa3d817ab42e49"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/tasks.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b41ae9d3b8852a7e3f90118b41c98ec12db153e3",
+      "size": 4259,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b41ae9d3b8852a7e3f90118b41c98ec12db153e3"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/tasks.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "953067bcaeb777ef729e1523ba3d3f03c0d65bb6",
+      "size": 1619,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/953067bcaeb777ef729e1523ba3d3f03c0d65bb6"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/tasks.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa58889bc9d774cea946d0b6dc8b07a94d7c9678",
+      "size": 136244,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/aa58889bc9d774cea946d0b6dc8b07a94d7c9678"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/tasks.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1bc387f5ca6d719b7cfe9b37139db1a9dfd9f2c",
+      "size": 5344,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d1bc387f5ca6d719b7cfe9b37139db1a9dfd9f2c"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/timers.cyclo",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/timers.d",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "221036f386266bf78ac0971f152d77a54eb4d229",
+      "size": 1607,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/221036f386266bf78ac0971f152d77a54eb4d229"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/timers.o",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0e7ce6f210d40aaf842d6f64493be9b61e9ef3f",
+      "size": 82652,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c0e7ce6f210d40aaf842d6f64493be9b61e9ef3f"
+    },
+    {
+      "path": "Debug/Middlewares/Third_Party/FreeRTOS/Source/timers.su",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Debug/lab3.elf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24c04cff6e3f74a55143a6598f3e807034c030ea",
+      "size": 1457124,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/24c04cff6e3f74a55143a6598f3e807034c030ea"
+    },
+    {
+      "path": "Debug/lab3.list",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43e35de9e01720be2f669926b9343dc8dc6e35f1",
+      "size": 851712,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/43e35de9e01720be2f669926b9343dc8dc6e35f1"
+    },
+    {
+      "path": "Debug/lab3.map",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b96131acf1ae469743fcbb24306536d391d449b",
+      "size": 622303,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3b96131acf1ae469743fcbb24306536d391d449b"
+    },
+    {
+      "path": "Debug/makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "caf5d8fa63f8121134015318a765b1879fc48248",
+      "size": 3080,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/caf5d8fa63f8121134015318a765b1879fc48248"
+    },
+    {
+      "path": "Debug/objects.list",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b455878dfeabb0344b3165db84c82fbe0d6816a8",
+      "size": 2104,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b455878dfeabb0344b3165db84c82fbe0d6816a8"
+    },
+    {
+      "path": "Debug/objects.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b471e98e0186661003af7f75d7b31c53c48e948a",
+      "size": 276,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b471e98e0186661003af7f75d7b31c53c48e948a"
+    },
+    {
+      "path": "Debug/sources.mk",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "325f3e4c2ce01a4bded0fde37fcb800f59e6750d",
+      "size": 825,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/325f3e4c2ce01a4bded0fde37fcb800f59e6750d"
+    },
+    {
+      "path": "Drivers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "54eea7a36dffba1913a4bdbd82440dc61503b7a2",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/54eea7a36dffba1913a4bdbd82440dc61503b7a2"
+    },
+    {
+      "path": "Drivers/CMSIS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dbdf53bdd1e5be0e94f95160608898a7afe73be2",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/dbdf53bdd1e5be0e94f95160608898a7afe73be2"
+    },
+    {
+      "path": "Drivers/CMSIS/Device",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a562c76b645b9139f43ce52ebdf910f4b70f55c5",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/a562c76b645b9139f43ce52ebdf910f4b70f55c5"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce8e47ac5ccf5ed2079ca9dd4c647daf51ae7744",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/ce8e47ac5ccf5ed2079ca9dd4c647daf51ae7744"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c59ea3dd334988c80ac1043544baec06aca00cf5",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/c59ea3dd334988c80ac1043544baec06aca00cf5"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e577de34ef12108bcfc3b428bdad7a03f86cc6fb",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/e577de34ef12108bcfc3b428bdad7a03f86cc6fb"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92b1891c6613286c663eb4687aba3d673ae43a2e",
+      "size": 1286469,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/92b1891c6613286c663eb4687aba3d673ae43a2e"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e1346aefcd2e7ffe884621cfbdbf359a5d8f1c9",
+      "size": 11928,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8e1346aefcd2e7ffe884621cfbdbf359a5d8f1c9"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15208a55650c6b8085f9b4e42cc603736420b6cd",
+      "size": 2214,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/15208a55650c6b8085f9b4e42cc603736420b6cd"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "872e82b467048e278c4c62de79b9ed601d3bd69c",
+      "size": 371,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/872e82b467048e278c4c62de79b9ed601d3bd69c"
+    },
+    {
+      "path": "Drivers/CMSIS/Include",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "74b7150ef761e147c591d5bc24079890dd312376",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/74b7150ef761e147c591d5bc24079890dd312376"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cachel1_armv7.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abebc95f946029af684920d31314fbf8ce5b7b3f",
+      "size": 12087,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/abebc95f946029af684920d31314fbf8ce5b7b3f"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armcc.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a955d4713911e6e1ca711291c52f26ca8366d595",
+      "size": 27999,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a955d4713911e6e1ca711291c52f26ca8366d595"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armclang.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "691141774773f5c92147909b4f90d720d1ed6f2b",
+      "size": 48417,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/691141774773f5c92147909b4f90d720d1ed6f2b"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armclang_ltm.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e255d5907f66949787589c1467d4d7ff61aa582",
+      "size": 56021,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/1e255d5907f66949787589c1467d4d7ff61aa582"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_compiler.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adbf296f15a47a93e5058abddad6742bb4b9854d",
+      "size": 9481,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/adbf296f15a47a93e5058abddad6742bb4b9854d"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_gcc.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67bda4ef3c38dadc4471129d39eb4e870dc08fc7",
+      "size": 63374,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/67bda4ef3c38dadc4471129d39eb4e870dc08fc7"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65b824b009caa14008b18314ef97c35060d04e88",
+      "size": 29069,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/65b824b009caa14008b18314ef97c35060d04e88"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_version.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b4765f186efe577be5245b59c610056d3c54cbc",
+      "size": 1680,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8b4765f186efe577be5245b59c610056d3c54cbc"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv81mml.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94128a1a7095c4813764b213c0214bd149566fa7",
+      "size": 276640,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/94128a1a7095c4813764b213c0214bd149566fa7"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv8mbl.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "932d3d188bfa0df0a5930c9df7fe1adb4bc0ce41",
+      "size": 115004,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/932d3d188bfa0df0a5930c9df7fe1adb4bc0ce41"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv8mml.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c119fbf24246728c7a0e8163b564b0e27018a21e",
+      "size": 183191,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c119fbf24246728c7a0e8163b564b0e27018a21e"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm0.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6441ff34190a97ff10abe39229705d0ac132efe7",
+      "size": 41643,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6441ff34190a97ff10abe39229705d0ac132efe7"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm0plus.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e7179a6146cd573f32cb8d1d96546de43d92f97",
+      "size": 49877,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4e7179a6146cd573f32cb8d1d96546de43d92f97"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm1.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76b4569743a651d8c8188924c487c159ec3132a3",
+      "size": 42626,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/76b4569743a651d8c8188924c487c159ec3132a3"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm23.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55fff9950965312a23e68af03afd4db7825afdb6",
+      "size": 121556,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/55fff9950965312a23e68af03afd4db7825afdb6"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm3.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74fb87e5c561f39588388d3bf1d5a560ee1a63f4",
+      "size": 109529,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/74fb87e5c561f39588388d3bf1d5a560ee1a63f4"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm33.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18a2e6fb0343abe4dcfc99ba89e46f845d485326",
+      "size": 189524,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/18a2e6fb0343abe4dcfc99ba89e46f845d485326"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm35p.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3843d9542c5ab15644c2d61f38afd31c6108f3ee",
+      "size": 189539,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3843d9542c5ab15644c2d61f38afd31c6108f3ee"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e21cd149256038244e709070864c347136d5af2a",
+      "size": 120975,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e21cd149256038244e709070864c347136d5af2a"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm55.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "faa30ce36a98b94a8a8243922544c980404b0af6",
+      "size": 317450,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/faa30ce36a98b94a8a8243922544c980404b0af6"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm7.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "010506e9fa430758fede292291be90722352f99b",
+      "size": 138948,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/010506e9fa430758fede292291be90722352f99b"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm85.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60463111897f832f1503a57ab029d8c00eb8daf6",
+      "size": 308328,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/60463111897f832f1503a57ab029d8c00eb8daf6"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_sc000.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbc755fff39b96852377304cbc0f9062bcd381ba",
+      "size": 46562,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/dbc755fff39b96852377304cbc0f9062bcd381ba"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_sc300.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d66621031e09b359269ef445a9126938639c93bd",
+      "size": 108524,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d66621031e09b359269ef445a9126938639c93bd"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_starmc1.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d86c8d3857ff322a57ae7c0553ff03509e265350",
+      "size": 193055,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d86c8d3857ff322a57ae7c0553ff03509e265350"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/mpu_armv7.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9eedf81a64c381157c7cfff6f9acfb2309ddff5",
+      "size": 11731,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d9eedf81a64c381157c7cfff6f9acfb2309ddff5"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/mpu_armv8.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3de16efc86a6ff2cb269e7ef477158829d4e7351",
+      "size": 11370,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3de16efc86a6ff2cb269e7ef477158829d4e7351"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/pac_armv81.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "854b60a204cc96f46b30fd90802497988032251c",
+      "size": 6062,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/854b60a204cc96f46b30fd90802497988032251c"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/pmu_armv8.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8f3d8935b82467b9c1d09d2b91f4fc9f07ee9bf",
+      "size": 22786,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f8f3d8935b82467b9c1d09d2b91f4fc9f07ee9bf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/tz_context.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d09749f3a5066f0e061783a1e67972b72ab61a7",
+      "size": 2687,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0d09749f3a5066f0e061783a1e67972b72ab61a7"
+    },
+    {
+      "path": "Drivers/CMSIS/LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dada3edaf50dbc082c9a125058f25def75e625a",
+      "size": 11357,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8dada3edaf50dbc082c9a125058f25def75e625a"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "345aab91ae37a24d64286e589529f41a30d1644a",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/345aab91ae37a24d64286e589529f41a30d1644a"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d6590c111797c2a4141861e7f9b9cc188bc88876",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/d6590c111797c2a4141861e7f9b9cc188bc88876"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "03974fc8a977eafea9a10f68fcde9bb9c7b255e9",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/03974fc8a977eafea9a10f68fcde9bb9c7b255e9"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3b84738b8b2d0d4d44fdf87fba10e61670dc0d5",
+      "size": 240833,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c3b84738b8b2d0d4d44fdf87fba10e61670dc0d5"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7eb847b3c1546bbe5b1c775e76f56dcd9cf9d84",
+      "size": 12683,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f7eb847b3c1546bbe5b1c775e76f56dcd9cf9d84"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76909305142c2c6f4875da2641891eabb4897096",
+      "size": 17098,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/76909305142c2c6f4875da2641891eabb4897096"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1df0d7d07496a0fad45f052e0ce8005d558b5b75",
+      "size": 7563,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/1df0d7d07496a0fad45f052e0ce8005d558b5b75"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ff3836b65bf12f5d0890c62d8ba0985add7fb8e",
+      "size": 37869,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7ff3836b65bf12f5d0890c62d8ba0985add7fb8e"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9858c741047d96466df0609c1bf88f0800b30ace",
+      "size": 2651,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9858c741047d96466df0609c1bf88f0800b30ace"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b18a2287a1fb892603312c2cb7bd7a3aa0affbca",
+      "size": 14833,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b18a2287a1fb892603312c2cb7bd7a3aa0affbca"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41f77d28f19b914a2d0dbabe22a66c90cfbd569e",
+      "size": 14303,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/41f77d28f19b914a2d0dbabe22a66c90cfbd569e"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fa89db5dcc680dce56b5f44662dfb3077d8e6f6",
+      "size": 64011,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5fa89db5dcc680dce56b5f44662dfb3077d8e6f6"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2112e747ce76591d7752f78099b12731b669d554",
+      "size": 2206,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2112e747ce76591d7752f78099b12731b669d554"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f3d749ede93a4a3b41062f68451d9bf6a3fdcab",
+      "size": 13687,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5f3d749ede93a4a3b41062f68451d9bf6a3fdcab"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e0b7cc6d7c2d0ac4e79d0cf235d69a78451ca5c",
+      "size": 81141,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5e0b7cc6d7c2d0ac4e79d0cf235d69a78451ca5c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a7a67efb96f456e8199875185a7e989c4afdf4d",
+      "size": 34977,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9a7a67efb96f456e8199875185a7e989c4afdf4d"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31ad99c3a2d751157acc3c8d3761c4ccb1313459",
+      "size": 2974,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/31ad99c3a2d751157acc3c8d3761c4ccb1313459"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7273d5ed8d28f11fe4ca5c25e2406ee883eba07",
+      "size": 14456,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a7273d5ed8d28f11fe4ca5c25e2406ee883eba07"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57fd4d93a7a9fb16b00c2bc211fd72d9ef8c10b2",
+      "size": 15884,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/57fd4d93a7a9fb16b00c2bc211fd72d9ef8c10b2"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e3909ada856b4c9e2d15e1cab7c1d8698e45a16",
+      "size": 73468,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2e3909ada856b4c9e2d15e1cab7c1d8698e45a16"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b6213407ff9fccd8d0eb80cc3bfbc910e7c7887",
+      "size": 436806,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3b6213407ff9fccd8d0eb80cc3bfbc910e7c7887"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53c9bf66870c9711b0be99393aa8f1be3c2c65d5",
+      "size": 122010,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/53c9bf66870c9711b0be99393aa8f1be3c2c65d5"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f1d01b07d9f9356bc168c5794208cb808f09fed",
+      "size": 16732,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/4f1d01b07d9f9356bc168c5794208cb808f09fed"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6ce82fca7d5018d8f30049d0bba42387f44a422",
+      "size": 45527,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e6ce82fca7d5018d8f30049d0bba42387f44a422"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce19d4d963d1dc73bed284c34daa09bdb7860e6b",
+      "size": 99874,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ce19d4d963d1dc73bed284c34daa09bdb7860e6b"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a183ea7557d82e75cd7d06e8ed054d77c9f7846",
+      "size": 24301,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9a183ea7557d82e75cd7d06e8ed054d77c9f7846"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "055ba5f226f1a1d09e929b74bdc4f5ad88afbc2d",
+      "size": 106997,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/055ba5f226f1a1d09e929b74bdc4f5ad88afbc2d"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65ab691840834f89b01152c4bac354b2e1729ce5",
+      "size": 34065,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/65ab691840834f89b01152c4bac354b2e1729ce5"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bee7fd15e9b53c220733732c5b2f97047cb7b79",
+      "size": 37445,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/6bee7fd15e9b53c220733732c5b2f97047cb7b79"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92d4a74a1ad83650a3e85ea62cf543e0cc279051",
+      "size": 67469,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/92d4a74a1ad83650a3e85ea62cf543e0cc279051"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea23dc528a787a20e3f0d013631c098a9fcfc67f",
+      "size": 31539,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ea23dc528a787a20e3f0d013631c098a9fcfc67f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a6a5b9286274ebd31a007215aea57a972e90c86",
+      "size": 341256,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0a6a5b9286274ebd31a007215aea57a972e90c86"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84ea5c4d1a32511168b9bc305d26583d410cd350",
+      "size": 70672,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/84ea5c4d1a32511168b9bc305d26583d410cd350"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed83b6c6ec032f3fd1fd0c74ef52b0d49f89bd7f",
+      "size": 97617,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ed83b6c6ec032f3fd1fd0c74ef52b0d49f89bd7f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "accdac7b8dc4d2a19ac0b9a69d91c614e047d293",
+      "size": 10642,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/accdac7b8dc4d2a19ac0b9a69d91c614e047d293"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3edc4d14644557136d3d0bb8724362a59cea8c98",
+      "size": 377,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3edc4d14644557136d3d0bb8724362a59cea8c98"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6ae8ea95791816e03f3bb010adce18c71bc511f",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/c6ae8ea95791816e03f3bb010adce18c71bc511f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "862ec732ee46eec100fd2678bb500bcdb5d732c9",
+      "size": 19188,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/862ec732ee46eec100fd2678bb500bcdb5d732c9"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3d2ba8e5aa0505f40e4694f94f61dd31b10a03c",
+      "size": 19368,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c3d2ba8e5aa0505f40e4694f94f61dd31b10a03c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3dbb47766e308c7d5718cde0883f734252f1d6f0",
+      "size": 39525,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3dbb47766e308c7d5718cde0883f734252f1d6f0"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7167e77e3445fa79f29199d10a235a5cec9f5eef",
+      "size": 10274,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7167e77e3445fa79f29199d10a235a5cec9f5eef"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e46312297bc7a18bc4a0e472cc0c10cc7e3cb2d",
+      "size": 15072,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/3e46312297bc7a18bc4a0e472cc0c10cc7e3cb2d"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "808949ea2d9bb5c4315df5c78b298463026d810e",
+      "size": 24084,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/808949ea2d9bb5c4315df5c78b298463026d810e"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "839c91b121a1c344dcdf4a62f6e3a58d7b3631f6",
+      "size": 49826,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/839c91b121a1c344dcdf4a62f6e3a58d7b3631f6"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6ab3ac863bebd8cf17bd33f58556fb3b22e474d",
+      "size": 5965,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/e6ab3ac863bebd8cf17bd33f58556fb3b22e474d"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3ce9bbcbe5d2d910cce40692663b8f832fd7180",
+      "size": 18844,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b3ce9bbcbe5d2d910cce40692663b8f832fd7180"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3f4262fef7c71b871de155a974a9696c36f4606",
+      "size": 241341,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d3f4262fef7c71b871de155a974a9696c36f4606"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64aabaa46e3891421215aa32e4ece968628c7f29",
+      "size": 5350,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/64aabaa46e3891421215aa32e4ece968628c7f29"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ccde6489e2405b5b3a2347f01364fd831bec0db",
+      "size": 21984,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5ccde6489e2405b5b3a2347f01364fd831bec0db"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77f9c35b1604b87a849c93bac9f16b7aaad1213f",
+      "size": 22773,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/77f9c35b1604b87a849c93bac9f16b7aaad1213f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c18fa09b202e256947b0aebbf0ce315d351e722f",
+      "size": 42493,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/c18fa09b202e256947b0aebbf0ce315d351e722f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04317181b80b72c9f0e4a91a035212ca830aaf4b",
+      "size": 156313,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/04317181b80b72c9f0e4a91a035212ca830aaf4b"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f056ebf24e5984aa90316466fe6140be8d126b4f",
+      "size": 244117,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f056ebf24e5984aa90316466fe6140be8d126b4f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "889f8fb9a76c3d7b28d254c092cd06a9fb8dadcb",
+      "size": 81598,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/889f8fb9a76c3d7b28d254c092cd06a9fb8dadcb"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf6d201ba4562904a911c808bb909eb029c8dfa7",
+      "size": 136921,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/cf6d201ba4562904a911c808bb909eb029c8dfa7"
+    },
+    {
+      "path": "Middlewares",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "72ec35ea1d19b388250128ecb9eacf95cccc496f",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/72ec35ea1d19b388250128ecb9eacf95cccc496f"
+    },
+    {
+      "path": "Middlewares/Third_Party",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e37af513f78b46ec212c8640338e500d9f51b69c",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/e37af513f78b46ec212c8640338e500d9f51b69c"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b78defcb445618db384bc69d49eb46e9b0f1c4dc",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/b78defcb445618db384bc69d49eb46e9b0f1c4dc"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b482e272ad4a0ad5dc5e595cd0e345e9ba806d3d",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/b482e272ad4a0ad5dc5e595cd0e345e9ba806d3d"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6e97350f13968eb05dc0196c1800ef5d6488b3f5",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/6e97350f13968eb05dc0196c1800ef5d6488b3f5"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89c36334ecfb6e25d2a0756426823fbf60365c77",
+      "size": 49161,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/89c36334ecfb6e25d2a0756426823fbf60365c77"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f53a132a1f9f105396c240f37eeb18632322f81a",
+      "size": 49405,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f53a132a1f9f105396c240f37eeb18632322f81a"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ce4711898ead34f160928a1632cf45d6c8376ea",
+      "size": 1101,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2ce4711898ead34f160928a1632cf45d6c8376ea"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/croutine.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ce50030d3ffc1f7801f92cd35fb5073c39a8670",
+      "size": 12824,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/9ce50030d3ffc1f7801f92cd35fb5073c39a8670"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/event_groups.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf4ec246a84ca5a97b7d8f62e987005040e717ce",
+      "size": 26038,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/bf4ec246a84ca5a97b7d8f62e987005040e717ce"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2a4c66924d0cfdd751656284a6aaee64179d5598",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/2a4c66924d0cfdd751656284a6aaee64179d5598"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ceb469a7246450800088949f0d6923336b498fa6",
+      "size": 42752,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ceb469a7246450800088949f0d6923336b498fa6"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56439917f0880dcfcbc4ec8a72edddb249317cb5",
+      "size": 6083,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/56439917f0880dcfcbc4ec8a72edddb249317cb5"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ceca69609b177e896ecf63f2c165768e18ee64ab",
+      "size": 11851,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/ceca69609b177e896ecf63f2c165768e18ee64ab"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d7069c0bd447c585e714c9d287031d35a85119b",
+      "size": 25818,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/8d7069c0bd447c585e714c9d287031d35a85119b"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21657b9dff83a0521ba5dfec6cddb6232513e046",
+      "size": 7295,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/21657b9dff83a0521ba5dfec6cddb6232513e046"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a87fdf374e15e62ce4d3738220a1c4329bfe561e",
+      "size": 29678,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a87fdf374e15e62ce4d3738220a1c4329bfe561e"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/list.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3e3024924e15c590a1b905a17741cbc0a584352",
+      "size": 18159,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a3e3024924e15c590a1b905a17741cbc0a584352"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/message_buffer.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c3edb9c76d37d7b537016dfa85e417f10f05b2f",
+      "size": 37401,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0c3edb9c76d37d7b537016dfa85e417f10f05b2f"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/mpu_prototypes.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a21b7a668a92b32ebc10f21697bc0ccd58dddb2e",
+      "size": 13874,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a21b7a668a92b32ebc10f21697bc0ccd58dddb2e"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f63d4f2d12623e56930d7bf45ad657fdd42e97c",
+      "size": 9216,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/5f63d4f2d12623e56930d7bf45ad657fdd42e97c"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/portable.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2099c33dd3c1e5390cf883676f2a11b9dd4fc2e",
+      "size": 7943,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a2099c33dd3c1e5390cf883676f2a11b9dd4fc2e"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d95130b60df9496eea29ce4847045c1214e93da",
+      "size": 5627,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/0d95130b60df9496eea29ce4847045c1214e93da"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52ccca551ea392627bc6de992601b35c0d05a3e8",
+      "size": 60107,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/52ccca551ea392627bc6de992601b35c0d05a3e8"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "787c791272483dd7094dcad769de6d99dc7a2164",
+      "size": 47151,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/787c791272483dd7094dcad769de6d99dc7a2164"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5bac0836e60f8041acecce632a3d0fa22fb4a7a",
+      "size": 5836,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b5bac0836e60f8041acecce632a3d0fa22fb4a7a"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8b68ad6738e595aeecc38b5b01b9a81d4e146b8",
+      "size": 37648,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a8b68ad6738e595aeecc38b5b01b9a81d4e146b8"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/task.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0cc60b6e0af6a695341d0a46bfcdfe0345a229d",
+      "size": 105243,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b0cc60b6e0af6a695341d0a46bfcdfe0345a229d"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/include/timers.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "307ea1f98d41d9b78732471073b44728520b270b",
+      "size": 60173,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/307ea1f98d41d9b78732471073b44728520b270b"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/list.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7618ee8b864cf54e319792e1a70fd9e77f88d659",
+      "size": 8277,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7618ee8b864cf54e319792e1a70fd9e77f88d659"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "647b26e58a1b42bc402032fb7bd98a29fd1ac445",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/647b26e58a1b42bc402032fb7bd98a29fd1ac445"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "33e45a9cfda30b00bfd0803ccf71c3f9ac3b2529",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/33e45a9cfda30b00bfd0803ccf71c3f9ac3b2529"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3a7428ed6b0c0fb486231c4311fe332bb83b0981",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/3a7428ed6b0c0fb486231c4311fe332bb83b0981"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89a912c086c75f90b9bb40f23002d6edd3ad0905",
+      "size": 29442,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/89a912c086c75f90b9bb40f23002d6edd3ad0905"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0a566a7c7b273827ffe58d6446df31109b536d8",
+      "size": 8263,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/d0a566a7c7b273827ffe58d6446df31109b536d8"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d569b6ab2caea032e3dc7e97727057615d5d185c",
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/trees/d569b6ab2caea032e3dc7e97727057615d5d185c"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eaf443f4a5611d7ccd5c2c907c6766522e993409",
+      "size": 15642,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/eaf443f4a5611d7ccd5c2c907c6766522e993409"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/queue.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3203b806e0a6af14ccd4a4fc54ba2b7294ee162",
+      "size": 93655,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/b3203b806e0a6af14ccd4a4fc54ba2b7294ee162"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ad5d54abbd4bdb0f8acfa53d1bc9c2461db94b2",
+      "size": 42465,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/7ad5d54abbd4bdb0f8acfa53d1bc9c2461db94b2"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/tasks.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6a6a9b42fd4f596a8336a48672d0900571f733d",
+      "size": 173337,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/f6a6a9b42fd4f596a8336a48672d0900571f733d"
+    },
+    {
+      "path": "Middlewares/Third_Party/FreeRTOS/Source/timers.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00200b8f6375c3e9ee46640485c3eb077806da43",
+      "size": 40088,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/00200b8f6375c3e9ee46640485c3eb077806da43"
+    },
+    {
+      "path": "STM32F427VITX_FLASH.ld",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d145b5da741ec900241f47d45da9ec3563c9101",
+      "size": 5867,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2d145b5da741ec900241f47d45da9ec3563c9101"
+    },
+    {
+      "path": "STM32F427VITX_RAM.ld",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1582a2c152c6baca915a57bed698f36f23a3792d",
+      "size": 5858,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/1582a2c152c6baca915a57bed698f36f23a3792d"
+    },
+    {
+      "path": "lab3 Debug.launch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2490754e4699b2dcea7b968de21c34c15bce42a6",
+      "size": 11204,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/2490754e4699b2dcea7b968de21c34c15bce42a6"
+    },
+    {
+      "path": "lab3.ioc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9f6f6de8b013420c8279a9e323b6badbe9d435d",
+      "size": 5232,
+      "url": "https://api.github.com/repos/aoswhiskey/innersys_lab3/git/blobs/a9f6f6de8b013420c8279a9e323b6badbe9d435d"
+    }
+  ],
+  "truncated": false
+}

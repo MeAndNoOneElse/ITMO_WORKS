@@ -1,0 +1,4 @@
+../Core/Src/game_view.c:12:13:pixel	8
+../Core/Src/game_view.c:19:13:rect	3
+../Core/Src/game_view.c:24:13:text	5
+../Core/Src/game_view.c:34:6:Game_Render	10

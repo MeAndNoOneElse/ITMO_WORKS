@@ -1,0 +1,4 @@
+../Core/Src/app_game.c:14:6:App_Init	8	static
+../Core/Src/app_game.c:21:6:App_InputTask	40	static
+../Core/Src/app_game.c:47:6:App_GameTask	56	static
+../Core/Src/app_game.c:95:6:App_DisplayTask	32	static

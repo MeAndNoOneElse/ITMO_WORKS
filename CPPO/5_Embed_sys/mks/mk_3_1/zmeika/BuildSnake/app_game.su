@@ -1,0 +1,4 @@
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\app_game.c:14:6:App_Init	8	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\app_game.c:21:6:App_InputTask	32	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\app_game.c:47:6:App_GameTask	32	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\app_game.c:95:6:App_DisplayTask	24	static

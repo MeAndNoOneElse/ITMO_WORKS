@@ -1,0 +1,8 @@
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:4:17:random_next	0	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:10:12:occupied	8	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:16:13:food_place	32	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:30:6:Snake_Init	16	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:41:6:Snake_Turn	0	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:48:6:Snake_TogglePause	0	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:53:6:Snake_Step	24	static
+C:\Users\Asus\STM32CubeIDE\workspace_1.19.0\tetris\Core\Src\snake.c:77:10:Snake_Period	0	static
