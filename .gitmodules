@@ -4,3 +4,6 @@
 [submodule "CPPO/5_IS/course_work"]
 	path = CPPO/5_IS/course_work
 	url = git@github.com:MeAndNoOneElse/IS_Course_work.git
+[submodule "CPPO/5_IS/Is_labs/lab_1"]
+	path = CPPO/5_IS/Is_labs/lab_1
+	url = git@github.com:MeAndNoOneElse/IS_lab_1.git
