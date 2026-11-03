@@ -1,3 +1,6 @@
 [submodule "CYUR/1-2_Python/python_labs/final_project"]
 	path = CYUR/1-2_Python/python_labs/final_project
 	url = https://github.com/MeAndNoOneElse/Python_final_project.git
+[submodule "CPPO/5_IS/course_work"]
+	path = CPPO/5_IS/course_work
+	url = /home/eter-core/ITMO_WORKS/CPPO/5_IS/course_work
