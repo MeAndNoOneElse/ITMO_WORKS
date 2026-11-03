@@ -3,4 +3,4 @@
 	url = https://github.com/MeAndNoOneElse/Python_final_project.git
 [submodule "CPPO/5_IS/course_work"]
 	path = CPPO/5_IS/course_work
-	url = https://github.com/MeAndNoOneElse/IS_Course_work.git
+	url = git@github.com:MeAndNoOneElse/IS_Course_work.git
