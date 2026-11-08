@@ -1,0 +1,4 @@
+модель,признаки,R^2
+Модель 1,median_income,0.497779
+Модель 2,median_income; housing_median_age,0.537632
+Модель 3,median_income; total_rooms; households; rooms_per_household,0.522702
