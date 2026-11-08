@@ -1,0 +1,428 @@
+@prefix :     <http://example.org/tanks#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/tanks> a owl:Ontology ;
+    rdfs:label "Онтология танков VII-VIII уровня (Tanks Blitz)"@ru ;
+    rdfs:comment "Перевод базы знаний Prolog (18 танков, tank_stats/11) в OWL. Работает с рассуждателем HermiT."@ru .
+
+#################################################################
+# 1. КЛАССЫ
+#    tank/1 + tank_stats/11  -> Tank
+#    tank_class/1            -> подклассы HeavyTank, MediumTank, TankDestroyer
+#    nation/1                -> Nation
+#    manufacturer/1          -> Manufacturer
+#    level/1                 -> Level
+#    team/2, team_title/2    -> Team
+#################################################################
+
+:Tank a owl:Class ; rdfs:label "Танк"@ru .
+
+:HeavyTank     a owl:Class ; rdfs:subClassOf :Tank ; rdfs:label "Тяжёлый танк"@ru .
+:MediumTank    a owl:Class ; rdfs:subClassOf :Tank ; rdfs:label "Средний танк"@ru .
+:TankDestroyer a owl:Class ; rdfs:subClassOf :Tank ; rdfs:label "ПТ-САУ"@ru .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( :HeavyTank :MediumTank :TankDestroyer ) .
+
+:Nation       a owl:Class ; rdfs:label "Нация"@ru .
+:Manufacturer a owl:Class ; rdfs:label "Разработчик / производитель"@ru .
+:Level        a owl:Class ; rdfs:label "Уровень техники"@ru .
+:Team         a owl:Class ; rdfs:label "Команда"@ru .
+
+#################################################################
+# 2. ОБЪЕКТНЫЕ СВОЙСТВА (связи между объектами)
+#################################################################
+
+# нация танка (2-й столбец nation в tank_stats)
+:hasNation a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "принадлежит нации"@ru ;
+    rdfs:domain :Tank ; rdfs:range :Nation .
+
+# уровень танка (tank_stats, 2-й аргумент; значения из level/1)
+:hasLevel a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "имеет уровень"@ru ;
+    rdfs:domain :Tank ; rdfs:range :Level .
+
+# built_by/3: кто разработал/выпустил
+:builtBy a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "разработан/выпущен"@ru ;
+    rdfs:domain :Tank ; rdfs:range :Manufacturer .
+
+:produced a owl:ObjectProperty ;
+    rdfs:label "разработал/выпустил"@ru ;
+    owl:inverseOf :builtBy .
+
+# unlocked_from/2: ветка исследования (VIII уровень <- VII уровень)
+:unlockedFrom a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "исследуется с"@ru ;
+    rdfs:domain :Tank ; rdfs:range :Tank .
+
+:leadsTo a owl:ObjectProperty ;
+    rdfs:label "ведёт к"@ru ;
+    owl:inverseOf :unlockedFrom .
+
+# team/2: состав команды
+:hasMember a owl:ObjectProperty ;
+    rdfs:label "включает танк"@ru ;
+    rdfs:domain :Team ; rdfs:range :Tank .
+
+# Аналог same_manufacturer: общий производитель (цепочка builtBy o produced).
+# Внимание: рассуждатель выводит и пары «танк - он сам» (A sameManufacturerAs A).
+:sameManufacturerAs a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label "того же производителя, что"@ru ;
+    owl:propertyChainAxiom ( :builtBy :produced ) .
+
+#################################################################
+# 3. СВОЙСТВА-ДАННЫЕ (числа и строки из tank_stats/11, built_by/3, level/1)
+#################################################################
+
+:hasName a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "название"@ru ; rdfs:domain :Tank ; rdfs:range xsd:string .
+
+:hasHP a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "прочность"@ru ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+
+:hasAlphaDamage a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "урон за выстрел"@ru ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+
+:hasPenetration a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "пробитие, мм"@ru ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+
+:hasFrontArmor a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "броня лба, мм"@ru ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+
+:hasCaliber a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "калибр, мм"@ru ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+
+:hasReloadTime a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "перезарядка, с"@ru ; rdfs:domain :Tank ; rdfs:range xsd:decimal .
+
+:developmentStartYear a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "год начала разработки"@ru ; rdfs:domain :Tank ; rdfs:range xsd:integer .
+
+:levelNumber a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "номер уровня"@ru ; rdfs:domain :Level ; rdfs:range xsd:integer .
+
+:teamTitle a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "название команды"@ru ; rdfs:domain :Team ; rdfs:range xsd:string .
+
+#################################################################
+# 4. ОПРЕДЕЛЁННЫЕ КЛАССЫ (бывшие правила Prolog)
+#    Принадлежность выводит рассуждатель (Reasoner -> HermiT).
+#    Это класс «эквивалентен» (Equivalent To), а не просто подкласс.
+#################################################################
+
+# durable(T) :- HP >= 1800.
+:DurableTank a owl:Class ;
+    rdfs:label "Живучий танк"@ru ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ;
+              owl:onProperty :hasHP ;
+              owl:someValuesFrom [
+                  a rdfs:Datatype ;
+                  owl:onDatatype xsd:integer ;
+                  owl:withRestrictions ( [ xsd:minInclusive "1800"^^xsd:integer ] )
+              ] ] )
+    ] .
+
+# hard_hitter(T) :- Pen >= 220.
+:HardHitter a owl:Class ;
+    rdfs:label "Пробивной танк"@ru ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ;
+              owl:onProperty :hasPenetration ;
+              owl:someValuesFrom [
+                  a rdfs:Datatype ;
+                  owl:onDatatype xsd:integer ;
+                  owl:withRestrictions ( [ xsd:minInclusive "220"^^xsd:integer ] )
+              ] ] )
+    ] .
+
+# all_rounder(T) :- durable(T), hard_hitter(T).      (логическое И)
+:AllRounder a owl:Class ;
+    rdfs:label "Универсал"@ru ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( :DurableTank :HardHitter )
+    ] .
+
+# glass_cannon(T) :- hard_hitter(T), \+ durable(T).  (логическое НЕ)
+# Работает, потому что hasHP - функциональное свойство: у танка ровно одно HP.
+:GlassCannon a owl:Class ;
+    rdfs:label "Стеклянная пушка"@ru ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( :HardHitter
+            [ a owl:Class ; owl:complementOf :DurableTank ] )
+    ] .
+
+# Танки по нациям и уровням (аналог выборок tank_stats(T, Lvl, Nation, ...))
+:SovietTank a owl:Class ;
+    rdfs:label "Советский танк"@ru ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ; owl:onProperty :hasNation ; owl:hasValue :USSR ] ) ] .
+
+:GermanTank a owl:Class ;
+    rdfs:label "Германский танк"@ru ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ; owl:onProperty :hasNation ; owl:hasValue :Germany ] ) ] .
+
+:AmericanTank a owl:Class ;
+    rdfs:label "Американский танк"@ru ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ; owl:onProperty :hasNation ; owl:hasValue :USA ] ) ] .
+
+# opponents/2: германский танк против советского ИЛИ американского (ИЛИ)
+:AlliedTank a owl:Class ;
+    rdfs:label "Танк союзников (СССР или США)"@ru ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:unionOf ( :SovietTank :AmericanTank ) ] .
+
+:Tier7Tank a owl:Class ;
+    rdfs:label "Танк VII уровня"@ru ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ; owl:onProperty :hasLevel ; owl:hasValue :Level7 ] ) ] .
+
+:Tier8Tank a owl:Class ;
+    rdfs:label "Танк VIII уровня"@ru ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( :Tank
+            [ a owl:Restriction ; owl:onProperty :hasLevel ; owl:hasValue :Level8 ] ) ] .
+
+# best_gun/2 (максимальное пробитие на уровне) и пары opponents/2
+# в OWL аксиомой класса не выражаются - см. SPARQL-запросы в конце файла.
+
+#################################################################
+# 5. ЭКЗЕМПЛЯРЫ-СПРАВОЧНИКИ
+#################################################################
+
+# nation/1
+:USSR    a :Nation ; rdfs:label "СССР"@ru .
+:Germany a :Nation ; rdfs:label "Германия"@ru .
+:USA     a :Nation ; rdfs:label "США"@ru .
+
+# manufacturer/1
+:ChelyabinskKirovPlant a :Manufacturer ; rdfs:label "Челябинский Кировский завод"@ru .
+:Henschel              a :Manufacturer ; rdfs:label "Henschel & Sohn"@ru .
+:USArmyOrdnance        a :Manufacturer ; rdfs:label "Артиллерийское управление армии США"@ru .
+:KharkivPlant75        a :Manufacturer ; rdfs:label "Харьковский завод №75"@ru .
+
+# level/1
+:Level7 a :Level ; :levelNumber "7"^^xsd:integer ; rdfs:label "VII уровень"@ru .
+:Level8 a :Level ; :levelNumber "8"^^xsd:integer ; rdfs:label "VIII уровень"@ru .
+
+#################################################################
+# 6. ЭКЗЕМПЛЯРЫ-ТАНКИ (tank_stats/11 + built_by/3 + unlocked_from/2)
+#    Соответствие id Prolog -> имя в онтологии:
+#    is_3 IS_3, t_44 T_44, isu_152 ISU_152, is IS, t_43 T_43, su_152 SU_152,
+#    tiger_i Tiger_I, panther_i Panther_I, jpanther Jagdpanther,
+#    tiger_ii Tiger_II, panther_ii Panther_II, ferdinand Ferdinand,
+#    t29 T29, t_20 T_20, t_25_2 T_25_2, t32 T32, pershing Pershing,
+#    t28_prot T28_Prot
+#################################################################
+
+# ---------- СССР, VIII уровень ----------
+:IS_3 a :HeavyTank ;
+    :hasName "ИС-3" ; :hasLevel :Level8 ; :hasNation :USSR ;
+    :hasHP "1800"^^xsd:integer ; :hasAlphaDamage "400"^^xsd:integer ;
+    :hasPenetration "225"^^xsd:integer ; :hasFrontArmor "110"^^xsd:integer ;
+    :hasCaliber "122"^^xsd:integer ; :hasReloadTime "12.21"^^xsd:decimal ;
+    :builtBy :ChelyabinskKirovPlant ; :developmentStartYear "1945"^^xsd:integer ;
+    :unlockedFrom :IS .
+
+:T_44 a :MediumTank ;
+    :hasName "Т-44" ; :hasLevel :Level8 ; :hasNation :USSR ;
+    :hasHP "1400"^^xsd:integer ; :hasAlphaDamage "400"^^xsd:integer ;
+    :hasPenetration "230"^^xsd:integer ; :hasFrontArmor "90"^^xsd:integer ;
+    :hasCaliber "122"^^xsd:integer ; :hasReloadTime "16.72"^^xsd:decimal ;
+    :builtBy :KharkivPlant75 ; :developmentStartYear "1944"^^xsd:integer ;
+    :unlockedFrom :T_43 .
+
+:ISU_152 a :TankDestroyer ;
+    :hasName "ИСУ-152" ; :hasLevel :Level8 ; :hasNation :USSR ;
+    :hasHP "1100"^^xsd:integer ; :hasAlphaDamage "640"^^xsd:integer ;
+    :hasPenetration "286"^^xsd:integer ; :hasFrontArmor "90"^^xsd:integer ;
+    :hasCaliber "152"^^xsd:integer ; :hasReloadTime "12.12"^^xsd:decimal ;
+    :builtBy :ChelyabinskKirovPlant ; :developmentStartYear "1943"^^xsd:integer ;
+    :unlockedFrom :SU_152 .
+
+# ---------- СССР, VII уровень ----------
+:IS a :HeavyTank ;
+    :hasName "ИС" ; :hasLevel :Level7 ; :hasNation :USSR ;
+    :hasHP "1500"^^xsd:integer ; :hasAlphaDamage "390"^^xsd:integer ;
+    :hasPenetration "175"^^xsd:integer ; :hasFrontArmor "120"^^xsd:integer ;
+    :hasCaliber "122"^^xsd:integer ; :hasReloadTime "12.00"^^xsd:decimal ;
+    :builtBy :ChelyabinskKirovPlant ; :developmentStartYear "1943"^^xsd:integer .
+
+:T_43 a :MediumTank ;
+    :hasName "Т-43" ; :hasLevel :Level7 ; :hasNation :USSR ;
+    :hasHP "1250"^^xsd:integer ; :hasAlphaDamage "390"^^xsd:integer ;
+    :hasPenetration "175"^^xsd:integer ; :hasFrontArmor "75"^^xsd:integer ;
+    :hasCaliber "100"^^xsd:integer ; :hasReloadTime "8.50"^^xsd:decimal ;
+    :builtBy :KharkivPlant75 ; :developmentStartYear "1942"^^xsd:integer .
+
+:SU_152 a :TankDestroyer ;
+    :hasName "СУ-152" ; :hasLevel :Level7 ; :hasNation :USSR ;
+    :hasHP "1200"^^xsd:integer ; :hasAlphaDamage "640"^^xsd:integer ;
+    :hasPenetration "250"^^xsd:integer ; :hasFrontArmor "110"^^xsd:integer ;
+    :hasCaliber "152"^^xsd:integer ; :hasReloadTime "17.00"^^xsd:decimal ;
+    :builtBy :ChelyabinskKirovPlant ; :developmentStartYear "1943"^^xsd:integer .
+
+# ---------- Германия, VIII уровень ----------
+:Tiger_II a :HeavyTank ;
+    :hasName "Tiger II" ; :hasLevel :Level8 ; :hasNation :Germany ;
+    :hasHP "1850"^^xsd:integer ; :hasAlphaDamage "310"^^xsd:integer ;
+    :hasPenetration "225"^^xsd:integer ; :hasFrontArmor "150"^^xsd:integer ;
+    :hasCaliber "105"^^xsd:integer ; :hasReloadTime "7.58"^^xsd:decimal ;
+    :builtBy :Henschel ; :developmentStartYear "1944"^^xsd:integer ;
+    :unlockedFrom :Tiger_I .
+
+:Panther_II a :MediumTank ;
+    :hasName "Panther II" ; :hasLevel :Level8 ; :hasNation :Germany ;
+    :hasHP "1400"^^xsd:integer ; :hasAlphaDamage "220"^^xsd:integer ;
+    :hasPenetration "203"^^xsd:integer ; :hasFrontArmor "100"^^xsd:integer ;
+    :hasCaliber "88"^^xsd:integer ; :hasReloadTime "5.14"^^xsd:decimal ;
+    :builtBy :Henschel ; :developmentStartYear "1943"^^xsd:integer ;
+    :unlockedFrom :Panther_I .
+
+:Ferdinand a :TankDestroyer ;
+    :hasName "Ferdinand" ; :hasLevel :Level8 ; :hasNation :Germany ;
+    :hasHP "1400"^^xsd:integer ; :hasAlphaDamage "460"^^xsd:integer ;
+    :hasPenetration "246"^^xsd:integer ; :hasFrontArmor "200"^^xsd:integer ;
+    :hasCaliber "128"^^xsd:integer ; :hasReloadTime "10.10"^^xsd:decimal ;
+    :builtBy :Henschel ; :developmentStartYear "1942"^^xsd:integer ;
+    :unlockedFrom :Jagdpanther .
+
+# ---------- Германия, VII уровень ----------
+:Tiger_I a :HeavyTank ;
+    :hasName "Tiger I" ; :hasLevel :Level7 ; :hasNation :Germany ;
+    :hasHP "1500"^^xsd:integer ; :hasAlphaDamage "310"^^xsd:integer ;
+    :hasPenetration "203"^^xsd:integer ; :hasFrontArmor "178"^^xsd:integer ;
+    :hasCaliber "105"^^xsd:integer ; :hasReloadTime "8.00"^^xsd:decimal ;
+    :builtBy :Henschel ; :developmentStartYear "1937"^^xsd:integer .
+
+:Panther_I a :MediumTank ;
+    :hasName "Panther I" ; :hasLevel :Level7 ; :hasNation :Germany ;
+    :hasHP "1300"^^xsd:integer ; :hasAlphaDamage "280"^^xsd:integer ;
+    :hasPenetration "198"^^xsd:integer ; :hasFrontArmor "100"^^xsd:integer ;
+    :hasCaliber "88"^^xsd:integer ; :hasReloadTime "5.50"^^xsd:decimal ;
+    :builtBy :Henschel ; :developmentStartYear "1941"^^xsd:integer .
+
+:Jagdpanther a :TankDestroyer ;
+    :hasName "Jagdpanther" ; :hasLevel :Level7 ; :hasNation :Germany ;
+    :hasHP "1400"^^xsd:integer ; :hasAlphaDamage "460"^^xsd:integer ;
+    :hasPenetration "226"^^xsd:integer ; :hasFrontArmor "150"^^xsd:integer ;
+    :hasCaliber "105"^^xsd:integer ; :hasReloadTime "10.00"^^xsd:decimal ;
+    :builtBy :Henschel ; :developmentStartYear "1942"^^xsd:integer .
+
+# ---------- США, VIII уровень ----------
+:T32 a :HeavyTank ;
+    :hasName "T32" ; :hasLevel :Level8 ; :hasNation :USA ;
+    :hasHP "1850"^^xsd:integer ; :hasAlphaDamage "310"^^xsd:integer ;
+    :hasPenetration "218"^^xsd:integer ; :hasFrontArmor "150"^^xsd:integer ;
+    :hasCaliber "105"^^xsd:integer ; :hasReloadTime "8.60"^^xsd:decimal ;
+    :builtBy :USArmyOrdnance ; :developmentStartYear "1945"^^xsd:integer ;
+    :unlockedFrom :T29 .
+
+:Pershing a :MediumTank ;
+    :hasName "Pershing" ; :hasLevel :Level8 ; :hasNation :USA ;
+    :hasHP "1400"^^xsd:integer ; :hasAlphaDamage "240"^^xsd:integer ;
+    :hasPenetration "180"^^xsd:integer ; :hasFrontArmor "90"^^xsd:integer ;
+    :hasCaliber "90"^^xsd:integer ; :hasReloadTime "8.00"^^xsd:decimal ;
+    :builtBy :USArmyOrdnance ; :developmentStartYear "1942"^^xsd:integer ;
+    :unlockedFrom :T_20 .
+
+:T28_Prot a :TankDestroyer ;
+    :hasName "T28 Prot." ; :hasLevel :Level8 ; :hasNation :USA ;
+    :hasHP "1250"^^xsd:integer ; :hasAlphaDamage "400"^^xsd:integer ;
+    :hasPenetration "248"^^xsd:integer ; :hasFrontArmor "200"^^xsd:integer ;
+    :hasCaliber "120"^^xsd:integer ; :hasReloadTime "12.00"^^xsd:decimal ;
+    :builtBy :USArmyOrdnance ; :developmentStartYear "1943"^^xsd:integer ;
+    :unlockedFrom :T_25_2 .
+
+# ---------- США, VII уровень ----------
+:T29 a :HeavyTank ;
+    :hasName "T29" ; :hasLevel :Level7 ; :hasNation :USA ;
+    :hasHP "1600"^^xsd:integer ; :hasAlphaDamage "400"^^xsd:integer ;
+    :hasPenetration "198"^^xsd:integer ; :hasFrontArmor "140"^^xsd:integer ;
+    :hasCaliber "105"^^xsd:integer ; :hasReloadTime "10.00"^^xsd:decimal ;
+    :builtBy :USArmyOrdnance ; :developmentStartYear "1944"^^xsd:integer .
+
+:T_20 a :MediumTank ;
+    :hasName "T20" ; :hasLevel :Level7 ; :hasNation :USA ;
+    :hasHP "1300"^^xsd:integer ; :hasAlphaDamage "240"^^xsd:integer ;
+    :hasPenetration "180"^^xsd:integer ; :hasFrontArmor "80"^^xsd:integer ;
+    :hasCaliber "90"^^xsd:integer ; :hasReloadTime "7.00"^^xsd:decimal ;
+    :builtBy :USArmyOrdnance ; :developmentStartYear "1942"^^xsd:integer .
+
+:T_25_2 a :TankDestroyer ;
+    :hasName "T25/2" ; :hasLevel :Level7 ; :hasNation :USA ;
+    :hasHP "1250"^^xsd:integer ; :hasAlphaDamage "240"^^xsd:integer ;
+    :hasPenetration "180"^^xsd:integer ; :hasFrontArmor "100"^^xsd:integer ;
+    :hasCaliber "90"^^xsd:integer ; :hasReloadTime "8.00"^^xsd:decimal ;
+    :builtBy :USArmyOrdnance ; :developmentStartYear "1943"^^xsd:integer .
+
+#################################################################
+# 7. КОМАНДЫ (team/2 + team_title/2)
+#################################################################
+
+:Team_USSR_8 a :Team ; :teamTitle "8 уровень СССР" ;
+    :hasMember :IS_3, :T_44, :ISU_152 .
+:Team_Germany_8 a :Team ; :teamTitle "8 уровень Германия" ;
+    :hasMember :Tiger_II, :Panther_II, :Ferdinand .
+:Team_USA_8 a :Team ; :teamTitle "8 уровень США" ;
+    :hasMember :T32, :Pershing, :T28_Prot .
+:Team_USSR_7 a :Team ; :teamTitle "7 уровень СССР" ;
+    :hasMember :IS, :T_43, :SU_152 .
+:Team_Germany_7 a :Team ; :teamTitle "7 уровень Германия" ;
+    :hasMember :Tiger_I, :Panther_I, :Jagdpanther .
+:Team_USA_7 a :Team ; :teamTitle "7 уровень США" ;
+    :hasMember :T29, :T_20, :T_25_2 .
+
+#################################################################
+# 8. ТЕСТЫ (после Reasoner -> HermiT -> Start reasoner)
+#
+# --- DL Query (вкладка DL Query, галочка Instances) ---
+#   DurableTank                 -> IS_3, Tiger_II, T32
+#   HardHitter                  -> IS_3, T_44, ISU_152, SU_152, Tiger_II, Ferdinand,
+#                                  Jagdpanther, T28_Prot
+#   AllRounder                  -> IS_3, Tiger_II
+#   GlassCannon                 -> T_44, ISU_152, SU_152, Ferdinand, Jagdpanther,
+#                                  T28_Prot
+#   Tier8Tank and SovietTank    -> IS_3, T_44, ISU_152
+#   GermanTank                  -> 6 германских танков
+#   AlliedTank                  -> 12 советских и американских танков
+#   Tier8Tank and not DurableTank -> T_44, ISU_152, Panther_II, Ferdinand,
+#                                    Pershing, T28_Prot
+#   Tank and leadsTo value IS_3 -> IS
+#
+# --- SPARQL: best_gun - лучшее пробитие на каждом уровне ---
+# PREFIX : <http://example.org/tanks#>
+# SELECT ?lvl ?name ?pen WHERE {
+#   ?t :hasLevel ?l ; :hasPenetration ?pen ; :hasName ?name .
+#   ?l :levelNumber ?lvl .
+#   FILTER NOT EXISTS {
+#     ?t2 :hasLevel ?l ; :hasPenetration ?pen2 . FILTER (?pen2 > ?pen) } }
+#   -> 7: СУ-152 (250); 8: ИСУ-152 (286)
+#
+# --- SPARQL: opponents - германский танк против СССР/США того же уровня ---
+# PREFIX : <http://example.org/tanks#>
+# SELECT ?a ?b WHERE {
+#   ?a a :GermanTank ; :hasLevel ?l .
+#   ?b a :AlliedTank ; :hasLevel ?l . }
+#
+# --- SPARQL: same_manufacturer ---
+# PREFIX : <http://example.org/tanks#>
+# SELECT ?a ?b WHERE { ?a :sameManufacturerAs ?b . FILTER (str(?a) < str(?b)) }
+#################################################################

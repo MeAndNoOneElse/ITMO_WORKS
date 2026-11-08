@@ -1,0 +1,780 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{paracol}
+\usepackage{src/title}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{tocloft}
+\usepackage{tabularx}
+
+\geometry{top=2cm, left=2cm, right=2cm, bottom=2cm}
+\graphicspath{{../lab_3/graphics/}{../lab_4/graphics/}{../lab_5/graphics/}{../lab_6/graphics/}}
+
+\lstset{
+  language=Python,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  commentstyle=\color{gray}\itshape,
+  tabsize=2,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+}
+
+\title{Модуль 2. Общий отчёт по лабораторным работам №3--№6: методы обучения с учителем}
+\author{Ануфриев А.С. 465029}
+\supervisor{Болдырева Е. А.}
+\date{08.11.2026}
+
+\abstract{
+В отчёте обобщены результаты четырёх лабораторных работ модуля 2 по линейной регрессии, методу k-ближайших соседей (k-NN), деревьям решений и логистической регрессии. Все модели реализованы ``с нуля'' на языке Python с использованием только NumPy и Pandas без готовых библиотек машинного обучения. Для каждой работы приведено описание метода, псевдокод, результаты экспериментов на реальных датасетах (жильё Калифорнии, вино, грибы UCI, пассажиры Титаника), графики и выводы. В заключении дан сравнительный анализ методов: их особенности, преимущества и ограничения. В приложении приводятся фрагменты исходного кода реализации.
+}
+\keywords{линейная регрессия, k-NN, дерево решений, логистическая регрессия, NumPy, Python, классификация, регрессия}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Введение}
+Модуль 2 посвящён основным методам (supervised) обучения c учителем: регрессии и классификации. В ходе четырёх лабораторных работ (лабораторные №3--№6) были реализованы и исследованы четыре метода:
+
+\begin{enumerate}
+\item линейная регрессия методом наименьших квадратов (лабораторная №3);
+\item метод k-ближайших соседей k-NN (лабораторная №4);
+\item дерево решений (лабораторная №5);
+\item логистическая регрессия (лабораторная №6).
+\end{enumerate}
+
+Общая особенность всех работ --- реализация алгоритмов собственным кодом на Python с использованием только NumPy и Pandas. Готовые средства машинного обучения (sklearn и аналоги) не применялись. В каждой работе проведена загрузка и предобработка реального датасета, разделение на обучающую и тестовую выборки, обучение модели, оценка качества и оформление результатов в виде отдельного отчёта с графиками. Ниже по каждой лабораторной работе приведены цель, описание метода, псевдокод, результаты и выводы, а затем --- сравнительный анализ всех четырёх методов.
+
+\section{Лабораторная работа 1. Линейная регрессия (данные о жилье Калифорнии)}
+
+\subsection{Цели и задачи}
+Цель работы --- построение и сравнение моделей линейной регрессии для прогнозирования стоимости жилья в Калифорнии методом наименьших квадратов без применения готовых библиотек регрессии. Основные задачи:
+\begin{enumerate}
+\item получить и визуализировать описательную статистику по датасету (количество, среднее, стандартное отклонение, минимум, максимум, квантили);
+\item выполнить предобработку данных: обработку отсутствующих значений, кодирование категориальных признаков, нормировку;
+\item разделить данные на обучающую и тестовую выборки;
+\item реализовать линейную регрессию методом наименьших квадратов собственным кодом (минимизация суммы квадратов разностей фактических и предсказанных значений), используя только NumPy и Pandas;
+\item построить три модели с разными наборами признаков;
+\item оценить каждую модель коэффициентом детерминации $R^2$ и сравнить результаты;
+\item в качестве бонуса ввести синтетический признак.
+\end{enumerate}
+
+\subsection{Описание метода}
+Линейная множественная регрессия описывает зависимость результативного признака $y$ от нескольких факторов $x_1,\dots,x_p$:
+\begin{equation}
+\hat{y} = a + b_1 x_1 + \dots + b_p x_p ,
+\end{equation}
+где $a$ --- свободный член, $b_j$ --- регрессионные коэффициенты. Метод наименьших квадратов (МНК) определяет оценки параметров вектором $B = (a,b_1,\dots,b_p)^\top$ как
+\begin{equation}
+B = (X^\top X)^{-1} X^\top Y ,
+\end{equation}
+где $X$ --- матрица признаков с первым столбцом единиц (свободный член), $Y$ --- вектор наблюдений целевой переменной. Качество модели оценивается коэффициентом детерминации
+\begin{equation}
+R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \bar{y})^2} .
+\end{equation}
+
+\subsection{Псевдокод метода}
+\begin{lstlisting}
+# X: feature matrix, y: target vector
+# add column of ones for the intercept term
+X_aug = column_stack([ones(len(X)), X])
+# OLS coefficients: B = (X^T X)^{-1} X^T y
+B = inv(X_aug.T @ X_aug) @ X_aug.T @ y
+# prediction
+y_pred = X_aug_test @ B
+# quality: coefficient of determination
+R2 = 1 - sum((y_true - y_pred)^2) / sum((y_true - mean(y_true))^2)
+\end{lstlisting}
+
+\subsection{Исходные данные}
+Исходный датасет содержит 17~000 записей о жилых районах Калифорнии. Все 9 признаков числовые, пропущенных значений и категориальных признаков в исходных данных отсутствуют. Целевая переменная --- \emph{median\_house\_value} (медианная стоимость дома, тыс. долл.). Особенность данных: значения стоимости ограничены сверху отметкой 500~000 (цenzурное отсечение); таких записей 22 (0,13 \%), доход у них разный, поэтому это не выброс, подлежащий удалению, а техническая особенность датасета.
+
+\subsection{Ход работы}
+\textbf{Описательная статистика.} Вычислены размер выборки, среднее, стандартное отклонение, минимум, максимум и квантили 25\%, 50\%, 75\% для всех признаков. Для целевой переменной построена гистограмма распределения, для пары ``доход населения --- стоимость жилья'' --- диаграмма рассеяния (рисунки \ref{fig:lab3_hist}, \ref{fig:lab3_scatter}).
+
+\begin{table}[H]
+\centering
+\caption{Описательная статистика по датасету о жилье Калифорнии.}
+\label{tab:lab3_stats}
+\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Признак & count & mean & std & min & 25\% & 50\% & 75\% & max \\
+\midrule
+longitude & 17000 & -119.56 & 2.01 & -124.35 & -121.79 & -118.49 & -118.00 & -114.31 \\
+latitude & 17000 & 35.63 & 2.14 & 32.54 & 33.93 & 34.25 & 37.72 & 41.95 \\
+housing\_median\_age & 17000 & 28.59 & 12.59 & 1.0 & 18.0 & 29.0 & 37.0 & 52.0 \\
+total\_rooms & 17000 & 2643.66 & 2179.95 & 2.0 & 1462.0 & 2127.0 & 3151.25 & 37937.0 \\
+total\_bedrooms & 17000 & 539.41 & 421.50 & 1.0 & 297.0 & 434.0 & 648.25 & 6445.0 \\
+population & 17000 & 1429.57 & 1147.85 & 3.0 & 790.0 & 1167.0 & 1721.0 & 35682.0 \\
+households & 17000 & 501.22 & 384.52 & 1.0 & 282.0 & 409.0 & 605.25 & 6082.0 \\
+median\_income & 17000 & 3.88 & 1.91 & 0.50 & 2.57 & 3.54 & 4.77 & 15.00 \\
+median\_house\_value & 17000 & 207300.91 & 115983.76 & 14999.0 & 119400.0 & 180400.0 & 265000.0 & 500001.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\linewidth]{target_hist.pdf}
+\caption{Гистограмма распределения медианной стоимости жилья (лаб.~3).}
+\label{fig:lab3_hist}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\linewidth]{price_vs_income.pdf}
+\caption{Диаграмма рассеяния стоимости жилья от дохода населения (лаб.~3).}
+\label{fig:lab3_scatter}
+\end{figure}
+
+\textbf{Предобработка.} Пропущенных значений не обнаружено, категориальных признаков нет. Все числовые признаки нормированы стандартизацией (вычет среднего, деление на стандартное отклонение); целевая переменная не нормировалась.
+
+\textbf{Разделение на выборки.} Данные перемешаны и разделены на обучающую (13~600 записей, 80\%) и тестовую (3~400 записей, 20\%) с фиксированным зерном генератора random\_state~=~42.
+
+\textbf{Реализация.} Коэффициенты регрессии вычислены собственным кодом на Python с использованием NumPy по формуле $B=(X^\top X)^{-1}X^\top Y$, что эквивалентно минимизации суммы квадратов разностей фактических и предсказанных значений. Готовые средства регрессии не использовались.
+
+\textbf{Три модели.} Построены три модели с разными наборами признаков. В третью модель включён синтетический признак $rooms\_per\_household = total\_rooms / households$ (бонусное задание).
+
+\begin{table}[H]
+\centering
+\caption{Сравнение трёх моделей линейной регрессии (признаки нормированы).}
+\label{tab:lab3_models}
+\small
+\begin{tabular}{lll}
+\toprule
+Модель & Признаки & $R^2$ на тестовой выборке \\
+\midrule
+Модель 1 & median\_income & 0.4978 \\
+Модель 2 & median\_income, housing\_median\_age & 0.5376 \\
+Модель 3 & median\_income, total\_rooms, households, rooms\_per\_household & 0.5227 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Оценочные коэффициенты моделей (включая свободный член, признаки нормированы).}
+\label{tab:lab3_coef}
+\small
+\begin{tabular}{lrrr}
+\toprule
+ & Модель 1 & Модель 2 & Модель 3 \\
+\midrule
+Свободный член & 207066.73 & 206962.89 & 207033.39 \\
+median\_income & 79512.76 & 81929.71 & 89613.01 \\
+housing\_median\_age & --- & 21519.53 & --- \\
+total\_rooms & --- & --- & -54374.09 \\
+households & --- & --- & 56290.68 \\
+rooms\_per\_household & --- & --- & -6.13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.32\linewidth]{pred_1.pdf}
+\includegraphics[width=0.32\linewidth]{pred_2.pdf}
+\includegraphics[width=0.32\linewidth]{pred_3.pdf}
+\caption{Фактические против предсказанных значений на тестовой выборке: Модель 1, 2, 3 (лаб.~3).}
+\label{fig:lab3_pred}
+\end{figure}
+
+\subsection{Выводы}
+Наилучшее качество показала Модель 2 (доход населения и возраст жилого дома), $R^2 \approx 0.54$ на тестовой выборке. Доход населения --- сильнейший отдельный признак ($R^2 \approx 0.50$ в одномерной модели). Добавление возраста дома повысило качество, а в третью модель количество комнат, число домохозяйств и синтетический признак не улучшили результат ($R^2 \approx 0.52$) из-за сильной линейной зависимости (мультиколлинеарности) между этими признаками.
+
+\section{Лабораторная работа 2. Метод k-ближайших соседей (датасет о вине)}
+
+\subsection{Цели и задачи}
+Цель работы --- исследование и применение метода k-ближайших соседей (k-NN) для классификации датасета о вине. Основные задачи:
+\begin{enumerate}
+\item описательная статистика и визуализация признаков (включая 3D-визуализацию);
+\item предобработка данных: пропуски, кодирование категориальных признаков, масштабирование;
+\item реализация k-NN собственным кодом без готовых библиотек классификации;
+\item постройка двух моделей: со случайным и с фиксированным наборами признаков;
+\item оценка качества на тестовой выборке при различных $k$ и построение матриц ошибок.
+\end{enumerate}
+
+\subsection{Описание метода}
+Метод k-ближайших соседей относит объект к классу, наиболее часто встречающемуся среди $k$ ближайших соседей в пространстве признаков. Расстояние вычисляется по правилу Евклида:
+\begin{equation}
+d(\mathbf{x}_i, \mathbf{x}_j) = \sqrt{\sum_{p=1}^{P} (x_{ip} - x_{jp})^2}.
+\end{equation}
+Класс определяется majoritaire голосованием среди $k$ ближайших обучающих примеров. Качество оценивается долей верных ответов (accuracy) и матрицей ошибок. k-NN --- ``ленивый'' алгоритм: этапа обучения в классическом смысле нет, все вычисления выполняются на этапе предсказания.
+
+\subsection{Псевдокод метода}
+\begin{lstlisting}
+# X_train, y_train: training set; X: test objects
+# pairwise Euclidean distances: ||a-b||^2 = ||a||^2 + ||b||^2 - 2 a*b
+d = sqrt(sum(X^2, axis=1) + sum(X_train^2, axis=1).T - 2 * X @ X_train.T)
+# k nearest neighbours for each test object
+nearest = argsort(d, axis=1)[:, :k]
+# class: majority vote among neighbour labels
+y_pred[i] = argmax(bincount(y_train[nearest[i]]))
+\end{lstlisting}
+
+\subsection{Исходные данные}
+Исходный датасет содержит 178 записей о вине. Признаков: 13 числовых (Alcohol, Malic Acid, Ash, Alcalinity of ash, Magnesium, Total phenols, Flavanoids, Nonflavanoid phenols, Proanthocyanins, Color intensity, Hue, OD280/OD315 of diluted wines, Proline). Целевая переменная --- Wine (три класса: 1, 2, 3). Пропущенных значений и категориальных признаков не обнаружено.
+
+\subsection{Ход работы}
+\textbf{Предобработка.} Все 13 числовых признаков подвергнуты стандартизации. Данные разделены на обучающую (142 записи, 80\%) и тестовую (36 записей, 20\%) с random\_state = 42.
+
+\textbf{Реализация.} k-NN реализован на NumPy: парные евклидовые расстояния вычисляются матрично, затем сортировка и выбор $k$ ближайших соседей, класс определяется голосованием. Готовые средства классификации не использовались.
+
+\textbf{Модели.} Построены две модели:
+\begin{itemize}
+\item Модель 1 --- признаки отбираются случайно (5 из 13: Alcohol, Color intensity, OD280/OD315 of diluted wines, Proanthocyanins, Total phenols);
+\item Модель 2 --- фиксированный набор признаков (Alcohol, Malic Acid, Ash, Alcalinity of ash, Magnesium, Total phenols).
+\end{itemize}
+Оценка при $k = 3, 5, 10, 15$.
+
+\begin{table}[H]
+\centering
+\caption{Точность k-NN на тестовой выборке.}
+\label{tab:lab4_metrics}
+\small
+\begin{tabular}{llcccc}
+\toprule
+Модель & Признаки & k=3 & k=5 & k=10 & k=15 \\
+\midrule
+Модель 1 & случайные (5 признаков) & 0.9444 & 0.9444 & 0.9167 & 0.9167 \\
+Модель 2 & фиксированные (6 признаков) & 0.8889 & 0.8889 & 0.9444 & 0.9444 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Матрица ошибок, Модель 1, k=5 (строки --- истинные классы, столбцы --- предсказанные).}
+\label{tab:lab4_cm1}
+\small
+\begin{tabular}{lccc}
+\toprule
+ & \multicolumn{3}{c}{Предсказанный класс} \\
+Истинный класс & 1 & 2 & 3 \\
+\midrule
+1 & 14 & 0 & 0 \\
+2 & 1 & 12 & 1 \\
+3 & 0 & 0 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Матрица ошибок, Модель 2, k=10.}
+\label{tab:lab4_cm2}
+\small
+\begin{tabular}{lccc}
+\toprule
+ & \multicolumn{3}{c}{Предсказанный класс} \\
+Истинный класс & 1 & 2 & 3 \\
+\midrule
+1 & 13 & 0 & 1 \\
+2 & 0 & 14 & 0 \\
+3 & 0 & 1 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{confusion_model1.pdf}
+\includegraphics[width=0.45\linewidth]{confusion_model2.pdf}
+\caption{Матрицы ошибок: Модель 1 (слева, k=5) и Модель 2 (справа, k=10) (лаб.~4).}
+\label{fig:lab4_cm}
+\end{figure}
+
+\subsection{Выводы}
+Обе модели обеспечивают высокую точность на тестовой выборке (до 0.9444 из 36 объектов). Модель 1 стабильна при $k=3$ и $k=5$ (0.9444), Модель 2 достигает наилучшего результата при $k=10$ и $k=15$ (0.9444). Основные ошибки приходятся на путаницу между классами 2 и 3, которые ближе друг к другу в пространстве признаков.
+
+\section{Лабораторная работа 3. Деревья решений (датасет грибов UCI Mushroom)}
+
+\subsection{Цели и задачи}
+Целью работы является реализация алгоритма построения дерева решений для задачи бинарной классификации грибов (съедобный / ядовитый) и оценка его качества. Основные этапы:
+\begin{enumerate}
+\item загрузка и предобработка исходных данных;
+\item случайный отбор $\sqrt{n}$ признаков;
+\item построение небинарного дерева решений собственным кодом без сторонних библиотек для построения дерева;
+\item оценка по Accuracy, precision и recall без использования библиотек;
+\item построение кривых AUC-ROC и AUC-PR без использования библиотек.
+\end{enumerate}
+
+\subsection{Описание метода}
+Дерево решений --- иерархическая структура правил классификации: каждый внутренний узел содержит проверку по какому-то признаку, ребра соответствуют возможным значениям признака, а листья содержат метки классов. Построение выполняется рекурсивно сверху вниз (подход алгоритма C4.5). В каждом узле выбирается признак с максимальным нормированным приростом информации:
+\begin{equation}
+\mathrm{GainRatio}(X) = \frac{\mathrm{Info}(T) - \mathrm{Info}_X(T)}{\mathrm{splitinfo}(X)},
+\end{equation}
+где $\mathrm{Info}(T) = -\sum_j p_j \log_2 p_j$ --- энтропия множества примеров, $\mathrm{Info}_X(T) = \sum_i \frac{|T_i|}{|T|}\mathrm{Info}(T_i)$ --- условная энтропия после разбиения по признаку $X$, $\mathrm{splitinfo}(X) = -\sum_i \frac{|T_i|}{|T|}\log_2\frac{|T_i|}{|T|}$. По выбранному признаку создаётся столько потомков, сколько у него значений (дерево не бинарное). Лист получает класс большинства объектов в узле.
+
+\subsection{Псевдокод метода}
+\begin{lstlisting}
+build_tree(X, y, features, depth):
+    node = majority class of y; share of poisonous = mean(y == 1)
+    if all examples one class or depth = max or no features left:
+        node.is_leaf = True; return node
+    best feature = argmax information gain (GainRatio) over features
+    if no gain: node.is_leaf = True; return node
+    for each value v of best feature:
+        child[v] = build_tree(X[feature==v], y[feature==v], features without best, depth+1)
+    return node
+
+predict(node, object):
+    descend to leaf; return label or share of poisonous (probability)
+\end{lstlisting}
+
+\subsection{Исходные данные}
+Используется датасет UCI Mushroom (\emph{agaricus-lepiota.data}, семейства \textit{Agaricus} и \textit{Lepiota}, источник --- справочник \emph{The Audubon Society Field Guide to North American Mushrooms}, 1981). Датасет содержит 8124 объекта, каждый описывается классом (съедобный \texttt{e} / ядовитый \texttt{p}) и 22 номинативными признаками; пропуски \emph{?} встречаются только в признаке \emph{stalk-root}. После удаления объектов с пропусками остаётся 5644 записи: 3488 съедобных (61.8\%) и 2156 ядовитых (38.2\%).
+
+\subsection{Ход работы}
+\begin{enumerate}
+\item Чтение данных; исключение записей с пропусками в \emph{stalk-root}.
+\item Случайный отбор $\sqrt{22} \approx 4$ признаков с зерном 42: \emph{cap-shape}, \emph{cap-surface}, \emph{gill-color}, \emph{stalk-color-above-ring}.
+\item Стратифицированное разделение 70/30: обучение 3951 объект, тест 1693 объекта, соотношение классов сохранено.
+\item Построение дерева на обучении: максимальная глубина 12, фактическая глубина 4, 85 внутренних узлов, 63 листа.
+\item Метки классов и вероятности (доля ядовитых в листе) для теста.
+\item Accuracy, precision, recall, AUC-ROC, AUC-PR собственным кодом (метод трапеций для площадей под кривыми).
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Матрица ошибок и метрики качества на тестовой выборке (1693 объекта, положительный класс --- ядовитый гриб).}
+\label{tab:lab5_metrics}
+\begin{tabular}{lrrr}
+\toprule
+ & Значение & & \\
+\midrule
+TP (яды распознаны) & 472 & FP (съедобные как яды) & 71 \\
+TN (съедобные распознаны) & 975 & FN (яды как съедобные) & 175 \\
+\midrule
+Accuracy & \multicolumn{3}{r}{0.8547} \\
+Precision & \multicolumn{3}{r}{0.8692} \\
+Recall & \multicolumn{3}{r}{0.7295} \\
+AUC-ROC & \multicolumn{3}{r}{0.9416} \\
+AUC-PR & \multicolumn{3}{r}{0.9223} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.48\linewidth]{roc_plot.pdf}
+\quad
+\includegraphics[width=0.48\linewidth]{pr_plot.pdf}
+\caption{ROC- и PR-кривые классификатора на тестовой выборке (лаб.~5): AUC-ROC = 0.9416, AUC-PR = 0.9223.}
+\label{fig:lab5_curves}
+\end{figure}
+
+\subsection{Выводы}
+Реализовано небинарное дерево решений без сторонних библиотек. На 4 случайно отобранных признаках дерево глубины 4 достигает Accuracy 0.8547, precision 0.8692 и recall 0.7295; AUC-ROC = 0.9416, AUC-PR = 0.9223. Получение вероятностей из долей объектов в листьях позволяет построить ROC- и PR-кривые. Ограничение: recall 0.7295 означает, что часть ядовитых грибов классифицируется как съедобные, что критично для задачи безопасного потребления.
+
+\section{Лабораторная работа 4. Логистическая регрессия (датасет пассажиров Титаника)}
+
+\subsection{Цели и задачи}
+Целью работы является реализация модели логистической регрессии для бинарной классификации без использования сторонних библиотек машинного обучения, исследование влияния гиперпараметров на качество модели и оценка её работы на тестовых данных.
+\begin{enumerate}
+\item загрузка и предобработка датасета пассажиров Титаника;
+\item описательная статистика и её визуализация;
+\item разделение на обучающую и тестовую выборки;
+\item реализация логистической регрессии ``с нуля'' (сигмоида, log-loss, градиентный спуск, настраиваемая скорость обучения и число итераций);
+\item исследование гиперпараметров: скорость обучения, число итераций, метод оптимизации (градиентный спуск и оптимизация Ньютона);
+\item оценка по accuracy, precision, recall, F1-Score на тестовой выборке.
+\end{enumerate}
+
+\subsection{Описание метода}
+Логистическая регрессия моделирует вероятность принадлежности объекта к положительному классу с помощью сигмоидной функции:
+\begin{equation}
+\sigma(z) = \frac{1}{1 + e^{-z}}, \qquad p = \sigma(Xw),
+\end{equation}
+где $X$ --- матрица признаков со столбцом смещения, $w$ --- вектор весов, $p$ --- предсказанная вероятность. Порог классификации обычно равен 0.5: $p \ge 0.5 \Rightarrow$ класс 1.
+
+Функция потерь (логарифмические потери, кросс-энтропия):
+\begin{equation}
+L(w) = -\frac{1}{N}\sum_{i=1}^{N}\left[y_i\ln p_i + (1-y_i)\ln(1-p_i)\right].
+\end{equation}
+Обучение --- градиентный спуск:
+\begin{equation}
+w \leftarrow w - \frac{\eta}{N}X^\top(p-y),
+\end{equation}
+где $\eta$ --- скорость обучения. Для оптимизации Ньютона используется гессиан $H = \frac{1}{N}X^\top W X$, $W = \mathrm{diag}(p_i(1-p_i))$, и обновление $w \leftarrow w - H^{-1}\nabla L(w)$. Функция выпукла, поэтому градиентные методы сходятся к глобальному минимуму.
+
+\subsection{Псевдокод метода}
+\begin{lstlisting}
+sigmoid(z) = 1 / (1 + exp(-clip(z, -500, 500)))
+log_loss(y, p) = -mean(y*log(p) + (1-y)*log(1-p))
+
+gradient_descent(X, y, lr, n_iter):
+    w = zeros
+    repeat n_iter times:
+        p = sigmoid(X @ w)
+        grad = X.T @ (p - y) / N
+        w = w - lr * grad
+
+Newton(X, y, n_iter):
+    repeat n_iter times:
+        p = sigmoid(X @ w)
+        grad = X.T @ (p - y) / N
+        W = diag(p * (1 - p))
+        H = X.T @ W @ X / N
+        w = w - solve(H, grad)
+
+predict(X, w): return (sigmoid(X @ w) >= 0.5)
+\end{lstlisting}
+
+\subsection{Исходные данные и предобработка}
+Используется датасет пассажиров Титаника, 891 запись. Целевой признак --- \emph{Survived} (0 --- не выжил, 1 --- выжил); доля выживших около 38,4\%. Числовые признаки: \emph{Pclass}, \emph{Age}, \emph{SibSp}, \emph{Parch}, \emph{Fare}; категориальные: \emph{Sex}, \emph{Embarked}. Признаки \emph{Name}, \emph{Ticket}, \emph{Cabin}, \emph{PassengerId} исключены. Пропуски: в \emph{Age} --- 177, в \emph{Embarked} --- 2, в \emph{Cabin} --- 687 (признак исключён).
+
+Предобработка без утечки информации:
+\begin{enumerate}
+\item данные разделены на обучающую и тестовую 80/20 (712 / 179, зерно 42) \emph{до} любой предобработки;
+\item статистики для заполнения пропусков и стандартизации вычислены только на обучающей выборке (медиана Age/Fare, мода Embarked, среднее и std числовых признаков);
+\item те же статистики применены к тестовой выборке;
+\item пропуски Age и Fare заполнены медианой обучения, Embarked --- модой обучения;
+\item Sex закодирован (male = 0, female = 1), Embarked --- one-hot кодированием (порты S, C, Q);
+\item числовые признаки стандартизированы статистиками обучения.
+\end{enumerate}
+После предобработки в модели используется 9 признаков (5 числовых + пол + 3 порта one-hot).
+
+\begin{table}[H]
+\centering
+\caption{Описательная статистика по датасету Титаника (все 891 запись после заполнения пропусков).}
+\label{tab:lab6_stats}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Признак & Count & Mean & Std & Min & 25\% & 50\% & 75\% & Max \\
+\midrule
+Survived & 891 & 0.3838 & 0.4866 & 0.0 & 0.0 & 0.0 & 1.0 & 1.0 \\
+Pclass & 891 & 2.3086 & 0.8361 & 1.0 & 2.0 & 3.0 & 3.0 & 3.0 \\
+Age & 891 & 29.3616 & 13.0197 & 0.42 & 22.0 & 28.0 & 35.0 & 80.0 \\
+SibSp & 891 & 0.5230 & 1.1027 & 0.0 & 0.0 & 0.0 & 1.0 & 8.0 \\
+Parch & 891 & 0.3816 & 0.8061 & 0.0 & 0.0 & 0.0 & 0.0 & 6.0 \\
+Fare & 891 & 32.2042 & 49.6934 & 0.0 & 7.91 & 14.45 & 31.0 & 512.33 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{lab6_survived.png}
+\caption{Распределение целевой переменной Survived (лаб.~6).}
+\label{fig:lab6_survived}
+\end{figure}
+
+\subsection{Исследование гиперпараметров}
+Проведено исследование: три значения скорости обучения (0.01, 0.1, 0.5), три числа итераций (100, 500, 1000) и два метода оптимизации (градиентный спуск, оптимизация Ньютона).
+
+\begin{table}[H]
+\centering
+\caption{Качество модели на тестовой выборке для комбинаций гиперпараметров.}
+\label{tab:lab6_hp}
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+Метод & lr & Iter. & Loss & Acc & Prec. & Rec. & F1 \\
+\midrule
+GD & 0.01 & 100 & 0.6340 & 0.6983 & 0.6341 & 0.4000 & 0.4906 \\
+GD & 0.01 & 500 & 0.5490 & 0.7207 & 0.6744 & 0.4462 & 0.5370 \\
+GD & 0.01 & 1000 & 0.5115 & 0.7430 & 0.6863 & 0.5385 & 0.6034 \\
+GD & 0.1 & 100 & 0.5118 & 0.7430 & 0.6863 & 0.5385 & 0.6034 \\
+GD & 0.1 & 500 & 0.4503 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+GD & 0.1 & 1000 & 0.4449 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+GD & 0.5 & 100 & 0.4503 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+GD & 0.5 & 500 & 0.4442 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+GD & 0.5 & 1000 & 0.4442 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+Newton & --- & 100 & 0.4442 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+Newton & --- & 500 & 0.4442 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+Newton & --- & 1000 & 0.4442 & 0.7765 & 0.6866 & 0.7077 & 0.6970 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Наилучший результат по F1-Score показывает градиентный спуск с learning rate 0.1 и 500 итерациями: accuracy 0.7765, precision 0.6866, recall 0.7077, F1-Score 0.6970 (TP = 46, TN = 93, FP = 21, FN = 19). Увеличение learning rate свыше 0.1 и числа итераций свыше 500 не улучшает метрики: loss стабилизируется. Метод Ньютона сходится за немногие итерации, но не даёт преимущества в точности на тесте по сравнению с градиентным спуском.
+
+\begin{table}[H]
+\centering
+\caption{Матрица ошибок лучшей модели (GD, lr = 0.1, 500 итераций) на тестовой выборке.}
+\label{tab:lab6_confusion}
+\begin{tabular}{lrr}
+\toprule
+ & Предсказано: не выжил & Предсказано: выжил \\
+\midrule
+На самом деле: не выжил & TN = 93 & FP = 21 \\
+На самом деле: выжил & FN = 19 & TP = 46 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{lab6_learning_curve.png}
+\caption{Кривая обучения (градиентный спуск, lr = 0.1, 500 итераций) (лаб.~6).}
+\label{fig:lab6_curve}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{lab6_hyperparam_heatmap.png}
+\caption{Зависимость F1-Score от learning rate и числа итераций (градиентный спуск) (лаб.~6).}
+\label{fig:lab6_heatmap}
+\end{figure}
+
+\subsection{Выводы}
+Реализована логистическая регрессия ``с нуля'' на Python (NumPy/Pandas): сигмоида, log-loss, градиентный спуск с настраиваемой скоростью обучения и числом итераций, а также оптимизация Ньютона. Проведена предобработка без утечки данных. Категориальный признак Embarked zakодирован one-hot кодированием. Наилучшее качество по F1-Score (0.6970) достигается при learning rate 0.1, 500 итерациях и градиентном спуске. Классы несбалансированы (доля выживших 38,4\%), что снижает качество предсказания меньшего класса при общем высоком accuracy.
+
+\section{Сравнительный анализ методов}
+
+\subsection{Сравнительная таблица}
+\begin{table}[H]
+\centering
+\caption{Сравнение четырёх методов модуля 2.}
+\label{tab:compare}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+Метод & Тип задачи & Датасет, качество (тест) & Преимущества & Ограничения \\
+\midrule
+Линейная регрессия (МНК) & Регрессия (непрерывная цель) & Жильё Калифорнии, $R^2$ до 0.54 & Простота, интерпретируемость коэффициентов, аналитическое решение, быстрота & Линейная зависимость, чувствительность к мультиколлинеарности и выбросам \\
+k-ближайших соседей & Классификация (и регрессия) & Вино, accuracy до 0.9444 & Простота, нет этапа обучения, непараметричность, работает с любым числом классов & Медленное предсказание, ``проклятие размерности'', чувствительность к масштабу признаков и выбору $k$ \\
+Дерево решений & Классификация & Грибы UCI, accuracy 0.8547, AUC-ROC 0.9416 & Интерпретируемость, номинативные признаки, нелинейные границы, мало подготовки данных & Склонность к переобучению, нестабильность, жадный алгоритм \\
+Логистическая регрессия & Бинарная классификация & Титаник, accuracy 0.7765, F1 0.6970 & Вероятностный вывод, быстрая сходимость, хорошая база & Линейная граница разделения, сложности с нелинейными зависимостями \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Обсуждение}
+Все четыре метода показали приемлемое качество на своих задачах. Линейная регрессия и логистическая регрессия --- линейные модели: первые предсказывают непрерывное значение через среднеквадратичную функцию потерь, вторые через сигмоиду и кросс-энтропию выдают вероятность класса. k-NN и дерево решений --- непараметрические методы, capables capturing нелинейных зависимостей без явной функциональной формы.
+
+k-NN не требует обучения, но стоимость предсказания растет с размером выборки; качество сильно зависит от масштабирования признаков (в работе без стандартизации признаки с большими значениями, например Proline ~747, доминировали бы в расстоянии). Дерево решений естественно работает с номинативными признаками и даёт легко интерпретируемые правила, но может переобучаться (в работе ограничение глубины и выбор $\sqrt{n}$ признаков служили регуляризацией). Логистическая регрессия даёт калиброванные вероятности и работает лучше всего при линейно разделимых классах; при сильной нелинейности или большом числе взаимодействий признаков уступает деревьям и k-NN.
+
+\subsection{Примеры лучшего применения каждого метода}
+\begin{itemize}
+\item \textbf{Линейная регрессия:} прогнозирование числовых величин, когда связь приближённо линейна (стоимость недвижимости, спрос, продажи), когда нужна интерпретируемость влияния каждого фактора.
+\item \textbf{k-NN:} задачи классификации на небольших и средних выборках с осмысленной метрикой расстояния, системы рекомендаций, задачи без четкой функциональной зависимости между признаками и целевой переменной.
+\item \textbf{Деревья решений:} смешанные числовые и категориальные данные, задачи, важна интерпретируемость решений (кредитный скоринг, медицинская диагностика), когда не требуется строгая параметрическая форма зависимости.
+\item \textbf{Логистическая регрессия:} бинарная классификация с вероятностным выводом (отток клиентов, скоринг рисков, выживание), особенно как базовая модель, которую легко обучать и интерпретировать.
+\end{itemize}
+
+\section{Заключение}
+В рамках модуля 2 реализованы четыре метода надзоруемого обучения --- линейная регрессия, k-NN, дерево решений и логистическая регрессия --- полностью собственным кодом на Python (NumPy/Pandas) без готовых библиотек машинного обучения. По каждому методу получены результаты на реальных датасетах: $R^2 \approx 0.54$ для регрессии стоимости жилья, accuracy до 0.9444 при k-NN на данных о вине, accuracy 0.8547 с AUC-ROC 0.9416 при классификации грибов, accuracy 0.7765 и F1 0.6970 для логистической регрессии на датасете Титаника. Линейные модели просты и интерпретируемы, но предполагают линейную зависимость; непараметрические методы (k-NN, деревья) лучше улавливают нелинейные зависимости, но требуют тщательной предобработки и защиты от переобучения. Выбор метода зависит от природы задачи (регрессия против классификации), типа признаков, объема данных и требований к интерпретируемости.
+
+\section{Приложение. Исходный код}
+Ниже приводятся ключевые фрагменты реализации каждого метода (полные скрипты хранятся в папках \texttt{prog/} соответствующих лабораторных работ).
+
+\subsection{Линейная регрессия (лаб.~3, \texttt{lab3\_regression.py})}
+\begin{lstlisting}
+def preprocess(df):
+    # check missing values, encode categorical features,
+    # standardize numeric features (target not normalized)
+    report = {}
+    report["missing_total"] = int(df.isna().sum().sum())
+    categorical_cols = df.select_dtypes(exclude=[np.number]).columns.tolist()
+    ...
+    feature_cols = [c for c in df.columns if c != TARGET]
+    means = df[feature_cols].mean()
+    stds = df[feature_cols].std().replace(0, 1.0)
+    df[feature_cols] = (df[feature_cols] - means) / stds
+    return df, report
+
+def ols_fit(X, y):
+    # B = (X^T X)^{-1} X^T y, first column of ones added here
+    X_aug = np.column_stack([np.ones(len(X)), X])
+    XtX = X_aug.T @ X_aug
+    XtX_inv = np.linalg.inv(XtX)
+    B = XtX_inv @ X_aug.T @ y
+    return B
+
+def ols_predict(X, B):
+    X_aug = np.column_stack([np.ones(len(X)), X])
+    return X_aug @ B
+
+def r2_score(y_true, y_pred):
+    ss_res = float(np.sum((y_true - y_pred) ** 2))
+    ss_tot = float(np.sum((y_true - np.mean(y_true)) ** 2))
+    return 1.0 - ss_res / ss_tot if ss_tot != 0 else float("nan")
+\end{lstlisting}
+
+\subsection{k-ближайших соседей (лаб.~4, \texttt{knn\_wine.py})}
+\begin{lstlisting}
+def train_test_split(X, y, test_size=0.2, random_state=42):
+    rng = np.random.RandomState(random_state)
+    n = X.shape[0]
+    indices = rng.permutation(n)
+    n_test = int(round(n * test_size))
+    return X[indices[n_test:]], X[indices[:n_test]], y[indices[n_test:]], y[indices[:n_test]]
+
+class KNNClassifier:
+    def __init__(self, k=3):
+        self.k = k
+    def fit(self, X, y):
+        self.X_train = np.asarray(X, dtype=float)
+        self.y_train = np.asarray(y)
+    def predict(self, X):
+        X = np.asarray(X, dtype=float)
+        # ||a-b||^2 = ||a||^2 + ||b||^2 - 2 a*b
+        a2 = np.sum(X ** 2, axis=1, keepdims=True)
+        b2 = np.sum(self.X_train ** 2, axis=1, keepdims=True).T
+        ab = X @ self.X_train.T
+        dists = np.sqrt(np.maximum(a2 + b2 - 2 * ab, 0.0))
+        k_nearest = np.argsort(dists, axis=1)[:, : self.k]
+        k_labels = self.y_train[k_nearest]
+        # majority vote among k neighbours
+        predictions = np.array([
+            np.bincount(row.astype(int)).argmax() for row in k_labels
+        ])
+        return predictions
+
+def confusion_matrix(y_true, y_pred, classes):
+    n = len(classes)
+    cm = np.zeros((n, n), dtype=int)
+    idx = {c: i for i, c in enumerate(classes)}
+    for t, p in zip(y_true, y_pred):
+        cm[idx[t], idx[p]] += 1
+    return cm
+\end{lstlisting}
+
+\subsection{Дерево решений (лаб.~5, \texttt{lab5\_tree.py})}
+\begin{lstlisting}
+def entropy(y):
+    if len(y) == 0:
+        return 0.0
+    p = np.mean(y == 1)
+    if p == 0.0 or p == 1.0:
+        return 0.0
+    return -p * np.log2(p) - (1.0 - p) * np.log2(1 - p)
+
+def information_gain(col, y, values):
+    total = len(y)
+    h_parent = entropy(y)
+    weighted = 0.0
+    for v in values:
+        mask = col == v
+        w = np.sum(mask)
+        if w == 0:
+            continue
+        weighted += (w / total) * entropy(y[mask])
+    return h_parent - weighted
+
+def build_tree(X, y, feature_indices, depth):
+    node = Node()
+    node.label = majority_label(y)
+    node.pos_frac = np.mean(y == 1)
+    # stopping conditions: pure node, max depth, features exhausted, few examples
+    if (len(np.unique(y)) == 1 or depth >= MAX_DEPTH
+            or len(feature_indices) == 0 or len(y) < 2):
+        node.is_leaf = True
+        return node
+    best_gain = -1.0
+    best_feat = None
+    for fi in feature_indices:
+        gain = information_gain(X[:, fi], y, np.unique(X[:, fi]))
+        if gain > best_gain:
+            best_gain = gain
+            best_feat = fi
+    if best_feat is None or best_gain <= 0.0:
+        node.is_leaf = True
+        return node
+    node.feature_idx = best_feat
+    remaining = [f for f in feature_indices if f != best_feat]
+    for v in np.unique(X[:, best_feat]):
+        mask = X[:, best_feat] == v
+        node.children[v] = build_tree(X[mask], y[mask], remaining, depth + 1)
+    return node
+
+def predict_proba(node, x):
+    # share of poisonous in the leaf the object falls into
+    cur = node
+    while not cur.is_leaf:
+        v = x[cur.feature_idx]
+        if v in cur.children:
+            cur = cur.children[v]
+        else:
+            break
+    return cur.pos_frac
+
+def auc_roc(y_true, score):
+    order = np.argsort(-score, kind="mergesort")
+    y_sorted = y_true[order]
+    P = np.sum(y_true == 1)
+    Nn = np.sum(y_true == 0)
+    tp = fp = 0
+    points = [(0.0, 0.0)]
+    for i in range(len(y_sorted)):
+        if y_sorted[i] == 1:
+            tp += 1
+        else:
+            fp += 1
+        points.append((fp / Nn, tp / P))
+    points.append((1.0, 1.0))
+    # area by trapezoidal rule
+    uniq = {}
+    for fpr, tpr in points:
+        uniq[fpr] = max(uniq.get(fpr, 0.0), tpr)
+    xs = sorted(uniq.keys())
+    auc = 0.0
+    for i in range(1, len(xs)):
+        auc += (xs[i] - xs[i - 1]) * (uniq[xs[i]] + uniq[xs[i - 1]]) / 2.0
+    return auc, points
+\end{lstlisting}
+
+\subsection{Логистическая регрессия (лаб.~6, \texttt{lab6\_logreg.py})}
+\begin{lstlisting}
+def sigmoid(z):
+    return 1.0 / (1.0 + np.exp(-np.clip(z, -500, 500)))
+
+def log_loss(y_true, p):
+    eps = 1e-12
+    p = np.clip(p, eps, 1.0 - eps)
+    return -float(np.mean(y_true * np.log(p) + (1.0 - y_true) * np.log(1.0 - p)))
+
+def gradient_descent(X, y, lr, n_iter):
+    w = np.zeros((X.shape[1], 1))
+    history = []
+    for _ in range(n_iter):
+        p = sigmoid(X @ w)
+        grad = X.T @ (p - y) / X.shape[0]
+        w = w - lr * grad
+        history.append(log_loss(y, p))
+    return w, history
+
+def newton_method(X, y, n_iter):
+    w = np.zeros((X.shape[1], 1))
+    history = []
+    for _ in range(n_iter):
+        p = sigmoid(X @ w)
+        grad = X.T @ (p - y) / X.shape[0]
+        W = np.diag((p * (1.0 - p)).ravel())
+        H = (X.T @ W @ X) / X.shape[0]
+        step = np.linalg.solve(H, grad)
+        w = w - step
+        history.append(log_loss(y, p))
+    return w, history
+
+def predict(X, w):
+    return (sigmoid(X @ w) >= 0.5).astype(int)
+
+def classification_metrics(y_true, y_pred):
+    tp = int(np.sum((y_pred == 1) & (y_true == 1)))
+    tn = int(np.sum((y_pred == 0) & (y_true == 0)))
+    fp = int(np.sum((y_pred == 1) & (y_true == 0)))
+    fn = int(np.sum((y_pred == 0) & (y_true == 1)))
+    acc = (tp + tn) / max(len(y_true), 1)
+    prec = tp / max(tp + fp, 1)
+    rec = tp / max(tp + fn, 1)
+    f1 = 2.0 * prec * rec / max(prec + rec, 1e-12)
+    return acc, prec, rec, f1, tp, tn, fp, fn
+\end{lstlisting}
+
+\end{document}
