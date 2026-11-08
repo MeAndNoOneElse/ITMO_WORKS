@@ -1,0 +1,9 @@
+model,k,accuracy
+M1_random,3,0.9444
+M1_random,5,0.9444
+M1_random,10,0.9167
+M1_random,15,0.9167
+M2_fixed,3,0.8889
+M2_fixed,5,0.8889
+M2_fixed,10,0.9444
+M2_fixed,15,0.9444
