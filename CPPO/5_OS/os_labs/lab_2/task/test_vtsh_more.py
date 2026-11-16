@@ -12,7 +12,7 @@ VTSH = os.path.join(
 TIMEOUT = 15
 
 
-def run(script, timeout=TIMEOUT):
+def run(script, timeout=TIMEOUT, env=None):
     """Запускает vtsh, подаёт script на stdin, возвращает CompletedProcess."""
     return subprocess.run(
         [VTSH],
@@ -20,6 +20,7 @@ def run(script, timeout=TIMEOUT):
         capture_output=True,
         text=True,
         timeout=timeout,
+        env=env,
     )
 
 
@@ -227,6 +228,60 @@ class TestVtshMore(unittest.TestCase):
         res = run("cat test/search.txt | /bin/grep -i search | /usr/bin/wc -l\n")
         self.assertEqual(res.returncode, 0)
         self.assertEqual(res.stdout.strip(), "4")
+
+    # ------------------------------------------------------------------
+    # Оставшиеся сценарии из методички (ещё не покрытые выше)
+    # ------------------------------------------------------------------
+
+    def test_empty_line_and_eof(self):
+        """Пустая строка и EOF не завершают оболочку."""
+        res = run("\n\n\n")
+        self.assertEqual(res.returncode, 0)
+        self.assertEqual(res.stdout, "")
+        # EOF без команд
+        res = run("")
+        self.assertEqual(res.returncode, 0)
+
+    def test_env_variable_passed(self):
+        """Переменная окружения передаётся в дочерний процесс."""
+        env = dict(os.environ, MY_TEST_VAR="secret_value")
+        res = run("/usr/bin/env\n", env=env)
+        self.assertEqual(res.returncode, 0)
+        self.assertIn("MY_TEST_VAR=secret_value", res.stdout)
+
+    def test_syntax_error_does_not_kill_shell(self):
+        """Синтаксическая ошибка не убивает оболочку."""
+        res = run("||| invalid command\n/bin/echo alive\n")
+        self.assertEqual(res.returncode, 0)
+        self.assertEqual(res.stdout, "alive\n")
+
+    def test_cd_changes_directory(self):
+        """После cd новые команды выполняются в указанной директории."""
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            res = run(f"cd {d}\n/bin/pwd\n")
+            self.assertEqual(res.returncode, 0)
+            self.assertEqual(res.stdout.strip(), d)
+
+    def test_fsize_resource_limit(self):
+        """Ограничение размера файла через fsize работает."""
+        import tempfile
+        import os
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, "out.bin")
+            res = run(f"fsize 4096\n"
+                      f"dd if=/dev/zero of={out} bs=1024 count=100\n"
+                      f"exit\n")
+            self.assertNotEqual(res.returncode, 0)  # dd не дописал
+            self.assertLessEqual(os.path.getsize(out), 4096)
+            # Оболочка продолжает работу
+            res = run(f"fsize 4096\n"
+                      f"dd if=/dev/zero of={out} bs=1024 count=100\n"
+                      f"fsize off\n"
+                      f"dd if=/dev/zero of={out} bs=1024 count=100\n"
+                      f"/bin/echo alive\n")
+            self.assertIn("alive", res.stdout)
+            self.assertEqual(os.path.getsize(out), 100 * 1024)
 
 
 if __name__ == "__main__":

@@ -116,3 +116,109 @@ echo "/bin/echo ok" | ./build/bin/vtsh; echo "код: $?"
 # exit с кодом
 echo "exit 7" | ./build/bin/vtsh; echo "код: $?"
 ```
+
+### 1. Пустая строка и EOF
+
+```bash
+# Пустая строка
+echo "" | ./build/bin/vtsh; echo "код: $?"
+
+# EOF (без команд)
+printf "" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** stdout пустой, код `0`, оболочка не завершается с ошибкой.
+
+### 2. Вызов программы по абсолютному пути
+
+```bash
+echo "/bin/echo hello world" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** stdout содержит `hello world`, код `0`.
+
+### 3. Программа без аргументов и с аргументами
+
+```bash
+# Без аргументов
+echo "/bin/echo" | ./build/bin/vtsh; echo "код: $?"
+
+# С аргументами
+echo "/bin/echo a b c" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** без аргументов — пустая строка, с аргументами — `a b c`, код `0` в обоих случаях.
+
+### 4. Лишние пробелы
+
+```bash
+echo "   /bin/echo    a     b   " | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** stdout содержит `a b`, код `0`.
+
+### 5. Передача переменной окружения
+
+```bash
+MY_TEST_VAR=secret_value python3 -c "
+import subprocess, os
+env = dict(os.environ, MY_TEST_VAR='secret_value')
+res = subprocess.run(['./build/bin/vtsh'], input='/usr/bin/env\n', capture_output=True, text=True, env=env)
+print('MY_TEST_VAR в stdout:', 'MY_TEST_VAR=secret_value' in res.stdout)
+print('Код:', res.returncode)
+"
+```
+
+**Ожидание:** stdout содержит `MY_TEST_VAR=secret_value`, код `0`.
+
+### 6. Ошибочный синтаксис не убивает shell
+
+```bash
+echo "||| invalid command" | ./build/bin/vtsh; echo "код: $?"
+echo "/bin/echo alive" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** после ошибки синтаксиса оболочка продолжает работу, вторая команда выполняется (`alive`), код `0`.
+
+### 9. Цепочка из трёх и более команд
+
+```bash
+echo "/bin/echo a b c d | /bin/cat | /usr/bin/wc -w" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** stdout содержит `4` (четыре слова), код `0`.
+
+### 10. После фоновой команды не остаётся zombie
+
+```bash
+echo -e "sleep 0.1 &\nsleep 0.5\n/bin/echo x" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** stderr содержит `[1] Done (exit 0) sleep`, оболочка продолжает работу.
+
+### 13. После выполнения `cd` новые команды выполняются в контексте указанной директории
+
+```bash
+mkdir -p /tmp/testdir
+echo -e "cd /tmp/testdir\n/bin/pwd" | ./build/bin/vtsh; echo "код: $?"
+```
+
+**Ожидание:** stdout содержит `/tmp/testdir`, код `0`.
+
+### 16. Ограничение на ресурсы (FSIZE)
+
+```bash
+python3 -c "
+import subprocess, tempfile, os
+with tempfile.TemporaryDirectory() as d:
+    out = os.path.join(d, 'out.bin')
+    res = subprocess.run(['./build/bin/vtsh'], input=f'fsize 4096\ndd if=/dev/zero of={out} bs=1024 count=100\nexit\n', capture_output=True, text=True)
+    print('STDOUT:', repr(res.stdout))
+    print('STDERR:', repr(res.stderr))
+    print('КОД:', res.returncode)
+    print('Размер файла:', os.path.getsize(out))
+    print('Меньше или равен 4096:', os.path.getsize(out) <= 4096)
+"
+```
+
+**Ожидание:** размер файла ≤ 4096 байт, оболочка продолжает работу после `fsize off`.
