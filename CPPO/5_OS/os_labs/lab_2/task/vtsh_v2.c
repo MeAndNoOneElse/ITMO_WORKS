@@ -1,12 +1,3 @@
-/*
- * Вариант: конвейер |, фон &, встроенные cd / exit / fsize, измерение времени.
- * АРХИТЕКТУРА (4 слоя):
- *   1. REPL (main) — цикл чтения-вывода.
- *   2. Парсер (parse) — строка → план выполнения (план = команды + операторы |).
- *   3. Исполнитель (execute, run_cmds) — план → процессы через fork/exec/waitpid.
- *   4. Менеджер фоновых задач (add_job, reap_jobs, shutdown_jobs).
- */
-
 #define _GNU_SOURCE
 #include <errno.h>
 #include <fcntl.h>
@@ -24,31 +15,14 @@
 #define MAX_JOBS 64   /* максимум фоновых задач одновременно */
 #define MAX_PIPES 64  /* максимум звеньев в конвейере */
 
-/* Типы данных*/
 
-/*
- * op_t — оператор перед командой в плане.
- * OP_NONE — первая команда (оператора нет).
- * OP_PIPE — перед командой стоит | (конвейер).
- */
 typedef enum { OP_NONE, OP_PIPE } op_t;
 
-/*
- * cmd_t — одна простая команда.
- * argv — массив аргументов, последний элемент NULL.
- * argc — количество аргументов.
- */
 typedef struct {
     char **argv;
     size_t argc;
 } cmd_t;
 
-/*
- * plan_t — план выполнения всей строки.
- * cmds — команды; ops[i] — оператор перед cmds[i] (ops[0] = OP_NONE);
- * n — число команд; background — флаг & в конце строки;
- * buf — общий буфер для всех строк (argv ссылаются на позиции внутри buf).
- */
 typedef struct {
     cmd_t *cmds;
     op_t *ops;
@@ -57,11 +31,6 @@ typedef struct {
     char *buf;
 } plan_t;
 
-/*
- * job_t — запись в таблице фоновых задач.
- * id — порядковый номер; pid — PID процесса (0 = слот свободен);
- * text — текст команды для вывода.
- */
 typedef struct {
     int id;
     pid_t pid;
@@ -77,7 +46,7 @@ static int g_should_exit = 0;  /* флаг выхода (ставит builtin ex
 static int g_fsize_set = 0;
 static rlim_t g_fsize = 0;     /* лимит RLIMIT_FSIZE (команда fsize) */
 
-/* Вспомогательные функции                                            */
+/* Вспомогательные функции*/
 
 /*
  * xrealloc — безопасный realloc: при ошибке памяти выводит ошибку и завершает программу.
@@ -126,7 +95,7 @@ static int decode_status(int st) {
     return 1;
 }
 
-/* Парсер: строка → plan_t                                            */
+/* Парсер*/
 
 static void cmd_push(cmd_t *c, char *word) {
     c->argv = xrealloc(c->argv, (c->argc + 2) * sizeof(char *)); /* расширяет argv */
@@ -255,7 +224,7 @@ out:
     return rc;
 }
 
-/* Менеджер фоновых задач                                             */
+/* Менеджер фоновых задач */
 
 static int find_free_job(void) { /* ищет свободный слот в таблице */
     for (int i = 0; i < MAX_JOBS; i++)
@@ -306,7 +275,7 @@ static void shutdown_jobs(void) {
     }
 }
 
-/* Встроенные команды (builtins)                                      */
+/* Встроенные команды (builtins)*/
 
 static int is_builtin(const char *n) { /* проверяет, встроенная ли команда */
     return !strcmp(n, "cd") || !strcmp(n, "exit") || !strcmp(n, "fsize");
@@ -377,19 +346,8 @@ static int builtin_fsize(cmd_t *c) { /* команда fsize: лимит фай�
     return 0;
 }
 
-/* Исполнитель: запуск плана                                          */
+/* Исполнитель*/
 
-/*
- * run_cmds — запуск одной команды или конвейера.
- * Объединяет run_external и run_pipeline из полной версии.
- * child_setup встроен прямо здесь (ребёнок настраивает себя перед execvp).
- *
- * Для одной команды (n == 1): fork → ребёнок настраивается + execvp,
- * родитель ждёт через waitpid и замеряет время.
- * Для конвейера (n > 1): создаются n-1 pipe'ов, каждый звено соединяет
- * stdin/stdout через dup2, родитель закрывает все свои концы pipe'ов
- * и ждёт всех детей. Статус — статус последнего звена.
- */
 static int run_cmds(cmd_t *cmds, size_t n, int bg) {
     if (n == 0) return 0; /* ничего не делать */
     if (n - 1 > MAX_PIPES - 1) { /* слишком много звеньев */
@@ -408,7 +366,7 @@ static int run_cmds(cmd_t *cmds, size_t n, int bg) {
         pid_t pid = fork(); /* клонирует процесс */
         if (pid < 0) { perror("vtsh: fork"); return 1; } /* ошибка fork */
         if (pid == 0) {
-            /* ---- КОД РЁБЁНКА (до execvp) ---- */
+            /*создание ребёнка (до execvp)  */
             struct sigaction sa;
             memset(&sa, 0, sizeof sa);
             sa.sa_handler = SIG_DFL;
@@ -453,7 +411,7 @@ static int run_cmds(cmd_t *cmds, size_t n, int bg) {
         pids[i] = pid; /* запоминает PID ребёнка */
     }
 
-    /* ---- КОД РОДИТЕЛЯ: закрываем все свои концы pipe'ов ---- */
+    /*  КОД РОДИТЕЛЯ: закрываем все свои концы pipe'ов  */
     for (size_t i = 0; i + 1 < n; i++) {
         close(pipes[i][0]); /* закрывает чтение */
         close(pipes[i][1]); /* закрывает запись */
@@ -510,7 +468,7 @@ static int run_command(cmd_t *c, int bg) { /* запускает одну ком
  * Иначе — запускает отдельную команду через run_command.
  */
 static void execute(plan_t *p) {
-    int status = g_status; /* текущий статус */
+    int status = g_status;
     size_t i = 0;
     while (i < p->n) { /* проходит по командам плана */
         if (i + 1 < p->n && p->ops[i + 1] == OP_PIPE) { /* за командой следует | */
@@ -529,7 +487,7 @@ static void execute(plan_t *p) {
     }
 }
 
-/* REPL — цикл чтения-вывода                                          */
+/* REPL*/
 
 int main(void) { /* точка входа */
     int interactive = isatty(STDIN_FILENO); /* интерактивный режим? */
