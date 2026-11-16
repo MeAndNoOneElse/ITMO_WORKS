@@ -1,0 +1,11 @@
+apple banana cherry
+date elderberry fig grape
+honeydew kiwi lemon mango
+nectarine orange papaya quince
+raspberry strawberry tangerine watermelon
+
+# Esta línea contiene la palabra "search" para probar
+# This line contains the word "search" for testing
+Search with capital S
+searching for something
+no match here
